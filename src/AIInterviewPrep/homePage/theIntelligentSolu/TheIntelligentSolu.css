@@ -1,4 +1,4 @@
-.main-container-theIntelligent{
+/* .main-container-theIntelligent{
     border: solid;
     background: linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%);
     color: #fff;
@@ -9,6 +9,9 @@
   padding: 80px 20px 40px;
   max-width: 800px;
   margin: 0 auto;
+  border: solid;
+  display: flex;
+  flex-direction: row;
 }
 
 .upper-Div-text h1 {
@@ -23,12 +26,13 @@
   margin-bottom: 30px;
 }
 
-.cta-section {
+.upper-inner-second-div {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
+  border: solid;
 }
 
 .cta-btn {
@@ -48,7 +52,7 @@
   font-size: 0.95rem;
 }
 
-/* Lower Images */
+
 .lower-Div-images {
   display: flex;
   justify-content: center;
@@ -72,4 +76,103 @@
 .main-interview {
   flex: 0 0 auto;
   width: 600px;
+}
+
+.upper-inner-first-div{
+    border: solid;
+} */
+
+
+.main-container-theIntelligent {
+  background: linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%);
+  color: #fff;
+  padding: 60px 40px;
+  border-radius: 0 0 24px 24px;
+}
+
+/* Top Text Section */
+.upper-Div-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.upper-inner-first-div {
+  flex: 1;
+  min-width: 300px;
+}
+
+.upper-inner-first-div h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.upper-inner-first-div p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.upper-inner-second-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 220px;
+}
+
+.cta-btn {
+  background: #fff;
+  color: #6b3fd4;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #f3f3f3;
+}
+
+.review-text {
+  font-size: 0.95rem;
+}
+
+/* Bottom Images Section */
+.lower-Div-images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ai-score {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+.main-interview {
+  flex: 1;
+  /* min-width: 100px; */
+  width: 20%;
+}
+
+.lower-Div-images img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  background: #fff;
 }
