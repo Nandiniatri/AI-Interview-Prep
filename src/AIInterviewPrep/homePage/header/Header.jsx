@@ -15,7 +15,7 @@ const Header = () => {
                     <a href="#">Resources</a>
                 </nav>
                 <div className="auth-buttons">
-                    <div><CiSearch className='ciSearch'/></div>
+                    <div><CiSearch className='ciSearch' /></div>
                     <Button className="login-btn">Log in</Button>
                     <Button className="signup-btn">Sign Up</Button>
                 </div>
