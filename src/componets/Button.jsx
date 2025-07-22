@@ -7,7 +7,7 @@ const Button = ({ children, onClick, type = 'button', className = '', disabled =
             disabled={disabled}
             className={className}>
             {children}
-        </button>
+        </button> 
     );
 };
 
