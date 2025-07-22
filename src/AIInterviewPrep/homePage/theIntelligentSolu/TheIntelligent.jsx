@@ -1,0 +1,29 @@
+import './TheIntelligentSolu.css';
+
+const TheIntelligentFile = () => {
+  return (
+    <div className='main-container-theIntelligent'>
+      <div className="upper-Div-text">
+        <h1>The Intelligent Solution for Talent Acquisition</h1>
+        <p>
+          Interview platform that combines the power of artificial intelligence with
+          cutting‑edge technology to revolutionize your hiring process.
+        </p>
+        <div className="cta-section">
+          <button className="cta-btn">Get Started Free</button>
+          <div className="review-text">
+            ⭐⭐⭐⭐⭐ <span>Based on 100+ reviews on</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="lower-Div-images">
+        <div className="ai-score">
+          <img src="https://cdn.prod.website-files.com/62775a91cc3db44c787149de/67183eb61f2946ce0cd8415e_AI-Interview-Practice.webp" alt="AI Video Score" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TheIntelligentFile;
