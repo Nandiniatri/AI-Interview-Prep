@@ -1,4 +1,9 @@
-a.hero-header {
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.hero-header {
   background: linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%);
   color: #fff;
   padding: 20px 60px;
