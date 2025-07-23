@@ -1,0 +1,88 @@
+.plans-wrapper {
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f7f7fc;
+  color: #1f1f1f;
+}
+
+.plans-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.plans-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: scale(1.03);
+}
+
+.plan-card h2 {
+  background: linear-gradient(90deg, #6b46c1, #805ad5);
+  color: white;
+  padding: 0.6rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.per-month {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.target {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+}
+
+.features li {
+  margin-bottom: 0.5rem;
+}
+
+.plan-btn {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.plan-btn:hover {
+  background-color: #5b21b6;
+}

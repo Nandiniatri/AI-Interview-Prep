@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Basic Plan",
-    "price": 12,
+    "price": "$12",
     "priceType": "month",
     "target": "For startups and small businesses",
     "features": [
@@ -16,7 +16,7 @@
   {
     "id": 2,
     "title": "Pro Plan",
-    "price": 50,
+    "price": "$50",
     "priceType": "month",
     "target": "For Growing Companies",
     "features": [
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "title": "Enterprise Plan",
-    "price": 100,
+    "price": "$100",
     "priceType": "month",
     "target": "For Large Organizations",
     "features": [
