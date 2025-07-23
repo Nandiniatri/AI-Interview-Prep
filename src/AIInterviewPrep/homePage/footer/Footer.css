@@ -61,10 +61,12 @@
     border: solid;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 .footer-socials{
     border: solid;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 30px;
+    align-items: center;
 }
