@@ -3,6 +3,7 @@ import './Features.css';
 
 const Features = () => {
     const [cardData, setCardData] = useState([]);
+    const [activeCardId, setActiveCardId] = useState(null);
 
     const fetchFeaturesData = async () => {
         try {
@@ -18,9 +19,12 @@ const Features = () => {
         fetchFeaturesData();
     }, []);
 
+    const handleCardClick = (id) => {
+        setActiveCardId((prev) => (prev === id ? null : id));
+    };
+
     return (
         <div className="features-main-div">
-            {/* heading */}
             <div className="features-top">
                 <h2>
                     Powerful Features of <span>InterviewAI</span>
@@ -33,10 +37,17 @@ const Features = () => {
             </div>
 
             <div className="features-cards">
-                {cardData.map((item, index) => (
+                {cardData.map((item) => (
                     <div
-                        className='feature-card'
                         key={item.id}
+                        className="feature-card"
+                        onClick={() => handleCardClick(item.id)}
+                        style={{
+                            backgroundImage:
+                                activeCardId === item.id ? item.backgroundColor : 'none',
+                            backgroundColor: activeCardId === item.id ? 'transparent' : '#fff',
+                            color: activeCardId === item.id ? '#fff' : '#000',
+                        }}
                     >
                         <div className="card-image">
                             <img src={item.image} alt={item.title} />
