@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 import "./PlansForHiring.css";
+import Image from "../../../componets/Image";
 
 const PlansForHiring = () => {
     const [plansCard, setPlansCard] = useState([]);
@@ -43,9 +44,13 @@ const PlansForHiring = () => {
             <div className="plans-cards">
                 {plansCard.map((item) => (
                     <div className="plan-card" key={item.id}>
-                        <h2>{item.title}</h2>
+                        <div className="image-wrapper">
+                            <h2 className="image-heading">{item.title}</h2>
+                            <Image src="https://cdn.dribbble.com/userupload/20163147/file/original-a6e2470b5d34d3994b93470f4ddd671f.jpg?resize=752x564&vertical=center" className="plancard-image" preview={false} />
+                        </div>
                         <p className="price">
-                            <span className="per-month">{item.price}/month</span>
+                            <span className="plans-price-span2">{item.price}</span>/
+                            <span className="plans-priceType-span2">{item.priceType}</span>
                         </p>
                         <p className="target">{item.target}</p>
 
