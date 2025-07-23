@@ -1,4 +1,5 @@
 import Features from "./homePage/features/Features";
+import Footer from "./homePage/footer/Footer";
 import Header from "./homePage/header/Header";
 import InterviewTech from "./homePage/interviewTech/InterviewTech";
 import PlansForHiring from "./homePage/plansForHiring/PlansForHiring";
@@ -14,6 +15,7 @@ const AIMainFile = () => {
             <Features />
             <PlansForHiring />
             <SuperChargeSection />
+            <Footer />
         </>
     )
 }
