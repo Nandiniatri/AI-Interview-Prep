@@ -6,7 +6,7 @@ const Features = () => {
 
     const fetchFeaturesData = async () => {
         try {
-            const response = await fetch('/data/featuresData.json'); // ✅ public folder se fetch
+            const response = await fetch('/data/featuresData.json');
             const result = await response.json();
             setCardData(result);
         } catch (error) {
@@ -32,7 +32,6 @@ const Features = () => {
                 </p>
             </div>
 
-            {/* cards */}
             <div className="features-cards">
                 {cardData.map((item, index) => (
                     <div
