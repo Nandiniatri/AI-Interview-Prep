@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Virtual Interviews",
+    "description": "Detail the virtual interview environment provided by InterviewAI, including video and voice interview capabilities.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3798/3798550.png",
+    "highlight": true
+  },
+  {
+    "id": 2,
+    "title": "AI Video Analytics",
+    "description": "Explain how InterviewAI analyzes interview data and generates performance reports to assist in decision‑making.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3798/3798550.png",
+    "highlight": false
+  },
+  {
+    "id": 3,
+    "title": "Workmap Screening",
+    "description": "Describe how InterviewAI utilizes AI to analyze and screen resumes, extracting relevant information and ranking candidates.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3798/3798550.png",
+    "highlight": false
+  }
+]
