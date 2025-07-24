@@ -50,7 +50,7 @@
 }
 
 .footer-top{
-    border: solid;
+    /* border: solid; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -58,13 +58,13 @@
 }
 
 .footer-nav{
-    border: solid;
+    /* border: solid; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .footer-socials{
-    border: solid;
+    /* border: solid; */
     display: flex;
     flex-direction: row;
     gap: 30px;

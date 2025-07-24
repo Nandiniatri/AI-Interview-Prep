@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './TheIntelligentSolu.css';
+import StartPracticeModal from '../../secondPageJob/StartPracticesModal';
 
 const TheIntelligentFile = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className='main-container-theIntelligent'>
       <div className="upper-Div-text">
@@ -12,7 +16,7 @@ const TheIntelligentFile = () => {
           </p>
         </div>
         <div className="upper-inner-second-div">
-          <button className="cta-btn">Get Started Free</button>
+          <button className="cta-btn" onClick={() => setShowModal(true)}>Get Started Free</button>
           <div className="review-text">
             ⭐⭐⭐⭐⭐ <span>Based on 100+ reviews on</span>
           </div>
@@ -33,6 +37,9 @@ const TheIntelligentFile = () => {
           />
         </div>
       </div>
+
+      {showModal && <StartPracticeModal onClose={() => setShowModal(false)} />}
+
     </div>
   );
 };
