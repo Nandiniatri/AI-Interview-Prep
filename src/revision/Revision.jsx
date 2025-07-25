@@ -12,6 +12,17 @@ const Revision = () => {
                 <li>Detection</li>
                 <li>Restore</li>
             </ul>
+
+            <h1>Check Point</h1>
+            <p>it is a machism of DB . Which they save the current state Date in DB.
+                In check point is a restore point that ensure , where the system where crash so they automatically return to the last safe current. It is known as check point. 
+            </p>
+            <ul>
+                <li>Manully</li>
+                <li>Auto-mated</li>
+                <li>Time-based</li>
+                <li>Transaction-based</li>
+            </ul>
         </div>
     )
 }
