@@ -5,8 +5,8 @@ import Revision from './revision/Revision'
 function App() {
   return (
     <>
-      {/* <AIMainFile /> */}
-      <Revision />
+      <AIMainFile />
+      {/* <Revision /> */}
     </>
   )
 }

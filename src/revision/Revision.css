@@ -1,5 +1,5 @@
-.revision-main-div {
-    border: solid;
+/* .revision-main-div {
+    border: solid; */
     /* text-align: center; //horizontal */
     /* display: flex;
     flex-direction: row;
@@ -8,12 +8,12 @@
     align-items: center; */
     /* align-items: center;   //vertical */
     /* height: 100vh; */
-}
+/* } */
 
-p {
+/* p {
     border: solid;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-} 
+}  */
