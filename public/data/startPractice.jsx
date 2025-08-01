@@ -18,7 +18,7 @@ export const positions = [
     },
     { id: 6, title: "Backend Developer"
     }
-]
+];
 
 export const rounds = [
     { id: 1, title: "Warm Up"
