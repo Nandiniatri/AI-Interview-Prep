@@ -15,7 +15,7 @@ const AIMainFile = () => {
             <Features />
             <PlansForHiring />
             <SuperChargeSection />
-            <Footer />
+            
         </>
     )
 }
