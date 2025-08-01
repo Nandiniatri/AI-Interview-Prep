@@ -3,7 +3,7 @@ export const jobs = [
     }, 
     { id: 2, title: "Internship"
     }
-];
+
 
 export const positions = [
     { id: 1, title: "Frontend Developer"
