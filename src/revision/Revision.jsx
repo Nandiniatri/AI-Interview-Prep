@@ -1,6 +1,15 @@
+import { useEffect } from 'react';
 import './Revision.css';
 
 const Revision = () => {
+    useEffect(() => {
+        try {
+            const response = fetch()
+        } catch (error) {
+
+        }
+    })
+
     return (
         <div className='revision-main-div'>
             <p>Hello</p>
@@ -15,7 +24,7 @@ const Revision = () => {
 
             <h1>Check Point</h1>
             <p>it is a machism of DB . Which they save the current state Date in DB.
-                In check point is a restore point that ensure , where the system where crash so they automatically return to the last safe current. It is known as check point. 
+                In check point is a restore point that ensure , where the system where crash so they automatically return to the last safe current. It is known as check point.
             </p>
             <ul>
                 <li>Manully</li>
@@ -33,6 +42,7 @@ const Revision = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro deserunt est, debitis inventore accusamus molestias explicabo maxime similique veniam nostrum, placeat exercitationem itaque aliquid vitae? Suscipit voluptate vitae ea doloremque.</p>
             <i>kjndkjnknsakjnk</i>
             <button>Hello</button>
+
         </div>
     )
 }
