@@ -1,14 +1,22 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './Revision.css';
 
 const Revision = () => {
-    useEffect(() => {
-        try {
-            const response = fetch()
-        } catch (error) {
+    const [data , setData] = useState([]);
 
+    const fetchData = async() => {
+        try {
+            const response = await fetch();
+            const result = await response.json();
+            setData(result);
+        } catch (error) {
+    
         }
-    })
+    }
+
+    useEffect(() => {
+        fetchData();
+    },[])
 
     return (
         <div className='revision-main-div'>
