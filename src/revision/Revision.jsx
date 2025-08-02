@@ -10,7 +10,7 @@ const Revision = () => {
             const result = await response.json();
             setData(result);
         } catch (error) {
-    
+            console.log('Network error');
         }
     }
 
