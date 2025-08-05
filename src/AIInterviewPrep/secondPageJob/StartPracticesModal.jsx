@@ -7,6 +7,10 @@ const StartPracticeModal = ({ onClose }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
     const [selectedRound, setSelectedRound] = useState("");
 
+    console.log("Job:", selectedJob);
+    console.log("Position:", selectedPosition);
+    console.log("Round:", selectedRound);
+
     return (
         <div className="modal-overlay">
             <div className="modal-content">
@@ -16,6 +20,7 @@ const StartPracticeModal = ({ onClose }) => {
 
                 <div className="dropdown-row">
                     <select value={selectedJob} onChange={e => setSelectedJob(e.target.value)} className="select-job">
+                        <option value="">Select Job</option>
                         {jobs.map(job => (
                             <option key={job.id} value={job.title}>{job.title}</option>
                         ))}
@@ -39,9 +44,10 @@ const StartPracticeModal = ({ onClose }) => {
                     </select>
 
                     <button className="start-btn">START PRACTICE</button>
+                    
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
