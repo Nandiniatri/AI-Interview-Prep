@@ -14,7 +14,6 @@ const StartPracticeModal = ({ onClose }) => {
         if (selectedJob && selectedPosition && selectedRound) {
             setIsModalOpen(true);
         }
-        // setIsModalOpen(false);
     };
 
     const isDisabled = !(selectedJob && selectedPosition && selectedRound);
@@ -33,7 +32,6 @@ const StartPracticeModal = ({ onClose }) => {
                             onChange={e => setSelectedJob(e.target.value)}
                             className="select-job"
                         >
-                            <option value="">Select Job</option>
                             {jobs.map(job => (
                                 <option key={job.id} value={job.title}>{job.title}</option>
                             ))}
@@ -73,7 +71,6 @@ const StartPracticeModal = ({ onClose }) => {
                 </div>
             </div>
 
-            {/* Portal Modal */}
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <h2>Hello</h2>
             </Modal>

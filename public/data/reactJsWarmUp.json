@@ -1,0 +1,68 @@
+{
+    "heading": [
+        {
+            "title": "React JS Developer",
+            "subTitle": "Warm Up"
+        }
+    ],
+    
+    "rounds": [
+        {
+            "id": 1,
+            "title": "Warm Up"
+        },
+        {
+            "id": 2,
+            "title": "Coding"
+        },
+        {
+            "id": 3,
+            "title": "Role Related"
+        },
+        {
+            "id": 4,
+            "title": "Behavioral"
+        }
+    ],
+    "durations": [
+        {
+            "id": 1,
+            "time": "5 mins"
+        },
+        {
+            "id": 2,
+            "time": "15 mins"
+        },
+        {
+            "id": 3,
+            "time": "30 mins",
+            "premium": true
+        }
+    ],
+    "interviewers": [
+        {
+            "id": 1,
+            "name": "Payal",
+            "lang": "IN English",
+            "img": "/img/payal.png"
+        },
+        {
+            "id": 2,
+            "name": "Emma",
+            "lang": "US English",
+            "img": "/img/emma.png"
+        },
+        {
+            "id": 3,
+            "name": "John",
+            "lang": "US English",
+            "img": "/img/john.png"
+        },
+        {
+            "id": 4,
+            "name": "Kapil",
+            "lang": "IN English",
+            "img": "/img/kapil.png"
+        }
+    ]
+}
