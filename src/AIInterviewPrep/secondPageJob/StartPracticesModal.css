@@ -69,7 +69,8 @@ p {
 }
 
 
-.select-position-option{
+.select-job{
   border: solid;
-  color: #4b0082;
+  color: #9D00E0;
+  font-weight: bold;
 }

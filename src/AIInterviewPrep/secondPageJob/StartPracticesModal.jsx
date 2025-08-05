@@ -15,7 +15,7 @@ const StartPracticeModal = ({ onClose }) => {
                 <p>AI mock interviews with personalized practice and real-time analytics</p>
 
                 <div className="dropdown-row">
-                    <select value={selectedJob} onChange={e => setSelectedJob(e.target.value)}>
+                    <select value={selectedJob} onChange={e => setSelectedJob(e.target.value)} className="select-job">
                         {jobs.map(job => (
                             <option key={job.id} value={job.title}>{job.title}</option>
                         ))}
