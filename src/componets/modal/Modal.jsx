@@ -1,4 +1,5 @@
-import Button from "./Button";
+import ReactDOM from "react-dom";
+import "./Modal.css";
 
 const Modal = ({ isOpen, children, onClose }) => {
     if (!isOpen) {
@@ -7,10 +8,10 @@ const Modal = ({ isOpen, children, onClose }) => {
 
     return ReactDOM.createPortal(
         <>
-            <div className="modal-overlay" onClick={onClose}>
-                <div className="modal-content">
+            <div className="modal-overlay1" onClick={onClose}>
+                <div className="modal-content1">
                     {children}
-                    <Button className="close-btn" onClick={onClose}>close</Button>
+                    <button className="close-btn" onClick={onClose}>close</button>
                 </div>
             </div>
         </>,
