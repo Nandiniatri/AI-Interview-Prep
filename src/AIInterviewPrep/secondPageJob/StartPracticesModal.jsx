@@ -29,17 +29,19 @@ const StartPracticeModal = ({ onClose }) => {
                         ))}
                     </select>
 
-                    <select value={selectedRound} onChange={e => setSelectedRound(e.target.value)}>
+                    <select value={selectedRound} onChange={e => setSelectedRound(e.target.value)} disabled={!selectedPosition}>
                         <option value="">Select Round</option>
-                        {rounds.map(round => (
-                            <option key={round.id} value={round.title}>{round.title}</option>
-                        ))}
+                        {selectedPosition &&
+                            rounds.map(round => (
+                                <option key={round.id} value={round.title}>{round.title}</option>
+                            ))
+                        }
                     </select>
 
                     <button className="start-btn">START PRACTICE</button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

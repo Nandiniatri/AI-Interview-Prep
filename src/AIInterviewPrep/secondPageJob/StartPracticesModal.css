@@ -30,7 +30,7 @@
 h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #4b0082; /* purple */
+  color: #4b0082; 
 }
 
 p {
@@ -73,4 +73,7 @@ p {
   border: solid;
   color: #9D00E0;
   font-weight: bold;
+}
+.select-round-option{
+  color: gray !important;
 }
