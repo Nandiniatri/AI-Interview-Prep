@@ -16,7 +16,6 @@ const StartPracticeModal = ({ onClose }) => {
 
                 <div className="dropdown-row">
                     <select value={selectedJob} onChange={e => setSelectedJob(e.target.value)}>
-                        {/* <option value="">Job</option> */}
                         {jobs.map(job => (
                             <option key={job.id} value={job.title}>{job.title}</option>
                         ))}
@@ -25,6 +24,7 @@ const StartPracticeModal = ({ onClose }) => {
                     <select value={selectedPosition} onChange={e => setSelectedPosition(e.target.value)}>
                         <option value="">Search position</option>
                         {positions.map(pos => (
+                            // console.log(pos)                            
                             <option key={pos.id} value={pos.title}>{pos.title}</option>
                         ))}
                     </select>

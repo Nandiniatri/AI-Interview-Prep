@@ -11,7 +11,7 @@ export const positions = [
     { id: 2, title: "ReactJS Developer"
     },
     { id: 3, title: "Manual Tester"
-    },
+    }, 
     { id: 4, title: "HTML"
     },
     { id: 5, title: "CSS"

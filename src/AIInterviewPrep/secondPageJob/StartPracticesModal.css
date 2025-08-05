@@ -67,3 +67,9 @@ p {
 .start-btn:hover {
   opacity: 0.9;
 }
+
+
+.select-position-option{
+  border: solid;
+  color: #4b0082;
+}
