@@ -10,12 +10,14 @@ const AIMainFile = () => {
     return (
         <>
             <Header />
-            <TheIntelligentFile />
+            <TheIntelligentFile /> 
             <InterviewTech />
             <Features />
             <PlansForHiring />
             <SuperChargeSection />
             <Footer />
+
+            
         </>
     )
 }

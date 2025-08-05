@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./StartPracticesModal.css";
 import { jobs, positions, rounds } from "../../../public/data/startPractice";
 import Modal from "../../componets/modal/Modal";
+import SelectedForm from "../selectedForms/SelectedForms";
 
 
 const StartPracticeModal = ({ onClose }) => {
@@ -32,6 +33,7 @@ const StartPracticeModal = ({ onClose }) => {
                             onChange={e => setSelectedJob(e.target.value)}
                             className="select-job"
                         >
+                            <option value="">Select Job</option>
                             {jobs.map(job => (
                                 <option key={job.id} value={job.title}>{job.title}</option>
                             ))}
@@ -72,7 +74,11 @@ const StartPracticeModal = ({ onClose }) => {
             </div>
 
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                <h2>Hello</h2>
+                <SelectedForm
+                    job={selectedJob}
+                    position={selectedPosition}
+                    round={selectedRound}
+                />
             </Modal>
         </>
     );
