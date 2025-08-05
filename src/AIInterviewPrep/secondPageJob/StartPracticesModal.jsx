@@ -74,11 +74,7 @@ const StartPracticeModal = ({ onClose }) => {
             </div>
 
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                <SelectedForm
-                    job={selectedJob}
-                    position={selectedPosition}
-                    round={selectedRound}
-                />
+                <SelectedForm />
             </Modal>
         </>
     );
