@@ -6,10 +6,15 @@ const StartPracticeModal = ({ onClose }) => {
     const [selectedJob, setSelectedJob] = useState("");
     const [selectedPosition, setSelectedPosition] = useState("");
     const [selectedRound, setSelectedRound] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     // console.log("Job:", selectedJob);
     // console.log("Position:", selectedPosition);
     // console.log("Round:", selectedRound);
+
+    const handleStartPractice = () => {
+        setIsModalOpen(true);
+    }
 
     return (
         <div className="modal-overlay">
@@ -42,10 +47,12 @@ const StartPracticeModal = ({ onClose }) => {
                         }
                     </select>
 
-                    <button className="start-btn">START PRACTICE</button>
+                    <button className="start-btn" onClick={handleStartPractice}>START PRACTICE</button>
 
                 </div>
             </div>
+
+            
         </div>
     );
 };

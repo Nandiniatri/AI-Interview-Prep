@@ -10,10 +10,10 @@ const Modal = ({ isOpen, children }) => {
             <div className="modal-overlay">
                 <div className="modal-content">
                     {children}
-                    <Button>close</Button>
+                    <Button className="close-btn">close</Button>
                 </div>
             </div>
-        </>
+        </> 
     )
 }
 

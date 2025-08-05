@@ -10,13 +10,11 @@ export const positions = [
     },
     { id: 2, title: "ReactJS Developer"
     },
-    { id: 3, title: "Manual Tester"
+    { id: 3, title: "Javascript"
     }, 
-    { id: 4, title: "HTML"
+    { id: 4, title: "CSS"
     },
-    { id: 5, title: "CSS"
-    },
-    { id: 6, title: "Backend Developer"
+    { id: 5, title: "HTML"
     }
 ];
 
