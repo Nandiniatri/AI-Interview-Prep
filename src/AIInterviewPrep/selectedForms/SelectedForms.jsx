@@ -1,5 +1,18 @@
 import { useEffect, useState } from "react";
 import './SelectedForms.css';
+import warmUp from '/public/data/reactJsWarmUp.json';
+import coding from '/public/data/reactJsCoding.json';
+import roleRelated from '/public/data/reactJsRoleRelated.json';
+import behavioral from '/public/data/reactJsBehavioral.json';
+
+const fileMap = {
+  "React JS Developer": {
+    "Warm Up": warmUp,
+    "Coding": coding,
+    "Role Related": roleRelated,
+    "Behavioral": behavioral
+  },
+};
 
 
 const SelectedForm = () => {
@@ -18,6 +31,10 @@ const SelectedForm = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  // console.log(warmUp);
+  // console.log(coding);
+
 
   return (
     <div className="form-container">

@@ -26,7 +26,7 @@ const StartPracticeModal = ({ onClose }) => {
                     <button className="close-btn" onClick={onClose}>×</button>
                     <h2>Ready to Ace Your Next Interview?</h2>
                     <p>AI mock interviews with personalized practice and real-time analytics</p>
-
+ 
                     <div className="dropdown-row">
                         <select
                             value={selectedJob}

@@ -6,7 +6,7 @@ export const jobs = [
 ];
 
 export const positions = [
-    { id: 1, title: "Frontend Developer"
+    { id: 1, title: "Frontend Developer" , 
     },
     { id: 2, title: "ReactJS Developer"
     },
