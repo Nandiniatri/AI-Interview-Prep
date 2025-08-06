@@ -7,7 +7,7 @@ const TheIntelligentFile = () => {
 
   return (
     <div className='main-container-theIntelligent'>
-      <div className="upper-Div-text">
+      <div className="upper-Div-text"> 
         <div className='upper-inner-first-div'>
           <h1>The Intelligent Solution for Talent Acquisition</h1>
           <p>
