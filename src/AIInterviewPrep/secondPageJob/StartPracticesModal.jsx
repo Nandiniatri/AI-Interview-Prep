@@ -4,7 +4,6 @@ import { jobs, positions, rounds } from "../../../public/data/startPractice";
 import Modal from "../../componets/modal/Modal";
 import SelectedForm from "../selectedForms/SelectedForms";
 
-
 const StartPracticeModal = ({ onClose }) => {
     const [selectedJob, setSelectedJob] = useState("");
     const [selectedPosition, setSelectedPosition] = useState("");
@@ -19,6 +18,12 @@ const StartPracticeModal = ({ onClose }) => {
 
     const isDisabled = !(selectedJob && selectedPosition && selectedRound);
 
+    const handleSelectedRound = (e) => {
+        setSelectedRound(e.target.value);
+    };
+
+    const selectedRoundFile = rounds.find(r => r.title === selectedRound)?.file1;
+
     return (
         <>
             <div className="modal-overlay">
@@ -26,7 +31,7 @@ const StartPracticeModal = ({ onClose }) => {
                     <button className="close-btn" onClick={onClose}>×</button>
                     <h2>Ready to Ace Your Next Interview?</h2>
                     <p>AI mock interviews with personalized practice and real-time analytics</p>
- 
+
                     <div className="dropdown-row">
                         <select
                             value={selectedJob}
@@ -51,7 +56,7 @@ const StartPracticeModal = ({ onClose }) => {
 
                         <select
                             value={selectedRound}
-                            onChange={e => setSelectedRound(e.target.value)}
+                            onChange={handleSelectedRound}
                             disabled={!selectedPosition}
                         >
                             <option value="">Select Round</option>
@@ -74,7 +79,7 @@ const StartPracticeModal = ({ onClose }) => {
             </div>
 
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                <SelectedForm />
+                <SelectedForm file={selectedRoundFile} position={selectedPosition} round={selectedRound} />
             </Modal>
         </>
     );
