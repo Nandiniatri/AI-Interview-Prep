@@ -23,6 +23,8 @@ const StartPracticeModal = ({ onClose }) => {
     };
 
     const selectedRoundFile = rounds.find(r => r.title === selectedRound)?.file1;
+    console.log(selectedRoundFile);
+    
 
     return (
         <>
@@ -68,7 +70,7 @@ const StartPracticeModal = ({ onClose }) => {
                         </select>
 
                         <button
-                            className={`start-btn ${isDisabled ? "disabled" : ""}`}
+                            className="start-btn"
                             onClick={handleStartPractice}
                             disabled={isDisabled}
                         >

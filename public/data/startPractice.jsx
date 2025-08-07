@@ -9,19 +9,19 @@ export const jobs = [
 
 export const positions = [
     {
-        id: 1, title: "Frontend Developer",
+        id: 1, title: "Web Developer",
     },
     {
         id: 2, title: "ReactJS Developer"
     },
     {
-        id: 3, title: "Javascript"
+        id: 3, title: "Web Designer"
     },
     {
-        id: 4, title: "CSS"
+        id: 4, title: "Software Engineer"
     },
     {
-        id: 5, title: "HTML"
+        id: 5, title: "MERN Stack Developer"
     }
 ];
 
