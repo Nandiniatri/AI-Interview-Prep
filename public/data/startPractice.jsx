@@ -27,7 +27,7 @@ export const positions = [
 
 export const rounds = [
     {
-        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json"
+        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json" , file2:""
     },
     {
         id: 2, title: "Coding", file1: "reactJsCoding.json"
