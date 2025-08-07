@@ -27,16 +27,16 @@ export const positions = [
 
 export const rounds = [
     {
-        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json" , file2:""
+        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json", file2: "webDevWarmUp.json"
     },
     {
-        id: 2, title: "Coding", file1: "reactJsCoding.json"
+        id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevWarmUp.json"
     },
     {
-        id: 3, title: "Role Related", file1: "reactJsRoleRelated.json"
+        id: 3, title: "Role Related", file1: "reactJsRoleRelated.json", file2: "webDevWarmUp.json"
     },
     {
-        id: 4, title: "Behavioral", file1: "reactJsBehavioral.json"
+        id: 4, title: "Behavioral", file1: "reactJsBehavioral.json", file2: "webDevWarmUp.json"
     }
 ]
 

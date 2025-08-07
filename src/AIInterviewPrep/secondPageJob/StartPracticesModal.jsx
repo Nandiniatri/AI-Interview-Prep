@@ -24,7 +24,11 @@ const StartPracticeModal = ({ onClose }) => {
 
     const selectedRoundFile = rounds.find(r => r.title === selectedRound)?.file1;
     console.log(selectedRoundFile);
-    
+  
+    const selectedRoundWebDev = rounds.find(r => r.title === selectedRound)?.file2;
+    console.log(selectedRoundWebDev);
+
+
 
     return (
         <>
@@ -81,7 +85,7 @@ const StartPracticeModal = ({ onClose }) => {
             </div>
 
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                <SelectedForm file={selectedRoundFile} position={selectedPosition} round={selectedRound} />
+                <SelectedForm file={selectedRoundFile} position={selectedPosition} round={selectedRound} selectedRoundWebDev={selectedRoundWebDev} />
             </Modal>
         </>
     );
