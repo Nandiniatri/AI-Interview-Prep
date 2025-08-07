@@ -30,7 +30,7 @@ export const rounds = [
         id: 1, title: "Warm Up", file1: "reactJsWarmUp.json", file2: "webDevWarmUp.json"
     },
     {
-        id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevWarmUp.json"
+        id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevCoding.json"
     },
     {
         id: 3, title: "Role Related", file1: "reactJsRoleRelated.json", file2: "webDevWarmUp.json"
