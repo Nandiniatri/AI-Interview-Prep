@@ -4,6 +4,9 @@ const Input = ({
     onChange,
     placeholder = '',
     className = '',
+    accept,
+    id = '',
+    style
 }) => {
     return (
         <input
@@ -12,6 +15,9 @@ const Input = ({
             onChange={onChange}
             placeholder={placeholder}
             className={className}
+            accept={accept}
+            id={id}
+            style={style}
         />
     );
 };
