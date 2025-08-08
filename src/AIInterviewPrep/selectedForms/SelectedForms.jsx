@@ -8,6 +8,9 @@ const SelectedForm = ({ file }) => {
   const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
   const [selectInterview, setSelectInterview] = useState('');
   const [selectInterviewer, setSelectInterviewer] = useState('');
+  const [videoSelected, setVideoSelected] = useState(false);
+  const [termsAgreed, setTermsAgreed] = useState(false);
+  
 
   const fetchAllFileData = async () => {
     if (file) {
