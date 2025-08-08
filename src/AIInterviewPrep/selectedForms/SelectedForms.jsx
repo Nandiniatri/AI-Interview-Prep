@@ -7,6 +7,7 @@ const SelectedForm = ({ file }) => {
   const fileInputRef = useRef(null);
   const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
   const [selectInterview, setSelectInterview] = useState('');
+  const [selectInterviewer, setSelectInterviewer] = useState('');
 
   const fetchAllFileData = async () => {
     if (file) {
@@ -47,6 +48,11 @@ const SelectedForm = ({ file }) => {
   const handleClickDuration = (duration) => {
     console.log(duration.time);
     setSelectInterview(duration.time);
+  }
+
+  const handleClickInterviewer = (interview) => {
+    console.log(interview);
+    setSelectInterviewer(interview.name);
   }
 
   return (
@@ -117,7 +123,7 @@ const SelectedForm = ({ file }) => {
         <p className="section-title">Select Your Interviewer *</p>
         <div className="interviewer-grid">
           {data?.interviewers?.map((interview, index) => (
-            <div className="interviewer-card" key={index}>
+            <div className={selectInterviewer === interview.name ? "option-btn-select-img" : "interviewer-card"} key={index} onClick={() => handleClickInterviewer(interview)}>
               <img src={interview.img} alt={interview.name} />
               <p className="interviewer-name">{interview.name}</p>
               <p className="interviewer-lang">{interview.lang}</p>

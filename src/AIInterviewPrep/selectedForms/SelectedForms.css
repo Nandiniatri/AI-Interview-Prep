@@ -107,6 +107,21 @@
   color: white;
 }
 
+.option-btn-select-img {
+  border: 2px solid #7C3AED;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #8a3ff7;
+}
+
+.option-btn-select-img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
 .interviewer-grid {
   display: flex;
   gap: 20px;
