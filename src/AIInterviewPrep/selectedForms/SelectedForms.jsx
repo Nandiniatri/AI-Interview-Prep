@@ -5,6 +5,8 @@ const SelectedForm = ({ file }) => {
   const [data, setData] = useState(null);
   const [resumeName, setResumeName] = useState("");
   const fileInputRef = useRef(null);
+  const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
+  const [selectInterview, setSelectInterview] = useState('');
 
   const fetchAllFileData = async () => {
     if (file) {
@@ -36,6 +38,15 @@ const SelectedForm = ({ file }) => {
 
   if (!data) {
     return <p>Loading questions...</p>;
+  }
+
+  const handleClickRounds = (round) => {
+    setSelectRoundsTitle(round.title);
+  }
+
+  const handleClickDuration = (duration) => {
+    console.log(duration.time);
+    setSelectInterview(duration.time);
   }
 
   return (
@@ -83,9 +94,13 @@ const SelectedForm = ({ file }) => {
       <div className="section">
         <p className="section-title">Select Round *</p>
         <div className="options">
-          {data?.rounds?.map((round, index) => (
-            <button className="option-btn" key={index}>{round.title}</button>
-          ))}
+          {data?.rounds?.map((round, index) => {
+            return (
+              <div>
+                <button className={selectRoundsTitle === round.title ? "option-btn-select" : "option-btn"} key={index} onClick={() => handleClickRounds(round)}>{round.title}</button>
+              </div>
+            )
+          })}
         </div>
       </div>
 
@@ -93,7 +108,7 @@ const SelectedForm = ({ file }) => {
         <p className="section-title">Interview Duration *</p>
         <div className="options">
           {data?.durations?.map((duration, index) => (
-            <button className="option-btn" key={index}>{duration.time}</button>
+            <button className={selectInterview === duration.time ? "option-btn-select" : "option-btn"} key={index} onClick={() => handleClickDuration(duration)}>{duration.time}</button>
           ))}
         </div>
       </div>

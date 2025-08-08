@@ -7,7 +7,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.form-title { 
+.form-title {
   color: #5e239d;
   font-size: 28px;
   margin-bottom: 20px;
@@ -94,6 +94,17 @@
 .option-btn:hover {
   background-color: #e2d4ff;
   border-color: #a259ff;
+}
+
+.option-btn-select {
+  padding: 8px 16px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: #8a3ff7;
+  color: white;
 }
 
 .interviewer-grid {
