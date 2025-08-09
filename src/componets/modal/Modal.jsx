@@ -5,8 +5,7 @@ const Modal = ({ isOpen, children, onClose }) => {
     if (!isOpen) return null;
 
     const handleStartPractices = () => {
-        alert('hello');
-        
+        alert('This is a start Practices');
     }
 
     return ReactDOM.createPortal(
