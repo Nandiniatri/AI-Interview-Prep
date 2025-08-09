@@ -11,7 +11,6 @@ const SelectedForm = ({ file }) => {
   const [videoSelected, setVideoSelected] = useState(false);
   const [termsAgreed, setTermsAgreed] = useState(false);
 
-
   const fetchAllFileData = async () => {
     if (file) {
       try {
