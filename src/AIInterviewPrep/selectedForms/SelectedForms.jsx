@@ -10,7 +10,7 @@ const SelectedForm = ({ file }) => {
   const [selectInterviewer, setSelectInterviewer] = useState('');
   const [videoSelected, setVideoSelected] = useState(false);
   const [termsAgreed, setTermsAgreed] = useState(false);
-  
+
 
   const fetchAllFileData = async () => {
     if (file) {
@@ -57,6 +57,20 @@ const SelectedForm = ({ file }) => {
     console.log(interview);
     setSelectInterviewer(interview.name);
   }
+
+  const handleStartPractice = () => {
+    if (
+      selectRoundsTitle &&
+      selectInterview &&
+      selectInterviewer &&
+      videoSelected &&
+      termsAgreed
+    ) {
+      alert("Practice Started ✅");
+    } else {
+      alert("⚠️ You have not selected all required fields");
+    }
+  };
 
   return (
     <div className="form-container">
