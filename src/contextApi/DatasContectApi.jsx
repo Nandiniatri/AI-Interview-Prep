@@ -10,7 +10,7 @@ const DatasContextApi = ({ children }) => {
     const [termsAgreed, setTermsAgreed] = useState(false);
     const [resumeName, setResumeName] = useState("");
 
-    console.log(selectInterviewer);
+    console.log(termsAgreed);
     
 
     const handleStartPractice = () => {
@@ -20,7 +20,8 @@ const DatasContextApi = ({ children }) => {
             selectRoundsTitle && 
             selectInterview && 
             selectInterviewer && 
-            videoSelected
+            videoSelected && 
+            termsAgreed
         ) {
             alert("Practice Started ✅");
         } else {

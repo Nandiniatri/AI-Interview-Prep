@@ -7,7 +7,7 @@ const SelectedForm = ({ file }) => {
   const fileInputRef = useRef(null);
   const { selectRoundsTitle, setSelectRoundsTitle,
     selectInterview, setSelectInterview,
-    selectInterviewer, setSelectInterviewer, resumeName, setResumeName, setVideoSelected } = useDataContext();
+    selectInterviewer, setSelectInterviewer, resumeName, setResumeName, setVideoSelected, termsAgreed, setTermsAgreed } = useDataContext();
 
 
   const fetchAllFileData = async () => {
@@ -61,6 +61,11 @@ const SelectedForm = ({ file }) => {
     const events = e.target.value;
     console.log('video Call Available', events);
     setVideoSelected(events);
+  }
+
+  const handleTermsAgree = (e) => {
+    console.log("terms Agreed", e.target.checked);
+    setTermsAgreed(e.target.checked);
   }
 
   return (
@@ -151,7 +156,7 @@ const SelectedForm = ({ file }) => {
       <p className="note">Note: Video will be deleted after 30 mins.</p>
 
       <div className="terms">
-        <input type="checkbox" />
+        <input type="checkbox" checked={termsAgreed} onChange={handleTermsAgree} />
         <label>I agree with the <a href="#">terms and conditions</a>.</label>
       </div>
     </div>
