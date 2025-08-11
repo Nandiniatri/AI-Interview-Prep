@@ -27,7 +27,6 @@ const DatasContextApi = () => {
 
     return (
         <dataContext.Provider value={{
-
         }}>
             {children}
         </dataContext.Provider>
