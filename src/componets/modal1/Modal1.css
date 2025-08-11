@@ -11,17 +11,20 @@
     align-items: center;
     padding: 10px;
     overflow: auto;
+    /* border: solid red; */
 }
 
 .modal1-content {
     background: #fff;
     border-radius: 12px;
-    width: 70vw;
-    max-height: 90vh;
+    width: 75vw;
+    max-height: 100vh !important; 
     overflow-y: scroll;
     position: relative;
     z-index: 1200;
     scrollbar-width: none;
+    /* border: solid; */
+    padding: 10px;
 }
 
 .modal-content1::-webkit-scrollbar {
@@ -42,7 +45,6 @@
     line-height: 30px;
     text-align: center;
     cursor: pointer;
-    font-weight: bold;
     transition: background 0.3s ease;
 }
 
