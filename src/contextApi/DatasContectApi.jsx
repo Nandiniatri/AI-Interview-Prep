@@ -9,6 +9,7 @@ const DatasContextApi = ({ children }) => {
     const [videoSelected, setVideoSelected] = useState(false);
     const [termsAgreed, setTermsAgreed] = useState(false);
     const [resumeName, setResumeName] = useState("");
+    const [isModalOpen , setIsOpenOpen] = useState(false);
 
     console.log(termsAgreed);
     
@@ -23,9 +24,9 @@ const DatasContextApi = ({ children }) => {
             videoSelected && 
             termsAgreed
         ) {
-            alert("Practice Started ✅");
+            setIsOpenOpen(true);
         } else {
-            alert("⚠️ You have not selected all required fields");
+            alert("You have not selected all required fields");
         }
     };
 
@@ -37,7 +38,8 @@ const DatasContextApi = ({ children }) => {
             selectInterviewer, setSelectInterviewer,
             videoSelected, setVideoSelected,
             termsAgreed, setTermsAgreed,
-            handleStartPractice
+            handleStartPractice,
+            isModalOpen , setIsOpenOpen
         }}>
             {children}
         </dataContext.Provider>
