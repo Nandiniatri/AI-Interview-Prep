@@ -4,11 +4,10 @@ import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const SelectedForm = ({ file }) => {
   const [data, setData] = useState(null);
-  const [resumeName, setResumeName] = useState("");
   const fileInputRef = useRef(null);
   const { selectRoundsTitle, setSelectRoundsTitle,
     selectInterview, setSelectInterview,
-    selectInterviewer, setSelectInterviewer } = useDataContext();
+    selectInterviewer, setSelectInterviewer, resumeName, setResumeName, setVideoSelected } = useDataContext();
 
 
   const fetchAllFileData = async () => {
@@ -57,6 +56,12 @@ const SelectedForm = ({ file }) => {
     setSelectInterviewer(interview.name);
   }
 
+
+  const handleVideoCall = (e) => {
+    const events = e.target.value;
+    console.log('video Call Available', events);
+    setVideoSelected(events);
+  }
 
   return (
     <div className="form-container">
@@ -139,7 +144,7 @@ const SelectedForm = ({ file }) => {
         <p className="section-title">Practice Setting *</p>
         <div className="checkbox-group">
           <label><input type="checkbox" /> Audio</label>
-          <label><input type="checkbox" /> Video</label>
+          <label><input type="checkbox" onClick={(e) => handleVideoCall(e)} /> Video</label>
         </div>
       </div>
 

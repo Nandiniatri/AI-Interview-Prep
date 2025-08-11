@@ -1,21 +1,20 @@
 import ReactDOM from "react-dom";
 import "./Modal.css";
+import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const Modal = ({ isOpen, children, onClose }) => {
-    if (!isOpen) return null;
+    const { handleStartPractice } = useDataContext();
 
-    const handleStartPractices = () => {
-        alert('This is a start Practices'); 
-    }
+    if (!isOpen) return null;
 
     return ReactDOM.createPortal(
         <div className="modal-overlay1" onClick={onClose}>
             <div className="modal-content1" onClick={(e) => e.stopPropagation()}>
-
                 {children}
-
                 <div className="modal-actions1">
-                    <button className="start-btn1" onClick={handleStartPractices}>START PRACTICE</button>
+                    <button className="start-btn1" onClick={handleStartPractice}>
+                        START PRACTICE
+                    </button>
                     <button className="cancel-btn1" onClick={onClose}>CANCEL</button>
                 </div>
             </div>

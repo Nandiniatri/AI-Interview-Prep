@@ -3,38 +3,44 @@ import { createContext, useContext, useState } from "react";
 const dataContext = createContext();
 
 const DatasContextApi = ({ children }) => {
-  const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
-  const [selectInterview, setSelectInterview] = useState('');
-  const [selectInterviewer, setSelectInterviewer] = useState('');
-  const [videoSelected, setVideoSelected] = useState(false);
-  const [termsAgreed, setTermsAgreed] = useState(false);
+    const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
+    const [selectInterview, setSelectInterview] = useState('');
+    const [selectInterviewer, setSelectInterviewer] = useState('');
+    const [videoSelected, setVideoSelected] = useState(false);
+    const [termsAgreed, setTermsAgreed] = useState(false);
+    const [resumeName, setResumeName] = useState("");
 
-  const handleStartPractice = () => {
-    if (
-      selectRoundsTitle &&
-      selectInterview &&
-      selectInterviewer &&
-      videoSelected &&
-      termsAgreed
-    ) {
-      alert("Practice Started ✅");
-    } else {
-      alert("⚠️ You have not selected all required fields");
-    }
-  };
+    console.log(selectInterviewer);
+    
 
-  return (
-    <dataContext.Provider value={{
-      selectRoundsTitle, setSelectRoundsTitle,
-      selectInterview, setSelectInterview,
-      selectInterviewer, setSelectInterviewer,
-      videoSelected, setVideoSelected,
-      termsAgreed, setTermsAgreed,
-      handleStartPractice
-    }}>
-      {children}
-    </dataContext.Provider>
-  );
+    const handleStartPractice = () => {
+        alert('hello ji')
+        if (
+            resumeName && 
+            selectRoundsTitle && 
+            selectInterview && 
+            selectInterviewer && 
+            videoSelected
+        ) {
+            alert("Practice Started ✅");
+        } else {
+            alert("⚠️ You have not selected all required fields");
+        }
+    };
+
+    return (
+        <dataContext.Provider value={{
+            resumeName, setResumeName,
+            selectRoundsTitle, setSelectRoundsTitle,
+            selectInterview, setSelectInterview,
+            selectInterviewer, setSelectInterviewer,
+            videoSelected, setVideoSelected,
+            termsAgreed, setTermsAgreed,
+            handleStartPractice
+        }}>
+            {children}
+        </dataContext.Provider>
+    );
 };
 
 export const useDataContext = () => useContext(dataContext);
