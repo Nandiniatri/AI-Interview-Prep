@@ -29,8 +29,8 @@ const Modal = ({ isOpen, children, onClose }) => {
 
             
             <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-                <h2>🎥 Practice Session</h2>
-                <p>Yaha tumhara video / practice content aayega.</p>
+                <h2>Practice Session</h2>
+                <p>Hello I am a Modal 1</p>
             </Modal1>
 
         </>,
