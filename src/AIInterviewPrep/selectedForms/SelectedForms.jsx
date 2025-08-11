@@ -5,11 +5,11 @@ const SelectedForm = ({ file }) => {
   const [data, setData] = useState(null);
   const [resumeName, setResumeName] = useState("");
   const fileInputRef = useRef(null);
-  const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
-  const [selectInterview, setSelectInterview] = useState('');
-  const [selectInterviewer, setSelectInterviewer] = useState('');
-  const [videoSelected, setVideoSelected] = useState(false);
-  const [termsAgreed, setTermsAgreed] = useState(false);
+  // const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
+  // const [selectInterview, setSelectInterview] = useState('');
+  // const [selectInterviewer, setSelectInterviewer] = useState('');
+  // const [videoSelected, setVideoSelected] = useState(false);
+  // const [termsAgreed, setTermsAgreed] = useState(false);
 
   const fetchAllFileData = async () => {
     if (file) {
@@ -57,19 +57,6 @@ const SelectedForm = ({ file }) => {
     setSelectInterviewer(interview.name);
   }
 
-  const handleStartPractice = () => {
-    if (
-      selectRoundsTitle &&
-      selectInterview &&
-      selectInterviewer &&
-      videoSelected &&
-      termsAgreed
-    ) {
-      alert("Practice Started ✅");
-    } else {
-      alert("⚠️ You have not selected all required fields");
-    }
-  };
 
   return (
     <div className="form-container">
