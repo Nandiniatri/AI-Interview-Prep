@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import './SelectedForms.css';
+import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const SelectedForm = ({ file }) => {
   const [data, setData] = useState(null);
   const [resumeName, setResumeName] = useState("");
   const fileInputRef = useRef(null);
-  // const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
-  // const [selectInterview, setSelectInterview] = useState('');
-  // const [selectInterviewer, setSelectInterviewer] = useState('');
-  // const [videoSelected, setVideoSelected] = useState(false);
-  // const [termsAgreed, setTermsAgreed] = useState(false);
+  const { selectRoundsTitle, setSelectRoundsTitle,
+    selectInterview, setSelectInterview,
+    selectInterviewer, setSelectInterviewer } = useDataContext();
+
 
   const fetchAllFileData = async () => {
     if (file) {
