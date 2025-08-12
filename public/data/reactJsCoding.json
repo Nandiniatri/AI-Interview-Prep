@@ -5,7 +5,6 @@
             "subTitle": "Coding"
         }
     ],
-
     "rounds": [
         {
             "id": 1,
@@ -24,8 +23,8 @@
             "title": "Behavioral"
         }
     ],
-    "Difficulty Level *":[
-         {
+    "Difficulty Level *": [
+        {
             "id": 1,
             "title": "Beginner"
         },
@@ -49,14 +48,14 @@
             "premium": true
         }
     ],
-    "selectCodingLanguage":[
+    "selectCodingLanguage": [
         {
-            "id":1,
-            "title":"Javascript"
+            "id": 1,
+            "title": "Javascript"
         },
         {
-            "id":2,
-            "title":"ReactJS"
+            "id": 2,
+            "title": "ReactJS"
         }
     ],
     "interviewers": [
