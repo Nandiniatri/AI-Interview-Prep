@@ -161,10 +161,11 @@ const Revision = () => {
             </ul>
             <nav>
                 <ul>
-                    <li>Hello</li>
-                    <li>hello baccho</li>
+                    <li>Home</li>
+                    <li>About</li>
                 </ul>
             </nav>
+
         </div>
     )
 }
