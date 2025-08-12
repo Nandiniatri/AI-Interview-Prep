@@ -169,7 +169,7 @@ const Revision = () => {
             </nav>
 
             <button>Login</button>
-
+            <button>SignUp</button>
         </div>
     )
 }
