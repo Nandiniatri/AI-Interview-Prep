@@ -1,0 +1,12 @@
+[
+    "Write a function in JavaScript to reverse a string without using built-in reverse() method.",
+    "Given an array of numbers, write a function to find the second largest number.",
+    "Write a JavaScript function to check if a given string is a palindrome.",
+    "Create a function that removes duplicate values from an array.",
+    "Write a program to count the number of vowels in a string.",
+    "Implement a debounce function in JavaScript.",
+    "Given a sorted array, write a function to perform binary search for a target value.",
+    "Write a JavaScript program to flatten a nested array.",
+    "Create a function that finds the factorial of a given number using recursion.",
+    "Implement a function to merge two sorted arrays into one sorted array."
+]
