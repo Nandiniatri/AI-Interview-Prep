@@ -13,7 +13,7 @@ const StartPracticeModal = ({ onClose }) => {
     const handleStartPractice = () => {
         if (selectedJob && selectedPosition && selectedRound) {
             setIsModalOpen(true);
-        }
+        } 
     };
 
     const isDisabled = !(selectedJob && selectedPosition && selectedRound);

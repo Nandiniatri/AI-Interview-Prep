@@ -1,9 +1,6 @@
 export const jobs = [
     {
         id: 1, title: "Job"
-    },
-    {
-        id: 2, title: "Internship"
     }
 ];
 
@@ -12,11 +9,11 @@ export const positions = [
         id: 1, title: "Web Developer",
     },
     {
-        id: 2, title: "Frontend Developer"
+        id: 2, title: "ReactJS Developer"
     },
     {
         id: 3, title: "Web Designer"
-    },
+    }, 
     {
         id: 4, title: "Software Engineer"
     },
