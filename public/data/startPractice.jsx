@@ -1,7 +1,7 @@
 export const jobs = [
     {
         id: 1, title: "Job"
-    }
+    },
 ];
 
 export const positions = [
