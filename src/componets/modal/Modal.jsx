@@ -51,13 +51,13 @@ import { useState, useEffect } from "react";
 const Modal = ({ isOpen, children, onClose }) => {
   const { handleStartPractice, isModalOpen, setIsOpenOpen } = useDataContext();
 
-  const questions = [
-    "Explain the difference between useEffect and useLayoutEffect in React.",
-    "What are React Hooks and why are they useful?",
-    "How does virtual DOM work in React?",
-    "What is the difference between state and props?",
-    "How can you optimize performance in a React application?"
-  ];
+  // const questions = [
+  //   "Explain the difference between useEffect and useLayoutEffect in React.",
+  //   "What are React Hooks and why are they useful?",
+  //   "How does virtual DOM work in React?",
+  //   "What is the difference between state and props?",
+  //   "How can you optimize performance in a React application?"
+  // ];
 
   const [currentQ, setCurrentQ] = useState(0);
   const [timer, setTimer] = useState(300);
