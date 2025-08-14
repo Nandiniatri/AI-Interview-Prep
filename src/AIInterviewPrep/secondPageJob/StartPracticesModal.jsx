@@ -10,12 +10,12 @@ const StartPracticeModal = ({ onClose }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
     // const [selectedRound, setSelectedRound] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { selectedRound, setSelectedRound } = useDataContext();
+    const {selectedRound, setSelectedRound} = useDataContext();
 
     const handleStartPractice = () => {
         if (selectedJob && selectedPosition && selectedRound) {
             setIsModalOpen(true);
-        }
+        } 
     };
 
     const isDisabled = !(selectedJob && selectedPosition && selectedRound);
@@ -34,10 +34,10 @@ const StartPracticeModal = ({ onClose }) => {
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
     const fileKey = positionToFileKey[selectedPosition] || "file1";
     console.log(fileKey);
-
+    
     const fileToUse = selectedRoundData?.[fileKey];
-    console.log("konsi file use ho rahi hai", fileToUse);
-
+    console.log("konsi file use ho rahi hai" , fileToUse);
+    
 
     return (
         <>

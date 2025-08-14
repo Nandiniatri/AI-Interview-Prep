@@ -179,12 +179,14 @@
 
 
 
+
+
+
 import ReactDOM from "react-dom";
 import "./Modal.css";
 import { useDataContext } from "../../contextApi/DatasContectApi";
 import Modal1 from "../modal1/Modal1";
 import { useState, useEffect } from "react";
-import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Questions";
 
 const Modal = ({ isOpen, children, onClose }) => {
   const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, setSelectedRound } = useDataContext();
@@ -269,7 +271,29 @@ const Modal = ({ isOpen, children, onClose }) => {
       </div>
 
       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        <Questions formatTime={formatTime} handleNext={handleNext} questions={questions} timer={timer} currentQ={currentQ} answer={answer} />
+        <div className="practice-container">
+          <div className="practice-header">
+            <h1>React JS Developer Interview Practice</h1>
+            <span className="timer">⏳ {formatTime(timer)}</span>
+          </div>
+
+          <div className="question-box">
+            <h2>
+              Question {currentQ + 1} of {questions.length}
+            </h2>
+            <p>{questions[currentQ]}</p>
+          </div>
+
+          <textarea
+            placeholder="Write your answer here..."
+            value={answer}
+            onChange={(e) => setAnswer(e.target.value)}
+          ></textarea>
+
+          <button onClick={handleNext} className="next-btn">
+            {currentQ === questions.length - 1 ? "Finish" : "Next Question"}
+          </button>
+        </div>
       </Modal1>
     </>,
     document.getElementById("modal-form")
@@ -277,3 +301,22 @@ const Modal = ({ isOpen, children, onClose }) => {
 };
 
 export default Modal;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <Questions formatTime={formatTime} handleNext={handleNext} questions={questions} timer={timer} currentQ={currentQ} answer={answer} /> */}
