@@ -8,7 +8,6 @@ import { useDataContext } from "../../contextApi/DatasContectApi";
 const StartPracticeModal = ({ onClose }) => {
     const [selectedJob, setSelectedJob] = useState("");
     const [selectedPosition, setSelectedPosition] = useState("");
-    // const [selectedRound, setSelectedRound] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const {selectedRound, setSelectedRound} = useDataContext();
 

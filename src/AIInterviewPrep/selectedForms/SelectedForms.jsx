@@ -9,7 +9,7 @@ const SelectedForm = ({ file }) => {
     selectInterview, setSelectInterview,
     selectInterviewer, setSelectInterviewer, resumeName, setResumeName, setVideoSelected, termsAgreed, setTermsAgreed } = useDataContext();
 
-
+ 
   const fetchAllFileData = async () => {
     if (file) {
       try {
