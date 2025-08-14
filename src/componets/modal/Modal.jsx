@@ -269,7 +269,7 @@ const Modal = ({ isOpen, children, onClose }) => {
       </div>
 
       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        <Questions formatTime={formatTime} handleNext={handleNext} questions={questions} />
+        <Questions formatTime={formatTime} handleNext={handleNext} questions={questions} timer={timer} currentQ={currentQ} answer={answer} />
       </Modal1>
     </>,
     document.getElementById("modal-form")

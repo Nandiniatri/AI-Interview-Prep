@@ -1,4 +1,4 @@
-const Questions = ({ formatTime, handleNext, questions }) => {
+const Questions = ({ formatTime, handleNext, questions, timer, currentQ, answer }) => {
     return (
         <div className="practice-container">
             <div className="practice-header">

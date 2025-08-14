@@ -16,14 +16,14 @@ const DatasContextApi = ({ children }) => {
     
 
     const handleStartPractice = () => {
-        alert('hello ji')
+        // alert('hello ji')
         if (
-            resumeName && 
-            selectRoundsTitle && 
-            selectInterview && 
-            selectInterviewer && 
-            videoSelected && 
-            termsAgreed
+            resumeName
+            // selectRoundsTitle && 
+            // selectInterview && 
+            // selectInterviewer && 
+            // videoSelected && 
+            // termsAgreed
         ) {
             setIsOpenOpen(true);
         } else {
