@@ -27,9 +27,9 @@
 //                 </div>
 //             </div>
 
-            
+
 //             <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-                
+
 //             </Modal1>
 
 //         </>,
@@ -49,15 +49,23 @@ import Modal1 from "../modal1/Modal1";
 import { useState, useEffect } from "react";
 
 const Modal = ({ isOpen, children, onClose }) => {
-  const { handleStartPractice, isModalOpen, setIsOpenOpen } = useDataContext();
+  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, setSelectedRound } = useDataContext();
 
-  // const questions = [
-  //   "Explain the difference between useEffect and useLayoutEffect in React.",
-  //   "What are React Hooks and why are they useful?",
-  //   "How does virtual DOM work in React?",
-  //   "What is the difference between state and props?",
-  //   "How can you optimize performance in a React application?"
-  // ];
+
+  const questions = [
+    "Explain the difference between useEffect and useLayoutEffect in React.",
+    "What are React Hooks and why are they useful?",
+    "How does virtual DOM work in React?",
+    "What is the difference between state and props?",
+    "How can you optimize performance in a React application?"
+  ];
+
+  // const fetchAllStartPracticsData = () => {
+  //   const response = fetch('');
+  //   const result = response.json();
+  //   console.log(result);
+
+  // }
 
   const [currentQ, setCurrentQ] = useState(0);
   const [timer, setTimer] = useState(300);
@@ -65,7 +73,7 @@ const Modal = ({ isOpen, children, onClose }) => {
   const [submittedAnswers, setSubmittedAnswers] = useState([]);
 
   useEffect(() => {
-    if (!isOpen) return; 
+    if (!isOpen) return;
 
     const countdown = setInterval(() => {
       setTimer((prev) => (prev > 0 ? prev - 1 : 0));
@@ -87,7 +95,7 @@ const Modal = ({ isOpen, children, onClose }) => {
     } else {
       alert("Practice Completed!");
       console.log("Submitted Answers:", newAnswers);
-      setIsOpenOpen(false); 
+      setIsOpenOpen(false);
     }
   };
 

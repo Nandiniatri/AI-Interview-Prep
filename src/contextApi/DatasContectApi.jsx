@@ -10,6 +10,7 @@ const DatasContextApi = ({ children }) => {
     const [termsAgreed, setTermsAgreed] = useState(false);
     const [resumeName, setResumeName] = useState("");
     const [isModalOpen , setIsOpenOpen] = useState(false);
+    const [selectedRound, setSelectedRound] = useState("");
 
     console.log(termsAgreed);
     
@@ -39,7 +40,8 @@ const DatasContextApi = ({ children }) => {
             videoSelected, setVideoSelected,
             termsAgreed, setTermsAgreed,
             handleStartPractice,
-            isModalOpen , setIsOpenOpen
+            isModalOpen , setIsOpenOpen,
+            selectedRound, setSelectedRound
         }}>
             {children}
         </dataContext.Provider>

@@ -24,16 +24,16 @@ export const positions = [
 
 export const rounds = [
     {
-        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json", file2: "webDevWarmUp.json" , file3:"webDesWarmUp.json"
+        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json", file2: "webDevWarmUp.json" , file3:"webDesWarmUp.json" , startPractices1:'reactJsWarmUpPage.json'
     },
     {
-        id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevCoding.json" , file3:"webDesCoding.json"
+        id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevCoding.json" , file3:"webDesCoding.json" , startPractices1:'reactJsCodingPagePage.json'
     },
     {
-        id: 3, title: "Role Related", file1: "reactJsRoleRelated.json", file2: "webDevRoleRelated.json" , file3:"webDesRoleRelated.json"
+        id: 3, title: "Role Related", file1: "reactJsRoleRelated.json", file2: "webDevRoleRelated.json" , file3:"webDesRoleRelated.json" , startPractices1:'reactJsRoleRelative.json'
     },
     {
-        id: 4, title: "Behavioral", file1: "reactJsBehavioral.json", file2: "webDevBehavioral.json" , file3:"webDesBehavioral.json"
+        id: 4, title: "Behavioral", file1: "reactJsBehavioral.json", file2: "webDevBehavioral.json" , file3:"webDesBehavioral.json" , startPractices1:'reactJsBehaviour.json'
     }
 ]
 
