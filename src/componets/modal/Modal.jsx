@@ -192,20 +192,20 @@ const Modal = ({ isOpen, children, onClose }) => {
   const [data, setData] = useState([]);
   const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound } = useDataContext();
 
-  
-  const fetchAllStartPracticsData = () => {
-    const response = fetch('/public/data/startPracticePage/reactJsWarmUpPage.json');
-    const result = response.json();
+
+  const fetchAllStartPracticsData = async () => {
+    const response = await fetch('/public/data/startPracticePage/reactJsWarmUpPage.json');
+    const result = await response.json();
     console.log(result);
     setData(result);
   }
-  
+
   useEffect(() => {
     fetchAllStartPracticsData();
   }, [])
-  
+
   if (!isOpen) return null;
-  
+
   console.log(data);
 
 
@@ -229,7 +229,16 @@ const Modal = ({ isOpen, children, onClose }) => {
           </div>
         </div>
       </div>
-
+      <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
+        <h1>Hello</h1>
+        {data.map((item) => {
+          return (
+            <div>
+              <p>{item.question}</p>
+            </div>
+          )
+        })}
+      </Modal1>
     </>,
     document.getElementById("modal-form")
   );
@@ -239,9 +248,6 @@ export default Modal;
 
 
 
-      <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        <h1>Hello</h1>
-      </Modal1>
 
 
 
