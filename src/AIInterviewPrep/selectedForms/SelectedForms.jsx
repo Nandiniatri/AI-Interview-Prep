@@ -34,7 +34,7 @@ const SelectedForm = ({ file }) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       setResumeName(selectedFile.name);
-      console.log("Selected file:", selectedFile);
+      // console.log("Selected file:", selectedFile);
     }
   };
 
@@ -47,24 +47,24 @@ const SelectedForm = ({ file }) => {
   }
 
   const handleClickDuration = (duration) => {
-    console.log(duration.time);
+    // console.log(duration.time);
     setSelectInterview(duration.time);
   }
 
   const handleClickInterviewer = (interview) => {
-    console.log(interview);
+    // console.log(interview);
     setSelectInterviewer(interview.name);
   }
 
 
   const handleVideoCall = (e) => {
     const events = e.target.value;
-    console.log('video Call Available', events);
+    // console.log('video Call Available', events);
     setVideoSelected(events);
   }
 
   const handleTermsAgree = (e) => {
-    console.log("terms Agreed", e.target.checked);
+    // console.log("terms Agreed", e.target.checked);
     setTermsAgreed(e.target.checked);
   }
 

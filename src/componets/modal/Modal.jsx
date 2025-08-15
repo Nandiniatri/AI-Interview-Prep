@@ -182,139 +182,25 @@
 
 
 
-// import ReactDOM from "react-dom";
-// import "./Modal.css";
-// import { useDataContext } from "../../contextApi/DatasContectApi";
-// import Modal1 from "../modal1/Modal1";
-// import { useState, useEffect } from "react";
-
-// const Modal = ({ isOpen, children, onClose }) => {
-//   const [data, setData] = useState([]);
-//   const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound } = useDataContext();
-
-
-//   const fetchAllStartPracticsData = async () => {
-//     const response = await fetch('/public/data/startPracticePage/reactJsWarmUpPage.json');
-//     const result = await response.json();
-//     console.log(result);
-//     setData(result);
-//   }
-
-//   useEffect(() => {
-//     fetchAllStartPracticsData();
-//   }, [])
-
-//   if (!isOpen) return null;
-
-//   console.log(data);
-
-
-//   return ReactDOM.createPortal(
-//     <>
-//       <div className="modal-overlay1" onClick={onClose}>
-//         <div className="modal-content1" onClick={(e) => e.stopPropagation()}>
-//           {children}
-//           <div className="modal-actions1">
-//             <button
-//               className="start-btn1"
-//               onClick={() => {
-//                 handleStartPractice();
-//               }}
-//             >
-//               START PRACTICE
-//             </button>
-//             <button className="cancel-btn1" onClick={onClose}>
-//               CANCEL
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-//         <h1>Hello</h1>
-//         {data.map((item) => {
-//           return (
-//             <div>
-//               <p>{item.question}</p>
-//             </div>
-//           )
-//         })}
-//       </Modal1>
-//     </>,
-//     document.getElementById("modal-form")
-//   );
-// };
-
-// export default Modal;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import ReactDOM from "react-dom";
 import "./Modal.css";
 import { useDataContext } from "../../contextApi/DatasContectApi";
 import Modal1 from "../modal1/Modal1";
 import { useState, useEffect } from "react";
-import { positions, rounds } from "../../../public/data/startPractice";
+import { rounds } from "../../../public/data/startPractice";
 
 const Modal = ({ isOpen, children, onClose }) => {
   const [data, setData] = useState([]);
-  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedPosition, selectedRound } = useDataContext();
+  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound } = useDataContext();
 
-  const fetchAllStartPracticsData = async () => {
-    try {
-      // Position object find karo
-      const positionObj = positions.find(pos => pos.title === selectedPosition);
-      // Round object find karo
-      const roundObj = rounds.find(r => r.title === selectedRound);
+  const selectedJsonFiles = {
+    "ReactJS Developer": "startPractices1",
+    "Web Developer": "startPractices2",
+  }
 
-      if (!positionObj || !roundObj) {
-        console.error("Position or Round not found:", selectedPosition, selectedRound);
-        return;
-      }
-
-      let fileName = "";
-
-      // Position ke hisaab se file pick
-      if (selectedPosition === "ReactJS Developer") {
-        fileName = roundObj.startPractices1;
-      } else if (selectedPosition === "Web Developer") {
-        fileName = roundObj.startPractices2;
-      } else {
-        console.error("File mapping not set for:", selectedPosition);
-        return;
-      }
-
-      console.log("Fetching file:", fileName);
-
-      const response = await fetch(`/data/startPracticePage/${fileName}`);
-      if (!response.ok) throw new Error(`Failed to fetch ${fileName}`);
-
-      const result = await response.json();
-      console.log("Fetched Data:", result);
-      setData(result);
-    } catch (error) {
-      console.error("Fetch error:", error);
-    }
-  };
-
-  useEffect(() => {
-    if (isOpen && selectedPosition && selectedRound) {
-      fetchAllStartPracticsData();
-    }
-  }, [isOpen, selectedPosition, selectedRound]);
+  const selectedRoundsData = rounds.find(r => r.title === selectedRound)
+  console.log("selected Round Data Modal" , selectedRoundsData);
+  
 
   if (!isOpen) return null;
 
@@ -338,18 +224,15 @@ const Modal = ({ isOpen, children, onClose }) => {
           </div>
         </div>
       </div>
-
       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
         <h1>Hello</h1>
-        {data.length > 0 ? (
-          data.map((item, index) => (
-            <div key={index}>
+        {data.map((item) => {
+          return (
+            <div>
               <p>{item.question}</p>
             </div>
-          ))
-        ) : (
-          <p>Loading questions...</p>
-        )}
+          )
+        })}
       </Modal1>
     </>,
     document.getElementById("modal-form")
@@ -357,6 +240,9 @@ const Modal = ({ isOpen, children, onClose }) => {
 };
 
 export default Modal;
+
+
+
 
 
 
