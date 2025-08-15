@@ -20,7 +20,7 @@ const SelectedForm = ({ file }) => {
         console.log('Network Error');
       }
     }
-  };
+  }; 
 
   useEffect(() => {
     fetchAllFileData();

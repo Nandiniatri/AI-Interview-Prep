@@ -13,7 +13,7 @@ export const positions = [
     },
     {
         id: 3, title: "Web Designer"
-    }, 
+    },
     {
         id: 4, title: "Software Engineer"
     },
@@ -22,19 +22,59 @@ export const positions = [
     }
 ];
 
+// export const rounds = [
+//     {
+//         id: 1, title: "Warm Up", file1: "reactJsWarmUp.json", file2: "webDevWarmUp.json", file3: "webDesWarmUp.json", startPractices1: 'reactJsWarmUpPage.json', startPractices2: "webDevWarmUp.json"
+//     },
+//     {
+//         id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevCoding.json", file3: "webDesCoding.json", startPractices1: 'reactJsCodingPagePage.json', startPractices2: "webDevWarmUp.json"
+//     },
+//     {
+//         id: 3, title: "Role Related", file1: "reactJsRoleRelated.json", file2: "webDevRoleRelated.json", file3: "webDesRoleRelated.json", startPractices1: 'reactJsRoleRelative.json', startPractices2: "webDevWarmUp.json"
+//     },
+//     {
+//         id: 4, title: "Behavioral", file1: "reactJsBehavioral.json", file2: "webDevBehavioral.json", file3: "webDesBehavioral.json", startPractices1: 'reactJsBehaviour.json', startPractices2: "webDevWarmUp.json"
+//     }
+// ]
+
+
+
+
 export const rounds = [
     {
-        id: 1, title: "Warm Up", file1: "reactJsWarmUp.json", file2: "webDevWarmUp.json" , file3:"webDesWarmUp.json" , startPractices1:'reactJsWarmUpPage.json'
+        id: 1,
+        title: "Warm Up",
+        file1: "reactJsWarmUp.json",
+        file2: "webDevWarmUp.json",
+        file3: "webDesWarmUp.json",
+        startPractices1: "reactJsWarmUpPage.json",
+        startPractices2: "webDevWarmUpPage.json"
     },
     {
-        id: 2, title: "Coding", file1: "reactJsCoding.json", file2: "webDevCoding.json" , file3:"webDesCoding.json" , startPractices1:'reactJsCodingPagePage.json'
+        id: 2,
+        title: "Coding",
+        file1: "reactJsCoding.json",
+        file2: "webDevCoding.json",
+        file3: "webDesCoding.json",
+        startPractices1: "reactJsCodingPage.json",
+        startPractices2: "webDevCodingPage.json"
     },
     {
-        id: 3, title: "Role Related", file1: "reactJsRoleRelated.json", file2: "webDevRoleRelated.json" , file3:"webDesRoleRelated.json" , startPractices1:'reactJsRoleRelative.json'
+        id: 3,
+        title: "Role Related",
+        file1: "reactJsRoleRelated.json",
+        file2: "webDevRoleRelated.json",
+        file3: "webDesRoleRelated.json",
+        startPractices1: "reactJsRoleRelativePage.json",
+        startPractices2: "webDevRoleRelativePage.json"
     },
     {
-        id: 4, title: "Behavioral", file1: "reactJsBehavioral.json", file2: "webDevBehavioral.json" , file3:"webDesBehavioral.json" , startPractices1:'reactJsBehaviour.json'
+        id: 4,
+        title: "Behavioral",
+        file1: "reactJsBehavioral.json",
+        file2: "webDevBehavioral.json",
+        file3: "webDesBehavioral.json",
+        startPractices1: "reactJsBehaviourPage.json",
+        startPractices2: "webDevBehaviourPage.json"
     }
-]
-
- 
+];
