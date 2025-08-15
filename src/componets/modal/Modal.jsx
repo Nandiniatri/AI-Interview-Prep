@@ -10,7 +10,7 @@ const Modal = ({ isOpen, children, onClose }) => {
 
   const selectedJsonFiles = {
     "ReactJS Developer": "startPractices1",
-    "Web Developer": "startPractices2",
+    "Web Developer": "startPractices2", 
   }
 
   const selectedRoundsData = rounds.find(r => r.title === selectedRound)
