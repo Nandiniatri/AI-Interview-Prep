@@ -191,7 +191,7 @@ import { rounds } from "../../../public/data/startPractice";
 
 const Modal = ({ isOpen, children, onClose }) => {
   const [data, setData] = useState([]);
-  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound } = useDataContext();
+  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound , selectedPosition} = useDataContext();
 
   const selectedJsonFiles = {
     "ReactJS Developer": "startPractices1",
@@ -200,6 +200,12 @@ const Modal = ({ isOpen, children, onClose }) => {
 
   const selectedRoundsData = rounds.find(r => r.title === selectedRound)
   console.log("selected Round Data Modal" , selectedRoundsData);
+
+  const fileKeys = selectedJsonFiles[selectedPosition] || 'startPractices1';
+  console.log(fileKeys);
+
+  const fileToBeUseInQuestions = selectedRoundsData?.[fileKeys];
+  console.log(fileToBeUseInQuestions);
   
 
   if (!isOpen) return null;
@@ -225,14 +231,7 @@ const Modal = ({ isOpen, children, onClose }) => {
         </div>
       </div>
       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        <h1>Hello</h1>
-        {data.map((item) => {
-          return (
-            <div>
-              <p>{item.question}</p>
-            </div>
-          )
-        })}
+        
       </Modal1>
     </>,
     document.getElementById("modal-form")

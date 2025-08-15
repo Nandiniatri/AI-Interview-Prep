@@ -9,17 +9,18 @@ const DatasContextApi = ({ children }) => {
     const [videoSelected, setVideoSelected] = useState(false);
     const [termsAgreed, setTermsAgreed] = useState(false);
     const [resumeName, setResumeName] = useState("");
-    const [isModalOpen , setIsOpenOpen] = useState(false);
+    const [isModalOpen, setIsOpenOpen] = useState(false);
     const [selectedRound, setSelectedRound] = useState("");
+    const [selectedPosition, setSelectedPosition] = useState("");
 
     console.log(termsAgreed);
-    
+
 
     const handleStartPractice = () => {
         // alert('hello ji')
         if (
-            resumeName
-            // selectRoundsTitle && 
+            // resumeName &&
+            selectRoundsTitle
             // selectInterview && 
             // selectInterviewer && 
             // videoSelected && 
@@ -40,8 +41,9 @@ const DatasContextApi = ({ children }) => {
             videoSelected, setVideoSelected,
             termsAgreed, setTermsAgreed,
             handleStartPractice,
-            isModalOpen , setIsOpenOpen,
-            selectedRound, setSelectedRound
+            isModalOpen, setIsOpenOpen,
+            selectedRound, setSelectedRound,
+            selectedPosition, setSelectedPosition
         }}>
             {children}
         </dataContext.Provider>
