@@ -1,4 +1,31 @@
-const Questions = ({ formatTime, handleNext, questions, timer, currentQ, answer }) => {
+import { useEffect, useState } from "react";
+
+const Questions = ({ formatTime, handleNext, questions, timer, currentQ, answer, files }) => {
+    const [questionData, setQuestionData] = useState(null);
+
+    const fetchData = async () => {
+        if (files) {
+            try {
+                const response = await fetch(`/public/data/startPracticePage/${files}`);
+                const result = await response.json();
+                setQuestionData(result);
+            } catch (error) {
+                console.log('Network Error');
+            }
+        }
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    if (!questionData) {
+        return <p>Loading All Questions........</p>
+    }
+
+    console.log(questionData);
+
+
     return (
         <div className="practice-container">
             <div className="practice-header">

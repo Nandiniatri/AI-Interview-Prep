@@ -188,10 +188,11 @@ import { useDataContext } from "../../contextApi/DatasContectApi";
 import Modal1 from "../modal1/Modal1";
 import { useState, useEffect } from "react";
 import { rounds } from "../../../public/data/startPractice";
+import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Questions";
 
 const Modal = ({ isOpen, children, onClose }) => {
   const [data, setData] = useState([]);
-  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound , selectedPosition} = useDataContext();
+  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, selectedPosition } = useDataContext();
 
   const selectedJsonFiles = {
     "ReactJS Developer": "startPractices1",
@@ -199,14 +200,14 @@ const Modal = ({ isOpen, children, onClose }) => {
   }
 
   const selectedRoundsData = rounds.find(r => r.title === selectedRound)
-  console.log("selected Round Data Modal" , selectedRoundsData);
+  console.log("selected Round Data Modal", selectedRoundsData);
 
   const fileKeys = selectedJsonFiles[selectedPosition] || 'startPractices1';
   console.log(fileKeys);
 
   const fileToBeUseInQuestions = selectedRoundsData?.[fileKeys];
   console.log(fileToBeUseInQuestions);
-  
+
 
   if (!isOpen) return null;
 
@@ -231,7 +232,7 @@ const Modal = ({ isOpen, children, onClose }) => {
         </div>
       </div>
       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        
+        <Questions files={fileToBeUseInQuestions} />
       </Modal1>
     </>,
     document.getElementById("modal-form")
