@@ -2,7 +2,6 @@ import ReactDOM from "react-dom";
 import "./Modal.css";
 import { useDataContext } from "../../contextApi/DatasContectApi";
 import Modal1 from "../modal1/Modal1";
-import { useState, useEffect } from "react";
 import { rounds } from "../../../public/data/startPractice";
 import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Questions";
 
