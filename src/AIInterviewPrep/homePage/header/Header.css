@@ -5,13 +5,13 @@
   border-radius: 24px 24px 0 0;
   position: relative;
   z-index: 10;
-  /* border: solid; */
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: solid; */
 }
 
 .logo {
@@ -76,3 +76,9 @@
   font-size: 20px;
 }
 
+/* 
+@media (max-width:480px) {
+    .hero-header{
+        border: solid red;
+    }
+} */

@@ -14,7 +14,6 @@ const DatasContextApi = ({ children }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
 
     const handleStartPractice = () => {
-        // alert('hello ji')
         if (
             resumeName &&
             selectRoundsTitle &&
