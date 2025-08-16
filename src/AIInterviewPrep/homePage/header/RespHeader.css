@@ -1,10 +1,14 @@
 @media (max-width:480px) {
     .hero-header{
         border: solid red;
-        width: 100%;
+        /* width: 100%; */
         /* padding: 10px 10px; */
     }
     .nav-links a{
+        display: none;
+    }
+    .auth-buttons{
+        border: solid;
         display: none;
     }
 }
