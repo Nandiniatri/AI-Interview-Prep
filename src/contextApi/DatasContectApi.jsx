@@ -13,18 +13,15 @@ const DatasContextApi = ({ children }) => {
     const [selectedRound, setSelectedRound] = useState("");
     const [selectedPosition, setSelectedPosition] = useState("");
 
-    console.log(termsAgreed);
-
-
     const handleStartPractice = () => {
         // alert('hello ji')
         if (
-            // resumeName &&
-            selectRoundsTitle
-            // selectInterview && 
-            // selectInterviewer && 
-            // videoSelected && 
-            // termsAgreed
+            resumeName &&
+            selectRoundsTitle &&
+            selectInterview && 
+            selectInterviewer && 
+            videoSelected && 
+            termsAgreed
         ) {
             setIsOpenOpen(true);
         } else {

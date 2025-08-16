@@ -5,6 +5,7 @@
   border-radius: 24px 24px 0 0;
   position: relative;
   z-index: 10;
+  /* border: solid; */
 }
 
 .nav-container {
@@ -74,3 +75,4 @@
   /* border: solid; */
   font-size: 20px;
 }
+

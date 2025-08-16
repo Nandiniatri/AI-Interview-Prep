@@ -1,5 +1,5 @@
 @media (max-width:480) {
     .hero-header{
-        border: solid;
+        border: solid red;
     }
 }
