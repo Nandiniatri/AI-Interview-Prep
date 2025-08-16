@@ -16,9 +16,6 @@ export const positions = [
     },
     {
         id: 4, title: "Software Engineer"
-    },
-    {
-        id: 5, title: "MERN Stack Developer"
     }
 ];
 
@@ -33,6 +30,7 @@ export const rounds = [
         startPractices1: "reactJsWarmUpPage.json",
         startPractices2: "webDevWarmUpPage.json",
         startPractices3: "webDesignWarmUpPage.json",
+        startPractices4: "webDesignWarmUpPage.json",
     },
     {
         id: 2,
@@ -43,6 +41,7 @@ export const rounds = [
         startPractices1: "reactJsCodingPage.json",
         startPractices2: "webDevCodingPage.json",
         startPractices3: "webDesignCodingPage.json",
+        startPractices4: "webDesignCodingPage.json",
     },
     {
         id: 3,
@@ -53,6 +52,7 @@ export const rounds = [
         startPractices1: "reactJsRoleRelativePage.json",
         startPractices2: "webDevRoleRelativePage.json",
         startPractices3: "webDesignRoleRelativePage.json",
+        startPractices4: "webDesignRoleRelativePage.json",
     },
     {
         id: 4,
@@ -63,5 +63,6 @@ export const rounds = [
         startPractices1: "reactJsBehaviourPage.json",
         startPractices2: "webDevBehaviourPage.json",
         startPractices3: "webDesignBehaviourPage.json",
+        startPractices4: "webDesignBehaviourPage.json",
     }
 ];
