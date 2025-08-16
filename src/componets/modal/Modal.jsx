@@ -5,6 +5,7 @@ import Modal1 from "../modal1/Modal1";
 import { rounds } from "../../../public/data/startPractice";
 import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Questions";
 
+
 const Modal = ({ isOpen, children, onClose }) => {
   const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, selectedPosition } = useDataContext();
 
