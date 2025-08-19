@@ -1,5 +1,8 @@
 // import React, { useState } from "react";
 
+import { useEffect, useState } from "react";
+import { supabase } from "./supabaseClient";
+
 // import { supabase } from "./supabaseClient";
 
 // import { supabase } from "./supabaseClient";
@@ -248,38 +251,83 @@
 
 
 
-import { useState } from "react";
-import { supabase } from "./supabaseClient";
 
-export default function AIAssistant() {
-  const [question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
 
-  const askAI = async () => {
-    const { data, error } = await supabase.functions.invoke("chat-assistant", {
-      body: { query: question },
-    });
+
+// import { useState } from "react";
+// import { supabase } from "./supabaseClient";
+
+// export default function AIAssistant() {
+//   const [question, setQuestion] = useState("");
+//   const [answer, setAnswer] = useState("");
+
+//   const askAI = async () => {
+//     const { data, error } = await supabase.functions.invoke("chat-assistant", {
+//       body: { query: question },
+//     });
+
+//     if (error) {
+//       console.error(error);
+//       setAnswer("Error: " + error.message);
+//     } else {
+//       setAnswer(data.response);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>AI Text Assistant</h2>
+//       <input
+//         type="text"
+//         value={question}
+//         onChange={(e) => setQuestion(e.target.value)}
+//         placeholder="Apna sawal likho..."
+//       />
+//       <button onClick={askAI}>Ask</button>
+//       <p><strong>AI:</strong> {answer}</p>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+const AIAssistant = () => {
+  const [response, setResponse] = useState([]);
+
+  const handleResp = async () => {
+    const { data: inserted, error: insertError } = await supabase
+      .from('users')
+      .insert([{ name: 'Nandini', age: 25 }]);
+
+    if (insertError) {
+      console.log('Insert Error:', insertError);
+      return;
+    }
+
+    console.log('Inserted:', inserted);
+
+    const { data, error } = await supabase.from('users').select('*');
 
     if (error) {
-      console.error(error);
-      setAnswer("Error: " + error.message);
+      console.log('Fetch Error:', error);
     } else {
-      setAnswer(data.response);
+      console.log('Response:', data);
+      setResponse(data);
     }
   };
 
+
   return (
-    <div>
-      <h2>AI Text Assistant</h2>
-      <input
-        type="text"
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Apna sawal likho..."
-      />
-      <button onClick={askAI}>Ask</button>
-      <p><strong>AI:</strong> {answer}</p>
-    </div>
-  );
+    <>
+      <button onClick={handleResp}>Click Here For Response</button>
+      <pre>{JSON.stringify(response, null, 2)}</pre>
+    </>
+  )
 }
 
+export default AIAssistant;

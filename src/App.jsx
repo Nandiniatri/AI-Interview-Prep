@@ -1,7 +1,7 @@
 
 // import AIMainFile from './AIInterviewPrep/AIFile'
 // import AIChat from './AIInterview/AIInterviewer';
-import VoiceAssistant from './AIInterview/AIInterviewer';
+import AIAssistant from './AIInterview/AIInterviewer';
 import './App.css'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       {/* <Login /> */}
       {/* <h1>Hello AI</h1> */}
       {/* <AIChat /> */}
-      <VoiceAssistant />
+      <AIAssistant />
     </>
   )
 }
