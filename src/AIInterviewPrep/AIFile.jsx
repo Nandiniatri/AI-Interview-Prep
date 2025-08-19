@@ -16,10 +16,8 @@ const AIMainFile = () => {
             <PlansForHiring />
             <SuperChargeSection />
             <Footer />
-
-            
         </>
     )
-}
+} 
 
 export default AIMainFile;
