@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Virtual Interviews",
+    "description": "Detail the virtual interview environment provided by InterviewAI, including video and voice interview capabilities.",
+    "image": "https://miro.medium.com/v2/resize:fit:1175/1*3X8urPzrPDT16dpcvJLIZA.png",
+    "backgroundColor": "linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%)"
+  },
+  {
+    "id": 2,
+    "title": "AI Video Analytics",
+    "description": "Explain how InterviewAI analyzes interview data and generates performance reports to assist in decision‑making.",
+    "image": "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/67f95008333da3001e68d791.jpg",
+    "backgroundColor": "linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%)"
+  },
+  {
+    "id": 3,
+    "title": "Workmap Screening",
+    "description": "Describe how InterviewAI utilizes AI to analyze and screen resumes, extracting relevant information and ranking candidates.",
+    "image": "https://interviewer.ai/wp-content/uploads/2021/12/Group-34053.png",
+    "backgroundColor": "linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%)"
+  }
+]

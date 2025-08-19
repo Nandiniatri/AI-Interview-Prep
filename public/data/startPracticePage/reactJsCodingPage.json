@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Write a function in JavaScript to reverse a string without using built-in reverse() method."
+    },
+    {
+        "id": 2,
+        "question": "Given an array of numbers, write a function to find the second largest number."
+    },
+    {
+        "id": 3,
+        "question": "Write a JavaScript function to check if a given string is a palindrome."
+    },
+    {
+        "id": 4,
+        "question": "Create a function that removes duplicate values from an array."
+    },
+    {
+        "id": 5,
+        "question": "Write a program to count the number of vowels in a string."
+    },
+    {
+        "id": 6,
+        "question": "Implement a debounce function in JavaScript."
+    },
+    {
+        "id": 7,
+        "question": "Given a sorted array, write a function to perform binary search for a target value."
+    },
+    {
+        "id": 8,
+        "question": "Write a JavaScript program to flatten a nested array."
+    },
+    {
+        "id": 9,
+        "question": "Create a function that finds the factorial of a given number using recursion."
+    },
+    {
+        "id": 10,
+        "question": "Implement a function to merge two sorted arrays into one sorted array."
+    }
+]

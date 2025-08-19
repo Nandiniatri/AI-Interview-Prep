@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Can you walk me through your journey into web development?"
+    },
+    { 
+        "id": 2,
+        "question": "What is your favorite part about building websites or web applications?"
+    },
+    { 
+        "id": 3,
+        "question": "How do you usually approach solving a challenging coding problem?"
+    },
+    { 
+        "id": 4,
+        "question": "What motivates you the most in your web development career?"
+    },
+    { 
+        "id": 5,
+        "question": "How do you keep yourself updated with the latest web technologies?"
+    },
+    { 
+        "id": 6,
+        "question": "Can you describe a project you are most proud of and why?"
+    },
+    { 
+        "id": 7,
+        "question": "How do you handle tight deadlines or high-pressure situations?"
+    },
+    { 
+        "id": 8,
+        "question": "What’s your process for ensuring good user experience in your projects?"
+    },
+    { 
+        "id": 9,
+        "question": "How do you balance writing clean code with delivering projects on time?"
+    },
+    { 
+        "id": 10,
+        "question": "What advice would you give to someone just starting out in web development?"
+    }
+]

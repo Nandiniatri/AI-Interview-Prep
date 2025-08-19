@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Can you describe how you usually start your design process?"
+    },
+    {
+        "id": 2,
+        "question": "What motivates you the most when working on a web design project?"
+    },
+    {
+        "id": 3,
+        "question": "How do you handle creative block or lack of inspiration?"
+    },
+    {
+        "id": 4,
+        "question": "Can you share an example of how you incorporated client feedback into your design?"
+    },
+    {
+        "id": 5,
+        "question": "What steps do you take to stay calm under tight deadlines?"
+    },
+    {
+        "id": 6,
+        "question": "How do you collaborate with developers, writers, or marketers during a project?"
+    },
+    {
+        "id": 7,
+        "question": "What’s your approach to balancing creativity with functionality in design?"
+    },
+    {
+        "id": 8,
+        "question": "Can you describe a time when you had to defend your design choices?"
+    },
+    {
+        "id": 9,
+        "question": "How do you ensure your designs remain user-centered throughout the process?"
+    },
+    {
+        "id": 10,
+        "question": "What personal habits help you stay productive and focused as a designer?"
+    }
+]

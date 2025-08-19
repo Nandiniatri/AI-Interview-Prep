@@ -1,0 +1,92 @@
+.interview-tech-section {
+  background: linear-gradient(135deg, #0d0d0d 0%, #1d0429 100%);
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 60px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.tech-heading {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
+}
+
+.tech-heading span {
+  opacity: 0.6;
+}
+
+.play-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.play-circle {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #4e4e4e 0%, #222222 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.play-circle:hover {
+  transform: scale(1.1);
+}
+
+.play-demo p {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+@media (max-width:480px) {
+  .tech-badge {
+    border: solid;
+    padding: 6px 30px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .tech-heading {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .play-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .play-demo p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+  .interview-tech-section {
+    padding: 27px 10px;
+  }
+}

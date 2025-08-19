@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Can you explain the difference between inline, internal, and external CSS?"
+    },
+    {
+        "id": 2,
+        "question": "What is the difference between relative, absolute, fixed, and sticky positioning in CSS?"
+    },
+    {
+        "id": 3,
+        "question": "How does the CSS box model work?"
+    },
+    {
+        "id": 4,
+        "question": "What are semantic HTML tags and why are they important?"
+    },
+    {
+        "id": 5,
+        "question": "How do you ensure a website is responsive across different devices?"
+    },
+    {
+        "id": 6,
+        "question": "Explain the difference between var, let, and const in JavaScript."
+    },
+    {
+        "id": 7,
+        "question": "What is the purpose of the 'key' prop in React lists?"
+    },
+    {
+        "id": 8,
+        "question": "How would you optimize the loading performance of a large React application?"
+    },
+    {
+        "id": 9,
+        "question": "What is the difference between controlled and uncontrolled components in React?"
+    },
+    {
+        "id": 10,
+        "question": "How do you handle form validation in React?"
+    }
+]

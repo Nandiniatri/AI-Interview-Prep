@@ -1,0 +1,18 @@
+@media (max-width:480px) {
+    /* .hero-header{
+        max-width: 100%;
+    } */
+    .nav-links a {
+        display: none;
+    }
+
+    .auth-buttons {
+        border: solid;
+        display: none;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: center;
+    }
+}

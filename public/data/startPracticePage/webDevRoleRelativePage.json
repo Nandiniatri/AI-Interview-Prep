@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "What programming languages do you use most often in your web development work?"
+    },
+    {
+        "id": 2,
+        "question": "Can you explain the difference between front-end, back-end, and full-stack development?"
+    },
+    {
+        "id": 3,
+        "question": "Which frameworks or libraries do you prefer for building web applications and why?"
+    },
+    {
+        "id": 4,
+        "question": "How do you ensure that your code is scalable and maintainable?"
+    },
+    {
+        "id": 5,
+        "question": "Can you describe your workflow when starting a new web project?"
+    },
+    {
+        "id": 6,
+        "question": "How do you optimize a website’s performance for faster loading times?"
+    },
+    {
+        "id": 7,
+        "question": "What tools do you use for version control and collaboration?"
+    },
+    {
+        "id": 8,
+        "question": "How do you handle cross-browser compatibility issues?"
+    },
+    {
+        "id": 9,
+        "question": "Can you explain the importance of responsive design in modern web development?"
+    },
+    {
+        "id": 10,
+        "question": "How do you test and debug your applications before deployment?"
+    }
+]

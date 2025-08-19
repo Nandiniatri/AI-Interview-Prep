@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Tell me about a time when you had to work under a tight deadline. How did you handle it?" 
+    },
+    {
+        "id": 2,
+        "question": "Describe a situation where you received critical feedback. How did you respond?"
+    },
+    {
+        "id": 3,
+        "question": "Can you give an example of a time when you had to quickly learn a new technology?"
+    },
+    {
+        "id": 4,
+        "question": "Tell me about a time when you had a disagreement with a teammate. How did you resolve it?"
+    },
+    {
+        "id": 5,
+        "question": "Describe a situation where you had to prioritize multiple tasks. How did you manage it?"
+    },
+    {
+        "id": 6,
+        "question": "Can you share an example of when you took initiative to improve a project?"
+    },
+    {
+        "id": 7,
+        "question": "Tell me about a time when you faced a major bug or issue. How did you troubleshoot it?"
+    },
+    {
+        "id": 8,
+        "question": "Describe a situation where you collaborated with other teams to achieve a goal."
+    },
+    {
+        "id": 9,
+        "question": "Have you ever missed a deadline? How did you handle it with your team or manager?"
+    },
+    {
+        "id": 10,
+        "question": "Tell me about a project you worked on that required strong communication skills."
+    }
+]
