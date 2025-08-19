@@ -1,6 +1,6 @@
 // import React, { useState } from "react";
 
-import { supabase } from "./supabaseClient";
+// import { supabase } from "./supabaseClient";
 
 // const VoiceAssistant = () => {
 //   const [listening, setListening] = useState(false);
@@ -98,3 +98,80 @@ import { supabase } from "./supabaseClient";
 
 
 
+import React, { useState } from "react";
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import { useSpeechSynthesis } from "react-speech-kit";
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "YOUR_OPENAI_API_KEY", // <- apna key lagana
+  dangerouslyAllowBrowser: true,
+});
+
+export default function AIChat() {
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { speak } = useSpeechSynthesis();
+
+  // speech recognition
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognition();
+
+  if (!browserSupportsSpeechRecognition) {
+    return <p>Browser does not support speech recognition.</p>;
+  }
+
+  // Send message to OpenAI
+  const sendMessage = async (text) => {
+    if (!text) return;
+    setLoading(true);
+
+    const newMessages = [...messages, { role: "user", content: text }];
+    setMessages(newMessages);
+
+    try {
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: newMessages,
+      });
+
+      const aiReply = response.choices[0].message.content;
+      setMessages([...newMessages, { role: "assistant", content: aiReply }]);
+
+      // bolkar sunao
+      speak({ text: aiReply });
+    } catch (err) {
+      console.error(err);
+    }
+
+    setLoading(false);
+    resetTranscript();
+  };
+
+  return (
+    <div style={{ padding: 20 }}>
+      <h2>🎤 AI Voice Assistant</h2>
+      <button onClick={SpeechRecognition.startListening}>
+        🎙 Start Listening
+      </button>
+      <button onClick={SpeechRecognition.stopListening}>⏹ Stop</button>
+      <p><b>Listening:</b> {listening ? "Yes" : "No"}</p>
+      <p><b>You said:</b> {transcript}</p>
+      <button onClick={() => sendMessage(transcript)}>Send to AI</button>
+
+      {loading && <p>⏳ Thinking...</p>}
+
+      <div style={{ marginTop: 20 }}>
+        {messages.map((msg, i) => (
+          <p key={i}>
+            <b>{msg.role}:</b> {msg.content}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
