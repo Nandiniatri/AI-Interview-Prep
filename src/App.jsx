@@ -1,7 +1,7 @@
-// import TodoApp from './AIInterview/AIInterviewer';
-// import VoiceAssistant from './AIInterview/AIInterviewer';
+
 // import AIMainFile from './AIInterviewPrep/AIFile'
-import AIChat from './AIInterview/AIInterviewer';
+// import AIChat from './AIInterview/AIInterviewer';
+import VoiceAssistant from './AIInterview/AIInterviewer';
 import './App.css'
 
 function App() {
@@ -13,9 +13,8 @@ function App() {
       {/* <AIMainFile />  */}
       {/* <Login /> */}
       {/* <h1>Hello AI</h1> */}
-      {/* <VoiceAssistant /> */}
-      {/* <TodoApp /> */}
-      <AIChat />
+      {/* <AIChat /> */}
+      <VoiceAssistant />
     </>
   )
 }

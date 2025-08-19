@@ -2,6 +2,8 @@
 
 // import { supabase } from "./supabaseClient";
 
+// import { supabase } from "./supabaseClient";
+
 // const VoiceAssistant = () => {
 //   const [listening, setListening] = useState(false);
 //   const [message, setMessage] = useState("");
@@ -98,80 +100,186 @@
 
 
 
-import React, { useState } from "react";
-import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-import { useSpeechSynthesis } from "react-speech-kit";
-import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: "YOUR_OPENAI_API_KEY", // <- apna key lagana
-  dangerouslyAllowBrowser: true,
-});
 
-export default function AIChat() {
-  const [messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const { speak } = useSpeechSynthesis();
 
-  // speech recognition
-  const {
-    transcript,
-    listening,
-    resetTranscript,
-    browserSupportsSpeechRecognition,
-  } = useSpeechRecognition();
+// import React, { useState } from "react";
+// import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+// import { useSpeechSynthesis } from "react-speech-kit";
+// import OpenAI from "openai";
 
-  if (!browserSupportsSpeechRecognition) {
-    return <p>Browser does not support speech recognition.</p>;
-  }
+// const openai = new OpenAI({
+//   apiKey: "YOUR_OPENAI_API_KEY", // <- apna key lagana
+//   dangerouslyAllowBrowser: true,
+// });
 
-  // Send message to OpenAI
-  const sendMessage = async (text) => {
-    if (!text) return;
-    setLoading(true);
+// export default function AIChat() {
+//   const [messages, setMessages] = useState([]);
+//   const [loading, setLoading] = useState(false);
+//   const { speak } = useSpeechSynthesis();
 
-    const newMessages = [...messages, { role: "user", content: text }];
-    setMessages(newMessages);
+//   // speech recognition
+//   const {
+//     transcript,
+//     listening,
+//     resetTranscript,
+//     browserSupportsSpeechRecognition,
+//   } = useSpeechRecognition();
 
-    try {
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: newMessages,
-      });
+//   if (!browserSupportsSpeechRecognition) {
+//     return <p>Browser does not support speech recognition.</p>;
+//   }
 
-      const aiReply = response.choices[0].message.content;
-      setMessages([...newMessages, { role: "assistant", content: aiReply }]);
+//   // Send message to OpenAI
+//   const sendMessage = async (text) => {
+//     if (!text) return;
+//     setLoading(true);
 
-      // bolkar sunao
-      speak({ text: aiReply });
-    } catch (err) {
-      console.error(err);
+//     const newMessages = [...messages, { role: "user", content: text }];
+//     setMessages(newMessages);
+
+//     try {
+//       const response = await openai.chat.completions.create({
+//         model: "gpt-4o-mini",
+//         messages: newMessages,
+//       });
+
+//       const aiReply = response.choices[0].message.content;
+//       setMessages([...newMessages, { role: "assistant", content: aiReply }]);
+
+//       // bolkar sunao
+//       speak({ text: aiReply });
+//     } catch (err) {
+//       console.error(err);
+//     }
+
+//     setLoading(false);
+//     resetTranscript();
+//   };
+
+//   return (
+//     <div style={{ padding: 20 }}>
+//       <h2>🎤 AI Voice Assistant</h2>
+//       <button onClick={SpeechRecognition.startListening}>
+//         🎙 Start Listening
+//       </button>
+//       <button onClick={SpeechRecognition.stopListening}>⏹ Stop</button>
+//       <p><b>Listening:</b> {listening ? "Yes" : "No"}</p>
+//       <p><b>You said:</b> {transcript}</p>
+//       <button onClick={() => sendMessage(transcript)}>Send to AI</button>
+
+//       {loading && <p>⏳ Thinking...</p>}
+
+//       <div style={{ marginTop: 20 }}>
+//         {messages.map((msg, i) => (
+//           <p key={i}>
+//             <b>{msg.role}:</b> {msg.content}
+//           </p>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+// import { useState } from "react";
+// import { supabase } from "./supabaseClient";
+
+// export default function VoiceAssistant() {
+//   const [text, setText] = useState("");
+//   const [response, setResponse] = useState("");
+//   const [loading, setLoading] = useState(false);
+
+//   const askAI = async () => {
+//     setLoading(true);
+
+//     // Supabase Edge Function call (OpenAI ke liye)
+//     const { data, error } = await supabase.functions.invoke("voice-assistant", {
+//       body: { question: text },
+//     });
+
+//     if (error) {
+//       console.error(error);
+//       setResponse("⚠️ Error: " + error.message);
+//     } else {
+//       setResponse(data.answer);
+//       speakText(data.answer);
+//     }
+
+//     setLoading(false);
+//   };
+
+//   // Browser Speech API for voice output
+//   const speakText = (msg) => {
+//     const speech = new SpeechSynthesisUtterance(msg);
+//     speech.lang = "en-US"; // Hindi ke liye use "hi-IN"
+//     window.speechSynthesis.speak(speech);
+//   };
+
+//   return (
+//     <div className="p-5 max-w-md mx-auto text-center">
+//       <h2 className="text-xl font-bold mb-3">🎤 AI Voice Assistant</h2>
+
+//       <input
+//         className="border p-2 w-full mb-3"
+//         placeholder="Ask me anything..."
+//         value={text}
+//         onChange={(e) => setText(e.target.value)}
+//       />
+
+//       <button
+//         className="bg-blue-500 text-white px-4 py-2 rounded"
+//         onClick={askAI}
+//         disabled={loading}
+//       >
+//         {loading ? "Thinking..." : "Ask AI"}
+//       </button>
+
+//       {response && (
+//         <p className="mt-4 p-3 border rounded bg-gray-50">{response}</p>
+//       )}
+//     </div>
+//   );
+// }
+
+
+
+
+import { useState } from "react";
+import { supabase } from "./supabaseClient";
+
+export default function AIAssistant() {
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+
+  const askAI = async () => {
+    const { data, error } = await supabase.functions.invoke("chat-assistant", {
+      body: { query: question },
+    });
+
+    if (error) {
+      console.error(error);
+      setAnswer("Error: " + error.message);
+    } else {
+      setAnswer(data.response);
     }
-
-    setLoading(false);
-    resetTranscript();
   };
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>🎤 AI Voice Assistant</h2>
-      <button onClick={SpeechRecognition.startListening}>
-        🎙 Start Listening
-      </button>
-      <button onClick={SpeechRecognition.stopListening}>⏹ Stop</button>
-      <p><b>Listening:</b> {listening ? "Yes" : "No"}</p>
-      <p><b>You said:</b> {transcript}</p>
-      <button onClick={() => sendMessage(transcript)}>Send to AI</button>
-
-      {loading && <p>⏳ Thinking...</p>}
-
-      <div style={{ marginTop: 20 }}>
-        {messages.map((msg, i) => (
-          <p key={i}>
-            <b>{msg.role}:</b> {msg.content}
-          </p>
-        ))}
-      </div>
+    <div>
+      <h2>AI Text Assistant</h2>
+      <input
+        type="text"
+        value={question}
+        onChange={(e) => setQuestion(e.target.value)}
+        placeholder="Apna sawal likho..."
+      />
+      <button onClick={askAI}>Ask</button>
+      <p><strong>AI:</strong> {answer}</p>
     </div>
   );
 }
+
