@@ -142,3 +142,15 @@
   background: #388e3c;
 }
 
+
+
+
+@media (max-width: 480px) {
+  .interview-container {
+    flex-direction: column;
+  }
+
+  .question-section {
+    margin-top: 20px;
+  }
+}
