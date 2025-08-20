@@ -1,48 +1,62 @@
-import React from "react";
+import { useState } from "react";
 import "./CodingInterview.css";
 
 const CodingInterview = () => {
-    return (
-        <div className="interview-container">
-            {/* Left Panel */}
-            <div className="left-panel">
-                <h2 className="role-title">Frontend Developer Interview</h2>
+  const [started, setStarted] = useState(false);
 
-                <div className="tags">
-                    <span className="tag main">Main Question</span>
-                    <span className="tag">JavaScript</span>
-                    <span className="tag">React</span>
-                </div>
+  return (
+    <div className="coding-interview">
+      {/* Left Sidebar */}
+      <div className="coding-interview__sidebar">
+        <h2 className="coding-interview__title">Web Developer</h2>
+        <span className="coding-interview__round">Coding</span>
 
-                <div className="question-box">
-                    <h3>Problem Statement</h3>
-                    <p>
-                        Write a function that reverses a string without using built-in reverse methods.
-                        <br /><br />
-                        Example: <br />
-                        Input: "hello" <br />
-                        Output: "olleh"
-                    </p>
-                </div>
-
-                <button className="exit-btn">Exit Practice</button>
-            </div>
-
-            {/* Right Panel */}
-            <div className="right-panel">
-                <div className="editor-box">
-                    <p className="editor-placeholder">// Start writing your code here...</p>
-                </div>
-
-                <button className="start-btn">Start Coding</button>
-
-                <div className="video-box">
-                    <div className="video-placeholder">🎥 Interviewer Video</div>
-                    <div className="timer">⏱ 30:00</div>
-                </div>
-            </div>
+        <div className="coding-interview__tags">
+          <button className="coding-interview__tag coding-interview__tag--main">MAIN QUESTION</button>
+          <button className="coding-interview__tag">JAVASCRIPT</button>
         </div>
-    );
+
+        <p className="coding-interview__instruction">Complete the code based on the given situation below.</p>
+
+        <div className="coding-interview__statement-box">
+          <p className="coding-interview__statement-label">CODE INSTRUCTION</p>
+          <textarea
+            className="coding-interview__statement-text"
+            readOnly
+            value={`In a naval architecture simulation,
+...forms a container,
+such that the container contains the most water.`}
+          />
+        </div>
+
+        <button className="coding-interview__exit-btn">Exit Practice</button>
+      </div>
+
+      {/* Right Panel */}
+      <div className="coding-interview__editor-panel">
+        <h3 className="coding-interview__editor-title">CODING EDITOR</h3>
+
+        {!started ? (
+          <div className="coding-interview__start-placeholder">
+            <p>Click "Start Coding" to begin.</p>
+            <button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
+              START CODING
+            </button>
+          </div>
+        ) : (
+          <textarea
+            className="coding-interview__code-editor"
+            placeholder="// Start coding here..."
+          />
+        )}
+
+        <div className="coding-interview__video-container">
+          <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
+          <span className="coding-interview__video-timer">00:00</span>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CodingInterview;
