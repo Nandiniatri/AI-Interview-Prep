@@ -3,101 +3,97 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
 
-// import { supabase } from "./supabaseClient";
+const VoiceAssistant = () => {
+  const [listening, setListening] = useState(false);
+  const [message, setMessage] = useState("");
+  const [aiReply, setAiReply] = useState("");
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
-// import { supabase } from "./supabaseClient";
+  // 🎤 Speech to Text
+  const startListening = () => {
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.start();
 
-// const VoiceAssistant = () => {
-//   const [listening, setListening] = useState(false);
-//   const [message, setMessage] = useState("");
-//   const [aiReply, setAiReply] = useState("");
-//   const [isSpeaking, setIsSpeaking] = useState(false);
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setMessage(transcript);
+      fetchAIResponse(transcript);
+    };
 
-//   // 🎤 Speech to Text
-//   const startListening = () => {
-//     const recognition = new window.webkitSpeechRecognition();
-//     recognition.lang = "en-US";
-//     recognition.start();
+    recognition.onerror = (err) => {
+      console.error("Speech recognition error:", err);
+    };
 
-//     recognition.onresult = (event) => {
-//       const transcript = event.results[0][0].transcript;
-//       setMessage(transcript);
-//       fetchAIResponse(transcript);
-//     };
+    recognition.onend = () => setListening(false);
+    setListening(true);
+  };
 
-//     recognition.onerror = (err) => {
-//       console.error("Speech recognition error:", err);
-//     };
+  // 🤖 Fetch AI Response from OpenAI
+  const fetchAIResponse = async (userText) => {
+    try {
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`, // ✅ API key from .env
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini", // ya "gpt-4o" / "gpt-3.5-turbo"
+          messages: [{ role: "user", content: userText }],
+        }),
+      });
 
-//     recognition.onend = () => setListening(false);
-//     setListening(true);
-//   };
+      const data = await response.json();
+      console.log("AI Response:", data); // 👀 check karo console me
 
-//   // 🤖 Fetch AI Response from OpenAI
-//   const fetchAIResponse = async (userText) => {
-//     try {
-//       const response = await fetch("https://api.openai.com/v1/chat/completions", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`, // ✅ API key from .env
-//         },
-//         body: JSON.stringify({
-//           model: "gpt-4o-mini", // ya "gpt-4o" / "gpt-3.5-turbo"
-//           messages: [{ role: "user", content: userText }],
-//         }),
-//       });
+      if (data?.choices?.length > 0) {
+        const reply = data.choices[0].message.content;
+        setAiReply(reply);
+        speak(reply);
+      } else {
+        setAiReply("⚠️ No response from AI.");
+      }
+    } catch (error) {
+      console.error("AI Error:", error);
+      setAiReply("❌ Error fetching AI response.");
+    }
+  };
 
-//       const data = await response.json();
-//       console.log("AI Response:", data); // 👀 check karo console me
+  // 🗣️ Text to Speech
+  const speak = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.onstart = () => setIsSpeaking(true);
+    utterance.onend = () => setIsSpeaking(false);
+    window.speechSynthesis.speak(utterance);
+  };
 
-//       if (data?.choices?.length > 0) {
-//         const reply = data.choices[0].message.content;
-//         setAiReply(reply);
-//         speak(reply);
-//       } else {
-//         setAiReply("⚠️ No response from AI.");
-//       }
-//     } catch (error) {
-//       console.error("AI Error:", error);
-//       setAiReply("❌ Error fetching AI response.");
-//     }
-//   };
+  return (
+    <div className="flex flex-col items-center p-6">
+      <h1 className="text-2xl font-bold mb-4">🎤 AI Voice Assistant</h1>
 
-//   // 🗣️ Text to Speech
-//   const speak = (text) => {
-//     const utterance = new SpeechSynthesisUtterance(text);
-//     utterance.onstart = () => setIsSpeaking(true);
-//     utterance.onend = () => setIsSpeaking(false);
-//     window.speechSynthesis.speak(utterance);
-//   };
+      {/* Avatar */}
+      <img
+        src="https://i.ibb.co/yf3cZ9K/avatar.png"
+        alt="AI Avatar"
+        className={`w-40 h-40 rounded-full transition-transform duration-300 
+          ${isSpeaking ? "scale-110 animate-bounce" : "scale-100"}`}
+      />
 
-//   return (
-//     <div className="flex flex-col items-center p-6">
-//       <h1 className="text-2xl font-bold mb-4">🎤 AI Voice Assistant</h1>
+      <button
+        onClick={startListening}
+        className="mt-6 px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md"
+      >
+        {listening ? "Listening..." : "Start Talking"}
+      </button>
 
-//       {/* Avatar */}
-//       <img
-//         src="https://i.ibb.co/yf3cZ9K/avatar.png"
-//         alt="AI Avatar"
-//         className={`w-40 h-40 rounded-full transition-transform duration-300 
-//           ${isSpeaking ? "scale-110 animate-bounce" : "scale-100"}`}
-//       />
+      <p className="mt-4 text-lg">🧑 You: {message}</p>
+      <p className="mt-2 text-green-600">🤖 AI: {aiReply}</p>
+    </div>
+  );
+};
 
-//       <button
-//         onClick={startListening}
-//         className="mt-6 px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md"
-//       >
-//         {listening ? "Listening..." : "Start Talking"}
-//       </button>
-
-//       <p className="mt-4 text-lg">🧑 You: {message}</p>
-//       <p className="mt-2 text-green-600">🤖 AI: {aiReply}</p>
-//     </div>
-//   );
-// };
-
-// export default VoiceAssistant;
+export default VoiceAssistant;
 
 
 
@@ -254,80 +250,138 @@ import { supabase } from "./supabaseClient";
 
 
 
-// import { useState } from "react";
-// import { supabase } from "./supabaseClient";
 
-// export default function AIAssistant() {
-//   const [question, setQuestion] = useState("");
-//   const [answer, setAnswer] = useState("");
 
-//   const askAI = async () => {
-//     const { data, error } = await supabase.functions.invoke("chat-assistant", {
-//       body: { query: question },
-//     });
+
+
+
+
+
+
+
+
+
+// const AIAssistant = () => {
+//   const [response, setResponse] = useState([]);
+
+//   const handleResp = async () => {
+//     const { data: inserted, error: insertError } = await supabase
+//       .from('users')
+//       .insert([{ name: 'Nandini', age: 25 }]);
+
+//     if (insertError) {
+//       console.log('Insert Error:', insertError);
+//       return;
+//     }
+
+//     console.log('Inserted:', inserted);
+
+//     const { data, error } = await supabase.from('users').select('*');
 
 //     if (error) {
-//       console.error(error);
-//       setAnswer("Error: " + error.message);
+//       console.log('Fetch Error:', error);
 //     } else {
-//       setAnswer(data.response);
+//       console.log('Response:', data);
+//       setResponse(data);
+//     }
+//   };
+
+
+//   return (
+//     <>
+//       <button onClick={handleResp}>Click Here For Response</button>
+//       <pre>{JSON.stringify(response, null, 2)}</pre>
+//     </>
+//   )
+// }
+
+// export default AIAssistant;
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { createClient } from '@supabase/supabase-js';
+
+// // Supabase setup
+// const supabase = createClient(
+//   'https://YOUR_PROJECT.supabase.co',  // replace with your Supabase project URL
+//   'YOUR_ANON_KEY'                     // replace with your anon key
+// );
+
+// const AIAssistant = () => {
+//   const [response, setResponse] = useState([]);  // AI responses
+//   const [userInput, setUserInput] = useState([]); // User input
+//   const [users, setUsers] = useState([]);        // Supabase table data
+
+//   // Fetch users from Supabase on component mount
+//   useEffect(() => {
+//     const fetchUsers = async () => {
+//       const { data, error } = await supabase.from('users').select('*');
+//       if (error) {
+//         console.log('Fetch Error:', error);
+//       } else {
+//         console.log('Users:', data);
+//         setUsers(data);
+//       }
+//     };
+//     fetchUsers();
+//   }, []);
+
+//   // Handle user question and fetch AI response
+//   const handleAsk = async () => {
+//     if (!userInput) return;
+
+//     try {
+//       const res = await fetch('https://YOUR_SUPABASE/functions/v1/chat-assistant', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ prompt: userInput }),
+//       });
+
+//       const data = await res.json();
+//       console.log('AI Response:', data.response);
+
+//       setResponse([...response, { question: userInput, answer: data.response }]);
+//       setUserInput(''); // clear input
+//     } catch (err) {
+//       console.log('AI Fetch Error:', err);
 //     }
 //   };
 
 //   return (
-//     <div>
-//       <h2>AI Text Assistant</h2>
+//     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+//       <h2>AI Assistant</h2>
+
+//       {/* User input */}
 //       <input
 //         type="text"
-//         value={question}
-//         onChange={(e) => setQuestion(e.target.value)}
-//         placeholder="Apna sawal likho..."
+//         value={userInput}
+//         onChange={(e) => setUserInput(e.target.value)}
+//         placeholder="Type your question..."
+//         style={{ width: '300px', padding: '8px' }}
 //       />
-//       <button onClick={askAI}>Ask</button>
-//       <p><strong>AI:</strong> {answer}</p>
+//       <button onClick={handleAsk} style={{ padding: '8px 12px', marginLeft: '8px' }}>
+//         Ask AI
+//       </button>
+
+//       {/* Display AI conversation */}
+//       <div style={{ marginTop: '20px' }}>
+//         {response.map((item, index) => (
+//           <div key={index} style={{ marginBottom: '15px' }}>
+//             <b>Q:</b> {item.question} <br />
+//             <b>A:</b> {item.answer}
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* Optional: display Supabase users */}
+//       <div style={{ marginTop: '30px' }}>
+//         <h3>Users Table Data:</h3>
+//         <pre>{JSON.stringify(users, null, 2)}</pre>
+//       </div>
 //     </div>
 //   );
-// }
+// };
 
-
-
-
-
-
-
-
-const AIAssistant = () => {
-  const [response, setResponse] = useState([]);
-
-  const handleResp = async () => {
-    const { data: inserted, error: insertError } = await supabase
-      .from('users')
-      .insert([{ name: 'Nandini', age: 25 }]);
-
-    if (insertError) {
-      console.log('Insert Error:', insertError);
-      return;
-    }
-
-    console.log('Inserted:', inserted);
-
-    const { data, error } = await supabase.from('users').select('*');
-
-    if (error) {
-      console.log('Fetch Error:', error);
-    } else {
-      console.log('Response:', data);
-      setResponse(data);
-    }
-  };
-
-
-  return (
-    <>
-      <button onClick={handleResp}>Click Here For Response</button>
-      <pre>{JSON.stringify(response, null, 2)}</pre>
-    </>
-  )
-}
-
-export default AIAssistant;
+// export default AIAssistant;
