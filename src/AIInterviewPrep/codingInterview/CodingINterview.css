@@ -1,0 +1,168 @@
+.coding-interview {
+  display: flex;
+  height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Sidebar (Left) */
+.coding-interview__sidebar {
+  width: 40%;
+  padding: 20px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.coding-interview__title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.coding-interview__round {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.coding-interview__tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.coding-interview__tag {
+  background-color: #f3f4f6;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.coding-interview__tag--main {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.coding-interview__instruction {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.coding-interview__statement-box {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.coding-interview__statement-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.coding-interview__statement-text {
+  width: 100%;
+  height: 200px;
+  border: none;
+  resize: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.coding-interview__exit-btn {
+  background: none;
+  border: 2px solid #ef4444;
+  color: #ef4444;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Editor Panel (Right) */
+.coding-interview__editor-panel {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.coding-interview__editor-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.coding-interview__start-placeholder {
+  flex: 1;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+.coding-interview__start-btn {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.coding-interview__code-editor {
+  flex: 1;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: monospace;
+  background: #111;
+  color: #f1f1f1;
+  outline: none;
+}
+
+/* Video Container */
+.coding-interview__video-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.coding-interview__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coding-interview__video-timer {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  background-color: red;
+  color: white;
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
