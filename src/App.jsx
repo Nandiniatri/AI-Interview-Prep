@@ -1,4 +1,5 @@
 import AIMainFile from './AIInterviewPrep/AIFile'
+import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
 import InterviewUI from './AIInterviewPrep/interviewUI/InterviewUI';
 // import AIChat from './AIInterview/AIInterviewer';
 // import AIAssistant from './AIInterview/AIInterviewer';
@@ -15,7 +16,8 @@ function App() {
       {/* <h1>Hello AI</h1> */}
       {/* <AIChat /> */}
       {/* <AIAssistant /> */}
-      <InterviewUI />
+      {/* <InterviewUI /> */}
+      <CodingInterview />
     </>
   )
 }
