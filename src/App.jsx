@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      {/* <AIMainFile />  */}
+      <AIMainFile /> 
       {/* <Login /> */}
       {/* <h1>Hello AI</h1> */}
       {/* <AIChat /> */}
