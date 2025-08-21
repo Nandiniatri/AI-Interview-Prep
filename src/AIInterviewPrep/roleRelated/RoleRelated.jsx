@@ -1,8 +1,6 @@
 import React from "react";
 import "./RoleRelated.css";
 
-import React from "react";
-import "./Interview.css";
 
 const RoleRelated = () => {
   return (
