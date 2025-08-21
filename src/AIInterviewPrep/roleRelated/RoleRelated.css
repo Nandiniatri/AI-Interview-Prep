@@ -4,15 +4,14 @@
     background: #f9fafb;
     padding: 10px;
     gap: 30px;
-    border: solid red;
+    /* border: solid red; */
 }
 
-/* Left side main video */
 .role-related-video-section {
     position: relative;
     flex: 1;
     width: 70%;
-    border: solid blue;
+    /* border: solid blue; */
     display: flex;
     justify-content: center;
 }
@@ -32,7 +31,7 @@
     object-fit: cover;
 }
 
-/* Timer */
+
 .role-related-timer {
     position: absolute;
     bottom: 15px;
@@ -44,7 +43,6 @@
     font-size: 14px;
 }
 
-/* Start Answer button */
 .role-related-start-btn {
     position: absolute;
     bottom: 15px;
@@ -63,9 +61,11 @@
     background: #218838;
 }
 
-/* Right panel */
 .role-related-side-panel {
     border: solid red;
+    /* width: 20; */
+    position: relative;
+    right: 90px;
 }
 
 .role-related-candidate-box {
@@ -126,7 +126,7 @@
     background: #fdecea;
 }
 
-/* Question box */
+
 .role-related-question-box {
     margin-top: 20px;
     width: 58%;
@@ -135,7 +135,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: solid;
+    /* border: solid; */
     margin-left: 110px;
 }
 
