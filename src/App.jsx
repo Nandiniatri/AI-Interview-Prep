@@ -1,6 +1,6 @@
 import AIMainFile from './AIInterviewPrep/AIFile'
 import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
-import WarmInterview from './AIInterviewPrep/interviewUI/InterviewUI';
+import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
 // import AIChat from './AIInterview/AIInterviewer';
 // import AIAssistant from './AIInterview/AIInterviewer';
 import './App.css'
