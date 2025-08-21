@@ -1,44 +1,57 @@
 import React from "react";
 import "./RoleRelated.css";
 
-const InterviewLayout = () => {
+import React from "react";
+import "./Interview.css";
+
+const RoleRelated = () => {
   return (
     <div className="interview-container">
-      {/* Left side main video */}
+      {/* Left Side - Interviewer Video */}
       <div className="video-section">
-        <img
-          src="https://via.placeholder.com/600x350"
-          alt="Interviewer"
-          className="main-video"
-        />
+        <div className="interviewer-box">
+          <img
+            src="https://via.placeholder.com/800x400"
+            alt="AI Interviewer"
+            className="interviewer-video"
+          />
+        </div>
+
+        {/* Timer */}
         <div className="timer">04:55</div>
+
+        {/* Start Answer Button */}
         <button className="start-btn">🎤 Start Answer</button>
       </div>
 
-      {/* Candidate self camera (top right) */}
-      <div className="self-camera">
-        <img
-          src="https://via.placeholder.com/150x100"
-          alt="Candidate"
-          className="self-video"
-        />
-      </div>
-
-      {/* Right side panel */}
+      {/* Right Side Panel */}
       <div className="side-panel">
-        <h3 className="role-title">Web Developer</h3>
+        {/* Candidate self video */}
+        <div className="candidate-box">
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Candidate"
+            className="candidate-video"
+          />
+        </div>
+
+        <h2 className="role-title">Web Developer</h2>
         <p className="role-subtitle">Role Related</p>
+
         <button className="eval-btn">Evaluation Criteria</button>
         <button className="exit-btn">Exit Interview</button>
       </div>
 
-      {/* Question box */}
+      {/* Question Box */}
       <div className="question-box">
-        <h4>Main Question</h4>
-        <p>What are the benefits and risks of using useRef in React?</p>
+        <h3 className="question-heading">Main Question</h3>
+        <p className="question-text">
+          What are the benefits and risks of using useRef in React?
+        </p>
       </div>
     </div>
   );
 };
 
-export default InterviewLayout;
+export default RoleRelated;
+
