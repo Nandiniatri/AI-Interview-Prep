@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./InterviewUI.css";
+import "./WarmInterview.css";
 
-const InterviewUI = () => {
+const WarmInterview = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const questions = [
@@ -54,4 +54,4 @@ const InterviewUI = () => {
   );
 };
 
-export default InterviewUI;
+export default WarmInterview;
