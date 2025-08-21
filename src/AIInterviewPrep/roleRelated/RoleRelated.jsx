@@ -1,49 +1,46 @@
 import React from "react";
 import "./RoleRelated.css";
 
-
 const RoleRelated = () => {
     return (
         <>
-            <div className="interview-container">
+            <div className="role-related-container">
                 {/* Left Side - Interviewer Video */}
-                <div className="video-section">
-                    <div className="interviewer-box">
+                <div className="role-related-video-section">
+                    <div className="role-related-interviewer-box">
                         <img
                             src="https://via.placeholder.com/800x400"
                             alt="AI Interviewer"
-                            className="interviewer-video"
+                            className="role-related-interviewer-video"
                         />
                     </div>
-                    <div className="timer">04:55</div>
+                    <div className="role-related-timer">04:55</div>
 
-                    <button className="start-btn">🎤 Start Answer</button>
+                    <button className="role-related-start-btn">🎤 Start Answer</button>
                 </div>
 
                 {/* Right Side Panel */}
-                <div className="side-panel">
+                <div className="role-related-side-panel">
                     {/* Candidate self video */}
-                    <div className="candidate-box">
+                    <div className="role-related-candidate-box">
                         <img
                             src="https://via.placeholder.com/150"
                             alt="Candidate"
-                            className="candidate-video"
+                            className="role-related-candidate-video"
                         />
                     </div>
 
-                    <h2 className="role-title">Web Developer</h2>
-                    <p className="role-subtitle">Role Related</p>
+                    <h2 className="role-related-title">Web Developer</h2>
+                    <p className="role-related-subtitle">Role Related</p>
 
-                    <button className="eval-btn">Evaluation Criteria</button>
-                    <button className="exit-btn">Exit Interview</button>
+                    <button className="role-related-eval-btn">Evaluation Criteria</button>
+                    <button className="role-related-exit-btn">Exit Interview</button>
                 </div>
-                {/* end Right */}
-
             </div>
 
-            <div className="question-box">
-                <h3 className="question-heading">Main Question</h3>
-                <p className="question-text">
+            <div className="role-related-question-box">
+                <h3 className="role-related-question-heading">Main Question</h3>
+                <p className="role-related-question-text">
                     What are the benefits and risks of using useRef in React?
                 </p>
             </div>
@@ -52,4 +49,3 @@ const RoleRelated = () => {
 };
 
 export default RoleRelated;
-
