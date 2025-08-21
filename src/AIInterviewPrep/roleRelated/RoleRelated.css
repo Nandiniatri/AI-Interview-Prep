@@ -66,6 +66,8 @@
     /* width: 20; */
     position: relative;
     right: 90px;
+    height: 60vh;
+    bottom: 30px;
 }
 
 .role-related-candidate-box {
