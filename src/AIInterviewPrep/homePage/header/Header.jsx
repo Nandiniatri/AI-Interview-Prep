@@ -4,13 +4,9 @@ import Button from '../../../componets/Button';
 import { useState } from 'react';
 import Modal2 from '../../../componets/modal2/Modal2';
 import SignUpForm from '../../../componets/SignupForm/SignupForm';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const [showModal , setShowModal] = useState(null);
-
-    const handleSignUpModal = () => {
-        setShowModal(!showModal);
-    }
 
     return (
         <>
@@ -25,16 +21,10 @@ const Header = () => {
                     </nav>
                     <div className="auth-buttons">
                         <Button className="login-btn">Contact Us</Button>
-                        <Button className="signup-btn" onClick={handleSignUpModal}>Sign Up</Button>
+                        <Button className="signup-btn"><Link to="/signup" className='inside-signup-btn'>Sign Up</Link></Button>
                     </div>
                 </div>
             </header>
-
-            <div>
-                {showModal && (
-                    <SignUpForm />
-                )}
-            </div>
         </>
     );
 };

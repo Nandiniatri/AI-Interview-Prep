@@ -62,9 +62,15 @@
 }
 
 .signup-btn {
-  background: #fff;
-  color: #6b3fd4;
+  /* background: #fff; */
   transition: background 0.3s ease, color 0.3s ease;
+  /* border: solid !important; */
+  background-color: #6b3fd4 !important;
+}
+
+.signup-btn .inside-signup-btn{
+  color: white;
+  text-decoration: none;
 }
 
 .signup-btn:hover {
@@ -75,10 +81,3 @@
   /* border: solid; */
   font-size: 20px;
 }
-
-/* 
-@media (max-width:480px) {
-    .hero-header{
-        border: solid red;
-    }
-} */
