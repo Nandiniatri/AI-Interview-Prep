@@ -82,7 +82,7 @@ const StartPracticeModal = ({ onClose }) => {
                         </select>
 
                         <button
-                            className="start-btn"
+                            className="form-start-btn"
                             onClick={handleStartPractice}
                             disabled={isDisabled}
                         >
