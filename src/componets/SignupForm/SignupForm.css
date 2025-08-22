@@ -2,7 +2,7 @@
     --color1: #263238;
     --color2: #616161;
     --primary-color: #8c52fe;
-    --background-color1: #000; 
+    --background-color1: #000;
     --background-color2: #00000000;
     --box-shadow1: rgba(0, 0, 0, 0.15) 0px 4px 12px;
     --box-shadow2: box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -73,7 +73,8 @@
 .signup-google-btn:hover {
     background: #f7f7f7;
 }
-.signup-google-text{
+
+.signup-google-text {
     font-size: var(--fontSize1);
 }
 
@@ -169,4 +170,20 @@
 
 .signup-link:hover {
     text-decoration: underline;
+}
+
+.inside-signup-fields {
+    border: solid;
+}
+
+.inside-name-last {
+    border: solid;
+    display: flex;
+    flex-direction: row;
+}
+
+.inside-passwords{
+    border: solid red;
+    display: flex;
+    flex-direction: row;
 }
