@@ -3,14 +3,14 @@ import './RespHeader.css';
 import Button from '../../../componets/Button';
 import { useState } from 'react';
 import Modal2 from '../../../componets/modal2/Modal2';
+import SignUpForm from '../../../componets/SignupForm/SignupForm';
 
 const Header = () => {
-    const [showModal , setShowModal] = useState(false);
+    const [showModal , setShowModal] = useState(null);
 
     const handleSignUpModal = () => {
-        setShowModal(true);
+        setShowModal(!showModal);
     }
-
 
     return (
         <>
@@ -31,7 +31,9 @@ const Header = () => {
             </header>
 
             <div>
-                
+                {showModal && (
+                    <SignUpForm />
+                )}
             </div>
         </>
     );

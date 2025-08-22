@@ -8,8 +8,6 @@ import './App.css'
 
 function App() {
 
-  // console.log("API Key from env:", import.meta.env.VITE_OPENAI_API_KEY);
-
   return (
     <>
       <AIMainFile /> 
