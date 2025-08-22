@@ -1,15 +1,19 @@
 import './Header.css';
 import './RespHeader.css';
-import { FaCaretDown } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
 import Button from '../../../componets/Button';
 import { useState } from 'react';
+import Modal2 from '../../../componets/modal2/Modal2';
 
 const Header = () => {
     const [showModal , setShowModal] = useState(false);
 
+    const handleClosedModal2 = () => {
+        setShowModal(false);
+    }
+
     const handleSignUpModal = () => {
-        alert('Hello Signup');
+        console.log('Modal will be open');
+        
         setShowModal(true);
     }
 
@@ -33,7 +37,9 @@ const Header = () => {
             </header>
 
             <div>
-                {showModal && <h1>Hello</h1>}
+                <Modal2 isOpen={showModal} onClose={handleClosedModal2}>
+                    <h1>Hello Modal 2</h1>
+                </Modal2>
             </div>
         </>
     );
