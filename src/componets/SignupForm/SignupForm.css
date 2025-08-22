@@ -172,11 +172,8 @@
     text-decoration: underline;
 }
 
-.inside-signup-fields {
-    border: solid;
-}
 
-.inside-name-last {
+/* .inside-name-last {
     border: solid;
     display: flex;
     flex-direction: row;
@@ -186,4 +183,4 @@
     border: solid red;
     display: flex;
     flex-direction: row;
-}
+} */
