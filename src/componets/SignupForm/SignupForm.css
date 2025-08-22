@@ -1,0 +1,39 @@
+:root {
+    --color1: rgb(38 50 56);
+    --color2: rgb(97 97 97);
+    --color3: rgb(140 82 254);
+    --background-color1: rgb(26 24 29);
+    --box-shadow1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.signup-container-main-div{
+    border: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-container {
+    border: solid blue 2px;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-form{
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    /* height: 65vh; */
+    padding: 20px;
+    line-height: 35px;
+    box-shadow: var(--box-shadow1);
+}
+
+.signup-header{
+    border: solid;
+    display: flex;
+    flex-direction: column;
+}
