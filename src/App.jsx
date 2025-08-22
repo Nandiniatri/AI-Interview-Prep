@@ -5,15 +5,17 @@ import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
 import AIChat from './AIInterview/AIInterviewer';
 import AIAssistant from './AIInterview/AIInterviewer';
 import './App.css';
-import SignUpForm from './componets/SignupForm/SignupForm';
+import LoginInSignUpForm from './componets/SignupForm/SignupForm';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<AIMainFile />} />
-        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/login" element={<LoginInSignUpForm />} />
+        <Route path="/signup" element={<InsideSignUp />} />
       </Routes>
     </Router>
   );

@@ -2,8 +2,9 @@ import { FcGoogle } from "react-icons/fc";
 import Button from "../Button";
 import './SignUpForm.css'
 import Header from "../../AIInterviewPrep/homePage/header/Header";
+import { Link } from "react-router-dom";
 
-const SignUpForm = () => {
+const LoginInSignUpForm = () => {
     return (
         <div className="signup-container-main-div">
             <div className="header-class-in-signIn">
@@ -59,7 +60,7 @@ const SignUpForm = () => {
                         
                         <div className="signup-footer">
                             <span>Don't have an account?</span>
-                            <a href="/signup" className="signup-link">Sign up</a>
+                            <Link to="/signup" className="signup-link">Sign up</Link>
                         </div>
                     </form>
                 </div>
@@ -68,4 +69,4 @@ const SignUpForm = () => {
     )
 }
 
-export default SignUpForm;
+export default LoginInSignUpForm;

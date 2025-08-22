@@ -7,7 +7,6 @@ import SignUpForm from '../../../componets/SignupForm/SignupForm';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-
     return (
         <>
             <header className="hero-header">
@@ -21,7 +20,7 @@ const Header = () => {
                     </nav>
                     <div className="auth-buttons">
                         <Button className="login-btn">Contact Us</Button>
-                        <Button className="signup-btn"><Link to="/signup" className='inside-signup-btn'>Sign Up</Link></Button>
+                        <Button className="signup-btn"><Link to="/login" className='inside-signup-btn'>Sign Up</Link></Button>
                     </div>
                 </div>
             </header>
