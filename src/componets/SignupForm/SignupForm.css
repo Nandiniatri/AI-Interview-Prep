@@ -4,6 +4,7 @@
     --color3: rgb(140 82 254);
     --background-color1: rgb(26 24 29);
     --box-shadow1: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    --border-radius1: 15px
 }
 
 .signup-container-main-div{
@@ -30,6 +31,7 @@
     padding: 20px;
     line-height: 35px;
     box-shadow: var(--box-shadow1);
+    border-radius: var(--border-radius1);
 }
 
 .signup-header{
