@@ -2,8 +2,8 @@ import AIMainFile from './AIInterviewPrep/AIFile'
 import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
 import RoleRelated from './AIInterviewPrep/roleRelated/RoleRelated';
 import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
-// import AIChat from './AIInterview/AIInterviewer';
-// import AIAssistant from './AIInterview/AIInterviewer';
+import AIChat from './AIInterview/AIInterviewer';
+import AIAssistant from './AIInterview/AIInterviewer';
 import './App.css'
 import SignUpForm from './componets/SignupForm/SignupForm';
 
