@@ -7,13 +7,7 @@ import Modal2 from '../../../componets/modal2/Modal2';
 const Header = () => {
     const [showModal , setShowModal] = useState(false);
 
-    const handleClosedModal2 = () => {
-        setShowModal(false);
-    }
-
     const handleSignUpModal = () => {
-        console.log('Modal will be open');
-        
         setShowModal(true);
     }
 
@@ -37,9 +31,7 @@ const Header = () => {
             </header>
 
             <div>
-                <Modal2 isOpen={showModal} onClose={handleClosedModal2}>
-                    <h1>Hello Modal 2</h1>
-                </Modal2>
+                
             </div>
         </>
     );
