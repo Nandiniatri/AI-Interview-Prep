@@ -67,8 +67,8 @@
   /* border: solid !important; */
   background-color: #6b3fd4 !important;
 }
- 
-.signup-btn .inside-signup-btn{
+
+.signup-btn .inside-signup-btn {
   color: white;
   text-decoration: none;
 }
@@ -80,4 +80,27 @@
 .ciSearch {
   /* border: solid; */
   font-size: 20px;
+}
+
+
+.header-auth-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.header-auth-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.down-icon-header {
+  position: relative;
+  top: 4px;
+  left: 4px;
+  cursor: pointer;
 }
