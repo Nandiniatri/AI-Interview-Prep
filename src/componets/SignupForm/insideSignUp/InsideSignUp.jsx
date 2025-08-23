@@ -2,11 +2,13 @@ import { FcGoogle } from "react-icons/fc";
 import Button from "../../Button";
 import './InsideSignUp.css';
 import Header from "../../../AIInterviewPrep/homePage/header/Header";
+import { useDataContext } from "../../../contextApi/DatasContectApi";
 
 const InsideSignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(true);
+    const { signOut, signUp } = useDataContext();
 
 
     const handleSubmit = async (e) => {
@@ -40,7 +42,7 @@ const InsideSignUp = () => {
                         <div className="signup-google">
                             <Button className="signup-google-btn">
                                 <FcGoogle size={24} />
-                                <h6 className="signup-google-text">Login with Google</h6>
+                                <h6 className="signup-google-text" onClick={signUp}>Login with Google</h6>
                             </Button>
                         </div>
 
