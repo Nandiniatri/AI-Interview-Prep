@@ -4,6 +4,22 @@ import './InsideSignUp.css';
 import Header from "../../../AIInterviewPrep/homePage/header/Header";
 
 const InsideSignUp = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [isLogin, setIsLogin] = useState(true);
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (isLogin) {
+            const { error } = await loginWithEmail(email, password);
+            if (!error) alert("Login Successful ✅");
+        } else {
+            const { error } = await signUpWithEmail(email, password);
+            if (!error) alert("Signup Successful ✅, Check your email!");
+        }
+    };
+
     return (
         <div className="signup-container-main-div">
             <div className="header-class-in-signIn">
@@ -12,7 +28,8 @@ const InsideSignUp = () => {
 
             <div>
                 <div className="signup-container">
-                    <form className="signup-form">
+                    <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+                    <form className="signup-form" onSubmit={handleSubmit}>
 
                         {/* Header */}
                         <div className="signup-header">
