@@ -5,10 +5,21 @@ import { Link } from 'react-router-dom';
 import { useDataContext } from '../../../contextApi/DatasContectApi';
 import Image from '../../../componets/Image';
 import { IoChevronDownSharp } from "react-icons/io5";
+import { useState } from 'react';
+import Modal2 from '../../../componets/modal2/Modal2';
 
 const Header = () => {
     const { session, signOut } = useDataContext();
     console.log(session);
+    const [isModalOpen , setIsModalOpen] = useState(false);
+
+    const handleModal2 = () => {
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal2 = () => {
+        setIsModalOpen(false);
+    }
 
     return (
         <>
@@ -28,14 +39,17 @@ const Header = () => {
                         ) : (
                             <div className='header-auth-div'>
                                 <Image src={session?.user?.user_metadata?.avatar_url} className='header-auth-img' />
-                                <span onClick={signOut}>
+                                <span onClick={handleModal2}>
                                     {session?.user?.user_metadata?.name}
-                                    <IoChevronDownSharp className='down-icon-header' size={'17px'}/>
+                                    <IoChevronDownSharp className='down-icon-header' size={'17px'} />
                                 </span>
                             </div>
                         )}
                     </div>
                 </div>
+                <Modal2 isOpen={isModalOpen} onClose={handleCloseModal2}>
+                    <h4>Logout</h4>
+                </Modal2>
             </header>
         </>
     );

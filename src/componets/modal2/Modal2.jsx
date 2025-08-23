@@ -18,4 +18,4 @@ const Modal2 = ({ isOpen, children , onClose}) => {
     )
 }
 
-export default Modal2;
+export default Modal2; 
