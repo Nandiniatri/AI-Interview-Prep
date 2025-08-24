@@ -41,7 +41,6 @@ const InsideSignUp = () => {
 
                         {/* Google Button */}
                         <div className="signup-google">
-                            {}
                             <Button className="signup-google-btn" onClick={signUp}>
                                 <FcGoogle size={24} />
                                 <h6 className="signup-google-text">Login with Google</h6>
