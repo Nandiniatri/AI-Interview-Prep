@@ -144,7 +144,7 @@ const LoginInSignUpForm = () => {
             </div>
         </div>
     );
-};
+}; 
 
 export default LoginInSignUpForm;
 

@@ -9,7 +9,7 @@ const InsideSignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(true);
-    const { signOut, signUp } = useDataContext(); 
+    const { signOut, signUp , session} = useDataContext(); 
 
 
     const handleSubmit = async (e) => {
@@ -41,7 +41,8 @@ const InsideSignUp = () => {
 
                         {/* Google Button */}
                         <div className="signup-google">
-                            <Button className="signup-google-btn">
+                            {}
+                            <Button className="signup-google-btn" onClick={signUp}>
                                 <FcGoogle size={24} />
                                 <h6 className="signup-google-text">Login with Google</h6>
                             </Button>
