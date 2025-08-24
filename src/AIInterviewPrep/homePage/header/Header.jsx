@@ -81,8 +81,8 @@ const Header = () => {
     };
 
     const handleLogout = () => {
-        signOut();          // logout karega
-        handleCloseModal2(); // modal band ho jayega
+        signOut();    
+        handleCloseModal2();
     };
 
     return (
