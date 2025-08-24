@@ -11,7 +11,7 @@ const Modal2 = ({ isOpen, children , onClose}) => {
         <div className="modal2-overlay" onClick={onClose}>
             <div className="modal2-content" onClick={(e) => e.stopPropagation()}>
                 {children}
-                <Button onClick={onClose} className="modal2-closed-btn">x</Button>
+                {/* <Button onClick={onClose} className="modal2-closed-btn"></Button> */}
             </div>
         </div>,
         document.getElementById('modal2-form')
