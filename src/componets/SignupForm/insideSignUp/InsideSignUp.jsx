@@ -3,12 +3,13 @@ import Button from "../../Button";
 import './InsideSignUp.css';
 import Header from "../../../AIInterviewPrep/homePage/header/Header";
 import { useDataContext } from "../../../contextApi/DatasContectApi";
+import { useState } from "react";
 
 const InsideSignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isLogin, setIsLogin] = useState(true);
-    const { signOut, signUp } = useDataContext();
+    const { signOut, signUp } = useDataContext(); 
 
 
     const handleSubmit = async (e) => {
