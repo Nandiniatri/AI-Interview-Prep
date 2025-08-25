@@ -22,7 +22,6 @@ const Questions = ({ files, onComplete }) => {
         }
     };
 
-
     useEffect(() => {
         fetchData();
     }, [files]);

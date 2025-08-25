@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import './SelectedForms.css';
 import { useDataContext } from "../../contextApi/DatasContectApi";
+import * as pdfjsLib from "pdfjs-dist";
+
 
 const SelectedForm = ({ file }) => {
   const [data, setData] = useState(null);
@@ -9,7 +11,7 @@ const SelectedForm = ({ file }) => {
     selectInterview, setSelectInterview,
     selectInterviewer, setSelectInterviewer, resumeName, setResumeName, setVideoSelected, termsAgreed, setTermsAgreed } = useDataContext();
 
- 
+
   const fetchAllFileData = async () => {
     if (file) {
       try {
@@ -20,7 +22,7 @@ const SelectedForm = ({ file }) => {
         console.log('Network Error');
       }
     }
-  }; 
+  };
 
   useEffect(() => {
     fetchAllFileData();

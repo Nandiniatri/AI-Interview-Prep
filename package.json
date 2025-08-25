@@ -13,6 +13,7 @@
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.56.0",
+    "mammoth": "^1.10.0",
     "openai": "^5.12.2",
     "pdfjs-dist": "^5.4.54",
     "react": "^19.1.0",
