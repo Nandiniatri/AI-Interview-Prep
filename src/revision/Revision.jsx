@@ -154,24 +154,54 @@
 
 
 
+import { useState } from "react";
+import * as pdfjsLib from "pdfjs-dist/build/pdf";
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url"; // 👈 load worker correctly
 
+// Tell pdfjs where the worker is
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
-const ReadResume = () => {
-    const handleFileChange = () => {
-    
-    }
-    
-    
-    const handleUpload = () => {
-    
-    }
-    
-    return (
-        <div>
-            <input type="file" accept=".pdf,.doc,.docx" onClick={handleFileChange} />
-            <button onClick={handleUpload}>Upload Resume</button>
-        </div>
-    )
+function ReadResume() {
+  const [text, setText] = useState("");
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const typedarray = new Uint8Array(reader.result);
+
+        // Load the PDF
+        const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+
+        let fullText = "";
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const textContent = await page.getTextContent();
+          fullText += textContent.items.map((s) => s.str).join(" ") + "\n";
+        }
+
+        setText(fullText);
+      } catch (err) {
+        console.error("Error reading PDF:", err);
+        setText("❌ Could not read the PDF file.");
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  };
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h2>📄 Upload Resume</h2>
+      <input type="file" accept="application/pdf" onChange={handleFileChange} />
+      <h3>Extracted Text:</h3>
+      <pre style={{ whiteSpace: "pre-wrap", background: "#f4f4f4", padding: "10px" }}>
+        {text}
+      </pre>
+    </div>
+  );
 }
 
 export default ReadResume;
