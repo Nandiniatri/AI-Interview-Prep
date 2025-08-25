@@ -154,54 +154,159 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState } from "react";
+// import * as pdfjsLib from "pdfjs-dist/build/pdf";
+// import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url"; // 👈 load worker correctly
+
+// // Tell pdfjs where the worker is
+// pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+// function ReadResume() {
+//   const [text, setText] = useState("");
+
+//   const handleFileChange = async (e) => {
+//     const file = e.target.files[0];
+//     if (!file) return;
+
+//     const reader = new FileReader();
+//     reader.onload = async () => {
+//       try {
+//         const typedarray = new Uint8Array(reader.result);
+
+//         // Load the PDF
+//         const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+
+//         let fullText = "";
+//         for (let i = 1; i <= pdf.numPages; i++) {
+//           const page = await pdf.getPage(i);
+//           const textContent = await page.getTextContent();
+//           fullText += textContent.items.map((s) => s.str).join(" ") + "\n";
+//         }
+
+//         setText(fullText);
+//       } catch (err) {
+//         console.error("Error reading PDF:", err);
+//         setText("❌ Could not read the PDF file.");
+//       }
+//     };
+//     reader.readAsArrayBuffer(file);
+//   };
+
+//   return (
+//     <div style={{ padding: "20px" }}>
+//       <h2>📄 Upload Resume</h2>
+//       <input type="file" accept="application/pdf" onChange={handleFileChange} />
+//       <h3>Extracted Text:</h3>
+//       <pre style={{ whiteSpace: "pre-wrap", background: "#f4f4f4", padding: "10px" }}>
+//         {text}
+//       </pre>
+//     </div>
+//   );
+// }
+
+// export default ReadResume;
+
+
+
+
+
+
+
+
+
 import { useState } from "react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
-import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url"; // 👈 load worker correctly
+import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url";
 
-// Tell pdfjs where the worker is
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 function ReadResume() {
-  const [text, setText] = useState("");
+    const [text, setText] = useState("");
+    const [skills, setSkills] = useState("");
 
-  const handleFileChange = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+    const handleFileChange = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = async () => {
-      try {
-        const typedarray = new Uint8Array(reader.result);
+        const reader = new FileReader();
+        reader.onload = async () => {
+            const typedarray = new Uint8Array(reader.result);
+            console.log(typedarray);
+            
+            const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+            console.log(pdf);
+            
 
-        // Load the PDF
-        const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+            let fullText = "";
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const page = await pdf.getPage(i);
+                const textContent = await page.getTextContent();
+                fullText += textContent.items.map((s) => s.str).join(" ") + "\n";
+            }
 
-        let fullText = "";
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const textContent = await page.getTextContent();
-          fullText += textContent.items.map((s) => s.str).join(" ") + "\n";
-        }
+            setText(fullText);
 
-        setText(fullText);
-      } catch (err) {
-        console.error("Error reading PDF:", err);
-        setText("❌ Could not read the PDF file.");
-      }
+            // 🛠 Skills extract karo
+            const skillRegex = /(skills|technical skills|key skills)[:\-]?\s*(.+)/i;
+            console.log(skillRegex);
+            
+            const lines = fullText.split("\n");
+            let foundSkills = "";
+
+            for (let line of lines) {
+                const match = line.match(skillRegex);
+                if (match) {
+                    foundSkills = match[2];
+                    break;
+                }
+            }
+
+            setSkills(foundSkills || "No skills found");
+        };
+        reader.readAsArrayBuffer(file);
     };
-    reader.readAsArrayBuffer(file);
-  };
 
-  return (
-    <div style={{ padding: "20px" }}>
-      <h2>📄 Upload Resume</h2>
-      <input type="file" accept="application/pdf" onChange={handleFileChange} />
-      <h3>Extracted Text:</h3>
-      <pre style={{ whiteSpace: "pre-wrap", background: "#f4f4f4", padding: "10px" }}>
-        {text}
-      </pre>
-    </div>
-  );
+    return (
+        <div style={{ padding: "20px" }}>
+            <h2>📄 Upload Resume</h2>
+            <input type="file" accept="application/pdf" onChange={handleFileChange} />
+
+            <h3>Extracted Text:</h3>
+            <pre>{text}</pre>
+
+            <h3>🎯 Extracted Skills:</h3>
+            <p>{skills}</p>
+        </div>
+    );
 }
 
 export default ReadResume;
