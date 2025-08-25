@@ -149,29 +149,29 @@
 
 // export default Login;
 
-const Revision = () => {
+
+
+
+
+
+
+
+const ReadResume = () => {
+    const handleFileChange = () => {
+    
+    }
+    
+    
+    const handleUpload = () => {
+    
+    }
+    
     return (
         <div>
-            <button>Hello Ji</button>
-            <img src="" alt="" />
-            <ul>
-                <li>Hello</li>
-                <li>Hello 1</li>
-                <li>Hello 2</li>
-            </ul>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Help</li>
-                </ul>
-            </nav>
-
-            <button>Login</button>
-            <button>SignUp</button>
+            <input type="file" accept=".pdf,.doc,.docx" onClick={handleFileChange} />
+            <button onClick={handleUpload}>Upload Resume</button>
         </div>
     )
 }
 
-export default Revision;
+export default ReadResume;
