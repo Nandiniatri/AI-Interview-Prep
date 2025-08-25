@@ -32,13 +32,53 @@ const SelectedForm = ({ file }) => {
     fileInputRef.current.click();
   };
 
+  // const handleFileChange = (e) => {
+  //   const selectedFile = e.target.files[0];
+  //   if (selectedFile) {
+  //     setResumeName(selectedFile.name);
+  //     // console.log("Selected file:", selectedFile);
+  //   }
+  // };
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       setResumeName(selectedFile.name);
-      // console.log("Selected file:", selectedFile);
+
+      if (selectedFile.type === "application/pdf") {
+        const reader = new FileReader();
+        reader.onload = async () => {
+          const typedarray = new Uint8Array(reader.result);
+          const pdf = await pdfjsLib.getDocument(typedarray).promise;
+
+          let extractedText = "";
+          for (let i = 1; i <= pdf.numPages; i++) {
+            const page = await pdf.getPage(i);
+            const textContent = await page.getTextContent();
+            extractedText += textContent.items.map((item) => item.str).join(" ") + " ";
+          }
+
+          console.log("📄 Resume Extracted Text:", extractedText);
+
+          // Example: Extract skills
+          const skills = ["JavaScript", "React", "Node.js", "CSS", "Python"];
+          const foundSkills = skills.filter(skill =>
+            extractedText.toLowerCase().includes(skill.toLowerCase())
+          );
+
+          console.log("✅ Matched Skills:", foundSkills);
+
+          // Ab aap matched skills ke basis pe questions dikha sakte ho
+          // setSkills(foundSkills);
+        };
+        reader.readAsArrayBuffer(selectedFile);
+      } else {
+        alert("Please upload only PDF resume.");
+      }
     }
   };
+
+
 
   if (!data) {
     return <p>Loading questions...</p>;
