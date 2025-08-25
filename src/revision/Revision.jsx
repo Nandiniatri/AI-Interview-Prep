@@ -252,6 +252,13 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 function ReadResume() {
     const [text, setText] = useState("");
     const [skills, setSkills] = useState("");
+    const [dataSkills , setDataSkills] = useState([]);
+
+    const fetchData = async() => {
+        const response = await fetch();
+        const result = await response.json();
+        setDataSkills(result);
+    }
 
     const handleFileChange = async (e) => {
         const file = e.target.files[0];
@@ -261,10 +268,10 @@ function ReadResume() {
         reader.onload = async () => {
             const typedarray = new Uint8Array(reader.result);
             console.log(typedarray);
-            
+
             const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
             console.log(pdf);
-            
+
 
             let fullText = "";
             for (let i = 1; i <= pdf.numPages; i++) {
@@ -278,7 +285,7 @@ function ReadResume() {
             // 🛠 Skills extract karo
             const skillRegex = /(skills|technical skills|key skills)[:\-]?\s*(.+)/i;
             console.log(skillRegex);
-            
+
             const lines = fullText.split("\n");
             let foundSkills = "";
 
