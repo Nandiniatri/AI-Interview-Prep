@@ -243,7 +243,7 @@
 
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url";
 
@@ -255,10 +255,15 @@ function ReadResume() {
     const [dataSkills , setDataSkills] = useState([]);
 
     const fetchData = async() => {
-        const response = await fetch();
+        const response = await fetch('/public/data/skillsData/skillsData.json');
         const result = await response.json();
+        // console.log(result);
         setDataSkills(result);
     }
+
+    useEffect(() => {
+        fetchData();
+    },[])
 
     const handleFileChange = async (e) => {
         const file = e.target.files[0];
@@ -267,10 +272,7 @@ function ReadResume() {
         const reader = new FileReader();
         reader.onload = async () => {
             const typedarray = new Uint8Array(reader.result);
-            console.log(typedarray);
-
             const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
-            console.log(pdf);
 
 
             let fullText = "";
@@ -284,8 +286,6 @@ function ReadResume() {
 
             // 🛠 Skills extract karo
             const skillRegex = /(skills|technical skills|key skills)[:\-]?\s*(.+)/i;
-            console.log(skillRegex);
-
             const lines = fullText.split("\n");
             let foundSkills = "";
 
@@ -296,11 +296,14 @@ function ReadResume() {
                     break;
                 }
             }
-
             setSkills(foundSkills || "No skills found");
         };
         reader.readAsArrayBuffer(file);
     };
+
+
+    console.log(text);
+    
 
     return (
         <div style={{ padding: "20px" }}>
@@ -312,6 +315,8 @@ function ReadResume() {
 
             <h3>🎯 Extracted Skills:</h3>
             <p>{skills}</p>
+
+            <button>Click here for fetch the Data</button>
         </div>
     );
 }
