@@ -2,7 +2,7 @@
     "skills": [
         {
             "category": "Frontend Development",
-            "items": [
+            "skillsItems": [
                 "HTML5",
                 "CSS3",
                 "JavaScript (ES6+)",
@@ -14,7 +14,7 @@
         },
         {
             "category": "Backend Development",
-            "items": [
+            "skillsItems": [
                 "Node.js",
                 "Express.js",
                 "REST API",
@@ -24,7 +24,7 @@
         },
         {
             "category": "Databases",
-            "items": [
+            "skillsItems": [
                 "MySQL",
                 "PostgreSQL",
                 "MongoDB"
@@ -32,7 +32,7 @@
         },
         {
             "category": "Version Control & Tools",
-            "items": [
+            "skillsItems": [
                 "Git",
                 "GitHub",
                 "VS Code",
@@ -41,7 +41,7 @@
         },
         {
             "category": "UI/UX & Design",
-            "items": [
+            "skillsItems": [
                 "Figma",
                 "Canva",
                 "Wireframing",
@@ -50,7 +50,7 @@
         },
         {
             "category": "Soft Skills",
-            "items": [
+            "skillsItems": [
                 "Problem Solving",
                 "Communication",
                 "Team Collaboration",

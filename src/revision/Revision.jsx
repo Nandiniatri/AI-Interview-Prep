@@ -252,9 +252,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 function ReadResume() {
     const [text, setText] = useState("");
     const [skills, setSkills] = useState("");
-    const [dataSkills , setDataSkills] = useState([]);
+    const [dataSkills, setDataSkills] = useState([]);
 
-    const fetchData = async() => {
+    const fetchData = async () => {
         const response = await fetch('/public/data/skillsData/skillsData.json');
         const result = await response.json();
         // console.log(result);
@@ -263,7 +263,7 @@ function ReadResume() {
 
     useEffect(() => {
         fetchData();
-    },[])
+    }, [])
 
     const handleFileChange = async (e) => {
         const file = e.target.files[0];
@@ -289,21 +289,48 @@ function ReadResume() {
             const lines = fullText.split("\n");
             let foundSkills = "";
 
-            for (let line of lines) {
+            // for (let line of lines) {
+            //     const match = line.match(skillRegex);
+            //     if (match) {
+            //         foundSkills = match[2];
+            //         break;
+            //     }
+            // }
+
+            lines.forEach(line => {
                 const match = line.match(skillRegex);
-                if (match) {
+                if (match && !foundSkills) {
                     foundSkills = match[2];
-                    break;
                 }
-            }
+            });
+
             setSkills(foundSkills || "No skills found");
         };
         reader.readAsArrayBuffer(file);
     };
 
 
-    console.log(text);
-    
+    // console.log(dataSkills?.skills?.[0]?.category);
+    // const 
+
+    const skillsItemData = dataSkills?.skills?.map((s) => {
+        console.log(s.skillsItems);
+        return (
+            <div>
+                 <p><b>{s.category}</b></p>
+                <ul>
+                    <li>
+                        {s.skillsItems?.map((item) => {
+                            return(
+                                <p>{item}</p>
+                            )
+                        })}
+                    </li>
+                </ul>
+            </div>
+        )
+    })
+
 
     return (
         <div style={{ padding: "20px" }}>
@@ -317,6 +344,8 @@ function ReadResume() {
             <p>{skills}</p>
 
             <button>Click here for fetch the Data</button>
+
+            <p>{skillsItemData}</p>
         </div>
     );
 }
