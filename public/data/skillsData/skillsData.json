@@ -1,3 +1,61 @@
-[
-    {"id":1 , }
-]
+{
+    "skills": [
+        {
+            "category": "Frontend Development",
+            "items": [
+                "HTML5",
+                "CSS3",
+                "JavaScript (ES6+)",
+                "React.js",
+                "Redux",
+                "Tailwind CSS",
+                "Material UI"
+            ]
+        },
+        {
+            "category": "Backend Development",
+            "items": [
+                "Node.js",
+                "Express.js",
+                "REST API",
+                "Supabase",
+                "Firebase"
+            ]
+        },
+        {
+            "category": "Databases",
+            "items": [
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB"
+            ]
+        },
+        {
+            "category": "Version Control & Tools",
+            "items": [
+                "Git",
+                "GitHub",
+                "VS Code",
+                "Postman"
+            ]
+        },
+        {
+            "category": "UI/UX & Design",
+            "items": [
+                "Figma",
+                "Canva",
+                "Wireframing",
+                "Responsive Design"
+            ]
+        },
+        {
+            "category": "Soft Skills",
+            "items": [
+                "Problem Solving",
+                "Communication",
+                "Team Collaboration",
+                "Time Management"
+            ]
+        }
+    ]
+}
