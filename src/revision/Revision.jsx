@@ -1,5 +1,5 @@
 // import { useEffect, useState } from 'react';
-// import './Revision.css';
+import './Revision.css';
 
 // const Revision = () => {
 //     const [data , setData] = useState([]);
@@ -503,10 +503,12 @@ function ReadResume() {
             <input type="file" accept="application/pdf" onChange={handleFileChange} />
 
             <h3>Extracted Text:</h3>
-            <pre className="pre-class">{text}</pre>
+            <p className="pre-class">{text}</p>
 
             <h3>✅ Matched Skills:</h3>
             {skillsItemData?.length > 0 ? skillsItemData : <p>No matching skills found</p>}
+
+            
         </div>
     );
 }
