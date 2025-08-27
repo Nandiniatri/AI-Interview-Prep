@@ -2,14 +2,14 @@
     "Frontend Development": {
         "fresher": {
             "questions": [
-                "HTML5 ke semantic tags kya hote hain?",
-                "DOCTYPE ka use kya hai?",
-                "CSS3 animations aur transitions me kya difference hai?",
-                "Flexbox ka basic use samjhaye?",
-                "let, var aur const me kya difference hai?",
-                "Arrow function kya hai?",
-                "React me component kya hai?",
-                "Props aur state me difference?"
+                "What are semantic tags in HTML5?",
+                "What is the purpose of DOCTYPE?",
+                "What is the difference between CSS3 animations and transitions?",
+                "Explain the basic use of Flexbox.",
+                "What is the difference between let, var, and const?",
+                "What is an arrow function?",
+                "What is a component in React?",
+                "What is the difference between props and state?"
             ]
         }
     }
