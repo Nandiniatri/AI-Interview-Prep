@@ -170,70 +170,121 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState } from "react";
+// import { useEffect, useState } from "react";
 // import * as pdfjsLib from "pdfjs-dist/build/pdf";
-// import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url"; // 👈 load worker correctly
+// import pdfjsWorker from "pdfjs-dist/build/pdf.worker?url";
 
-// // Tell pdfjs where the worker is
 // pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 // function ReadResume() {
-//   const [text, setText] = useState("");
+//     const [text, setText] = useState("");
+//     const [skills, setSkills] = useState("");
+//     const [dataSkills, setDataSkills] = useState([]);
 
-//   const handleFileChange = async (e) => {
-//     const file = e.target.files[0];
-//     if (!file) return;
+//     const fetchData = async () => {
+//         const response = await fetch('/public/data/skillsData/skillsData.json');
+//         const result = await response.json();
+//         // console.log(result);
+//         setDataSkills(result);
+//     }
 
-//     const reader = new FileReader();
-//     reader.onload = async () => {
-//       try {
-//         const typedarray = new Uint8Array(reader.result);
+//     useEffect(() => {
+//         fetchData();
+//     }, [])
 
-//         // Load the PDF
-//         const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
+//     const handleFileChange = async (e) => {
+//         const file = e.target.files[0];
+//         if (!file) return;
 
-//         let fullText = "";
-//         for (let i = 1; i <= pdf.numPages; i++) {
-//           const page = await pdf.getPage(i);
-//           const textContent = await page.getTextContent();
-//           fullText += textContent.items.map((s) => s.str).join(" ") + "\n";
-//         }
+//         const reader = new FileReader();
+//         reader.onload = async () => {
+//             const typedarray = new Uint8Array(reader.result);
+//             const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
 
-//         setText(fullText);
-//       } catch (err) {
-//         console.error("Error reading PDF:", err);
-//         setText("❌ Could not read the PDF file.");
-//       }
+
+//             let fullText = "";
+//             for (let i = 1; i <= pdf.numPages; i++) {
+//                 const page = await pdf.getPage(i);
+//                 const textContent = await page.getTextContent();
+//                 fullText += textContent.items.map((s) => s.str).join(" ") + "\n";
+//             }
+
+//             setText(fullText);
+
+//             // 🛠 Skills extract karo
+//             const skillRegex = /(skills|technical skills|key skills)[:\-]?\s*(.+)/i;
+//             const lines = fullText.split("\n");
+//             let foundSkills = "";
+
+//             // for (let line of lines) {
+//             //     const match = line.match(skillRegex);
+//             //     if (match) {
+//             //         foundSkills = match[2];
+//             //         break;
+//             //     }
+//             // }
+
+//             lines.forEach(line => {
+//                 const match = line.match(skillRegex);
+//                 if (match && !foundSkills) {
+//                     foundSkills = match[2];
+//                 }
+//             });
+
+//             setSkills(foundSkills || "No skills found");
+//         };
+//         reader.readAsArrayBuffer(file);
 //     };
-//     reader.readAsArrayBuffer(file);
-//   };
 
-//   return (
-//     <div style={{ padding: "20px" }}>
-//       <h2>📄 Upload Resume</h2>
-//       <input type="file" accept="application/pdf" onChange={handleFileChange} />
-//       <h3>Extracted Text:</h3>
-//       <pre style={{ whiteSpace: "pre-wrap", background: "#f4f4f4", padding: "10px" }}>
-//         {text}
-//       </pre>
-//     </div>
-//   );
+
+//     // console.log(dataSkills?.skills?.[0]?.category);
+//     // const 
+
+//     const skillsItemData = dataSkills?.skills?.map((s) => {
+//         console.log(s.skillsItems);
+//         return (
+//             <div>
+//                  <p><b>{s.category}</b></p>
+//                 <ul>
+//                     <li>
+//                         {s.skillsItems?.map((item) => {
+//                             return(
+//                                 <p>{item}</p>
+//                             )
+//                         })}
+//                     </li>
+//                 </ul>
+//             </div>
+//         )
+//     })
+
+
+//     return (
+//         <div style={{ padding: "20px" }}>
+//             <h2>📄 Upload Resume</h2>
+//             <input type="file" accept="application/pdf" onChange={handleFileChange} />
+
+//             <h3>Extracted Text:</h3>
+//             <pre>{text}</pre>
+
+//             <h3>🎯 Extracted Skills:</h3>
+//             <p>{skills}</p>
+
+//             <button>Click here for fetch the Data</button>
+
+//             <p>{skillsItemData}</p>
+//         </div>
+//     );
 // }
 
 // export default ReadResume;
+
+
+
+
+
+
+
 
 
 
@@ -257,13 +308,12 @@ function ReadResume() {
     const fetchData = async () => {
         const response = await fetch('/public/data/skillsData/skillsData.json');
         const result = await response.json();
-        // console.log(result);
         setDataSkills(result);
-    }
+    };
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, []);
 
     const handleFileChange = async (e) => {
         const file = e.target.files[0];
@@ -273,7 +323,6 @@ function ReadResume() {
         reader.onload = async () => {
             const typedarray = new Uint8Array(reader.result);
             const pdf = await pdfjsLib.getDocument({ data: typedarray }).promise;
-
 
             let fullText = "";
             for (let i = 1; i <= pdf.numPages; i++) {
@@ -289,14 +338,6 @@ function ReadResume() {
             const lines = fullText.split("\n");
             let foundSkills = "";
 
-            // for (let line of lines) {
-            //     const match = line.match(skillRegex);
-            //     if (match) {
-            //         foundSkills = match[2];
-            //         break;
-            //     }
-            // }
-
             lines.forEach(line => {
                 const match = line.match(skillRegex);
                 if (match && !foundSkills) {
@@ -309,28 +350,34 @@ function ReadResume() {
         reader.readAsArrayBuffer(file);
     };
 
+    // ✅ Resume skills ko array me convert karo
+    const resumeSkills = skills
+        ?.split(/,|\s+/)
+        .map(s => s.trim().toLowerCase())
+        .filter(Boolean);
 
-    // console.log(dataSkills?.skills?.[0]?.category);
-    // const 
+    // ✅ Data JSON ke saath match karo
+    const matchedSkills = dataSkills?.skills?.map((s) => {
+        const matchedItems = s.skillsItems?.filter(item =>
+            resumeSkills.includes(item.toLowerCase())
+        );
 
-    const skillsItemData = dataSkills?.skills?.map((s) => {
-        console.log(s.skillsItems);
-        return (
-            <div>
-                 <p><b>{s.category}</b></p>
-                <ul>
-                    <li>
-                        {s.skillsItems?.map((item) => {
-                            return(
-                                <p>{item}</p>
-                            )
-                        })}
-                    </li>
-                </ul>
-            </div>
-        )
-    })
+        return matchedItems?.length > 0
+            ? { category: s.category, skills: matchedItems }
+            : null;
+    }).filter(Boolean);
 
+    // ✅ UI me render
+    const skillsItemData = matchedSkills?.map((s, idx) => (
+        <div key={idx} style={{ marginBottom: "10px" }}>
+            <p><b>{s.category}</b></p>
+            <ul>
+                {s.skills.map((item, i) => (
+                    <li key={i}>{item}</li>
+                ))}
+            </ul>
+        </div>
+    ));
 
     return (
         <div style={{ padding: "20px" }}>
@@ -343,9 +390,8 @@ function ReadResume() {
             <h3>🎯 Extracted Skills:</h3>
             <p>{skills}</p>
 
-            <button>Click here for fetch the Data</button>
-
-            <p>{skillsItemData}</p>
+            <h3>✅ Matched Skills:</h3>
+            {skillsItemData?.length > 0 ? skillsItemData : <p>No matching skills found</p>}
         </div>
     );
 }
