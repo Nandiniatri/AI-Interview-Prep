@@ -1,11 +1,16 @@
 {
-    "questions": [
-        {
-            "experience":"fresher",
-            "category":"Frontend Development",
-            "questions":[
-                {}
+    "Frontend Development": {
+        "fresher": {
+            "questions": [
+                "HTML5 ke semantic tags kya hote hain?",
+                "DOCTYPE ka use kya hai?",
+                "CSS3 animations aur transitions me kya difference hai?",
+                "Flexbox ka basic use samjhaye?",
+                "let, var aur const me kya difference hai?",
+                "Arrow function kya hai?",
+                "React me component kya hai?",
+                "Props aur state me difference?"
             ]
         }
-    ]
+    }
 }
