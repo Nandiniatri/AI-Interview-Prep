@@ -51,17 +51,23 @@
 
 
 import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
+import { Canvas, useThree } from "@react-three/fiber";
+import { Environment, OrbitControls, useGLTF, useTexture } from "@react-three/drei";
 import './AITalk.css';
 
 function AvatarModel() {
     const { scene } = useGLTF("/data/avatar/avatar.glb");
+    const texture = useTexture("/data/textures/background.jpg");
+    console.log(texture);
+    const viewPort = useThree((state) => state.viewport)
+    console.log(viewPort);
+    
+    
     return (
         <primitive
             object={scene}
-            scale={2.5}       // thoda bada
-            position={[0, -2, 0]} // neeche shift kiya taki face upar aa jaye
+            scale={6}       // thoda bada
+            position={[0, -7, 0]} // neeche shift kiya taki face upar aa jaye
         />
     );
 }
