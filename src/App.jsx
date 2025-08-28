@@ -46,11 +46,13 @@ import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import ReadResume from './revision/Revision';
+import AITalk from './revision/AITalk/AITalk';
 
 function App() {
   return (
     <>
-      <ReadResume />
+      {/* <ReadResume /> */}
+      <AITalk />
     </>
   );
 }
