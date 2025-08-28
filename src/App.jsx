@@ -48,13 +48,15 @@ import { supabase } from '../supabaseClient';
 import ReadResume from './revision/Revision';
 import AITalk from './revision/AITalk/AITalk';
 import TalkingMouth from './revision/AITalk/AITalk';
+import AvatarViewer from './revision/AITalk/AITalk';
 
 function App() {
   return (
     <>
       {/* <ReadResume /> */}
-      <AITalk />
+      {/* <AITalk /> */}
       {/* <TalkingMouth /> */}
+      <AvatarViewer />
     </>
   );
 }

@@ -88,12 +88,44 @@
 
 
 
-const AITalk = () => {
-    return (
-        <div>
+// const AITalk = () => {
+//     return (
+//         <div>
 
-        </div>
-    )
+//         </div>
+//     )
+// }
+
+// export default AITalk;
+
+
+
+
+import React, { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import './AITalk.css';
+
+function AvatarModel() {
+  const { scene } = useGLTF("/data/avatar/avatar.glb");
+  console.log(scene);
+  
+
+  return <primitive object={scene} scale={3} position={[0, -3, 2]} />;
 }
 
-export default AITalk;
+export default function AvatarViewer() {
+  return (
+    <div style={{ width: "100%", height: "500px" }}>
+      <Canvas className="canvas-AvatarModal">
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[0, 0, 7]} />
+        <Suspense fallback={null}>
+          <AvatarModel />
+        </Suspense>
+        <OrbitControls />
+      </Canvas>
+    </div>
+  );
+}
+
