@@ -166,15 +166,22 @@
 // }
 
 
+// useEffect(() => {
+//     actions[animation].reset().fadeIn(0.5).play();
+//     return () => actions[animation].fadeOut(0.5);
+// },[animation])
 
 
 
 
-import React, { Suspense, useEffect, useRef, useState } from "react";
+
+
+import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { Environment, OrbitControls, useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { Environment, OrbitControls, useAnimations, useFaceControls, useFBX, useGLTF } from "@react-three/drei";
 import { TextureLoader } from "three";
 import './AITalk.css';
+import { playAudio } from "openai/helpers/audio.mjs";
 
 function AvatarModel() {
     const { scene } = useGLTF("/data/avatar/avatar.glb");
@@ -183,9 +190,25 @@ function AvatarModel() {
     );
 }
 
-// 👉 यह नया component है जो Canvas के अंदर चलेगा
 function SceneContent() {
     const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
+    const { playAudio, script } = useFaceControls({
+        playAudio: false,
+        script: {
+            value: "Nandini",
+            options: ["aryNandini", "nanduYoutube"]
+        }
+    })
+
+    const audio = useMemo(() => new Audio(`/data/audios/${script}.mp3`), [script]);
+
+    useEffect(() => {
+        if (playAudio) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }, [playAudio, script])
 
     const { animations: idleAnimation } = useFBX("/data/animations/Breathing Idle.fbx");
     const { animations: angryAnimation } = useFBX("/data/animations/Angry Gesture.fbx");
@@ -199,10 +222,18 @@ function SceneContent() {
     const group = useRef();
     const { actions } = useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
 
+
     useEffect(() => {
-        actions[animation].reset().fadeIn(0.5).play();
-        return () => actions[animation].fadeOut(0.5);
-    },[animation])
+        if (actions && actions[animation]) {
+            actions[animation].reset().fadeIn(0.5).play();
+        }
+
+        return () => {
+            if (actions && actions[animation]) {
+                actions[animation].fadeOut(0.5);
+            }
+        };
+    }, [animation, actions]);
 
     return (
         <>
@@ -228,11 +259,18 @@ function SceneContent() {
 }
 
 export default function AvatarViewer() {
+    const [isPlaying, setIsPlaying] = useState(false);
+
     return (
         <div style={{ width: "100%", height: "500px" }}>
             <Canvas camera={{ position: [0, 2, 5] }} className="canvas-AvatarModal">
                 <SceneContent />
             </Canvas>
+
+            <div style={{ marginTop: "10px", textAlign: "center" }}>
+                <button onClick={() => setIsPlaying(true)}>▶ Play</button>
+                <button onClick={() => setIsPlaying(false)}>⏸ Pause</button>
+            </div>
         </div>
     );
 }
