@@ -176,12 +176,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Environment, OrbitControls, useAnimations, useFaceControls, useFBX, useGLTF } from "@react-three/drei";
 import { TextureLoader } from "three";
 import './AITalk.css';
 import { playAudio } from "openai/helpers/audio.mjs";
+import { useControls } from "leva";
 
 function AvatarModel() {
     const { scene } = useGLTF("/data/avatar/avatar.glb");
@@ -192,7 +203,9 @@ function AvatarModel() {
 
 function SceneContent() {
     const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
-    const { playAudio, script } = useFaceControls({
+    const { scene, nodes, materials } = useGLTF("/data/avatar/avatar.glb");
+
+    const { playAudio, script } = useControls({
         playAudio: false,
         script: {
             value: "Nandini",
@@ -200,7 +213,7 @@ function SceneContent() {
         }
     })
 
-    const audio = useMemo(() => new Audio(`/data/audios/${script}.mp3`), [script]);
+    const audio = useMemo(() => new Audio(`/data/audios/${script}.mp3`), [script])
 
     useEffect(() => {
         if (playAudio) {
@@ -221,6 +234,19 @@ function SceneContent() {
     const [animation, setAnimation] = useState("Idle");
     const group = useRef();
     const { actions } = useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
+
+    // useEffect(() => {
+    //     console.log(nodes.Wolf3D_Head.morphTargetDictionary);
+    //     nodes.nodes.Wolf3D_Head.morphTargetInfluences[nodes.Wolf3D_Head.morphTargetDictionary["mouthSmile"]]
+
+    // }, [])
+
+    useEffect(() => {
+        const head = nodes.Wolf3D_Head;
+        if (head) {
+            head.morphTargetInfluences[head.morphTargetDictionary["mouthSmile"]] = 1;
+        }
+    }, [nodes]);
 
 
     useEffect(() => {
@@ -259,18 +285,21 @@ function SceneContent() {
 }
 
 export default function AvatarViewer() {
-    const [isPlaying, setIsPlaying] = useState(false);
-
     return (
         <div style={{ width: "100%", height: "500px" }}>
             <Canvas camera={{ position: [0, 2, 5] }} className="canvas-AvatarModal">
                 <SceneContent />
             </Canvas>
-
-            <div style={{ marginTop: "10px", textAlign: "center" }}>
-                <button onClick={() => setIsPlaying(true)}>▶ Play</button>
-                <button onClick={() => setIsPlaying(false)}>⏸ Pause</button>
-            </div>
         </div>
     );
 }
+
+
+
+
+
+// useEffect(() => {
+//         console.log(Nodes.Wolf3D_Head.morphTargetDictionary);
+//         Nodes.Wolf3D_Head.morphTargetInfluences[Nodes.Wolf3D_Head.morphTargetDictionary["mouthSmile"]]
+
+//     }, [])
