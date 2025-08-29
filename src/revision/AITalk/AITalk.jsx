@@ -195,7 +195,7 @@ import { playAudio } from "openai/helpers/audio.mjs";
 import { useControls } from "leva";
 
 function AvatarModel() {
-    const { scene } = useGLTF("/data/avatar/avatar.glb");
+    const { scene } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
     return (
         <primitive object={scene} scale={6} position={[0, -7, 0]} />
     );
