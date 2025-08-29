@@ -103,46 +103,136 @@
 
 
 
-import React, { Suspense } from "react";
+// import React, { Suspense, useRef, useState } from "react";
+// import { Canvas, useLoader } from "@react-three/fiber";
+// import { Environment, OrbitControls, useAnimations, useFBX, useGLTF } from "@react-three/drei";
+// import { TextureLoader } from "three";
+// import './AITalk.css';
+
+// function AvatarModel() {
+//     const { scene } = useGLTF("/data/avatar/avatar.glb");
+
+//     return (
+//         <primitive
+//             object={scene}
+//             scale={6}
+//             position={[0, -7, 0]}
+//         />
+//     );
+// }
+
+// export default function AvatarViewer() {
+//     const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
+//     const { animations: idleAnimation } = useFBX("/data/animations/Breathing Idle.fbx");
+//     const { animations: angryAnimation } = useFBX("/data/animations/Angry Gesture.fbx");
+//     const { animations: greetingAnimation } = useFBX("/data/animations/Standing Greeting.fbx");
+
+//     console.log(idleAnimation);
+
+//     idleAnimation[0].name = "Idle";
+//     angryAnimation[0].name = "Angry";
+//     greetingAnimation[0].name = "Greeting";
+
+//     const [animation, setAnimation] = useState("Idle");
+
+//     const group = useRef();
+//     useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
+
+
+//     return (
+//         <div style={{ width: "100%", height: "500px" }}>
+//             <Canvas camera={{ position: [0, 2, 5] }} className="canvas-AvatarModal">
+//                 {/* Background image */}
+//                 <primitive attach="background" object={texture} />
+
+//                 {/* Lights */}
+//                 <ambientLight intensity={0.5} />
+//                 <directionalLight position={[2, 2, 2]} />
+
+//                 {/* Model */}
+//                 <Suspense fallback={null}>
+//                     <group ref={group}>
+//                         <AvatarModel />
+//                     </group>
+//                 </Suspense>
+
+//                 {/* Controls */}
+//                 <OrbitControls target={[0, 1, 0]} />
+//                 <Environment preset="sunset" />
+
+//             </Canvas>
+//         </div>
+//     );
+// }
+
+
+
+
+
+
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
+import { Environment, OrbitControls, useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { TextureLoader } from "three";
 import './AITalk.css';
 
 function AvatarModel() {
-  const { scene } = useGLTF("/data/avatar/avatar.glb");
+    const { scene } = useGLTF("/data/avatar/avatar.glb");
+    return (
+        <primitive object={scene} scale={6} position={[0, -7, 0]} />
+    );
+}
 
-  return (
-    <primitive
-      object={scene}
-      scale={6}
-      position={[0, -7, 0]}
-    />
-  );
+// 👉 यह नया component है जो Canvas के अंदर चलेगा
+function SceneContent() {
+    const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
+
+    const { animations: idleAnimation } = useFBX("/data/animations/Breathing Idle.fbx");
+    const { animations: angryAnimation } = useFBX("/data/animations/Angry Gesture.fbx");
+    const { animations: greetingAnimation } = useFBX("/data/animations/Standing Greeting.fbx");
+
+    idleAnimation[0].name = "Idle";
+    angryAnimation[0].name = "Angry";
+    greetingAnimation[0].name = "Greeting";
+
+    const [animation, setAnimation] = useState("Idle");
+    const group = useRef();
+    const { actions } = useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
+
+    useEffect(() => {
+        actions[animation].reset().fadeIn(0.5).play();
+        return () => actions[animation].fadeOut(0.5);
+    },[animation])
+
+    return (
+        <>
+            {/* Background image */}
+            <primitive attach="background" object={texture} />
+
+            {/* Lights */}
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[2, 2, 2]} />
+
+            {/* Model */}
+            <Suspense fallback={null}>
+                <group ref={group}>
+                    <AvatarModel />
+                </group>
+            </Suspense>
+
+            {/* Controls */}
+            <OrbitControls target={[0, 1, 0]} />
+            <Environment preset="sunset" />
+        </>
+    );
 }
 
 export default function AvatarViewer() {
-  const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
-
-  return (
-    <div style={{ width: "100%", height: "500px" }}>
-      <Canvas camera={{ position: [0, 2, 5] }} className="canvas-AvatarModal">
-        {/* Background image */}
-        <primitive attach="background" object={texture} />
-
-        {/* Lights */}
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[2, 2, 2]} />
-
-        {/* Model */}
-        <Suspense fallback={null}>
-          <AvatarModel />
-        </Suspense>
-
-        {/* Controls */}
-        <OrbitControls target={[0, 1, 0]} />
-        <Environment preset="sunset" />
-      </Canvas>
-    </div>
-  );
+    return (
+        <div style={{ width: "100%", height: "500px" }}>
+            <Canvas camera={{ position: [0, 2, 5] }} className="canvas-AvatarModal">
+                <SceneContent />
+            </Canvas>
+        </div>
+    );
 }
