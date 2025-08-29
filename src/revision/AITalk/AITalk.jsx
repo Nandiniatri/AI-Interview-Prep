@@ -203,7 +203,7 @@ function AvatarModel() {
 
 function SceneContent() {
     const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
-    const { scene, nodes, materials } = useGLTF("/data/avatar/avatar.glb");
+    const { scene, nodes, materials } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
 
     const { playAudio, script } = useControls({
         playAudio: false,
@@ -213,7 +213,8 @@ function SceneContent() {
         }
     })
 
-    const audio = useMemo(() => new Audio(`/data/audios/${script}.mp3`), [script])
+    const audio = useMemo(() => new Audio(`/data/audios/${script}.mp3`), [script]);
+    
 
     useEffect(() => {
         if (playAudio) {
@@ -235,17 +236,20 @@ function SceneContent() {
     const group = useRef();
     const { actions } = useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
 
-    // useEffect(() => {
-    //     console.log(nodes.Wolf3D_Head.morphTargetDictionary);
-    //     nodes.nodes.Wolf3D_Head.morphTargetInfluences[nodes.Wolf3D_Head.morphTargetDictionary["mouthSmile"]]
-
-    // }, [])
 
     useEffect(() => {
         const head = nodes.Wolf3D_Head;
+        console.log(head);
+        const teeth = nodes.Wolf3D_Teeth;
+        
         if (head) {
-            head.morphTargetInfluences[head.morphTargetDictionary["mouthSmile"]] = 1;
+            head.morphTargetInfluences[head.morphTargetDictionary["viseme_O"]] = 1;
         }
+
+        if (head) {
+            teeth.morphTargetInfluences[teeth.morphTargetDictionary["viseme_O"]] = 1;
+        }
+
     }, [nodes]);
 
 
