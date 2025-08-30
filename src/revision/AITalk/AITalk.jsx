@@ -186,212 +186,107 @@
 
 
 
-// import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
-// import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-// import { Environment, OrbitControls, useAnimations, useFaceControls, useFBX, useGLTF } from "@react-three/drei";
-// import { TextureLoader } from "three";
-// import './AITalk.css';
-// import { playAudio } from "openai/helpers/audio.mjs";
-// import { useControls } from "leva";
-// import * as THREE from "three";
-
-// function AvatarModel() {
-//     const { scene } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
-//     return (
-//         <primitive object={scene} scale={6} position={[0, -7, 0]} />
-//     );
-// }
-
-// function SceneContent() {
-//     const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
-//     const { scene, nodes, materials } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
-
-//     const { playAudio, scripts } = useControls({
-//         playAudio: false,
-//         scripts: {
-//             value: "Nandini",
-//             options: ["aryNandini", "nanduYoutube"]
-//         }
-//     })
-
-//     const audio = useMemo(() => new Audio(`/public/data/audios/${scripts}.mp3`), [scripts]);
-//     const jsonFile = useLoader(THREE.FileLoader , `/public/data/audios/${scripts}.json`);
-//     console.log(jsonFile);
-
-//     const lipsync = JSON.parse(jsonFile);
-//     console.log(lipsync);
-
-
-//     // useFrame(() => {
-//     //     const currentAudioTime = audio.currentTime;
-//     //     for(let i=0; i< lipsync.mouthCues.length; i++){
-//     //         const mouthCue = lipsync.mouthCues[i];
-//     //         if(currentAudioTime >= mouthCue.start && currentAudioTime <= mouthCue.end){
-//     //             console.log(mouthCue.value);
-
-//     //         }
-//     //     }
-//     // })
-
-
-//     useEffect(() => {
-//         if (playAudio) {
-//             audio.play();
-//         } else {
-//             audio.pause();
-//         }
-//     }, [playAudio, scripts])
-
-//     const { animations: idleAnimation } = useFBX("/data/animations/Breathing Idle.fbx");
-//     const { animations: angryAnimation } = useFBX("/data/animations/Angry Gesture.fbx");
-//     const { animations: greetingAnimation } = useFBX("/data/animations/Standing Greeting.fbx");
-
-//     idleAnimation[0].name = "Idle";
-//     angryAnimation[0].name = "Angry";
-//     greetingAnimation[0].name = "Greeting";
-
-//     const [animation, setAnimation] = useState("Idle");
-//     const group = useRef();
-//     const { actions } = useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
-
-
-//     useEffect(() => {
-//         const head = nodes.Wolf3D_Head;
-//         console.log(head);
-//         const teeth = nodes.Wolf3D_Teeth;
-
-//         if (head) {
-//             head.morphTargetInfluences[head.morphTargetDictionary["viseme_O"]] = 1;
-//         }
-
-//         if (head) {
-//             teeth.morphTargetInfluences[teeth.morphTargetDictionary["viseme_O"]] = 1;
-//         }
-
-//     }, [nodes]);
-
-
-//     useEffect(() => {
-//         if (actions && actions[animation]) {
-//             actions[animation].reset().fadeIn(0.5).play();
-//         }
-
-//         return () => {
-//             if (actions && actions[animation]) {
-//                 actions[animation].fadeOut(0.5);
-//             }
-//         };
-//     }, [animation, actions]);
-
-//     return (
-//         <>
-//             {/* Background image */}
-//             <primitive attach="background" object={texture} />
-
-//             {/* Lights */}
-//             <ambientLight intensity={0.5} />
-//             <directionalLight position={[2, 2, 2]} />
-
-//             {/* Model */}
-//             <Suspense fallback={null}>
-//                 <group ref={group}>
-//                     <AvatarModel />
-//                 </group>
-//             </Suspense>
-
-//             {/* Controls */}
-//             <OrbitControls target={[0, 1, 0]} />
-//             <Environment preset="sunset" />
-//         </>
-//     );
-// }
-
-// export default function AvatarViewer() {
-//     return (
-//         <div style={{ width: "100%", height: "500px" }}>
-//             <Canvas camera={{ position: [0, 2, 5] }} className="canvas-AvatarModal">
-//                 <SceneContent />
-//             </Canvas>
-//         </div>
-//     );
-// }
-
-
-
-
-
-
-
-
-
-
-
 import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Environment, OrbitControls, useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { Environment, OrbitControls, useAnimations, useFaceControls, useFBX, useGLTF } from "@react-three/drei";
 import { TextureLoader } from "three";
+import './AITalk.css';
+import { playAudio } from "openai/helpers/audio.mjs";
 import { useControls } from "leva";
 import * as THREE from "three";
-import "./AITalk.css";
+
+const corresponding = {
+    A: "viseme_PP",
+    B: "viseme_kk",
+    C: "viseme_I",
+    D: "viseme_AA",
+    E: "viseme_O",
+    F: "viseme_U",
+    G: "viseme_FF",
+    H: "viseme_TH",
+    X: "viseme_PP",
+}
 
 function AvatarModel() {
     const { scene } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
-    return <primitive object={scene} scale={6} position={[0, -7, 0]} />;
+    return (
+        <primitive object={scene} scale={6} position={[0, -7, 0]} />
+    );
 }
 
 function SceneContent() {
     const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
-    const { scene, nodes } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
+    const { scene, nodes, materials } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
 
-    // Leva controls
-    const { playAudio, scripts } = useControls({
+    const { playAudio, scriptValues } = useControls({
         playAudio: false,
-        scripts: {
-            value: "nanduYoutube",
-            options: ["aryNandini", "nanduYoutube"],
-        },
-    });
+        scriptValues: {
+            value: "aryNandini",
+            options: ["aryNandini", "nanduYoutube"]
+        }
+    })
 
-    // JSON lipsync file load karo
-    const jsonString = useLoader(THREE.FileLoader, `/data/audios/${scripts}.json`);
-    const lipsync = useMemo(() => JSON.parse(jsonString), [jsonString]);
+    const audio = useMemo(() => new Audio(`/data/audios/${scriptValues}.mp3`), [scriptValues]);
+    console.log(audio);
 
-    // Audio element
-    const audio = useMemo(() => new Audio(`/data/audios/${scripts}.ogg`), [scripts]);
+    const jsonText = useLoader(THREE.FileLoader, `/data/audios/${scriptValues}.json`);
 
-    // Lipsync drive karna
+    const lipsync = useMemo(() => {
+        try {
+            return JSON.parse(jsonText);
+        } catch (e) {
+            console.error("JSON parse error:", e, jsonText);
+            return null;
+        }
+    }, [jsonText]);
+
+    console.log("Loaded JSON:", lipsync.mouthCues);
+
     useFrame(() => {
-        if (!lipsync || !audio) return;
-
-        const currentTime = audio.currentTime;
-        const cue = lipsync.mouthCues.find(
-            (m) => currentTime >= m.start && currentTime <= m.end
-        );
-
-        if (cue) {
+        const currentAudioTime = audio.currentTime;
+        Object.values(corresponding).forEach((value) => {
             const head = nodes.Wolf3D_Head;
+            // console.log(head.morphTargetDictionary);
             const teeth = nodes.Wolf3D_Teeth;
-            if (head && head.morphTargetDictionary[cue.value] !== undefined) {
-                head.morphTargetInfluences.fill(0); // sab reset
-                head.morphTargetInfluences[head.morphTargetDictionary[cue.value]] = 1;
+
+            if (head) {
+                head.morphTargetInfluences[head.morphTargetDictionary[value]] = 0;
             }
-            if (teeth && teeth.morphTargetDictionary[cue.value] !== undefined) {
-                teeth.morphTargetInfluences.fill(0);
-                teeth.morphTargetInfluences[teeth.morphTargetDictionary[cue.value]] = 1;
+
+            if (head) {
+                teeth.morphTargetInfluences[teeth.morphTargetDictionary[value]] = 0;
+            }
+        })
+
+        for (let i = 0; i < lipsync.mouthCues.length; i++) {
+            const mouthCue = lipsync.mouthCues[i];
+            if (currentAudioTime >= mouthCue.start && currentAudioTime <= mouthCue.end) {
+                console.log(mouthCue.value);
+                const head = nodes.Wolf3D_Head;
+                // console.log(head.morphTargetDictionary);
+                const teeth = nodes.Wolf3D_Teeth;
+
+                if (head) {
+                    head.morphTargetInfluences[head.morphTargetDictionary[corresponding[mouthCue.value]]] = 1;
+                }
+
+                if (head) {
+                    teeth.morphTargetInfluences[teeth.morphTargetDictionary[corresponding[mouthCue.value]]] = 1;
+                }
+                break;
             }
         }
-    });
+    })
 
-    // Audio play/pause
+
     useEffect(() => {
         if (playAudio) {
             audio.play();
         } else {
             audio.pause();
         }
-    }, [playAudio, scripts]);
+    }, [playAudio, scriptValues])
 
-    // Animations
     const { animations: idleAnimation } = useFBX("/data/animations/Breathing Idle.fbx");
     const { animations: angryAnimation } = useFBX("/data/animations/Angry Gesture.fbx");
     const { animations: greetingAnimation } = useFBX("/data/animations/Standing Greeting.fbx");
@@ -402,15 +297,30 @@ function SceneContent() {
 
     const [animation, setAnimation] = useState("Idle");
     const group = useRef();
-    const { actions } = useAnimations(
-        [idleAnimation[0], angryAnimation[0], greetingAnimation[0]],
-        group
-    );
+    const { actions } = useAnimations([idleAnimation[0], angryAnimation[0], greetingAnimation[0]], group);
+
+
+    // useEffect(() => {
+    //     const head = nodes.Wolf3D_Head;
+    //     // console.log(head.morphTargetDictionary);
+    //     const teeth = nodes.Wolf3D_Teeth;
+
+    //     if (head) {
+    //         head.morphTargetInfluences[head.morphTargetDictionary["viseme_O"]] = 1;
+    //     }
+
+    //     if (head) {
+    //         teeth.morphTargetInfluences[teeth.morphTargetDictionary["viseme_O"]] = 1;
+    //     }
+
+    // }, [nodes]);
+
 
     useEffect(() => {
         if (actions && actions[animation]) {
             actions[animation].reset().fadeIn(0.5).play();
         }
+
         return () => {
             if (actions && actions[animation]) {
                 actions[animation].fadeOut(0.5);
@@ -420,7 +330,7 @@ function SceneContent() {
 
     return (
         <>
-            {/* Background */}
+            {/* Background image */}
             <primitive attach="background" object={texture} />
 
             {/* Lights */}
@@ -455,31 +365,8 @@ export default function AvatarViewer() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // useEffect(() => {
 //         console.log(Nodes.Wolf3D_Head.morphTargetDictionary);
 //         Nodes.Wolf3D_Head.morphTargetInfluences[Nodes.Wolf3D_Head.morphTargetDictionary["mouthSmile"]]
 
 //     }, [])
-
-
-
-
