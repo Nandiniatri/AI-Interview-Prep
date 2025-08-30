@@ -56,7 +56,7 @@ function App() {
       {/* <ReadResume /> */}
       {/* <AITalk /> */}
       {/* <TalkingMouth /> */}
-      <AvatarViewer />
+      {/* <AvatarViewer /> */}
     </>
   );
 }

@@ -312,7 +312,6 @@ function SceneContent() {
     //     if (head) {
     //         teeth.morphTargetInfluences[teeth.morphTargetDictionary["viseme_O"]] = 1;
     //     }
-
     // }, [nodes]);
 
 
