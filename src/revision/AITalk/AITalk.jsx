@@ -215,7 +215,7 @@ function AvatarModel() {
 }
 
 function SceneContent() {
-    const texture = useLoader(TextureLoader, "/data/textures/background.jpg");
+    const texture = useLoader(TextureLoader, "/data/textures/nature background.jpg");
     const { scene, nodes, materials } = useGLTF("/data/avatar/68b2035864d80a6d02a281cb.glb");
 
     const { playAudio, scriptValues } = useControls({
