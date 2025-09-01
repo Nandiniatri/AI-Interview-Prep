@@ -2,7 +2,7 @@ import { useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import "./AvatarModal.css";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const AvatarModel = ({ url }) => {
     const { scene } = useGLTF(url);
@@ -25,9 +25,22 @@ const AvatarModel = ({ url }) => {
 
     console.log(meshRef.current);
 
+    useEffect(() => {
+        if (meshRef.current) {
+            console.log("Avatar Loaded:", meshRef.current);
+            meshRef.current.traverse((child) => {
+                if (child.morphTargetDictionary) {
+                    console.log("Morph Targets:", child.morphTargetDictionary);
+                }
+            });
+        }
+    }, [scene]);
+
+
 
     return (
-        <primitive object={scene} scale={3} position={[0, -4, 0]} />
+        // <primitive object={scene} scale={3} position={[0, -4, 0]} />
+        <primitive ref={meshRef} object={scene} scale={3.4} position={[0, -4, 0]} />
     )
 }
 
