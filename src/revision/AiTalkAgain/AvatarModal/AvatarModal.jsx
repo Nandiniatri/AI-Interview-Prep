@@ -16,7 +16,7 @@ const AvatarModel = ({ url }) => {
             meshRef.current.traverse((child) => {
                 if (child.morphTargetInfluences) {
                     const time = clock.getElapsedTime();
-                    const mouthValue = (Math.sin(time * 2) + 1) / 2; // 0 → 1
+                    const mouthValue = (Math.sin(time * 2) + 1) / 2;
                     child.morphTargetInfluences[0] = mouthValue;
                 }
             });
@@ -36,8 +36,6 @@ const AvatarModel = ({ url }) => {
         }
     }, [scene]);
 
-
-
     return (
         // <primitive object={scene} scale={3} position={[0, -4, 0]} />
         <primitive ref={meshRef} object={scene} scale={3.4} position={[0, -4, 0]} />
@@ -46,13 +44,39 @@ const AvatarModel = ({ url }) => {
 
 
 const AvatarViewer = () => {
+    const handleSpeak = () => {
+        const text = "Hello, Nandini Atri. How are you?";
+        const utterance = new SpeechSynthesisUtterance(text);
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) utterance.voice = voices[0];
+        window.speechSynthesis.speak(utterance);
+    };
+
     return (
-        <Canvas camera={{ position: [0, 0, 5], fov: 50 }} className="canvas-avatar">
-            <ambientLight intensity={1} />
-            <directionalLight position={[5, 5, 5]} />
-            <AvatarModel url='/data/Avatar1/68b573a33033dedc62d80935.glb' />
-            <OrbitControls />
-        </Canvas>
+        <div>
+            <Canvas camera={{ position: [0, 0, 5], fov: 50 }} className="canvas-avatar">
+                <ambientLight intensity={1} />
+                <directionalLight position={[5, 5, 5]} />
+                <AvatarModel url='/data/Avatar1/68b573a33033dedc62d80935.glb' />
+                <OrbitControls />
+            </Canvas>
+            <button
+                onClick={handleSpeak}
+                style={{
+                    position: "absolute",
+                    top: "20px",
+                    left: "20px",
+                    padding: "10px 20px",
+                    fontSize: "16px",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    background: "#333",
+                    color: "#fff"
+                }}
+            >
+                Speak Text
+            </button>
+        </div>
     )
 }
 
