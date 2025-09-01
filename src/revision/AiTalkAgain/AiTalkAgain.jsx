@@ -27,10 +27,10 @@ import AvatarViewer from "./AvatarModal/AvatarModal";
 
 
 const AiTalkAgain = () => {
-    return(
-        // <AvatarViewer />
+    return (
+        <AvatarViewer />
         // <AvatarLipSync />
-        <AvatarModal1 />
+        // <AvatarModal1 />
     )
 }
 
