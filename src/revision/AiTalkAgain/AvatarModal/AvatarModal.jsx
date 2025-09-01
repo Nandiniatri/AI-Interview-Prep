@@ -1,10 +1,31 @@
 import { useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import "./AvatarModal.css";
+import { useRef } from "react";
 
 const AvatarModel = ({ url }) => {
     const { scene } = useGLTF(url);
+    const meshRef = useRef();
+
+    console.log(meshRef);
+    console.log(scene);
+
+    useFrame(({ clock }) => {
+        if (meshRef.current) {
+            meshRef.current.traverse((child) => {
+                if (child.morphTargetInfluences) {
+                    const time = clock.getElapsedTime();
+                    const mouthValue = (Math.sin(time * 2) + 1) / 2; // 0 → 1
+                    child.morphTargetInfluences[0] = mouthValue;
+                }
+            });
+        }
+    });
+
+    console.log(meshRef.current);
+
+
     return (
         <primitive object={scene} scale={3} position={[0, -4, 0]} />
     )
@@ -87,7 +108,7 @@ export default AvatarViewer;
 //         const el = connectTo.current;
 //         if (!el) return;
 
-//         if (!sourceRef.current) {   
+//         if (!sourceRef.current) {
 //             sourceRef.current = ctx.createMediaElementSource(el);
 //             sourceRef.current.connect(analyser);
 //             analyser.connect(ctx.destination);
