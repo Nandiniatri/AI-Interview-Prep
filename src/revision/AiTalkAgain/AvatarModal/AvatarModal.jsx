@@ -1,11 +1,12 @@
 import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import "./AvatarModal.css";
 
 const AvatarModel = ({ url }) => {
     const { scene } = useGLTF(url);
     return (
-        <primitive object={scene} scale={2} />
+        <primitive object={scene} scale={3} position={[0, -4, 0]} />
     )
 }
 
