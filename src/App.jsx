@@ -49,6 +49,7 @@ import ReadResume from './revision/Revision';
 import AITalk from './revision/AITalk/AITalk';
 import TalkingMouth from './revision/AITalk/AITalk';
 import AvatarViewer from './revision/AITalk/AITalk';
+import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
 
 function App() {
   return (
@@ -57,7 +58,7 @@ function App() {
       {/* <AITalk /> */}
       {/* <TalkingMouth /> */}
       {/* <AvatarViewer /> */}
-      
+      <AiTalkAgain />
     </>
   );
 }

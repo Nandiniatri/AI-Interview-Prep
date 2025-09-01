@@ -1,0 +1,55 @@
+.app {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.video-section {
+  flex: 2;
+  text-align: center;
+}
+
+.end-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.question {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  border-left: 1px solid #ddd;
+  text-align: center;
+}
+
+.candidate-img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.criteria-btn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px;
+  border: 1px solid purple;
+  background: transparent;
+  cursor: pointer;
+}
+
+.exit-btn {
+  background: orange;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
