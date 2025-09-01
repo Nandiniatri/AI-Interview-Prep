@@ -1,7 +1,7 @@
 // import React from "react";
 // import "./AiTalkAgain.css";
 
-import AvatarModal from "./AvatarModal/AvatarModal";
+import AvatarViewer from "./AvatarModal/AvatarModal";
 
 // function AiTalkAgain() {
 //     return (
@@ -26,7 +26,7 @@ import AvatarModal from "./AvatarModal/AvatarModal";
 
 const AiTalkAgain = () => {
     return(
-        <AvatarModal />
+        <AvatarViewer />
     )
 }
 
