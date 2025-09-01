@@ -44,11 +44,20 @@ const AvatarModel = ({ url }) => {
 
 
 const AvatarViewer = () => {
+
     const handleSpeak = () => {
         const text = "Hello, Nandini Atri. How are you?";
         const utterance = new SpeechSynthesisUtterance(text);
+        console.log(utterance);
+
         const voices = window.speechSynthesis.getVoices();
-        if (voices.length > 0) utterance.voice = voices[0];
+        console.log(voices.length);
+
+        if (voices.length > 0) {
+            console.log(utterance.voice = voices[0]);
+            utterance.voice = voices[0]
+        };
+
         window.speechSynthesis.speak(utterance);
     };
 
