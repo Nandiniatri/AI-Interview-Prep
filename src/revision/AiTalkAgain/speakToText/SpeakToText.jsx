@@ -36,6 +36,9 @@ const VoiceListener = () => {
         };
     }, [isListening]);
 
+    console.log(transcript);
+    
+
     return (
         <div>
             <button onClick={() => setIsListening(true)}>🎤 Start Listening</button>
