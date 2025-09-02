@@ -268,6 +268,8 @@ const AvatarViewer = () => {
 
         const interval = setInterval(() => {
             const elapsed = Date.now() - start;
+            console.log(elapsed);
+            
 
             if (elapsed > duration) {
                 clearInterval(interval);
