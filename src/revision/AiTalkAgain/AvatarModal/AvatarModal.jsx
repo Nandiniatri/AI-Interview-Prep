@@ -236,19 +236,18 @@ const AvatarModel = ({ url, meshRef }) => {
 
 const AvatarViewer = () => {
     const meshRef = useRef();
-    const debug = true; 
+    const debug = true;
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+
+    const questions = [
+        { id: 1, que: "Hello Nandini , How are you ?" },
+        { id: 2, que: "That's good to known" },
+        { id: 3, que: "So, let's start the interview." },
+        { id: 4, que: "ok , let's continue" }
+    ]
 
     const handleSpeak = () => {
-        // const text = "Hello Nandini Atri.";
-        const [currentQuestion , setCurrentQuestion] = useState(0);
-
-        const questions= [
-            {id:1 , que:"Hello Nandini , How are you ?"},
-            {id:2 , que:"That's good to known"},
-            {id:3 , que:"So, let's start the interview."},
-            {id:4 , que:"ok , let's continue"}
-        ]
-
+        const text = "Hello Nandini Atri.";
         const utterance = new SpeechSynthesisUtterance(text);
         window.speechSynthesis.speak(utterance);
 
@@ -266,7 +265,7 @@ const AvatarViewer = () => {
         const interval = setInterval(() => {
             const elapsed = Date.now() - start;
             console.log(elapsed);
-            
+
             if (elapsed > duration) {
                 clearInterval(interval);
                 if (meshRef.current) {

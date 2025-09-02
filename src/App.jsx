@@ -59,8 +59,8 @@ function App() {
       {/* <AITalk /> */}
       {/* <TalkingMouth /> */}
       {/* <AvatarViewer /> */}
-      {/* <AiTalkAgain /> */}
-      <VoiceListener />
+      <AiTalkAgain />
+      {/* <VoiceListener /> */}
     </>
   );
 }

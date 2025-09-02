@@ -28,8 +28,8 @@ import AvatarViewer from "./AvatarModal/AvatarModal";
 
 const AiTalkAgain = () => {
     return (
-        <AvatarViewer />
-        // <AvatarLipSync />
+        // <AvatarViewer />
+        <AvatarLipSync />
         // <AvatarModal1 />
     )
 }
