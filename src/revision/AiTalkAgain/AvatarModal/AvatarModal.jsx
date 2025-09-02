@@ -212,9 +212,6 @@
 
 
 
-
-
-
 import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -236,21 +233,27 @@ const AvatarModel = ({ url, meshRef }) => {
 
 const AvatarViewer = () => {
     const meshRef = useRef();
-    const debug = true;
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const debug = true;
 
     const questions = [
-        { id: 1, que: "Hello Nandini , How are you ?" },
-        { id: 2, que: "That's good to known" },
+        { id: 1, que: "Hello Nandini, How are you?" },
+        { id: 2, que: "That's good to know." },
         { id: 3, que: "So, let's start the interview." },
-        { id: 4, que: "ok , let's continue" }
-    ]
+        { id: 4, que: "Ok, let's continue." },
+    ];
 
     const handleSpeak = () => {
-        const text = "Hello Nandini Atri.";
+        if (currentQuestion >= questions.length) {
+            console.log("All questions completed!");
+            return;
+        }
+
+        const text = questions[currentQuestion].que;
         const utterance = new SpeechSynthesisUtterance(text);
         window.speechSynthesis.speak(utterance);
 
+        // debug morph targets
         if (debug && meshRef.current) {
             meshRef.current.traverse((child) => {
                 if (child.morphTargetDictionary) {
@@ -259,26 +262,26 @@ const AvatarViewer = () => {
             });
         }
 
-        const duration = text.split(" ").length * 0.5 * 1000; // approx duration
+        // lipsync approx duration
+        const duration = text.split(" ").length * 0.5 * 1000;
         const start = Date.now();
 
         const interval = setInterval(() => {
             const elapsed = Date.now() - start;
-            console.log(elapsed);
 
             if (elapsed > duration) {
                 clearInterval(interval);
                 if (meshRef.current) {
                     meshRef.current.traverse((child) => {
                         if (child.morphTargetInfluences) {
-                            child.morphTargetInfluences[0] = 0; // close mouth
+                            child.morphTargetInfluences[0] = 0; 
                         }
                     });
                 }
                 return;
             }
 
-            // Random lips open/close
+            // Random lips movement
             if (meshRef.current) {
                 meshRef.current.traverse((child) => {
                     if (child.morphTargetInfluences) {
@@ -287,6 +290,11 @@ const AvatarViewer = () => {
                 });
             }
         }, 100);
+
+        // ✅ jab bolna khatam ho jaye to agla question ready ho
+        utterance.onend = () => {
+            setCurrentQuestion((prev) => prev + 1);
+        };
     };
 
     return (
@@ -312,7 +320,7 @@ const AvatarViewer = () => {
                     color: "#fff",
                 }}
             >
-                Speak Text
+                Speak Next
             </button>
         </div>
     );
