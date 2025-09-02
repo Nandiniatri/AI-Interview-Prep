@@ -50,6 +50,7 @@ import AITalk from './revision/AITalk/AITalk';
 import TalkingMouth from './revision/AITalk/AITalk';
 import AvatarViewer from './revision/AITalk/AITalk';
 import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
+import VoiceListener from './revision/AiTalkAgain/speakToText/SpeakToText';
 
 function App() {
   return (
@@ -58,7 +59,8 @@ function App() {
       {/* <AITalk /> */}
       {/* <TalkingMouth /> */}
       {/* <AvatarViewer /> */}
-      <AiTalkAgain />
+      {/* <AiTalkAgain /> */}
+      <VoiceListener />
     </>
   );
 }
