@@ -100,100 +100,105 @@
 
 
 
-import { useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import "./AvatarModal.css";
-import { useEffect, useRef } from "react";
 
-const AvatarModel = ({ url, meshRef }) => {
-    const { scene } = useGLTF(url);
 
-    useEffect(() => {
-        if (meshRef.current) {
-            console.log("Avatar Loaded:", meshRef.current);
-            meshRef.current.traverse((child) => {
-                if (child.morphTargetDictionary) {
-                    console.log("Morph Targets:", child.morphTargetDictionary);
-                }
-            });
-        }
-    }, [scene, meshRef]);
 
-    return (
-        <primitive
-            ref={meshRef}
-            object={scene}
-            scale={4}
-            position={[0, -5.6, 0]}
-        />
-    );
-};
 
-const AvatarViewer = () => {
-    const meshRef = useRef();
 
-    const handleSpeak = () => {
-        const text = "Hello, Nandini Atri. How are you?";
-        const utterance = new SpeechSynthesisUtterance(text);
-        window.speechSynthesis.speak(utterance);
+// import { useGLTF } from "@react-three/drei";
+// import { Canvas } from "@react-three/fiber";
+// import { OrbitControls } from "@react-three/drei";
+// import "./AvatarModal.css";
+// import { useEffect, useRef } from "react";
 
-        const duration = text.split(" ").length * 0.4 * 1000;
-        const start = Date.now();
+// const AvatarModel = ({ url, meshRef }) => {
+//     const { scene } = useGLTF(url);
 
-        const interval = setInterval(() => {
-            const elapsed = Date.now() - start;
-            if (elapsed > duration) {
-                clearInterval(interval);
-                if (meshRef.current) {
-                    meshRef.current.traverse((child) => {
-                        if (child.morphTargetInfluences) {
-                            child.morphTargetInfluences[0] = 0; // mouth close
-                        }
-                    });
-                }
-                return;
-            }
+//     // useEffect(() => {
+//     //     if (meshRef.current) {
+//     //         console.log("Avatar Loaded:", meshRef.current);
+//     //         meshRef.current.traverse((child) => {
+//     //             if (child.morphTargetDictionary) {
+//     //                 console.log("Morph Targets:", child.morphTargetDictionary);
+//     //             }
+//     //         });
+//     //     }
+//     // }, [scene, meshRef]);
 
-            //isme closed and open lips animation isse ho raha hai.
-            if (meshRef.current) {
-                meshRef.current.traverse((child) => {
-                    if (child.morphTargetInfluences) {
-                        child.morphTargetInfluences[0] = Math.random();
-                    }
-                });
-            }
-        }, 100);
-    };
+//     return (
+//         <primitive
+//             ref={meshRef}
+//             object={scene}
+//             scale={4}
+//             position={[0, -5.6, 0]}
+//         />
+//     );
+// };
 
-    return (
-        <div>
-            <Canvas camera={{ position: [0, 0, 5], fov: 50 }} className="canvas-avatar">
-                <ambientLight intensity={1} />
-                <directionalLight position={[5, 5, 5]} />
-                <AvatarModel url="/data/Avatar1/68b573a33033dedc62d80935.glb" meshRef={meshRef} />
-                <OrbitControls />
-            </Canvas>
+// const AvatarViewer = () => {
+//     const meshRef = useRef();
 
-            <button
-                onClick={handleSpeak}
-                style={{
-                    position: "absolute",
-                    top: "20px",
-                    left: "20px",
-                    padding: "10px 20px",
-                    fontSize: "16px",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    background: "#333",
-                    color: "#fff",
-                }}
-            >
-                Speak Text
-            </button>
-        </div>
-    );
-};
+//     const handleSpeak = () => {
+//         const text = "Hello, Nandini Atri. How are you?";
+//         const utterance = new SpeechSynthesisUtterance(text);
+//         window.speechSynthesis.speak(utterance);
 
-export default AvatarViewer;
+//         const duration = text.split(" ").length * 0.4 * 1000;
+//         const start = Date.now();
+
+//         const interval = setInterval(() => {
+//             const elapsed = Date.now() - start;
+//             if (elapsed > duration) {
+//                 clearInterval(interval);
+//                 if (meshRef.current) {
+//                     meshRef.current.traverse((child) => {
+//                         if (child.morphTargetInfluences) {
+//                             child.morphTargetInfluences[0] = 0; // mouth close
+//                         }
+//                     });
+//                 }
+//                 return;
+//             }
+
+//             //isme closed and open lips animation isse ho raha hai.
+//             if (meshRef.current) {
+//                 meshRef.current.traverse((child) => {
+//                     if (child.morphTargetInfluences) {
+//                         child.morphTargetInfluences[0] = Math.random();
+//                     }
+//                 });
+//             }
+//         }, 100);
+//     };
+
+//     return (
+//         <div>
+//             <Canvas camera={{ position: [0, 0, 5], fov: 50 }} className="canvas-avatar">
+//                 <ambientLight intensity={1} />
+//                 <directionalLight position={[5, 5, 5]} />
+//                 <AvatarModel url="/data/Avatar1/68b573a33033dedc62d80935.glb" meshRef={meshRef} />
+//                 <OrbitControls />
+//             </Canvas>
+
+//             <button
+//                 onClick={handleSpeak}
+//                 style={{
+//                     position: "absolute",
+//                     top: "20px",
+//                     left: "20px",
+//                     padding: "10px 20px",
+//                     fontSize: "16px",
+//                     borderRadius: "8px",
+//                     cursor: "pointer",
+//                     background: "#333",
+//                     color: "#fff",
+//                 }}
+//             >
+//                 Speak Text
+//             </button>
+//         </div>
+//     );
+// };
+
+// export default AvatarViewer;
 
