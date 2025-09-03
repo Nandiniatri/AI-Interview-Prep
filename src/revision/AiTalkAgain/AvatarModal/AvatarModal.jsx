@@ -357,14 +357,19 @@ const AvatarViewer = () => {
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
+    const [questions , setQuestions] = useState([]);
     const debug = true;
 
-    const questions = [
-        { id: 1, que: "Hello Nandini, How are you?" },
-        { id: 2, que: "That's good to know." },
-        { id: 3, que: "So, let's start the interview." },
-        { id: 4, que: "Ok, let's continue." },
-    ];
+    // const questions = [
+    //     { id: 1, que: "Hello Nandini, How are you? Can you tell me about yourself" },
+    //     { id: 2, que: "Could you tell me about a specific project where you utilized your front-end development skills?" },
+    //     { id: 3, que: "How do you prioritize your tasks when you have multiple deadlines to meet?" },
+    //     { id: 4, que: "Ok, let's continue." },
+    // ];
+
+    const fetchAllTheQuestions = () =>{
+        
+    }
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
