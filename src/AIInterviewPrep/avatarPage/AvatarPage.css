@@ -3,30 +3,28 @@
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  padding: 20px;
+  padding: 50px;
   background-color: #f9fafb;
   min-height: 100vh;
   box-sizing: border-box;
+  border: solid;
 }
 
 .avatar-section, 
 .video-call-section {
-  /* background: #fff; */
-  border-radius: 12px;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   padding: 16px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* border: solid; */
 }
 
 .avatar-section {
   flex: 1;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .video-call-section {
   flex: 1;
-  max-width: 500px;
-  min-height: 400px;
+  max-width: 450px;
+  min-height: auto;
 }
