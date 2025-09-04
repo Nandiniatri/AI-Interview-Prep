@@ -148,21 +148,13 @@ const AvatarTalk = () => {
                 <OrbitControls enableZoom={false} />
             </Canvas>
 
+            <h1>Hello</h1>
+
             {
                 !interviewStarted && (
                     <button
                         onClick={startInterview}
-                        style={{
-                            position: "absolute",
-                            top: "20px",
-                            left: "20px",
-                            padding: "10px 20px",
-                            fontSize: "16px",
-                            borderRadius: "8px",
-                            cursor: "pointer",
-                            background: "#333",
-                            color: "#fff",
-                        }}
+                        className='avatar-Btn'
                     >
                         Start Interview
                     </button>
