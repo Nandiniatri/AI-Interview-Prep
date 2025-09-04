@@ -28,7 +28,7 @@ import AvatarViewer from "./AvatarModal/AvatarModal";
 
 const AiTalkAgain = () => {
     return (
-        <div className="">
+        <div>
             {/* // <AvatarViewer /> */}
             <AvatarLipSync />
             {/* // <AvatarModal1 /> */}

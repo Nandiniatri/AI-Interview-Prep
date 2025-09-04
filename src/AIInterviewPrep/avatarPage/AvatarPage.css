@@ -1,0 +1,6 @@
+.avatar-page-main-container{
+    border: solid red;
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+}
