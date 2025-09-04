@@ -9,6 +9,9 @@
     /* width: 50%; */
     width: 696px;
     height: 400px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/035/093/911/non_2x/you-can-use-the-blurred-focus-of-a-white-open-space-office-interior-as-a-background-with-wooden-table-free-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .avatar-Btn {

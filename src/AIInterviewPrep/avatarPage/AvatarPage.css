@@ -1,31 +1,3 @@
-/* .avatar-page-main-container {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
-
-.avatar-talk-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    border: 1px solid black;
-}
-
-.avatar-wrapper {
-    width: 700px;
-    height: 400px;
-    background: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border: 1px solid gray;
-} */
-
-
-
 .avatar-page-main-container {
   display: flex;
   justify-content: center;

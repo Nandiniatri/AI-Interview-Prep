@@ -9,7 +9,7 @@ const AvatarModel = ({ url, meshRef }) => {
     const { scene } = useGLTF(url);
 
     return (
-        <primitive ref={meshRef} object={scene} scale={4} position={[0, -5.6, 0]} />
+        <primitive ref={meshRef} object={scene} scale={4} position={[0, -6, 2.2]} />
     );
 };
 
@@ -49,7 +49,7 @@ const AvatarTalk = () => {
 
         const text = questions[index].que;
         const utterance = new SpeechSynthesisUtterance(text);
-        window.speechSynthesis.cancel(); // clear pending speeches
+        window.speechSynthesis.cancel();
         window.speechSynthesis.speak(utterance);
 
         // debug morph targets
