@@ -135,6 +135,8 @@ const AvatarTalk = () => {
     return (
         <div>
             <Canvas
+                style={{ width: "100%", height: "100%" }}
+                resize={{ scroll: false, debounce: 0 }}
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 className="canvas-avatar"
             >
@@ -144,28 +146,30 @@ const AvatarTalk = () => {
                     url="/data/Avatar1/68b573a33033dedc62d80935.glb"
                     meshRef={meshRef}
                 />
-                <OrbitControls />
+                <OrbitControls enableZoom={false} />
             </Canvas>
 
-            {!interviewStarted && (
-                <button
-                    onClick={startInterview}
-                    style={{
-                        position: "absolute",
-                        top: "20px",
-                        left: "20px",
-                        padding: "10px 20px",
-                        fontSize: "16px",
-                        borderRadius: "8px",
-                        cursor: "pointer",
-                        background: "#333",
-                        color: "#fff",
-                    }}
-                >
-                    Start Interview
-                </button>
-            )}
-        </div>
+            {
+                !interviewStarted && (
+                    <button
+                        onClick={startInterview}
+                        style={{
+                            position: "absolute",
+                            top: "20px",
+                            left: "20px",
+                            padding: "10px 20px",
+                            fontSize: "16px",
+                            borderRadius: "8px",
+                            cursor: "pointer",
+                            background: "#333",
+                            color: "#fff",
+                        }}
+                    >
+                        Start Interview
+                    </button>
+                )
+            }
+        </div >
     );
 };
 

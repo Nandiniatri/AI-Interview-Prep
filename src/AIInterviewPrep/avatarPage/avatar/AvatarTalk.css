@@ -1,4 +1,16 @@
-.canvas-avatar{
-    border: solid green;
-    width: 50% !important;
+.avatar-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.canvas-avatar {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
 }
