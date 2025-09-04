@@ -12,13 +12,15 @@
 }
 
 .avatar-Btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: relative;
+    /* top: 60px; */
+    left: 270px;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
     background: green;
     color: #fff;
+    border: none;
+    bottom: 79px;
 }

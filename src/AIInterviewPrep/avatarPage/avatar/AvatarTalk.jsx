@@ -147,9 +147,6 @@ const AvatarTalk = () => {
                 />
                 <OrbitControls enableZoom={false} />
             </Canvas>
-
-            <h1>Hello</h1>
-
             {
                 !interviewStarted && (
                     <button
@@ -160,6 +157,10 @@ const AvatarTalk = () => {
                     </button>
                 )
             }
+
+            <div>
+                <p>Questions</p>
+            </div>
         </div >
     );
 };
