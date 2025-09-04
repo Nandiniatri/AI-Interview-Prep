@@ -136,12 +136,11 @@ const AvatarTalk = () => {
         <div>
             <Canvas
                 style={{ width: "100%", height: "100%" }}
-                resize={{ scroll: false, debounce: 0 }}
                 camera={{ position: [0, 0, 5], fov: 50 }}
                 className="canvas-avatar"
             >
                 <ambientLight intensity={1} />
-                <directionalLight position={[5, 5, 5]} />
+                <directionalLight position={[0, 0, 5]} />
                 <AvatarModel
                     url="/data/Avatar1/68b573a33033dedc62d80935.glb"
                     meshRef={meshRef}
