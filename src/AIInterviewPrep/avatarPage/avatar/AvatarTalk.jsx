@@ -28,7 +28,7 @@ const AvatarTalk = () => {
 
     useEffect(() => {
         fetchAllTheQuestions();
-    }, [])
+    }, []);
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -105,15 +105,7 @@ const AvatarTalk = () => {
         recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
             console.log("🗣️ User Answer:", transcript);
-
-            // ✅ Answer ke baad turant next question
-            setCurrentQuestion((prev) => {
-                const nextIndex = prev + 1;
-                if (nextIndex < questions.length) {
-                    setTimeout(() => speakQuestion(nextIndex), 300);
-                }
-                return nextIndex;
-            });
+            setCurrentQuestion((prev) => prev + 1);
         };
 
         recognition.onspeechend = () => {
@@ -129,8 +121,14 @@ const AvatarTalk = () => {
     const startInterview = () => {
         setInterviewStarted(true);
         setCurrentQuestion(0);
-        speakQuestion(0);
     };
+
+    // ✅ Har baar currentQuestion change hote hi ye trigger hoga
+    useEffect(() => {
+        if (interviewStarted && currentQuestion < questions.length) {
+            speakQuestion(currentQuestion);
+        }
+    }, [currentQuestion, interviewStarted, questions]);
 
     return (
         <div className='canvas-main-div'>
@@ -161,9 +159,8 @@ const AvatarTalk = () => {
             <div>
                 <p>Questions</p>
             </div>
-        </div >
+        </div>
     );
 };
 
 export default AvatarTalk;
-
