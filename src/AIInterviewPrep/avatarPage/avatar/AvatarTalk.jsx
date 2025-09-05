@@ -158,14 +158,7 @@ const AvatarTalk = () => {
                 )
             }
 
-            <div>
-                <p>{questions.map((item) => (
-                    <div>{item.que}</div>
-                ))}</p>
-            </div>
-
-
-            <div>
+            <div className='show-current-question'>
                 {interviewStarted && currentQuestion < questions.length && (
                     <p>{questions[currentQuestion].que}</p>
                 )}
