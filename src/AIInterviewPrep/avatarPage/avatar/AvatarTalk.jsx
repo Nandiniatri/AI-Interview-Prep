@@ -73,6 +73,8 @@ const AvatarTalk = () => {
 
         // lipsync effect
         const duration = text.split(" ").length * 0.3 * 1000;
+        // console.log(duration);
+        
         const start = Date.now();
 
         const interval = setInterval(() => {
