@@ -13,6 +13,8 @@ const AvatarModel = ({ url, meshRef }) => {
     );
 };
 
+let lipsyncInterval = null;
+
 const AvatarTalk = () => {
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -49,7 +51,15 @@ const AvatarTalk = () => {
 
         const text = questions[index].que;
         const utterance = new SpeechSynthesisUtterance(text);
+
+        //Stop old speech and lipsync
         window.speechSynthesis.cancel();
+        if(lipsyncInterval){
+            clearInterval(lipsyncInterval);
+            lipsyncInterval = null;
+        }
+
+        //ye hai new speech start karne ke liye
         window.speechSynthesis.speak(utterance);
 
         // debug morph targets
@@ -62,7 +72,7 @@ const AvatarTalk = () => {
         }
 
         // lipsync effect
-        const duration = text.split(" ").length * 0.5 * 1000;
+        const duration = text.split(" ").length * 0.3 * 1000;
         const start = Date.now();
 
         const interval = setInterval(() => {
@@ -158,7 +168,7 @@ const AvatarTalk = () => {
                 )
             }
 
-            <div className='question-box'>
+            <div className='show-current-question'>
                 {interviewStarted && currentQuestion < questions.length && (
                     <p>{questions[currentQuestion].que}</p>
                 )}
