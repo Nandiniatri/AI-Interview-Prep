@@ -130,6 +130,8 @@ const AvatarTalk = () => {
         }
     }, [currentQuestion, interviewStarted, questions]);
 
+    console.log(questions);
+
     return (
         <div className='canvas-main-div'>
             <Canvas
@@ -157,7 +159,16 @@ const AvatarTalk = () => {
             }
 
             <div>
-                <p>Questions</p>
+                <p>{questions.map((item) => (
+                    <div>{item.que}</div>
+                ))}</p>
+            </div>
+
+
+            <div>
+                {interviewStarted && currentQuestion < questions.length && (
+                    <p>{questions[currentQuestion].que}</p>
+                )}
             </div>
         </div>
     );
