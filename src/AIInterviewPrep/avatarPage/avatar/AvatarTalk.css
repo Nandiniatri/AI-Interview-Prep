@@ -29,9 +29,23 @@
     bottom: 79px;
 }
 
-.show-current-question{
-    /* border: solid; */
+/* .show-current-question{
+    border: solid;
     height: 110px;
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+} */
+
+.question-box {
+  margin-top: 10px;
+  background: #e1ffc7;
+  padding: 12px 16px;
+  border-radius: 10px;
+  max-width: 60%;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  height: 100px;
 }

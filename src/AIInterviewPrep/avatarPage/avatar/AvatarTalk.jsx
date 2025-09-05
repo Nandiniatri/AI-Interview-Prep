@@ -158,7 +158,7 @@ const AvatarTalk = () => {
                 )
             }
 
-            <div className='show-current-question'>
+            <div className='question-box'>
                 {interviewStarted && currentQuestion < questions.length && (
                     <p>{questions[currentQuestion].que}</p>
                 )}
