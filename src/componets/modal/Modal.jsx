@@ -38,7 +38,7 @@ const Modal = ({ isOpen, children, onClose }) => {
                 handleStartPractice();
               }}
             >
-              START PRACTICE
+              START PRACTICEs
             </button>
             <button className="cancel-btn1" onClick={onClose}>
               CANCEL
@@ -55,7 +55,7 @@ const Modal = ({ isOpen, children, onClose }) => {
 };
 
 export default Modal;
-
+ 
 
 
 

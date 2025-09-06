@@ -32,14 +32,6 @@ const SelectedForm = ({ file }) => {
     fileInputRef.current.click();
   };
 
-  // const handleFileChange = (e) => {
-  //   const selectedFile = e.target.files[0];
-  //   if (selectedFile) {
-  //     setResumeName(selectedFile.name);
-  //     // console.log("Selected file:", selectedFile);
-  //   }
-  // };
-
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -67,9 +59,6 @@ const SelectedForm = ({ file }) => {
           );
 
           console.log("✅ Matched Skills:", foundSkills);
-
-          // Ab aap matched skills ke basis pe questions dikha sakte ho
-          // setSkills(foundSkills);
         };
         reader.readAsArrayBuffer(selectedFile);
       } else {
