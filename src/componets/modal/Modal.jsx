@@ -46,9 +46,12 @@ const Modal = ({ isOpen, children, onClose }) => {
           </div>
         </div>
       </div>
-      <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        {/* <Questions files={fileToBeUseInQuestions} /> */}
-      </Modal1>
+
+
+      {/* <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
+        <Questions files={fileToBeUseInQuestions} />
+      </Modal1> */}
+      
     </>,
     document.getElementById("modal-form")
   );

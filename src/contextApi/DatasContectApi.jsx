@@ -105,6 +105,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../../supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 const dataContext = createContext();
 
@@ -120,6 +121,8 @@ const DatasContextApi = ({ children }) => {
     const [isModalOpen, setIsOpenOpen] = useState(false);
     const [selectedRound, setSelectedRound] = useState("");
     const [selectedPosition, setSelectedPosition] = useState("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -156,7 +159,8 @@ const DatasContextApi = ({ children }) => {
             videoSelected &&
             termsAgreed
         ) {
-            setIsOpenOpen(true);
+            // setIsOpenOpen(true);
+            navigate('/avatarModal')
         } else {
             alert("You have not selected all required fields");
         }

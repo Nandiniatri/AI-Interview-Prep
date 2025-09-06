@@ -12,16 +12,16 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
+import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
 
 function App() {
   return (
-    <Router>
       <Routes>
         <Route path="/" element={<AIMainFile />} />
         <Route path="/login" element={<LoginInSignUpForm />} />
         <Route path="/signup" element={<InsideSignUp />} />
+        <Route path="/avatarModal" element={<AvatarPage />} />
       </Routes>
-    </Router>
   );
 }
 
