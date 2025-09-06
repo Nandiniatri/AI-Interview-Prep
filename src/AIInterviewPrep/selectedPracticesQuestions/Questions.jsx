@@ -7,7 +7,7 @@ const Questions = ({ files, onComplete }) => {
     const [answer, setAnswer] = useState("");
     const [submittedAnswers, setSubmittedAnswers] = useState([]);
 
-    const fetchData = async () => {
+    const fetchData = async () => { 
         if (files) {
             try {
                 const response = await fetch(`/data/startPracticePage/${files}`);

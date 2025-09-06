@@ -20,8 +20,8 @@ const Modal = ({ isOpen, children, onClose }) => {
   const fileKeys = selectedJsonFiles[selectedPosition] || 'startPractices1';
   console.log(fileKeys);
 
-  const fileToBeUseInQuestions = selectedRoundsData?.[fileKeys];
-  console.log(fileToBeUseInQuestions);
+  // const fileToBeUseInQuestions = selectedRoundsData?.[fileKeys];
+  // console.log(fileToBeUseInQuestions);
 
 
   if (!isOpen) return null;
@@ -47,7 +47,7 @@ const Modal = ({ isOpen, children, onClose }) => {
         </div>
       </div>
       <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        <Questions files={fileToBeUseInQuestions} />
+        {/* <Questions files={fileToBeUseInQuestions} /> */}
       </Modal1>
     </>,
     document.getElementById("modal-form")
