@@ -1,43 +1,10 @@
-// import AIMainFile from './AIInterviewPrep/AIFile';
-// import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
-// import RoleRelated from './AIInterviewPrep/roleRelated/RoleRelated';
-// import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
-// import AIChat from './AIInterview/AIInterviewer';
-// import AIAssistant from './AIInterview/AIInterviewer';
-// import './App.css';
-// import LoginInSignUpForm from './componets/SignupForm/SignupForm';
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
-// import { Auth } from '@supabase/auth-ui-react'
-// import { ThemeSupa } from '@supabase/auth-ui-shared'
-// import { useEffect, useState } from 'react';
-// import { supabase } from '../supabaseClient';
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<AIMainFile />} />
-//         <Route path="/login" element={<LoginInSignUpForm />} />
-//         <Route path="/signup" element={<InsideSignUp />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
-// export default App;
-
-
-
-
-
-import './App.css';
 import AIMainFile from './AIInterviewPrep/AIFile';
 import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
 import RoleRelated from './AIInterviewPrep/roleRelated/RoleRelated';
 import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
 import AIChat from './AIInterview/AIInterviewer';
 import AIAssistant from './AIInterview/AIInterviewer';
+import './App.css';
 import LoginInSignUpForm from './componets/SignupForm/SignupForm';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
@@ -45,29 +12,70 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
-import ReadResume from './revision/Revision';
-import AITalk from './revision/AITalk/AITalk';
-import TalkingMouth from './revision/AITalk/AITalk';
-import AvatarViewer from './revision/AITalk/AITalk';
-import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
-import VoiceListener from './revision/AiTalkAgain/speakToText/SpeakToText';
-import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
 
 function App() {
   return (
-    <>
-      {/* <ReadResume /> */}
-      {/* <AITalk /> */}
-      {/* <TalkingMouth /> */}
-      {/* <AvatarViewer /> */}
-      {/* <AiTalkAgain /> */}
-      {/* <VoiceListener /> */}
-      <AvatarPage />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AIMainFile />} />
+        <Route path="/login" element={<LoginInSignUpForm />} />
+        <Route path="/signup" element={<InsideSignUp />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import './App.css';
+// import AIMainFile from './AIInterviewPrep/AIFile';
+// import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
+// import RoleRelated from './AIInterviewPrep/roleRelated/RoleRelated';
+// import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
+// import AIChat from './AIInterview/AIInterviewer';
+// import AIAssistant from './AIInterview/AIInterviewer';
+// import LoginInSignUpForm from './componets/SignupForm/SignupForm';
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
+// import { Auth } from '@supabase/auth-ui-react'
+// import { ThemeSupa } from '@supabase/auth-ui-shared'
+// import { useEffect, useState } from 'react';
+// import { supabase } from '../supabaseClient';
+// import ReadResume from './revision/Revision';
+// import AITalk from './revision/AITalk/AITalk';
+// import TalkingMouth from './revision/AITalk/AITalk';
+// import AvatarViewer from './revision/AITalk/AITalk';
+// import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
+// import VoiceListener from './revision/AiTalkAgain/speakToText/SpeakToText';
+// import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
+
+// function App() {
+//   return (
+//     <>
+//       {/* <ReadResume /> */}
+//       {/* <AITalk /> */}
+//       {/* <TalkingMouth /> */}
+//       {/* <AvatarViewer /> */}
+//       {/* <AiTalkAgain /> */}
+//       {/* <VoiceListener /> */}
+//       <AvatarPage />
+//     </>
+//   );
+// }
+
+// export default App;
 
 
 
