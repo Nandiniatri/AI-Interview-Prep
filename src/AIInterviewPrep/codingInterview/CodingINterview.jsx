@@ -37,28 +37,74 @@ const CodingInterview = () => {
             {/* Right Panel */}
             <div className="coding-interview__editor-panel">
                 <h3 className="coding-interview__editor-title">CODING EDITOR</h3>
+                <div className="coding-editor-div">
+                    {!started ? (
+                        <div className="coding-interview__start-placeholder">
+                            <p>Click "Start Coding" to begin.</p>
+                            <Button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
+                                START CODING
+                            </Button>
+                        </div>
+                    ) : (
+                        <textarea
+                            className="coding-interview__code-editor"
+                            placeholder="// Start coding here..."
+                        />
+                    )}
 
-                {!started ? (
-                    <div className="coding-interview__start-placeholder">
-                        <p>Click "Start Coding" to begin.</p>
-                        <Button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
-                            START CODING
-                        </Button>
+                    <div className="coding-interview__video-container">
+                        <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
+                        <span className="coding-interview__video-timer">00:00</span>
                     </div>
-                ) : (
-                    <textarea
-                        className="coding-interview__code-editor"
-                        placeholder="// Start coding here..."
-                    />
-                )}
+                </div>
 
-                <div className="coding-interview__video-container">
-                    <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
-                    <span className="coding-interview__video-timer">00:00</span>
+
+                <div>
+                    <h1>
+                        complier
+                    </h1>
                 </div>
             </div>
+
+
         </div>
     );
 };
 
 export default CodingInterview;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div className="coding-interview__editor-panel">
+    <h3 className="coding-interview__editor-title">CODING EDITOR</h3>
+
+    {!started ? (
+        <div className="coding-interview__start-placeholder">
+            <p>Click "Start Coding" to begin.</p>
+            <Button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
+                START CODING
+            </Button>
+        </div>
+    ) : (
+        <textarea
+            className="coding-interview__code-editor"
+            placeholder="// Start coding here..."
+        />
+    )}
+
+    <div className="coding-interview__video-container">
+        <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
+        <span className="coding-interview__video-timer">00:00</span>
+    </div>
+</div> */}

@@ -108,7 +108,7 @@
 /* Editor Panel (Right) */
 .coding-interview__editor-panel {
   flex: 1;
-  padding: 20px;
+  /* padding: 20px; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -116,12 +116,18 @@
   margin-bottom: 20px;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
+  border: solid red;
 }
 
 .coding-interview__editor-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 10px;
+}
+
+.coding-editor-div{
+  border: solid blue;
+  height: 50vh;
 }
 
 .coding-interview__start-placeholder {
@@ -134,6 +140,7 @@
   flex-direction: column;
   gap: 15px;
   text-align: center;
+  border: solid;
 }
 
 .coding-interview__start-btn {
