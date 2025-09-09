@@ -1,8 +1,9 @@
-.video-Call-main-div{
+/* .video-Call-main-div{
     border: solid;
-} 
+}  */
 
 .video-call{
-    border: solid;
+    /* border: solid red; */
     width: 300px;
+    border-radius: 12px;
 }

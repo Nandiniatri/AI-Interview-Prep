@@ -17,6 +17,7 @@ const SelectedForm = ({ file }) => {
       try {
         const response = await fetch(`/public/data/${file}`);
         const result = await response.json();
+        console.log(result);
         setData(result);
       } catch (error) {
         console.log('Network Error');
