@@ -42,7 +42,7 @@ such that the container contains the most water.`}
                         <button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
                             START CODING
                         </button>
-                    </div>
+                    </div> 
                 ) : (
                     <textarea
                         className="coding-interview__code-editor"
