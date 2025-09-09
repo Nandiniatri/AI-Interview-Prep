@@ -6,13 +6,20 @@
 
 /* Sidebar (Left) */
 .coding-interview__sidebar {
-  width: 40%;
-  padding: 20px;
-  background-color: #f2f2f2;
+  width: 30%;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
+
 
 .coding-interview__title {
   font-size: 22px;
@@ -87,6 +94,8 @@
   align-self: flex-start;
 }
 
+
+
 /* Editor Panel (Right) */
 .coding-interview__editor-panel {
   flex: 1;
@@ -94,7 +103,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border: solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .coding-interview__editor-title {

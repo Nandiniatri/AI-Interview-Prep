@@ -9,29 +9,30 @@ const CodingInterview = () => {
         <div className="coding-interview">
             {/* Left Sidebar */}
             <div className="coding-interview__sidebar">
-                <h2 className="coding-interview__title">Web Developer</h2>
-                <span className="coding-interview__round">Coding</span>
+                    <h2 className="coding-interview__title">Web Developer</h2>
+                    <span className="coding-interview__round">Coding</span>
 
-                <div className="coding-interview__tags">
-                    <Button className="coding-interview__tag coding-interview__tag--main">MAIN QUESTION</Button>
-                    <Button className="coding-interview__tag">JAVASCRIPT</Button>
-                </div>
+                    <div className="coding-interview__tags">
+                        <Button className="coding-interview__tag coding-interview__tag--main">MAIN QUESTION</Button>
+                        <Button className="coding-interview__tag">JAVASCRIPT</Button>
+                    </div>
 
-                <p className="coding-interview__instruction">Complete the code based on the given situation below.</p>
+                    <p className="coding-interview__instruction">Complete the code based on the given situation below.</p>
 
-                <div className="coding-interview__statement-box">
-                    <p className="coding-interview__statement-label">CODE INSTRUCTION</p>
-                    <textarea
-                        className="coding-interview__statement-text"
-                        readOnly
-                        value={`In a naval architecture simulation,
+                    <div className="coding-interview__statement-box">
+                        <p className="coding-interview__statement-label">CODE INSTRUCTION</p>
+                        <textarea
+                            className="coding-interview__statement-text"
+                            readOnly
+                            value={`In a naval architecture simulation,
 ...forms a container,
 such that the container contains the most water.`}
-                    />
-                </div>
+                        />
+                    </div>
 
-                <button className="coding-interview__exit-btn">Exit Practice</button>
-            </div>
+                    <Button className="coding-interview__exit-btn">Exit Practice</Button>
+                </div>
+                
 
             {/* Right Panel */}
             <div className="coding-interview__editor-panel">
@@ -43,7 +44,7 @@ such that the container contains the most water.`}
                         <Button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
                             START CODING
                         </Button>
-                    </div> 
+                    </div>
                 ) : (
                     <textarea
                         className="coding-interview__code-editor"
