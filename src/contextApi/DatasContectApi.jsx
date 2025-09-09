@@ -111,7 +111,6 @@ const dataContext = createContext();
 
 const DatasContextApi = ({ children }) => {
     const [session, setSession] = useState(null);
-
     const [selectRoundsTitle, setSelectRoundsTitle] = useState('');
     const [selectInterview, setSelectInterview] = useState('');
     const [selectInterviewer, setSelectInterviewer] = useState('');
@@ -144,13 +143,17 @@ const DatasContextApi = ({ children }) => {
 
     const signUp = async () => {
         console.log('hello sign up here');
-        
+
         await supabase.auth.signInWithOAuth({
             provider: "google",
         });
     };
 
     const handleStartPractice = () => {
+        if (!session) {
+            alert("Please signup!");
+            return;
+        }
         if (
             resumeName &&
             selectRoundsTitle &&
@@ -159,7 +162,7 @@ const DatasContextApi = ({ children }) => {
             videoSelected &&
             termsAgreed
         ) {
-            // setIsOpenOpen(true);
+
             navigate('/avatarModal')
         } else {
             alert("You have not selected all required fields");
@@ -169,12 +172,9 @@ const DatasContextApi = ({ children }) => {
     return (
         <dataContext.Provider
             value={{
-                // auth
                 session,
                 signOut,
                 signUp,
-
-                // baki states
                 resumeName, setResumeName,
                 selectRoundsTitle, setSelectRoundsTitle,
                 selectInterview, setSelectInterview,

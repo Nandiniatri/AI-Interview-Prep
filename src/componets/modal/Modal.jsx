@@ -7,7 +7,7 @@ import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Question
 
 
 const Modal = ({ isOpen, children, onClose }) => {
-  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, selectedPosition } = useDataContext();
+  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, selectedPosition , signUp} = useDataContext();
 
   const selectedJsonFiles = {
     "ReactJS Developer": "startPractices1",
@@ -38,7 +38,7 @@ const Modal = ({ isOpen, children, onClose }) => {
                 handleStartPractice();
               }}
             >
-              START PRACTICEs
+              START PRACTICE's
             </button>
             <button className="cancel-btn1" onClick={onClose}>
               CANCEL
@@ -46,11 +46,6 @@ const Modal = ({ isOpen, children, onClose }) => {
           </div>
         </div>
       </div>
-
-
-      {/* <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-        <Questions files={fileToBeUseInQuestions} />
-      </Modal1> */}
       
     </>,
     document.getElementById("modal-form")
@@ -61,14 +56,6 @@ export default Modal;
  
 
 
-
-
-
-
-
-
-
-
-
-
-{/* <Questions formatTime={formatTime} handleNext={handleNext} questions={questions} timer={timer} currentQ={currentQ} answer={answer} /> */ }
+{/* <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
+  <Questions files={fileToBeUseInQuestions} />
+</Modal1> */}
