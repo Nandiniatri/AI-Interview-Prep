@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./CodingInterview.css";
+import Button from "../../componets/Button";
 
 const CodingInterview = () => {
     const [started, setStarted] = useState(false);
@@ -12,8 +13,8 @@ const CodingInterview = () => {
                 <span className="coding-interview__round">Coding</span>
 
                 <div className="coding-interview__tags">
-                    <button className="coding-interview__tag coding-interview__tag--main">MAIN QUESTION</button>
-                    <button className="coding-interview__tag">JAVASCRIPT</button>
+                    <Button className="coding-interview__tag coding-interview__tag--main">MAIN QUESTION</Button>
+                    <Button className="coding-interview__tag">JAVASCRIPT</Button>
                 </div>
 
                 <p className="coding-interview__instruction">Complete the code based on the given situation below.</p>
@@ -39,9 +40,9 @@ such that the container contains the most water.`}
                 {!started ? (
                     <div className="coding-interview__start-placeholder">
                         <p>Click "Start Coding" to begin.</p>
-                        <button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
+                        <Button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
                             START CODING
-                        </button>
+                        </Button>
                     </div> 
                 ) : (
                     <textarea
