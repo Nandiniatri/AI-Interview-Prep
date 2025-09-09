@@ -151,7 +151,8 @@ const DatasContextApi = ({ children }) => {
 
     const handleStartPractice = () => {
         if (!session) {
-            alert("Please signup!");
+            // alert("Please signup!");
+            navigate("/login");
             return;
         }
         if (
