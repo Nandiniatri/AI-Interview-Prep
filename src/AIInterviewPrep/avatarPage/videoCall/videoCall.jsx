@@ -18,10 +18,13 @@ const VideoCall = () => {
     }, [])
 
     return (
-        <div className="video-Call-main-div">
-            <video ref={videoRef} autoPlay playsInline muted className='video-call'/>
-        </div>
+        <>
+            <div className="video-Call-main-div">
+                <video ref={videoRef} autoPlay playsInline muted className='video-call' />
+
+            </div>
+        </>
     )
 }
 
-export default VideoCall; 
+export default VideoCall;  
