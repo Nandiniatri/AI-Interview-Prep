@@ -20,15 +20,21 @@
   margin-left: 20px;
 }
 
+.coding-question-div{
+  border: solid 1px gray;
+  height: 20vh;
+  padding: 10px;
+}
 
 .coding-interview__title {
   font-size: 22px;
   font-weight: 600;
+  color: #000;
 }
 
 .coding-interview__round {
   font-size: 16px;
-  color: #666;
+  color: #302f2f;
   margin-bottom: 15px;
 }
 
@@ -48,14 +54,17 @@
 }
 
 .coding-interview__tag--main {
-  background-color: #e0e7ff;
-  color: #3730a3;
+  background-color: #c6c7cd;
+  /* color: #3730a3; */
 }
 
 .coding-interview__instruction {
   margin-bottom: 12px;
   font-size: 14px;
-  color: #333;
+  /* border: solid; */
+  padding: 15px;
+  font-weight: bold;
+  color: black;
 }
 
 .coding-interview__statement-box {
@@ -105,6 +114,8 @@
   flex-direction: column;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
 }
 
 .coding-interview__editor-title {
