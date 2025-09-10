@@ -51,6 +51,7 @@ import AvatarViewer from './revision/AITalk/AITalk';
 import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
 import VoiceListener from './revision/AiTalkAgain/speakToText/SpeakToText';
 import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
+import CodeEditor from './revision/coding/Coding';
 
 function App() {
   return (
@@ -62,7 +63,8 @@ function App() {
       {/* <AiTalkAgain /> */}
       {/* <VoiceListener /> */}
       {/* <AvatarPage /> */}
-      <CodingInterview />
+      {/* <CodingInterview /> */}
+      <CodeEditor />
     </>
   );
 }
