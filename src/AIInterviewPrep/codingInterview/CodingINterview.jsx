@@ -2,9 +2,16 @@ import { useState } from "react";
 import "./CodingInterview.css";
 import Button from "../../componets/Button";
 import { FaSignOutAlt } from "react-icons/fa";
+import { Editor } from "@monaco-editor/react";
 
 const CodingInterview = () => {
     const [started, setStarted] = useState(false);
+    const [code, setCode] = useState('// write your code here');
+
+    const runCode = () => {
+        console.log("Code:", code);
+        alert("Running Code:\n" + code);
+    };
 
     return (
         <div className="coding-interview">
@@ -36,30 +43,23 @@ const CodingInterview = () => {
 
             {/* Right Panel */}
             <div className="coding-interview__editor-panel">
-                <h3 className="coding-interview__editor-title">CODING EDITOR</h3>
                 <div className="coding-editor-div">
-                    {!started ? (
-                        <div className="coding-interview__start-placeholder">
-                            <p>Click "Start Coding" to begin.</p>
-                            <Button className="coding-interview__start-btn" onClick={() => setStarted(true)}>
-                                START CODING
-                            </Button>
-                        </div>
-                    ) : (
-                        <textarea
-                            className="coding-interview__code-editor"
-                            placeholder="// Start coding here..."
-                        />
-                    )}
+                    <Editor
+                        height="400px"
+                        defaultLanguage="javascript"
+                        defaultValue={code}
+                        onChange={(value) => setCode(value)}
+                        theme="vs-dark"
+                        className="coder-editor"
+                    />
 
-                    <div className="coding-interview__video-container">
-                        <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
-                        <span className="coding-interview__video-timer">00:00</span>
-                    </div>
+                    {/* <Button onClick={runCode} style={{ marginTop: "10px", padding: "8px 16px" }}>
+                        Execute
+                    </Button> */}
                 </div>
 
 
-                <div>
+                <div className="coder-compliler-div">
                     <h1>
                         complier
                     </h1>
@@ -83,7 +83,10 @@ export default CodingInterview;
 
 
 
-
+{/* <div className="coding-interview__video-container">
+    <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
+    <span className="coding-interview__video-timer">00:00</span>
+</div> */}
 
 
 {/* <div className="coding-interview__editor-panel">

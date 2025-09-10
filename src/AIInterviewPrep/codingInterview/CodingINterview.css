@@ -126,8 +126,14 @@
 }
 
 .coding-editor-div{
-  border: solid blue;
-  height: 50vh;
+  /* border: solid blue; */
+  /* height: 50vh; */
+}
+
+.coder-editor{
+  border: solid pink;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .coding-interview__start-placeholder {
@@ -152,18 +158,11 @@
   cursor: pointer;
   font-weight: 500;
 }
-
-.coding-interview__code-editor {
-  flex: 1;
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 14px;
-  font-family: monospace;
-  background: #111;
-  color: #f1f1f1;
-  outline: none;
+.coder-compliler-div{
+  /* border: solid; */
+  height: 30vh;
+  background-color: black;
+  color: white;
 }
 
 /* Video Container */
