@@ -1,18 +1,16 @@
 import { LANGUAGE_VERSION } from "../../contants";
 
-const LanguageSelecter = () => {
+const LanguageSelecter = ({ onSelect, language }) => {
     const languages = Object.entries(LANGUAGE_VERSION);
 
     return (
         <>
-            <select>
-                {languages.map((Languageitem) => {
-                    return (
-                        <div>
-                            <option>{Languageitem}</option>
-                        </div>
-                    )
-                })}
+            <select value={language} onChange={(e) => onSelect(e.target.value)}>
+                {languages.map(([name, version]) => (
+                    <option key={name} value={name}>
+                        {name} ({version})
+                    </option>
+                ))}
             </select>
         </>
     )
