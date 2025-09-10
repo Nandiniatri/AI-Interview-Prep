@@ -1,23 +1,34 @@
+import { useState } from "react";
+import { executeCode } from "../../api";
 import Button from "../../componets/Button";
 
-const Output = ({language , editorRef}) => {
-    const runcode = async() => {
-        const sourceCode = editorRef.current.getValue();
-        if(!sourceCode) return;
-        try{
+const Output = ({ language, editorRef }) => {
+    const [output, setOutput] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-        }catch(error){
+
+    const runcode = async () => {
+        const sourceCode = editorRef.current.getValue();
+        if (!sourceCode) return;
+        try {
+            const { run: result } = await executeCode(language, sourceCode);
+            setOutput(result.output)
+        } catch (error) {
             console.log('Network Alert');
-            
+        } finally {
+            setLoading(false);
         }
     }
+    console.log(output);
 
     return (
         <div>
-            <Button onClick={runcode}>Run Code</Button>
+            <Button
+                loading={loading}
+                onClick={runcode}>Run Code</Button>
 
-            <div style={{height:'400px' , background:"black"}}>
-                Text
+            <div style={{ height: '400px', background: "black", color: 'white' }}>
+                {output ? output : 'Click "Run Code" to see the output here'}
             </div>
         </div>
     )
