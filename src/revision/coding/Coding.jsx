@@ -1,6 +1,10 @@
 // import Editor from "@monaco-editor/react";
 // import { useState } from "react";
 
+import { Editor } from "@monaco-editor/react";
+import { useRef, useState } from "react";
+import LanguageSelecter from "./LangaugeSelecter";
+
 // function CodeEditor() {
 //     const [code, setCode] = useState("// write your code here");
 
@@ -208,6 +212,61 @@
 // };
 
 // export default CodeEditor;
+
+
+
+
+const CodeEditor = () => {
+  const editorRef = useRef();
+  const [value, setValue] = useState();
+
+  const onMount = (editor) => {
+    editorRef.current = editor;
+    editor.focus();
+  }
+
+  return (
+    <>
+      <LanguageSelecter />
+      <Editor
+        height="75vh"
+        theme="vs-dark"
+        defaultLanguage="javascript"
+        defaultValue="// some comment"
+        onMount={onMount}
+        value={value}
+        onChange={(value) => setValue(value)}
+      />
+    </>
+  )
+}
+
+export default CodeEditor;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
