@@ -4,12 +4,10 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import { CODE_SNIPPETS } from "../../contants";
-import LanguageSelecter from "../../revision/coding/LangaugeSelecter";
+import LanguageSelecter from "./LangaugeSelecter";
 import Output from "./Output";
 
 const CodingInterview = () => {
-    const [code, setCode] = useState('// write your code here');
-
     const editorRef = useRef();
     const [value, setValue] = useState();
     const [language, setLanguage] = useState("javascript");

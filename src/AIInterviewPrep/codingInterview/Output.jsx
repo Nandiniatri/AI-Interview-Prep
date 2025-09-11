@@ -22,16 +22,34 @@ const Output = ({ language, editorRef }) => {
     console.log(output);
 
     return (
-        <div>
-            <Button
-                loading={loading}
-                onClick={runcode}>Run Code</Button>
-
+        <div className="output-wrapper">
+            {/* Output Box */}
             <div className="output-div">
                 {output ? output : 'Click "Run Code" to see the output here'}
             </div>
+
+            {/* Run Button INSIDE editor wrapper */}
+            <button
+                className="run-btn"
+                onClick={runcode}
+                disabled={loading}
+            >
+                {loading ? "Running..." : "Run Code"}
+            </button>
         </div>
     )
 }
 
 export default Output;
+
+
+
+{/* <div>
+    <Button
+        loading={loading}
+        onClick={runcode}>Run Code</Button>
+
+    <div className="output-div">
+        {output ? output : 'Click "Run Code" to see the output here'}
+    </div>
+</div> */}
