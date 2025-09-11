@@ -7,6 +7,9 @@ import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const LoginInSignUpForm = () => {
     const { signUp , session } = useDataContext();
+    console.log(signUp)
+
+
 
     return (
         <div className="signup-container-main-div">
