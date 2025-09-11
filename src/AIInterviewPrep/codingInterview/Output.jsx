@@ -27,7 +27,7 @@ const Output = ({ language, editorRef }) => {
                 loading={loading}
                 onClick={runcode}>Run Code</Button>
 
-            <div style={{ height: '400px', background: "black", color: 'white' }}>
+            <div className="output-div">
                 {output ? output : 'Click "Run Code" to see the output here'}
             </div>
         </div>

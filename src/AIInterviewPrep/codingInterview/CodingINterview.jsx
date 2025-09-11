@@ -4,8 +4,8 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { useRef, useState } from "react";
 import Editor from "@monaco-editor/react";
 import { CODE_SNIPPETS } from "../../contants";
-import Output from "../../revision/coding/Output";
 import LanguageSelecter from "../../revision/coding/LangaugeSelecter";
+import Output from "./Output";
 
 const CodingInterview = () => {
     const [code, setCode] = useState('// write your code here');
@@ -57,7 +57,7 @@ const CodingInterview = () => {
                 <LanguageSelecter language={language} onSelect={onSelect} />
                 <div className="coding-editor-div">
                     <Editor
-                        height="75vh"
+                        height="70vh"
                         theme="vs-dark"
                         language={language}
                         defaultValue="// some comment"
@@ -68,7 +68,7 @@ const CodingInterview = () => {
                 </div>
 
 
-                <div className="coder-compliler-div">
+                <div className="coder-compliler">
                     <Output editorRef={editorRef} language={language} />
                 </div>
             </div>
