@@ -2,170 +2,154 @@
   display: flex;
   height: 100vh;
   background-color: #f9fafb;
+  font-family: "Inter", sans-serif;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Sidebar (Left) */
 .coding-interview__sidebar {
-  width: 30%;
-  border-right: 1px solid #ddd;
+  width: 28%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  padding: 20px;
-  background-color: #f2f2f2;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-}
-
-.coding-question-div{
-  border: solid 1px gray;
-  height: 20vh;
-  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .coding-interview__title {
   font-size: 22px;
-  font-weight: 600;
-  color: #000;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111827;
 }
 
 .coding-interview__round {
-  font-size: 16px;
-  color: #302f2f;
-  margin-bottom: 15px;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
 }
 
 .coding-interview__tags {
   display: flex;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .coding-interview__tag {
   background-color: #f3f4f6;
-  border: none;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.coding-interview__tag:hover {
+  background: #e5e7eb;
 }
 
 .coding-interview__tag--main {
-  background-color: #c6c7cd;
-  /* color: #3730a3; */
+  background-color: #2563eb;
+  color: #ffffff;
 }
 
 .coding-interview__instruction {
   margin-bottom: 12px;
-  font-size: 14px;
-  /* border: solid; */
-  padding: 15px;
-  font-weight: bold;
-  color: black;
-}
-
-.coding-interview__statement-box {
-  /* border: 1px solid #ddd; */
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 20px;
-  flex: 1;
-}
-
-.coding-interview__statement-label {
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 8px;
+  color: #111827;
 }
 
-.coding-interview__statement-text {
-  width: 100%;
-  height: 200px;
-  border: none;
-  resize: none;
-  background: transparent;
-  outline: none;
+.coding-question-div {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  height: 20vh;
+  padding: 12px;
   font-size: 14px;
-  line-height: 1.5;
+  color: #374151;
+  background: #f9fafb;
+  margin-bottom: 20px;
+  overflow-y: auto;
 }
 
 .coding-interview__exit-btn {
-  background: none;
-  border: 2px solid #ef4444;
-  color: #ef4444;
-  padding: 8px 14px;
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  color: #b91c1c;
+  padding: 10px 16px;
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   margin-top: auto;
-  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-
+.coding-interview__exit-btn:hover {
+  background: #ef4444;
+  color: white;
+}
 
 /* Editor Panel (Right) */
 .coding-interview__editor-panel {
   flex: 1;
-  /* padding: 20px; */
-  position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-  border: solid red;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.coding-interview__editor-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.language-selector {
+  align-self: flex-start;
+  margin-bottom: 15px;
 }
 
-.coding-editor-div{
-  /* border: solid blue; */
-  /* height: 50vh; */
-}
-
-.coder-editor{
-  border: solid pink;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.coding-interview__start-placeholder {
-  flex: 1;
-  border: 1px dashed #ccc;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  text-align: center;
-  border: solid;
-}
-
-.coding-interview__start-btn {
-  background-color: #16a34a;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
+.language-selector select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
   cursor: pointer;
-  font-weight: 500;
-}
-.coder-compliler-div{
-  /* border: solid; */
-  height: 30vh;
-  background-color: black;
-  color: white;
+  outline: none;
+  transition: border 0.2s ease-in-out;
 }
 
-/* Video Container */
+.language-selector select:hover {
+  border-color: #2563eb;
+}
+
+.coding-editor-div {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+/* Compiler / Output Box */
+.coder-compliler {
+  border: 1px solid #e5e7eb;
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  height: 25vh;
+  font-family: monospace;
+  font-size: 14px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* Video Container (Optional Future use) */
 .coding-interview__video-container {
   position: absolute;
   top: 15px;
@@ -192,15 +176,4 @@
   font-size: 13px;
   padding: 2px 6px;
   border-radius: 4px;
-}
-
-.coder-compliler{
-  border: solid;
-}
-.output{
-  border: solid red;
-}
-
-.output-div{
-  
 }
