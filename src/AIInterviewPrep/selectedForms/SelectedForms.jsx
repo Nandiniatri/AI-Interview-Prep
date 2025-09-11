@@ -75,6 +75,8 @@ const SelectedForm = ({ file }) => {
   }
 
   const handleClickRounds = (round) => {
+    // console.log(round);
+    
     setSelectRoundsTitle(round.title);
   }
 

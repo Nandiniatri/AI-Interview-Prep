@@ -15,10 +15,10 @@ const Modal = ({ isOpen, children, onClose }) => {
   }
 
   const selectedRoundsData = rounds.find(r => r.title === selectedRound)
-  console.log("selected Round Data Modal", selectedRoundsData);
+  // console.log("selected Round Data Modal", selectedRoundsData);
 
   const fileKeys = selectedJsonFiles[selectedPosition] || 'startPractices1';
-  console.log(fileKeys);
+  // console.log(fileKeys);
 
   // const fileToBeUseInQuestions = selectedRoundsData?.[fileKeys];
   // console.log(fileToBeUseInQuestions);
