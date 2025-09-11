@@ -1,16 +1,29 @@
-import { useState } from "react";
 import "./CodingInterview.css";
 import Button from "../../componets/Button";
 import { FaSignOutAlt } from "react-icons/fa";
-import { Editor } from "@monaco-editor/react";
+import { useRef, useState } from "react";
+import Editor from "@monaco-editor/react";
+import { CODE_SNIPPETS } from "../../contants";
+import Output from "../../revision/coding/Output";
+import LanguageSelecter from "../../revision/coding/LangaugeSelecter";
 
 const CodingInterview = () => {
-    const [started, setStarted] = useState(false);
     const [code, setCode] = useState('// write your code here');
 
-    const runCode = () => {
-        console.log("Code:", code);
-        alert("Running Code:\n" + code);
+    const editorRef = useRef();
+    const [value, setValue] = useState();
+    const [language, setLanguage] = useState("javascript");
+
+    const onMount = (editor) => {
+        editorRef.current = editor;
+        editor.focus();
+    };
+
+    const onSelect = (language) => {
+        setLanguage(language);
+        setValue(
+            CODE_SNIPPETS[language]
+        )
     };
 
     return (
@@ -39,30 +52,24 @@ const CodingInterview = () => {
 
 
 
-
-
             {/* Right Panel */}
             <div className="coding-interview__editor-panel">
+                <LanguageSelecter language={language} onSelect={onSelect} />
                 <div className="coding-editor-div">
                     <Editor
-                        height="400px"
-                        defaultLanguage="javascript"
-                        defaultValue={code}
-                        onChange={(value) => setCode(value)}
+                        height="75vh"
                         theme="vs-dark"
-                        className="coder-editor"
+                        language={language}
+                        defaultValue="// some comment"
+                        onMount={onMount}
+                        value={value}
+                        onChange={(value) => setValue(value)}
                     />
-
-                    {/* <Button onClick={runCode} style={{ marginTop: "10px", padding: "8px 16px" }}>
-                        Execute
-                    </Button> */}
                 </div>
 
 
                 <div className="coder-compliler-div">
-                    <h1>
-                        complier
-                    </h1>
+                    <Output editorRef={editorRef} language={language} />
                 </div>
             </div>
 

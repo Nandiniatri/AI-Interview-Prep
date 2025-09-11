@@ -4,7 +4,7 @@ import LoginInSignUpForm from './componets/SignupForm/SignupForm';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
 import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
-import CodeEditor from './revision/coding/Coding';
+import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/login" element={<LoginInSignUpForm />} />
         <Route path="/signup" element={<InsideSignUp />} />
         <Route path="/avatarModal" element={<AvatarPage />} />
-        <Route path="/codingPage" element={<CodeEditor />} />
+        <Route path="/codingPage" element={<CodingInterview />} />
       </Routes>
   );
 }
