@@ -167,7 +167,12 @@ const DatasContextApi = ({ children }) => {
                 navigate('/avatarModal')
             } else if (selectedRound === "Coding") {
                 navigate("/codingPage");
-            } else {
+            } else if(selectedRound === 'Role Related'){
+                alert('Page Nahi hai!')
+            }else if(selectedRound === 'Behavioral'){
+                alert('page nhi hai abhi!')
+            }
+            else {
                 alert("Selected round is not recognized!");
             }
         } else {
