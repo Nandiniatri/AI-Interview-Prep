@@ -14,6 +14,8 @@ const Modal = ({ isOpen, children, onClose }) => {
     "Web Developer": "startPractices2", 
   }
 
+  console.log(selectedRound);
+  
   const selectedRoundsData = rounds.find(r => r.title === selectedRound)
   // console.log("selected Round Data Modal", selectedRoundsData);
 

@@ -163,8 +163,13 @@ const DatasContextApi = ({ children }) => {
             videoSelected &&
             termsAgreed
         ) {
-
-            navigate('/avatarModal')
+            if (selectedRound === 'Warm Up') {
+                navigate('/avatarModal')
+            } else if (selectedRound === "Coding") {
+                navigate("/codingPage");
+            } else {
+                alert("Selected round is not recognized!");
+            }
         } else {
             alert("You have not selected all required fields");
         }
