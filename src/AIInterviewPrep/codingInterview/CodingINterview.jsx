@@ -7,11 +7,13 @@ import { CODE_SNIPPETS } from "../../contants";
 import LanguageSelecter from "./LangaugeSelecter";
 import Output from "./Output";
 import AvatarTalkCoding from "./AvatarTalkInCoding";
+import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const CodingInterview = () => {
     const editorRef = useRef();
     const [value, setValue] = useState("");
     const [language, setLanguage] = useState("javascript");
+    const { interviewStarted, startInterview, currentQuestion, questions, } = useDataContext();
 
     const onMount = (editor) => {
         editorRef.current = editor;
@@ -32,16 +34,14 @@ const CodingInterview = () => {
                 <h2 className="coding-interview__title">Web Developer</h2>
                 <span className="coding-interview__round">Coding</span>
 
-                <div className="coding-interview__tags">
-                    <Button className="coding-interview__tag coding-interview__tag--main">MAIN QUESTION</Button>
-                    <Button className="coding-interview__tag">JAVASCRIPT</Button>
+                <div>
+                    <Button onClick={startInterview}>Start Question</Button>
                 </div>
 
-                <p className="coding-interview__instruction">QUESTIONS.............</p>
-
-                <div className="coding-question-div">
-                    This is my questions
-                </div>
+                <p className="coding-interview__instruction">
+                    {interviewStarted && currentQuestion < questions.length && (
+                        <p>{questions[currentQuestion].que}</p>)}
+                </p>
 
                 <Button className="coding-interview__exit-btn">
                     <FaSignOutAlt className="exit-icon" />
@@ -84,6 +84,25 @@ const CodingInterview = () => {
 
 export default CodingInterview;
 
+
+
+
+//  {
+//                 !interviewStarted && (
+//                     <button
+//                         onClick={startInterview}
+//                         className='avatar-Btn'
+//                     >
+//                         Start Interview
+//                     </button>
+//                 )
+//             }
+
+//             <div className='coding-show-current-question'>
+//                 {interviewStarted && currentQuestion < questions.length && (
+//                     <p>{questions[currentQuestion].que}</p>
+//                 )}
+//             </div>
 
 
 
