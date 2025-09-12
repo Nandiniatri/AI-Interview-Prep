@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-   justify-content: space-between;
+  justify-content: space-between;
 }
 
 .coding-interview__title {
@@ -130,6 +130,7 @@
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
 .coding-interview__editor {
   flex: 1;
   border-radius: 8px;
@@ -244,7 +245,7 @@
   position: absolute;
   bottom: -10px;
   left: 10px;
-  background: #22c55e; 
+  background: #22c55e;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -289,3 +290,40 @@
 
 
 
+
+
+
+
+
+.avatar-page-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 50px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  box-sizing: border-box;
+  /* border: solid red; */
+  height: auto;
+}
+
+.avatar-section,
+.video-call-section {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  /* border: solid; */
+}
+
+.coding-canvas-avatar {
+  flex: 1;
+  max-width: 800px;
+  /* border: solid red; */
+}
+
+.video-call-section {
+  flex: 1;
+  max-width: 450px;
+  min-height: auto;
+}

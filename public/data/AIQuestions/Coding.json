@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "que": "Create a Todo List component where there is an input field to add new todos. When you click 'Add', the todo should appear in a list. Bonus: Add a delete button to remove a todo."
+  },
+  {
+    "id": 2,
+    "que": "Create an Accordion component where you have multiple questions and answers. When you click on a question, its answer expands. If you click again, it should collapse."
+  },
+  {
+    "id": 3,
+    "que": "Create a Modal component where there is a button on the page. When clicked, a popup modal should open. The modal should have a close button to hide it again."
+  },
+  {
+    "id": 4,
+    "que": "Create a Search Filter component where you have a list of items (e.g., names of fruits). There is a search bar, and as you type in the search bar, the list should filter and show only matching items."
+  }
+]

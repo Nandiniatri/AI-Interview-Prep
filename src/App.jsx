@@ -33,28 +33,29 @@ export default App;
 
 
 // import './App.css';
-// import AIMainFile from './AIInterviewPrep/AIFile';
-// import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
-// import RoleRelated from './AIInterviewPrep/roleRelated/RoleRelated';
-// import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
-// import AIChat from './AIInterview/AIInterviewer';
-// import AIAssistant from './AIInterview/AIInterviewer';
-// import LoginInSignUpForm from './componets/SignupForm/SignupForm';
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
-// import { Auth } from '@supabase/auth-ui-react'
-// import { ThemeSupa } from '@supabase/auth-ui-shared'
-// import { useEffect, useState } from 'react';
-// import { supabase } from '../supabaseClient';
-// import ReadResume from './revision/Revision';
-// import AITalk from './revision/AITalk/AITalk';
-// import TalkingMouth from './revision/AITalk/AITalk';
-// import AvatarViewer from './revision/AITalk/AITalk';
-// import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
-// import VoiceListener from './revision/AiTalkAgain/speakToText/SpeakToText';
-// import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
-// import CodeEditor from './revision/coding/Coding';
-// import Output from './revision/coding/Output';
+// // import AIMainFile from './AIInterviewPrep/AIFile';
+// // import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
+// // import RoleRelated from './AIInterviewPrep/roleRelated/RoleRelated';
+// // import WarmInterview from './AIInterviewPrep/warmInterview/WarmInterview';
+// // import AIChat from './AIInterview/AIInterviewer';
+// // import AIAssistant from './AIInterview/AIInterviewer';
+// // import LoginInSignUpForm from './componets/SignupForm/SignupForm';
+// // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// // import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
+// // import { Auth } from '@supabase/auth-ui-react'
+// // import { ThemeSupa } from '@supabase/auth-ui-shared'
+// // import { useEffect, useState } from 'react';
+// // import { supabase } from '../supabaseClient';
+// // import ReadResume from './revision/Revision';
+// // import AITalk from './revision/AITalk/AITalk';
+// // import TalkingMouth from './revision/AITalk/AITalk';
+// // import AvatarViewer from './revision/AITalk/AITalk';
+// // import AiTalkAgain from './revision/AiTalkAgain/AiTalkAgain';
+// // import VoiceListener from './revision/AiTalkAgain/speakToText/SpeakToText';
+// // import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
+// // import CodeEditor from './revision/coding/Coding';
+// // import Output from './revision/coding/Output';
+// import AvatarTalkCoding from './AIInterviewPrep/codingInterview/AvatarTalkInCoding';
 
 // function App() {
 //   return (
@@ -67,8 +68,9 @@ export default App;
 //       {/* <VoiceListener /> */}
 //       {/* <AvatarPage /> */}
 //       {/* <CodingInterview /> */}
-//       <CodeEditor />
+//       {/* <CodeEditor /> */}
 //       {/* <Output /> */}
+//       <AvatarTalkCoding />
 //     </>
 //   );
 // }

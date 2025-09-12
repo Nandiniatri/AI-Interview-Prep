@@ -6,6 +6,7 @@ import Editor from "@monaco-editor/react";
 import { CODE_SNIPPETS } from "../../contants";
 import LanguageSelecter from "./LangaugeSelecter";
 import Output from "./Output";
+import AvatarTalkCoding from "./AvatarTalkInCoding";
 
 const CodingInterview = () => {
     const editorRef = useRef();
@@ -66,7 +67,7 @@ const CodingInterview = () => {
                 </div>
 
                 <div className="coding-interview__video-container">
-                    <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
+                    <AvatarTalkCoding />
                     <span className="coding-interview__video-timer">00:00</span>
                 </div>
 
