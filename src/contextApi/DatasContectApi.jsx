@@ -256,15 +256,6 @@ const DatasContextApi = ({ children }) => {
     console.log(questions);
 
 
-
-
-
-
-
-
-
-
-
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
             setSession(session);
