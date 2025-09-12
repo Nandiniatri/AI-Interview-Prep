@@ -4,6 +4,7 @@ import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
+import { useDataContext } from '../../../contextApi/DatasContectApi';
 
 const AvatarModel = ({ url, meshRef }) => {
     const { scene } = useGLTF(url);
@@ -19,18 +20,19 @@ const AvatarTalk = () => {
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
-    const [questions, setQuestions] = useState([]);
-    const debug = true; 
+    // const [questions, setQuestions] = useState([]);
+    const debug = true;
+    const { questions } = useDataContext();
 
-    const fetchAllTheQuestions = async () => {
-        const response = await fetch('/data/AIQuestions/WarmUp.json');
-        const result = await response.json();
-        setQuestions(result);
-    }
+    // const fetchAllTheQuestions = async () => {
+    //     const response = await fetch('/data/AIQuestions/WarmUp.json');
+    //     const result = await response.json();
+    //     setQuestions(result);
+    // }
 
-    useEffect(() => {
-        fetchAllTheQuestions();
-    }, []);
+    // useEffect(() => {
+    //     fetchAllTheQuestions();
+    // }, []);
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -54,7 +56,7 @@ const AvatarTalk = () => {
 
         //Stop old speech and lipsync
         window.speechSynthesis.cancel();
-        if(lipsyncInterval){
+        if (lipsyncInterval) {
             clearInterval(lipsyncInterval);
             lipsyncInterval = null;
         }
@@ -74,7 +76,7 @@ const AvatarTalk = () => {
         // lipsync effect
         const duration = text.split(" ").length * 0.3 * 1000;
         // console.log(duration);
-        
+
         const start = Date.now();
 
         const interval = setInterval(() => {

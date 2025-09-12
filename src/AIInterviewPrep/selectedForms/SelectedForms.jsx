@@ -20,7 +20,7 @@ const SelectedForm = ({ file }) => {
         console.log(result);
         setData(result);
       } catch (error) {
-        console.log('Network Error');
+        console.log('Network Error'); 
       }
     }
   };
@@ -74,31 +74,25 @@ const SelectedForm = ({ file }) => {
     return <p>Loading questions...</p>;
   }
 
-  const handleClickRounds = (round) => {
-    // console.log(round);
-    
+  const handleClickRounds = (round) => {    
     setSelectRoundsTitle(round.title);
   }
 
   const handleClickDuration = (duration) => {
-    // console.log(duration.time);
     setSelectInterview(duration.time);
   }
 
   const handleClickInterviewer = (interview) => {
-    // console.log(interview);
     setSelectInterviewer(interview.name);
   }
 
 
   const handleVideoCall = (e) => {
     const events = e.target.value;
-    // console.log('video Call Available', events);
     setVideoSelected(events);
   }
 
   const handleTermsAgree = (e) => {
-    // console.log("terms Agreed", e.target.checked);
     setTermsAgreed(e.target.checked);
   }
 

@@ -106,9 +106,10 @@
 
 
 
-import { createContext, useContext, useEffect, useState , useRef} from "react";
+import { createContext, useContext, useEffect, useState, useRef } from "react";
 import { supabase } from "../../supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { rounds } from "../../public/data/startPractice";
 
 const dataContext = createContext();
 
@@ -125,23 +126,44 @@ const DatasContextApi = ({ children }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
     const navigate = useNavigate();
     let lipsyncInterval = null;
-
-
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
     const [questions, setQuestions] = useState([]);
     const debug = true;
 
-    const fetchAllTheQuestions = async () => {
-        const response = await fetch('/data/AIQuestions/Coding.json');
-        const result = await response.json();
-        setQuestions(result);
-    }
 
-    useEffect(() => {
-        fetchAllTheQuestions();
-    }, []);
+
+    // const fetchAllTheQuestions = async () => {
+    //     const response = await fetch(`/data/AIQuestions/{file}`);
+    //     const result = await response.json();
+    //     setQuestions(result);
+    // }
+
+    // useEffect(() => {
+    //     fetchAllTheQuestions();
+    // }, []);
+
+
+    // const round = rounds.find(r => r.title === selectedRound);
+    // console.log(selectedRound);
+
+    const getAvatarFile = () => {
+        const round = rounds.find(r => r.title === selectedRound);
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -295,6 +317,7 @@ const DatasContextApi = ({ children }) => {
             videoSelected &&
             termsAgreed
         ) {
+            fetchAllTheQuestions();
             if (selectedRound === 'Warm Up') {
                 navigate('/avatarModal')
             } else if (selectedRound === "Coding") {

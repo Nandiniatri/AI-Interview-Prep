@@ -17,14 +17,8 @@ const Modal = ({ isOpen, children, onClose }) => {
   console.log(selectedRound);
   
   const selectedRoundsData = rounds.find(r => r.title === selectedRound)
-  // console.log("selected Round Data Modal", selectedRoundsData);
 
   const fileKeys = selectedJsonFiles[selectedPosition] || 'startPractices1';
-  // console.log(fileKeys);
-
-  // const fileToBeUseInQuestions = selectedRoundsData?.[fileKeys];
-  // console.log(fileToBeUseInQuestions);
-
 
   if (!isOpen) return null;
 
@@ -48,7 +42,6 @@ const Modal = ({ isOpen, children, onClose }) => {
           </div>
         </div>
       </div>
-      
     </>,
     document.getElementById("modal-form")
   );

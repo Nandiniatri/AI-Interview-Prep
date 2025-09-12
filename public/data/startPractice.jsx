@@ -19,7 +19,7 @@ export const positions = [
     }
 ];
 
- 
+
 export const rounds = [
     {
         id: 1,
@@ -31,6 +31,13 @@ export const rounds = [
         startPractices2: "webDevWarmUpPage.json",
         startPractices3: "webDesignWarmUpPage.json",
         startPractices4: "webDesignWarmUpPage.json",
+
+        avatars: {
+            "Web Developer": "WebDevWarmUpAvatar.json",
+            "ReactJS Developer": "ReactJsWarmUpAvatar.json",
+            "Web Designer": "WebDesWarmUpAvatar.json",
+            "Software Engineer": "SoftwareEngWarmUpAvatar.json"
+        }
     },
     {
         id: 2,
@@ -42,6 +49,13 @@ export const rounds = [
         startPractices2: "webDevCodingPage.json",
         startPractices3: "webDesignCodingPage.json",
         startPractices4: "webDesignCodingPage.json",
+
+        avatars: {
+            "Web Developer": "WebDevWarmUpAvatar.json",
+            "ReactJS Developer": "ReactJsWarmUpAvatar.json",
+            "Web Designer": "WebDesWarmUpAvatar.json",
+            "Software Engineer": "SoftwareEngWarmUpAvatar.json"
+        }
     },
     {
         id: 3,
@@ -53,6 +67,13 @@ export const rounds = [
         startPractices2: "webDevRoleRelativePage.json",
         startPractices3: "webDesignRoleRelativePage.json",
         startPractices4: "webDesignRoleRelativePage.json",
+
+        avatars: {
+            "Web Developer": "WebDevWarmUpAvatar.json",
+            "ReactJS Developer": "ReactJsWarmUpAvatar.json",
+            "Web Designer": "WebDesWarmUpAvatar.json",
+            "Software Engineer": "SoftwareEngWarmUpAvatar.json"
+        }
     },
     {
         id: 4,
@@ -64,5 +85,12 @@ export const rounds = [
         startPractices2: "webDevBehaviourPage.json",
         startPractices3: "webDesignBehaviourPage.json",
         startPractices4: "webDesignBehaviourPage.json",
+
+        avatars: {
+            "Web Developer": "WebDevWarmUpAvatar.json",
+            "ReactJS Developer": "ReactJsWarmUpAvatar.json",
+            "Web Designer": "WebDesWarmUpAvatar.json",
+            "Software Engineer": "SoftwareEngWarmUpAvatar.json"
+        }
     }
 ];
