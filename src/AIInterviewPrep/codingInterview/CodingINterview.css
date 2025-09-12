@@ -174,7 +174,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* Compiler / Output Box */
@@ -201,6 +201,7 @@
   border-radius: 8px;
   overflow: hidden;
   background-color: #000;
+  z-index: 1000;
 }
 
 .coding-interview__video {
@@ -272,7 +273,7 @@
   cursor: pointer;
   outline: none;
   transition: 0.3s ease;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   width: fit-content;
 }
 

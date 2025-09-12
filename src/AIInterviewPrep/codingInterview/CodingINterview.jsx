@@ -58,7 +58,7 @@ const CodingInterview = () => {
                         height="70vh"
                         theme="vs-dark"
                         language={language}
-                        defaultValue="// some comment"
+                        defaultValue={CODE_SNIPPETS["javascript"]}
                         onMount={onMount}
                         value={value}
                         onChange={(value) => setValue(value)}
