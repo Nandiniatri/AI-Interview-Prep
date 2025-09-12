@@ -162,28 +162,49 @@ const DatasContextApi = ({ children }) => {
     const [questions, setQuestions] = useState([]);
 
 
-    // useEffect(() => {
-    //     if (selectedPosition && selectedRound) {
-    //         const round = rounds.find(r => r.title === selectedRound);
+    console.log(selectedRound, selectedPosition);
 
-    //         if (round && round.data[selectedPosition]) {
-    //             const { file } = round.data[selectedPosition]; 
-    //             console.log(file);
-                
-    //             fetch(`/data/AIQuestions/${file}`)
-    //                 .then(res => res.json())
-    //                 .then(data => setQuestions(data))
-    //                 .catch(err => {
-    //                     console.error("Error loading JSON:", err);
-    //                     setQuestions([]);
-    //                 });
-    //         } else {
-    //             setQuestions([]);
-    //         }
-    //     }
-    // }, [selectedPosition, selectedRound]);
 
-    
+
+    const positionToAvatarKey = {
+        "ReactJS Developer": "file1",
+        "Web Developer": "file2",
+        "Web Designer": "file3"
+    };
+
+
+    const selectedRoundData = rounds.find(r => r.title === selectedRound);
+    console.log("selected round", selectedRoundData);
+
+
+    const avatarKey = positionToAvatarKey[selectedPosition] || "avatarModelData1";
+
+    const avatarToUse = selectedRoundData?.[avatarKey] || null;
+
+    const fetchAllAvatarData = async () => {
+        if (avatarToUse) {
+            try {
+                const response = await fetch(`/public/data/${avatarToUse}`);
+                const result = await response.json();
+                console.log(result);
+
+                setQuestions(result);
+            } catch (error) {
+                console.log('Network Error');
+            }
+        }
+    };
+
+    useEffect(() => {
+        fetchAllAvatarData();
+    }, []);
+
+
+
+
+
+
+
 
 
 
@@ -392,7 +413,8 @@ const DatasContextApi = ({ children }) => {
                 selectedRound, setSelectedRound,
                 selectedPosition, setSelectedPosition,
                 interviewStarted, startInterview, currentQuestion, questions,
-                meshRef
+                meshRef,
+                avatarToUse
             }}
         >
             {children}

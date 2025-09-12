@@ -33,7 +33,7 @@ export const rounds = [
         startPractices4: "webDesignWarmUpPage.json",
 
         avatarModelData1: "WebDevWarmUpAvatar.json",
-        avatarModelData1: "reactJsWarmUpAvatar.json"
+        avatarModelData2: "reactJsWarmUpAvatar.json"
     },
     {
         id: 2,
@@ -60,7 +60,8 @@ export const rounds = [
         startPractices3: "webDesignRoleRelativePage.json",
         startPractices4: "webDesignRoleRelativePage.json",
 
-        avatarModelData1: "WebDevRoleRelatedAvatar.json"
+        avatarModelData1: "WebDevRoleRelatedAvatar.json",
+        avatarModelData2: "reactJsCodingAvatar.json"
     },
     {
         id: 4,
@@ -73,6 +74,8 @@ export const rounds = [
         startPractices3: "webDesignBehaviourPage.json",
         startPractices4: "webDesignBehaviourPage.json",
 
-        avatarModelData1: "WebDevBehavioralAvatar.json"
+        avatarModelData1: "WebDevBehavioralAvatar.json",
+        avatarModelData2: "reactJsCodingAvatar.json"
     }
 ];
+ 
