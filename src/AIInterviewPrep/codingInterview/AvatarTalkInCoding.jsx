@@ -190,6 +190,7 @@ import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
+import { useDataContext } from '../../contextApi/DatasContectApi';
 
 const AvatarModel = ({ url, meshRef, scale = 4, position = [0, -6, 2.2] }) => {
     const { scene } = useGLTF(url);
@@ -205,7 +206,7 @@ const AvatarModel = ({ url, meshRef, scale = 4, position = [0, -6, 2.2] }) => {
 };
 
 const AvatarOnly = () => {
-    const meshRef = useRef();
+    const { meshRef } = useDataContext();
 
     return (
         <div className='canvas-main-div'>

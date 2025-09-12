@@ -337,7 +337,8 @@ const DatasContextApi = ({ children }) => {
                 isModalOpen, setIsOpenOpen,
                 selectedRound, setSelectedRound,
                 selectedPosition, setSelectedPosition,
-                interviewStarted, startInterview, currentQuestion, questions
+                interviewStarted, startInterview, currentQuestion, questions,
+                meshRef
             }}
         >
             {children}
