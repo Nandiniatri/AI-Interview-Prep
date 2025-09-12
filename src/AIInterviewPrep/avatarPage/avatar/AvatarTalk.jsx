@@ -20,7 +20,7 @@ const AvatarTalk = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
     const [questions, setQuestions] = useState([]);
-    const debug = true;
+    const debug = true; 
 
     const fetchAllTheQuestions = async () => {
         const response = await fetch('/data/AIQuestions/WarmUp.json');
