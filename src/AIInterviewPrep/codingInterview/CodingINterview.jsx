@@ -65,6 +65,11 @@ const CodingInterview = () => {
                     />
                 </div>
 
+                <div className="coding-interview__video-container">
+                    <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
+                    <span className="coding-interview__video-timer">00:00</span>
+                </div>
+
 
                 <div className="coder-compliler">
                     <Output editorRef={editorRef} language={language} />
@@ -88,10 +93,7 @@ export default CodingInterview;
 
 
 
-{/* <div className="coding-interview__video-container">
-    <img src="https://via.placeholder.com/150" alt="Interviewer" className="coding-interview__video" />
-    <span className="coding-interview__video-timer">00:00</span>
-</div> */}
+
 
 
 {/* <div className="coding-interview__editor-panel">
