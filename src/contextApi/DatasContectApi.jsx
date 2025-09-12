@@ -106,6 +106,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { createContext, useContext, useEffect, useState, useRef } from "react";
 import { supabase } from "../../supabaseClient";
 import { useNavigate } from "react-router-dom";
@@ -136,8 +161,34 @@ const DatasContextApi = ({ children }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
     const [questions, setQuestions] = useState([]);
 
+
+    // useEffect(() => {
+    //     if (selectedPosition && selectedRound) {
+    //         const round = rounds.find(r => r.title === selectedRound);
+
+    //         if (round && round.data[selectedPosition]) {
+    //             const { file } = round.data[selectedPosition]; 
+    //             console.log(file);
+                
+    //             fetch(`/data/AIQuestions/${file}`)
+    //                 .then(res => res.json())
+    //                 .then(data => setQuestions(data))
+    //                 .catch(err => {
+    //                     console.error("Error loading JSON:", err);
+    //                     setQuestions([]);
+    //                 });
+    //         } else {
+    //             setQuestions([]);
+    //         }
+    //     }
+    // }, [selectedPosition, selectedRound]);
+
     
-    
+
+
+
+
+
 
 
 
@@ -265,7 +316,7 @@ const DatasContextApi = ({ children }) => {
         }
     }, [currentQuestion, interviewStarted, questions]);
 
-    console.log(questions);
+    // console.log(questions);
 
 
     useEffect(() => {
@@ -307,7 +358,6 @@ const DatasContextApi = ({ children }) => {
             videoSelected &&
             termsAgreed
         ) {
-            fetchAllTheQuestions();
             if (selectedRound === 'Warm Up') {
                 navigate('/avatarModal')
             } else if (selectedRound === "Coding") {
