@@ -9,7 +9,7 @@ import Output from "./Output";
 
 const CodingInterview = () => {
     const editorRef = useRef();
-    const [value, setValue] = useState();
+    const [value, setValue] = useState("");
     const [language, setLanguage] = useState("javascript");
 
     const onMount = (editor) => {
