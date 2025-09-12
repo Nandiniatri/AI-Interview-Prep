@@ -122,35 +122,25 @@ const DatasContextApi = ({ children }) => {
     const [termsAgreed, setTermsAgreed] = useState(false);
     const [resumeName, setResumeName] = useState("");
     const [isModalOpen, setIsOpenOpen] = useState(false);
-    const [selectedRound, setSelectedRound] = useState("");
-    const [selectedPosition, setSelectedPosition] = useState("");
     const navigate = useNavigate();
     let lipsyncInterval = null;
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
-    const [questions, setQuestions] = useState([]);
     const debug = true;
 
 
 
-    // const fetchAllTheQuestions = async () => {
-    //     const response = await fetch(`/data/AIQuestions/{file}`);
-    //     const result = await response.json();
-    //     setQuestions(result);
-    // }
 
-    // useEffect(() => {
-    //     fetchAllTheQuestions();
-    // }, []);
+    const [selectedRound, setSelectedRound] = useState("");
+    const [selectedPosition, setSelectedPosition] = useState("");
+    const [questions, setQuestions] = useState([]);
+
+    
+    
 
 
-    // const round = rounds.find(r => r.title === selectedRound);
-    // console.log(selectedRound);
 
-    const getAvatarFile = () => {
-        const round = rounds.find(r => r.title === selectedRound);
-    };
 
 
 
