@@ -1,17 +1,18 @@
-.video-Call-main-div{
+/* .video-Call-main-div{
     border: solid;
-}
+} */
 
 .video-call{
-    border: solid red;
+    /* border: solid red; */
     width: 300px;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 .video-Call-title-div{
-    border: solid;
+    /* border: solid; */
     display: flex;
     flex-direction: column;
+    justify-content: start;
 }
 
 .video-Call-title-div h3{
@@ -20,7 +21,20 @@
 }
 
 
-.video-Call-title-div p{
+.video-Call-title-div span{
     color: gray;
     /* font-size: 1.5rem; */
+    font-weight: bold;
+}
+
+.video-call-exit-btn{
+    border: solid 1px red;
+    padding: 10px 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
 }

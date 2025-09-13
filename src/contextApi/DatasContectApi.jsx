@@ -398,7 +398,8 @@ const DatasContextApi = ({ children }) => {
                 selectedPosition, setSelectedPosition,
                 interviewStarted, startInterview, currentQuestion, questions,
                 meshRef,
-                avatarToUse
+                avatarToUse,
+                navigate
             }}
         >
             {children}
