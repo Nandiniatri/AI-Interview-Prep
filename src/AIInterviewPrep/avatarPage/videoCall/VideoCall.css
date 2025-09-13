@@ -16,5 +16,11 @@
 
 .video-Call-title-div h3{
     color: #8c52fe;
-    font-size: 30px;
+    font-size: 1.5rem;
+}
+
+
+.video-Call-title-div p{
+    color: gray;
+    /* font-size: 1.5rem; */
 }

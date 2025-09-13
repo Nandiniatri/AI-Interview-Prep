@@ -186,11 +186,18 @@ const DatasContextApi = ({ children }) => {
             const result = await response.json();
             // console.log(result);
             setQuestions(result);
+
+            localStorage.setItem("questions" , JSON.stringify(result));
         }
     }
 
     useEffect(() => {
-        fetchAllAvatarData();
+        const saved = localStorage.getItem("questions");
+        if(saved){
+            setQuestions(JSON.parse(saved));
+        }else{
+            fetchAllAvatarData();
+        }
     },[avatarToUse]);
 
 
@@ -349,12 +356,12 @@ const DatasContextApi = ({ children }) => {
             return;
         }
         if (
-            resumeName &&
-            selectRoundsTitle &&
-            selectInterview &&
-            selectInterviewer &&
-            videoSelected &&
-            termsAgreed
+            // resumeName &&
+            selectRoundsTitle
+            // selectInterview &&
+            // selectInterviewer &&
+            // videoSelected &&
+            // termsAgreed
         ) {
             if (selectedRound === 'Warm Up') {
                 navigate('/avatarModal')
