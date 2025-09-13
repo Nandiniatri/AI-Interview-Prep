@@ -169,22 +169,22 @@ const DatasContextApi = ({ children }) => {
 
 
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
-    console.log("selected round", selectedRoundData);
+    // console.log("selected round", selectedRoundData);
 
 
     const avatarKey = positionToAvatarKey[selectedPosition] || "avatarModelData1";
-    console.log("avatarkey", avatarKey);
+    // console.log("avatarkey", avatarKey);
 
 
     const avatarToUse = selectedRoundData?.[avatarKey] || null;
-    console.log("AvatarUseJsonFile:", avatarToUse);
+    // console.log("AvatarUseJsonFile:", avatarToUse);
 
     const fetchAllAvatarData = async() => {
         if(avatarToUse){
             const response = await fetch(`/data/AIQuestions/${avatarToUse}`);
             // console.log(response);
             const result = await response.json();
-            console.log(result);
+            // console.log(result);
             setQuestions(result);
         }
     }
@@ -194,6 +194,8 @@ const DatasContextApi = ({ children }) => {
     },[avatarToUse]);
 
 
+    // console.log(questions[0]);
+    
 
 
 
