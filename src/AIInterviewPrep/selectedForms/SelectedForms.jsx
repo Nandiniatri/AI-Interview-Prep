@@ -17,6 +17,8 @@ const SelectedForm = ({ file }) => {
       try {
         const response = await fetch(`/public/data/${file}`);
         const result = await response.json();
+        // console.log("selectForms" , result);
+        
         setData(result);
       } catch (error) {
         console.log('Network Error'); 
@@ -26,7 +28,7 @@ const SelectedForm = ({ file }) => {
 
   useEffect(() => {
     fetchAllFileData();
-  }, []);
+  }, []); 
 
   const handleUploadClick = () => {
     fileInputRef.current.click();

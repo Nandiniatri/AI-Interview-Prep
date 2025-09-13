@@ -161,15 +161,10 @@ const DatasContextApi = ({ children }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
     const [questions, setQuestions] = useState([]);
 
-
-    console.log(selectedRound, selectedPosition);
-
-
-
     const positionToAvatarKey = {
-        "ReactJS Developer": "file1",
-        "Web Developer": "file2",
-        "Web Designer": "file3"
+        "ReactJS Developer": "avatarModelData2",
+        "Web Developer": "avatarModelData1",
+        // "Web Designer": ""
     };
 
 
@@ -178,45 +173,25 @@ const DatasContextApi = ({ children }) => {
 
 
     const avatarKey = positionToAvatarKey[selectedPosition] || "avatarModelData1";
+    console.log("avatarkey", avatarKey);
+
 
     const avatarToUse = selectedRoundData?.[avatarKey] || null;
+    console.log("AvatarUseJsonFile:", avatarToUse);
 
-    const fetchAllAvatarData = async () => {
-        if (avatarToUse) {
-            try {
-                const response = await fetch(`/public/data/${avatarToUse}`);
-                const result = await response.json();
-                console.log(result);
-
-                setQuestions(result);
-            } catch (error) {
-                console.log('Network Error');
-            }
+    const fetchAllAvatarData = async() => {
+        if(avatarToUse){
+            const response = await fetch(`/data/AIQuestions/${avatarToUse}`);
+            // console.log(response);
+            const result = await response.json();
+            console.log(result);
+            setQuestions(result);
         }
-    };
+    }
 
     useEffect(() => {
         fetchAllAvatarData();
-    }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    },[avatarToUse]);
 
 
 
