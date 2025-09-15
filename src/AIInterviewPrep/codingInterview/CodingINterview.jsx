@@ -1,4 +1,4 @@
-import "./CodingInterview.css";
+import "./CodingINterview.css";
 import Button from "../../componets/Button";
 import { FaSignOutAlt } from "react-icons/fa";
 import { useRef, useState } from "react";
