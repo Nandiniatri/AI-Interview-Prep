@@ -1,6 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import Button from "../Button";
-import './SignUpForm.css'
+import './SignupForm.css'
 import Header from "../../AIInterviewPrep/homePage/header/Header";
 import { Link } from "react-router-dom";
 import { useDataContext } from "../../contextApi/DatasContectApi";
