@@ -40,11 +40,11 @@
 }
 
 .video-call-exit-btn {
-    border: solid 1px red;
+    border: none;
     padding: 10px 10px;
     border-radius: 10px;
     font-size: 13px;
-    color: red;
+    /* color: red; */
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
