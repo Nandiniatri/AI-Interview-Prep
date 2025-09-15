@@ -8,6 +8,7 @@ import LanguageSelecter from "./LangaugeSelecter";
 import Output from "./Output";
 import AvatarTalkCoding from "./AvatarTalkInCoding";
 import { useDataContext } from "../../contextApi/DatasContectApi";
+import Header from "../homePage/header/Header";
 
 const CodingInterview = () => {
     const editorRef = useRef();
@@ -28,57 +29,61 @@ const CodingInterview = () => {
     };
 
     return (
-        <div className="coding-interview">
-            {/* Left Sidebar */}
-            <div className="coding-interview__sidebar">
-                <h2 className="coding-interview__title">Web Developer</h2>
-                <span className="coding-interview__round">Coding</span>
+        <>
+        <Header /> 
+            <div className="coding-interview">
+                {/* Left Sidebar */}
+                <div className="coding-interview__sidebar">
+                    <h2 className="coding-interview__title">Web Developer</h2>
+                    <span className="coding-interview__round">Coding</span>
 
-                <div>
-                    <Button onClick={startInterview}>Start Question</Button>
+                    <div>
+                        <Button onClick={startInterview}>Start Question</Button>
+                    </div>
+
+                    <p className="coding-interview__instruction">
+                        {interviewStarted && currentQuestion < questions.length && (
+                            <p>{questions[currentQuestion].que}</p>)}
+                    </p>
+
+                    <Button className="coding-interview__exit-btn">
+                        <FaSignOutAlt className="exit-icon" />
+                        Exit Practice
+                    </Button>
                 </div>
 
-                <p className="coding-interview__instruction">
-                    {interviewStarted && currentQuestion < questions.length && (
-                        <p>{questions[currentQuestion].que}</p>)}
-                </p>
 
-                <Button className="coding-interview__exit-btn">
-                    <FaSignOutAlt className="exit-icon" />
-                    Exit Practice
-                </Button>
+
+                {/* Right Panel */}
+                <div className="coding-interview__editor-panel">
+                    <LanguageSelecter language={language} onSelect={onSelect} />
+                    <div className="coding-editor-div">
+                        <Editor
+                            height="70vh"
+                            theme="vs-dark"
+                            language={language}
+                            defaultValue={CODE_SNIPPETS["javascript"]}
+                            onMount={onMount}
+                            value={value}
+                            onChange={(value) => setValue(value)}
+                        />
+                    </div>
+
+                    <div className="coding-interview__video-container">
+                        <AvatarTalkCoding />
+                        <span className="coding-interview__video-timer">00:00</span>
+                    </div>
+
+
+                    <div className="coder-compliler">
+                        <Output editorRef={editorRef} language={language} />
+                    </div>
+                </div>
+
+
             </div>
 
-
-
-            {/* Right Panel */}
-            <div className="coding-interview__editor-panel">
-                <LanguageSelecter language={language} onSelect={onSelect} />
-                <div className="coding-editor-div">
-                    <Editor
-                        height="70vh"
-                        theme="vs-dark"
-                        language={language}
-                        defaultValue={CODE_SNIPPETS["javascript"]}
-                        onMount={onMount}
-                        value={value}
-                        onChange={(value) => setValue(value)}
-                    />
-                </div>
-
-                <div className="coding-interview__video-container">
-                    <AvatarTalkCoding />
-                    <span className="coding-interview__video-timer">00:00</span>
-                </div>
-
-
-                <div className="coder-compliler">
-                    <Output editorRef={editorRef} language={language} />
-                </div>
-            </div>
-
-
-        </div>
+        </>
     );
 };
 

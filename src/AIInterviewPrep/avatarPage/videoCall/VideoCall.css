@@ -54,7 +54,8 @@
     cursor: pointer;
     margin-top: 20px;
     /* background-color: #f03993 #d737d5; */
-    background: linear-gradient(135deg, #f03993 , #d737d5)
+    /* background: linear-gradient(135deg, #f03993 , #d737d5) */
+    background: linear-gradient(90deg, #ef4444, #b91c1c);
 }
 
 .exit-div{
