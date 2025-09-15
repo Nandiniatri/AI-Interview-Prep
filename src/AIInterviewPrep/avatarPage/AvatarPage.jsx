@@ -1,7 +1,7 @@
 import Header from "../homePage/header/Header";
 import AvatarTalk from "./avatar/AvatarTalk";
 import './AvatarPage.css';
-import VideoCall from "./avatar/videoCall/VideoCall";
+// import VideoCall from "./avatar/videoCall/VideoCall";
 
 const AvatarPage = () => {
     return (
@@ -12,7 +12,7 @@ const AvatarPage = () => {
                     <AvatarTalk />
                 </div>
                 <div className="video-call-section">
-                    <VideoCall />
+                    {/* <VideoCall />s */}
                 </div>
             </div>
         </>
