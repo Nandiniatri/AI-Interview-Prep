@@ -61,7 +61,7 @@ export const rounds = [
         startPractices4: "webDesignRoleRelativePage.json",
 
         avatarModelData1: "WebDevRoleRelatedAvatar.json",
-        avatarModelData2: "reactJsCodingAvatar.json"
+        avatarModelData2: "reactJsRoleRelativeAvatar.json"
     },
     {
         id: 4,
@@ -75,7 +75,7 @@ export const rounds = [
         startPractices4: "webDesignBehaviourPage.json",
 
         avatarModelData1: "WebDevBehavioralAvatar.json",
-        avatarModelData2: "reactJsCodingAvatar.json"
+        avatarModelData2: "reactJsBehaiviorAvatar.json"
     }
 ];
   
