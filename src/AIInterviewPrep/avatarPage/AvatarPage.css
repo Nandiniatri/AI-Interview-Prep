@@ -10,10 +10,11 @@
   border: solid red;
   height: auto;
   /* background: linear-gradient(90deg, #6a11cb, #7349ce); */
-  background-color: rgba(118,48,237,255);
+  /* background-color: rgba(118,48,237,255); */
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #3b0764);
 }
 
-.avatar-section, 
+.avatar-section,
 .video-call-section {
   padding: 16px;
   display: flex;
