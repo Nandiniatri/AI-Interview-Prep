@@ -7,23 +7,15 @@ const VideoCall = () => {
     const videoRef = useRef(null);
     const { questions, navigate } = useDataContext();
 
-    // console.log(questions.title);
-    // console.log(questions.subTitle);
-
-    // {questions.map((item) =>{
-    //     console.log(item);
-
-    // })}
-
     const handleVideoCallExit = () => {
         navigate('/');
-    }
+    } 
 
     if (!questions) {
         alert('there is no questions data');
     }
 
-    useEffect(() => {
+    useEffect(() => { 
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(stream => {
                 if (videoRef.current) {
@@ -56,7 +48,7 @@ const VideoCall = () => {
                 </div>
             </div>
 
-            <div className=''>
+            <div className='exit-div'>
                 <Button className='video-call-exit-btn' onClick={handleVideoCallExit}>Exit Interview</Button>
             </div>
         </div>
