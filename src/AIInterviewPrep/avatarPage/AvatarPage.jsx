@@ -1,6 +1,6 @@
 import AvatarTalk from "./avatar/AvatarTalk";
-import VideoCall from "./videoCall/videoCall";
 import './AvatarPage.css';
+import VideoCall from "./videoCall/VideoCall";
 
 const AvatarPage = () => {
     return (

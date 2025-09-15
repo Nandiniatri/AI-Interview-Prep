@@ -19,23 +19,21 @@ const Output = ({ language, editorRef }) => {
             setLoading(false);
         }
     }
-    console.log(output);
+    // console.log(output);
 
     return (
         <div className="output-wrapper">
-            {/* Output Box */}
             <div className="output-div">
                 {output ? output : 'Click "Run Code" to see the output here'}
             </div>
 
-            {/* Run Button INSIDE editor wrapper */}
-            <button
+            <Button
                 className="run-btn"
                 onClick={runcode}
                 disabled={loading}
             >
                 {loading ? "Running..." : "Run Code"}
-            </button>
+            </Button>
         </div>
     )
 }

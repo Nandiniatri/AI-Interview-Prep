@@ -20,19 +20,10 @@ const AvatarTalk = () => {
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
-    // const [questions, setQuestions] = useState([]);
     const debug = true;
     const { questions } = useDataContext();
 
-    // const fetchAllTheQuestions = async () => {
-    //     const response = await fetch('/data/AIQuestions/WarmUp.json');
-    //     const result = await response.json();
-    //     setQuestions(result);
-    // }
 
-    // useEffect(() => {
-    //     fetchAllTheQuestions();
-    // }, []);
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -144,7 +135,6 @@ const AvatarTalk = () => {
         }
     }, [currentQuestion, interviewStarted, questions]);
 
-    console.log(questions);
 
     return (
         <div className='canvas-main-div'>
@@ -174,11 +164,36 @@ const AvatarTalk = () => {
 
             <div className='show-current-question'>
                 {interviewStarted && currentQuestion < questions.length && (
-                    <p>{questions[currentQuestion].que}</p>
+                    <>
+                        <p>{questions[currentQuestion].que}</p>
+                        <button
+                            className="avatar-next-btn"
+                            onClick={() => setCurrentQuestion(prev => prev + 1)}
+                        >
+                            Next Question
+                        </button>
+                    </>
+                )}
+
+                {interviewStarted && currentQuestion >= questions.length && (
+                    <p>✅ Interview Finished!</p>
                 )}
             </div>
+
         </div>
     );
 };
 
 export default AvatarTalk;
+
+
+
+
+
+
+
+// <div className='show-current-question'>
+//     {interviewStarted && currentQuestion < questions.length && (
+//         <p>{questions[currentQuestion].que}</p>
+//     )}
+// </div>

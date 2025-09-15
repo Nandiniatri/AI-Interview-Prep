@@ -2,13 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
-  padding: 50px;
-  background-color: #f9fafb;
+  /* gap: 10px; */
+  padding: 10px;
+  /* background-color: #f9fafb; */
   min-height: 100vh;
   box-sizing: border-box;
-  /* border: solid red; */
+  border: solid red;
   height: auto;
+  /* background: linear-gradient(90deg, #6a11cb, #7349ce); */
+  background-color: rgba(118,48,237,255);
 }
 
 .avatar-section, 

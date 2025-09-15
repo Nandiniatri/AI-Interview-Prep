@@ -1,29 +1,38 @@
-/* .video-Call-main-div{
+.video-call-main-container{
     border: solid;
-} */
+}
+
+.video-Call-main-div{
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #38147c;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+}
 
 .video-call{
-    /* border: solid red; */
     width: 300px;
     border-radius: 10px;
 }
 
 .video-Call-title-div{
-    /* border: solid; */
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    align-items: center;
 }
 
 .video-Call-title-div h3{
-    color: #8c52fe;
+    color: white;
     font-size: 1.5rem;
 }
 
 
 .video-Call-title-div span{
-    color: gray;
-    /* font-size: 1.5rem; */
+    color: white;
     font-weight: bold;
 }
 
