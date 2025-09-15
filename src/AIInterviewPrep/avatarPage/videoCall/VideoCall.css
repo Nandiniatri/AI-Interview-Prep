@@ -1,11 +1,10 @@
 .video-call-main-container {
-    border: solid blue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%; 
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -14,7 +13,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: #38147c; */
     padding: 10px;
     border-radius: 10px;
     gap: 10px;
@@ -51,4 +49,11 @@
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
+}
+
+.exit-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
