@@ -1,5 +1,5 @@
 import { LANGUAGE_VERSION } from "../../contants";
-import "./CodingInterview.css";
+import "./CodingINterview.css";
 
 const LanguageSelecter = ({ onSelect, language }) => {
     const languages = Object.entries(LANGUAGE_VERSION);
