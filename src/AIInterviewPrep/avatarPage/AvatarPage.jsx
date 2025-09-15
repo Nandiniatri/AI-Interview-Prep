@@ -1,7 +1,7 @@
 import Header from "../homePage/header/Header";
 import AvatarTalk from "./avatar/AvatarTalk";
 import './AvatarPage.css';
-import VideoCall from "./videoCall/VideoCall";
+import VideoCall from "./avatar/videoCall/VideoCall";
 
 const AvatarPage = () => {
     return (
