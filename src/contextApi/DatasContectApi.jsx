@@ -338,17 +338,27 @@ const DatasContextApi = ({ children }) => {
 
     // console.log(session?.user?.email);
 
-    const signOut = async () => {
-        const { error } = await supabase.auth.signOut();
-    };
 
-    const signUp = async () => {
-        console.log('hello sign up here');
 
-        await supabase.auth.signInWithOAuth({
-            provider: "google",
-        });
-    };
+
+
+    // const signOut = async () => {
+    //     const { error } = await supabase.auth.signOut();
+    // };
+
+    // const signUp = async () => {
+    //     console.log('hello sign up here');
+
+    //     await supabase.auth.signInWithOAuth({
+    //         provider: "google",
+    //     });
+    // };
+
+    useEffect(() => {
+
+    },[])
+
+
 
     const handleStartPractice = () => {
         if (!session) {
