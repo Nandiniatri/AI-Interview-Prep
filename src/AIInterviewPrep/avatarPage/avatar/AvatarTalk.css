@@ -33,11 +33,11 @@
     height: 110px;
     background-color: #38137f;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     color: white;
     position: absolute;
     left: 49%;
-    bottom: -20px;
+    bottom: -25px;
     transform: translateX(-50%);
     width: 92%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -45,14 +45,17 @@
 
 .show-current-question p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: white;
 }
 
 .avatar-next-btn {
     border: solid 1px white;
     background-color: transparent;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 10px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 45px;
+    font-size: 15px;
 }
