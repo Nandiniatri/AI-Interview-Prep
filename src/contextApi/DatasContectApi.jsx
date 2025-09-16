@@ -355,22 +355,22 @@ const DatasContextApi = ({ children }) => {
     // };
 
     useEffect(() => {
-        const getSession = () => {
-            const { data: { session } } = supabase.auth.getSession();
-            console.log({ data: { session } });
-            setSession(session);
-        }
-
-        getSession();
-
-        const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
-            setSession(session);
-        });
-
-        return () => {
-            authListener.subscription.unsubscribe();
+        const getSession = async () => {
+            const { data, error } = await supabase.auth.getSession();
+            if (error) {
+                console.error("Session fetch error:", error.message);
+                return;
+            }
+            if (data && data.session) {
+                setSession(data.session);
+            } else {
+                console.log("No session found");
+                setSession(null);
+            }
         };
-    }, [])
+        getSession();
+    }, []);
+
 
     const signUp = async () => {
         console.log('Sign in with Google initiated');
