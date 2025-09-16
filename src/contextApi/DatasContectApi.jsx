@@ -162,14 +162,14 @@ const DatasContextApi = ({ children }) => {
     const [questions, setQuestions] = useState([]);
 
     const positionToAvatarKey = {
-        "ReactJS Developer": "avatarModelData2",
         "Web Developer": "avatarModelData1",
+        "ReactJS Developer": "avatarModelData2",
         // "Web Designer": ""
     };
 
 
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
-    // console.log("selected round", selectedRoundData);
+    console.log("selected round", selectedRoundData);
 
 
     const avatarKey = positionToAvatarKey[selectedPosition] || "avatarModelData1";
@@ -201,7 +201,7 @@ const DatasContextApi = ({ children }) => {
     }, [avatarToUse]);
 
 
-    // console.log(questions[0]);
+    console.log(questions);
 
 
 
