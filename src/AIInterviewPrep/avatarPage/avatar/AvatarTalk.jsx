@@ -19,7 +19,7 @@ let lipsyncInterval = null;
 const AvatarTalk = () => {
     const meshRef = useRef();
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [interviewStarted, setInterviewStarted] = useState(false);
+    const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
     const { questions } = useDataContext();
 
@@ -163,7 +163,7 @@ const AvatarTalk = () => {
                 )
             }
 
-            <div className='show-current-question'>
+            {/* <div className='show-current-question'>
                 {interviewStarted && currentQuestion < questions.length && (
                     <>
                         <p>{questions[currentQuestion].que}</p>
@@ -175,12 +175,28 @@ const AvatarTalk = () => {
                         </button>
                     </>
                 )}
+            </div> */}
 
-                {interviewStarted && currentQuestion >= questions.length && (
+            <div className='show-current-question'>
+                {currentQuestion < questions.length ? (
+                    <>
+                        <p>{questions[currentQuestion].que}</p>
+                        <button
+                            className="avatar-next-btn"
+                            onClick={() => setCurrentQuestion(prev => prev + 1)}
+                        >
+                            Next Question
+                        </button>
+                    </>
+                ) : (
                     <p>✅ Interview Finished!</p>
                 )}
             </div>
 
+
+            {interviewStarted && currentQuestion >= questions.length && (
+                <p>✅ Interview Finished!</p>
+            )}
         </div>
     );
 };
@@ -189,12 +205,3 @@ export default AvatarTalk;
 
 
 
-
-
-
-
-// <div className='show-current-question'>
-//     {interviewStarted && currentQuestion < questions.length && (
-//         <p>{questions[currentQuestion].que}</p>
-//     )}
-// </div>

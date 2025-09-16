@@ -6,7 +6,6 @@
     height: 100%; 
     padding: 10px;
     box-sizing: border-box;
-    /* border: solid red; */
 }
 
 .video-Call-main-div {
@@ -17,8 +16,6 @@
     padding: 10px;
     border-radius: 10px;
     gap: 10px;
-    /* background: linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%); */
-    /* border: solid; */
     background-color: #35177d;
 }
 
@@ -48,13 +45,10 @@
     padding: 10px 10px;
     border-radius: 10px;
     font-size: 13px;
-    /* color: red; */
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
-    /* background-color: #f03993 #d737d5; */
-    /* background: linear-gradient(135deg, #f03993 , #d737d5) */
     background: linear-gradient(90deg, #ef4444, #b91c1c);
     color: white;
 }
