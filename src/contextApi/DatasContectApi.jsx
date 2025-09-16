@@ -179,30 +179,30 @@ const DatasContextApi = ({ children }) => {
     const avatarToUse = selectedRoundData?.[avatarKey] || null;
     // console.log("AvatarUseJsonFile:", avatarToUse);
 
-    const fetchAllAvatarData = async() => {
-        if(avatarToUse){
+    const fetchAllAvatarData = async () => {
+        if (avatarToUse) {
             const response = await fetch(`/data/AIQuestions/${avatarToUse}`);
             // console.log(response);
             const result = await response.json();
             // console.log(result);
             setQuestions(result);
 
-            localStorage.setItem("questions" , JSON.stringify(result));
+            localStorage.setItem("questions", JSON.stringify(result));
         }
     }
 
     useEffect(() => {
         const saved = localStorage.getItem("questions");
-        if(saved){
+        if (saved) {
             setQuestions(JSON.parse(saved));
-        }else{
+        } else {
             fetchAllAvatarData();
         }
-    },[avatarToUse]);
+    }, [avatarToUse]);
 
 
     // console.log(questions[0]);
-    
+
 
 
 
@@ -355,8 +355,44 @@ const DatasContextApi = ({ children }) => {
     // };
 
     useEffect(() => {
+        const getSession = () => {
+            const { data: { session } } = supabase.auth.getSession();
+            console.log({ data: { session } });
+            setSession(session);
+        }
 
-    },[])
+        getSession();
+
+        const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+            setSession(session);
+        });
+
+        return () => {
+            authListener.subscription.unsubscribe();
+        };
+    }, [])
+
+    const signUp = async () => {
+        console.log('Sign in with Google initiated');
+        const { data, error } = await supabase.auth.signInWithOAuth({
+            provider: "google",
+        });
+        if (error) {
+            console.error("Sign in error:", error.message);
+        } else {
+            console.log("Sign in data:", data);
+        }
+    };
+
+    const signOut = async () => {
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+            console.error("Sign out error:", error.message);
+        } else {
+            console.log("Signed out successfully");
+            setSession(null);
+        }
+    };
 
 
 

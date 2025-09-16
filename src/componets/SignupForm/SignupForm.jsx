@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const LoginInSignUpForm = () => {
-    const { signUp , session } = useDataContext();
+    const { signUp, session } = useDataContext();
     console.log(signUp)
+    console.log("Current session:", session);
 
 
 
@@ -66,7 +67,7 @@ const LoginInSignUpForm = () => {
             </div>
         </div>
     );
-}; 
+};
 
 export default LoginInSignUpForm;
 
