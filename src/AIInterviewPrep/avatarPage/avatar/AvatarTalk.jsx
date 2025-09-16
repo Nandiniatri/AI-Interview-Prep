@@ -126,6 +126,7 @@ const AvatarTalk = () => {
     const startInterview = () => {
         setInterviewStarted(true);
         setCurrentQuestion(0);
+        speakQuestion(0);
     };
 
     // ✅ Har baar currentQuestion change hote hi ye trigger hoga
