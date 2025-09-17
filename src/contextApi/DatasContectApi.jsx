@@ -190,7 +190,15 @@ const DatasContextApi = ({ children }) => {
         fetchAllAvatarData();
     }, [avatarToUse, selectedPosition, selectedRound]);
 
-    console.log("Questions:", questions)
+    useEffect(() => {
+        const storedQuestions = localStorage.getItem("questions");
+        if (storedQuestions) {
+            setQuestions(JSON.parse(storedQuestions));
+            console.log("Loaded questions from localStorage:", JSON.parse(storedQuestions));
+        }
+    }, []);
+
+    console.log("Questions:", questions);
 
 
 

@@ -14,7 +14,7 @@ const CodingInterview = () => {
     const editorRef = useRef();
     const [value, setValue] = useState("");
     const [language, setLanguage] = useState("javascript");
-    const { interviewStarted, startInterview, currentQuestion, questions, } = useDataContext();
+    const { interviewStarted, startInterview, currentQuestion, questions, navigate } = useDataContext();
 
     const onMount = (editor) => {
         editorRef.current = editor;
@@ -28,14 +28,26 @@ const CodingInterview = () => {
         )
     };
 
+    const handleVideoCallExit = () => {
+        navigate('/');
+    }
+
+    if (!questions || questions.length === 0) {
+        return <h4>No questions found</h4>;
+    }
+    
+    console.log(questions[0]);
+
+    // const { title, subTitle } = questions[0];
+
     return (
         <>
-        <Header /> 
+            <Header />
             <div className="coding-interview">
                 {/* Left Sidebar */}
                 <div className="coding-interview__sidebar">
-                    <h2 className="coding-interview__title">{}</h2>
-                    <span className="coding-interview__round">Coding</span>
+                    <h2 className="coding-interview__title"></h2>
+                    <span className="coding-interview__round"></span>
 
                     <div>
                         <Button onClick={startInterview}>Start Question</Button>
@@ -46,7 +58,7 @@ const CodingInterview = () => {
                             <p>{questions[currentQuestion].que}</p>)}
                     </p>
 
-                    <Button className="coding-interview__exit-btn">
+                    <Button className="coding-interview__exit-btn" onClick={handleVideoCallExit}>
                         <FaSignOutAlt className="exit-icon" />
                         Exit Practice
                     </Button>
@@ -71,7 +83,6 @@ const CodingInterview = () => {
 
                     <div className="coding-interview__video-container">
                         <AvatarTalkCoding />
-                        <span className="coding-interview__video-timer">00:00</span>
                     </div>
 
 
