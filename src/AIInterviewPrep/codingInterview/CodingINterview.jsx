@@ -38,7 +38,7 @@ const CodingInterview = () => {
     
     console.log(questions[0]);
 
-    // const { title, subTitle } = questions[0];
+    const { title, subTitle } = questions[0];
 
     return (
         <>
@@ -46,8 +46,8 @@ const CodingInterview = () => {
             <div className="coding-interview">
                 {/* Left Sidebar */}
                 <div className="coding-interview__sidebar">
-                    <h2 className="coding-interview__title"></h2>
-                    <span className="coding-interview__round"></span>
+                    <h2 className="coding-interview__title">{title}</h2>
+                    <span className="coding-interview__round">{subTitle}</span>
 
                     <div>
                         <Button onClick={startInterview}>Start Question</Button>
