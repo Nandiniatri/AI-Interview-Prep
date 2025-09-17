@@ -162,10 +162,10 @@ const DatasContextApi = ({ children }) => {
     const [questions, setQuestions] = useState([]);
 
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
-    console.log("Selected Round Data:", selectedRoundData);
+    // console.log("Selected Round Data:", selectedRoundData);
 
     const avatarToUse = selectedRoundData?.avatars?.[selectedPosition] || null;
-    console.log("Avatar File To Fetch:", avatarToUse);
+    // console.log("Avatar File To Fetch:", avatarToUse);
 
     const fetchAllAvatarData = async () => {
         if (avatarToUse) {
@@ -176,7 +176,7 @@ const DatasContextApi = ({ children }) => {
                 }
                 const result = await response.json();
 
-                console.log("Fetched data:", result);
+                // console.log("Fetched data:", result);
                 setQuestions(result);
 
                 localStorage.setItem("questions", JSON.stringify(result));
@@ -194,11 +194,11 @@ const DatasContextApi = ({ children }) => {
         const storedQuestions = localStorage.getItem("questions");
         if (storedQuestions) {
             setQuestions(JSON.parse(storedQuestions));
-            console.log("Loaded questions from localStorage:", JSON.parse(storedQuestions));
+            // console.log("Loaded questions from localStorage:", JSON.parse(storedQuestions));
         }
     }, []);
 
-    console.log("Questions:", questions);
+    // console.log("Questions:", questions);
 
 
 
