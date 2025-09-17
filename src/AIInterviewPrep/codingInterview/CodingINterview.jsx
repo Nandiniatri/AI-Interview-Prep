@@ -14,7 +14,7 @@ const CodingInterview = () => {
     const editorRef = useRef();
     const [value, setValue] = useState("");
     const [language, setLanguage] = useState("javascript");
-    const { interviewStarted, startInterview, currentQuestion, questions, navigate } = useDataContext();
+    const { interviewStarted, startInterview, currentQuestion, questions, navigate, setCurrentQuestion } = useDataContext();
 
     const onMount = (editor) => {
         editorRef.current = editor;
@@ -35,7 +35,7 @@ const CodingInterview = () => {
     if (!questions || questions.length === 0) {
         return <h4>No questions found</h4>;
     }
-    
+
     console.log(questions[0]);
 
     const { title, subTitle } = questions[0];
@@ -56,9 +56,8 @@ const CodingInterview = () => {
                     <p className="coding-interview__instruction">
                         {interviewStarted && currentQuestion < questions.length && (
                             <p>{questions[currentQuestion].que}</p>)}
-                        <Button>Next Question</Button>
                     </p>
-                    
+
 
                     <Button className="coding-interview__exit-btn" onClick={handleVideoCallExit}>
                         <FaSignOutAlt className="exit-icon" />

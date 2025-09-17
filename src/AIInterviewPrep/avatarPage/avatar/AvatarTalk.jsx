@@ -22,7 +22,7 @@ const AvatarTalk = () => {
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
     const { questions } = useDataContext();
-
+ 
 
 
     // 🎤 Speech Recognition setup
