@@ -15,7 +15,7 @@ const SelectedForm = ({ file }) => {
   const fetchAllFileData = async () => {
     if (file) {
       try {
-        const response = await fetch(`/public/data/${file}`);
+        const response = await fetch(`/data/${file}`);
         const result = await response.json();
         // console.log("selectForms" , result);
         

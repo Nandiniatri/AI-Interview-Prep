@@ -9,17 +9,6 @@ import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Question
 const Modal = ({ isOpen, children, onClose }) => {
   const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, selectedPosition , signUp} = useDataContext();
 
-  // const selectedJsonFiles = {
-  //   "ReactJS Developer": "startPractices1",
-  //   "Web Developer": "startPractices2", 
-  // }
-
-  // // console.log(selectedRound);
-  
-  // const selectedRoundsData = rounds.find(r => r.title === selectedRound)
-
-  // const fileKeys = selectedJsonFiles[selectedPosition] || 'startPractices1';
-
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
