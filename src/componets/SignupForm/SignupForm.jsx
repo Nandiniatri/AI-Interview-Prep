@@ -7,8 +7,8 @@ import { useDataContext } from "../../contextApi/DatasContectApi";
 
 const LoginInSignUpForm = () => {
     const { signUp, session } = useDataContext();
-    console.log(signUp)
-    console.log("Current session:", session);
+    // console.log(signUp)
+    // console.log("Current session:", session);
 
 
 
