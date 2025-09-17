@@ -66,7 +66,6 @@ const CodingInterview = () => {
                 </div>
 
 
-
                 {/* Right Panel */}
                 <div className="coding-interview__editor-panel">
                     <LanguageSelecter language={language} onSelect={onSelect} />
