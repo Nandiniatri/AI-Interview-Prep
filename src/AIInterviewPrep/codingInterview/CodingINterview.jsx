@@ -56,7 +56,9 @@ const CodingInterview = () => {
                     <p className="coding-interview__instruction">
                         {interviewStarted && currentQuestion < questions.length && (
                             <p>{questions[currentQuestion].que}</p>)}
+                        <Button>Next Question</Button>
                     </p>
+                    
 
                     <Button className="coding-interview__exit-btn" onClick={handleVideoCallExit}>
                         <FaSignOutAlt className="exit-icon" />
