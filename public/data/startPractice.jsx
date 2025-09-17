@@ -19,12 +19,12 @@ export const positions = [
     }
 ];
 
- 
+
 export const rounds = [
     {
         id: 1,
         title: "Warm Up",
-        file1: "reactJsWarmUp.json", 
+        file1: "reactJsWarmUp.json",
         file2: "webDevWarmUp.json",
         file3: "webDesWarmUp.json",
         startPractices1: "reactJsWarmUpPage.json",
@@ -32,8 +32,12 @@ export const rounds = [
         startPractices3: "webDesignWarmUpPage.json",
         startPractices4: "webDesignWarmUpPage.json",
 
-        avatarModelData1: "WebDevWarmUpAvatar.json",
-        avatarModelData2: "reactJsWarmUpAvatar.json"
+        avatars: {
+            "ReactJS Developer": "reactJsWarmUpAvatar.json",
+            "Web Developer": "WebDevWarmUpAvatar.json",
+            "Web Designer": "WebDesWarmUpAvatar.json",
+            "Software Engineer": "SoftwareEngWarmUpAvatar.json",
+        },
     },
     {
         id: 2,
@@ -46,8 +50,12 @@ export const rounds = [
         startPractices3: "webDesignCodingPage.json",
         startPractices4: "webDesignCodingPage.json",
 
-        avatarModelData1: "WebDevCodingAvatar.json",
-        avatarModelData2: "reactJsCodingAvatar.json"
+        avatars: {
+            "ReactJS Developer": "reactJsCodingAvatar.json",
+            "Web Developer": "WebDevCodingAvatar.json",
+            "Web Designer": "WebDesCodingAvatar.json",
+            "Software Engineer": "SoftwareEngCodingAvatar.json",
+        },
     },
     {
         id: 3,
@@ -60,8 +68,12 @@ export const rounds = [
         startPractices3: "webDesignRoleRelativePage.json",
         startPractices4: "webDesignRoleRelativePage.json",
 
-        avatarModelData1: "WebDevRoleRelatedAvatar.json",
-        avatarModelData2: "reactJsRoleRelativeAvatar.json"
+        avatars: {
+            "ReactJS Developer": "reactJsRoleRelativeAvatar.json",
+            "Web Developer": "WebDevRoleRelatedAvatar.json",
+            "Web Designer": "WebDesRoleRelatedAvatar.json",
+            "Software Engineer": "SoftwareEngRoleRelatedAvatar.json",
+        },
     },
     {
         id: 4,
@@ -74,8 +86,11 @@ export const rounds = [
         startPractices3: "webDesignBehaviourPage.json",
         startPractices4: "webDesignBehaviourPage.json",
 
-        avatarModelData1: "WebDevBehavioralAvatar.json",
-        avatarModelData2: "reactJsBehaiviorAvatar.json"
+        avatars: {
+            "ReactJS Developer": "reactJsBehaiviorAvatar.json",
+            "Web Developer": "WebDevBehavioralAvatar.json",
+            "Web Designer": "WebDesBehavioralAvatar.json",
+            "Software Engineer": "SoftwareEngBehavioralAvatar.json",
+        }
     }
 ];
-   

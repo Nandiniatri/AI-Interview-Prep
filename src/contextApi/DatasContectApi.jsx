@@ -161,51 +161,36 @@ const DatasContextApi = ({ children }) => {
     const [selectedPosition, setSelectedPosition] = useState("");
     const [questions, setQuestions] = useState([]);
 
-    const positionToAvatarKey = {
-        "Web Developer": "avatarModelData1",
-        "ReactJS Developer": "avatarModelData2",
-        // "Web Designer": ""
-    };
-
-
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
-    console.log("selected round", selectedRoundData);
+    console.log("Selected Round Data:", selectedRoundData);
 
-
-    const avatarKey = positionToAvatarKey[selectedPosition] || "avatarModelData1";
-    // console.log("avatarkey", avatarKey);
-
-
-    const avatarToUse = selectedRoundData?.[avatarKey] || null;
-    // console.log("AvatarUseJsonFile:", avatarToUse);
+    const avatarToUse = selectedRoundData?.avatars?.[selectedPosition] || null;
+    console.log("Avatar File To Fetch:", avatarToUse);
 
     const fetchAllAvatarData = async () => {
         if (avatarToUse) {
-            const response = await fetch(`/data/AIQuestions/${avatarToUse}`);
-            // console.log(response);
-            const result = await response.json();
-            // console.log(result);
-            setQuestions(result);
+            try {
+                const response = await fetch(`/data/AIQuestions/${avatarToUse}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const result = await response.json();
 
-            localStorage.setItem("questions", JSON.stringify(result));
+                console.log("Fetched data:", result);
+                setQuestions(result);
+
+                localStorage.setItem("questions", JSON.stringify(result));
+            } catch (error) {
+                console.error("Error fetching file:", error);
+            }
         }
-    }
+    };
 
     useEffect(() => {
-        const saved = localStorage.getItem("questions");
-        if (saved) {
-            setQuestions(JSON.parse(saved));
-        } else {
-            fetchAllAvatarData();
-        }
-    }, [avatarToUse]);
+        fetchAllAvatarData();
+    }, [avatarToUse, selectedPosition, selectedRound]);
 
-
-    console.log(questions);
-
-
-
-
+    console.log("Questions:", questions)
 
 
 

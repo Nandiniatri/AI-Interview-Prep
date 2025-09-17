@@ -34,7 +34,7 @@ const CodingInterview = () => {
             <div className="coding-interview">
                 {/* Left Sidebar */}
                 <div className="coding-interview__sidebar">
-                    <h2 className="coding-interview__title">Web Developer</h2>
+                    <h2 className="coding-interview__title">{}</h2>
                     <span className="coding-interview__round">Coding</span>
 
                     <div>
