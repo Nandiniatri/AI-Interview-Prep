@@ -36,7 +36,7 @@ const CodingInterview = () => {
         return <h4>No questions found</h4>;
     }
 
-    console.log(questions[0]);
+    // console.log(questions[0]);
 
     const { title, subTitle } = questions[0];
 
