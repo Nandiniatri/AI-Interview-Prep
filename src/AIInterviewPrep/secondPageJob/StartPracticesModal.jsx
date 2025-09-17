@@ -21,7 +21,7 @@ const StartPracticeModal = ({ onClose }) => {
     const handleSelectedRound = (e) => {
         setSelectedRound(e.target.value);
     };
-
+ 
 
     const positionToFileKey = {
         "ReactJS Developer": "file1",
@@ -31,10 +31,10 @@ const StartPracticeModal = ({ onClose }) => {
 
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
     const fileKey = positionToFileKey[selectedPosition] || "file1";
-    // console.log(fileKey);
+    console.log(fileKey);
 
     const fileToUse = selectedRoundData?.[fileKey];
-    // console.log("konsi file use ho rahi hai" , fileToUse);
+    console.log("konsi file use ho rahi hai" , fileToUse);
 
 
     return (
