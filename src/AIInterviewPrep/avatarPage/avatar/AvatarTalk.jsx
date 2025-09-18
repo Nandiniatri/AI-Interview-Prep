@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useDataContext } from '../../../contextApi/DatasContectApi';
 import Button from '../../../componets/Button';
+import { RotateCcw } from "lucide-react";
 
 const AvatarModel = ({ url, meshRef }) => {
     const { scene } = useGLTF(url);
@@ -166,7 +167,9 @@ const AvatarTalk = () => {
                     <>
                         <div>
                             <p>{questions[currentQuestion].que}</p>
-                            <Button onClick={handleRepeat}>Repeat Question</Button>
+                            <Button onClick={handleRepeat} className="repeat-btn">
+                                <RotateCcw size={20} />
+                            </Button>
                         </div>
 
                         <div>
