@@ -97,5 +97,5 @@ const StartPracticeModal = ({ onClose }) => {
         </>
     );
 };
-
+ 
 export default StartPracticeModal;
