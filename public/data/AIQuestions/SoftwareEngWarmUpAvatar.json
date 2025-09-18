@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "que": "Hello Nandini, how are you feeling today?",
+    "title": "Software Engineer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 2,
+    "que": "Can you give a brief introduction about yourself and your journey in software engineering?",
+    "title": "Software Engineer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 3,
+    "que": "What motivated you to pursue a career in software engineering?",
+    "title": "Software Engineer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 4,
+    "que": "Do you enjoy solving complex coding problems or working on large-scale applications more?",
+    "title": "Software Engineer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 5,
+    "que": "How do you usually keep yourself updated with the latest technologies?",
+    "title": "Software Engineer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 6,
+    "que": "Alright, let’s move ahead to some technical and project-based discussions.",
+    "title": "Software Engineer",
+    "subTitle": "Warm Up Avatar"
+  }
+]
