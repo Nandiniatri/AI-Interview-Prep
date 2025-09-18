@@ -255,3 +255,55 @@ p {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
+
+/* Dropdown container */
+.dropdown-row {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Base select style */
+.dropdown-row select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* On focus / active */
+.dropdown-row select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0px 4px 10px rgba(59, 130, 246, 0.2);
+}
+
+/* Disabled dropdown */
+.dropdown-row select:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  border: 1px solid #e5e7eb;
+}
+
+/* Options inside select */
+.dropdown-row option {
+  padding: 12px;
+  font-size: 15px;
+  background: #fff;
+  color: #333;
+}
+
+/* Option hover (works in some browsers like Firefox/Chrome) */
+.dropdown-row option:hover {
+  background: #f1f5ff;
+  color: #2563eb;
+}
