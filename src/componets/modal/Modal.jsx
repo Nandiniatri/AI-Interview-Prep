@@ -1,13 +1,11 @@
 import ReactDOM from "react-dom";
 import "./Modal.css";
 import { useDataContext } from "../../contextApi/DatasContectApi";
-import Modal1 from "../modal1/Modal1";
-import { rounds } from "../../../public/data/startPractice";
-import Questions from "../../AIInterviewPrep/selectedPracticesQuestions/Questions";
+import Button from "../Button";
 
 
 const Modal = ({ isOpen, children, onClose }) => {
-  const { handleStartPractice, isModalOpen, setIsOpenOpen, selectedRound, selectedPosition , signUp} = useDataContext();
+  const { handleStartPractice } = useDataContext();
 
   if (!isOpen) return null;
 
@@ -17,17 +15,17 @@ const Modal = ({ isOpen, children, onClose }) => {
         <div className="modal-content1" onClick={(e) => e.stopPropagation()}>
           {children}
           <div className="modal-actions1">
-            <button
+            <Button
               className="start-btn1"
               onClick={() => {
                 handleStartPractice();
               }}
             >
-              START PRACTICE's
-            </button>
-            <button className="cancel-btn1" onClick={onClose}>
+              START PRACTICE
+            </Button>
+            <Button className="cancel-btn1" onClick={onClose}>
               CANCEL
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -38,8 +36,3 @@ const Modal = ({ isOpen, children, onClose }) => {
 
 export default Modal;
  
-
-
-{/* <Modal1 isOpen={isModalOpen} onClose={() => setIsOpenOpen(false)}>
-  <Questions files={fileToBeUseInQuestions} />
-</Modal1> */}
