@@ -131,7 +131,7 @@ const AvatarTalk = () => {
     // 🔁 Repeat Question button handler
     const handleRepeat = () => {
         if (questions.length > 0) {
-            speakQuestion(currentQuestion); 
+            speakQuestion(currentQuestion);
         }
     };
 
@@ -162,7 +162,7 @@ const AvatarTalk = () => {
                 )
             }
 
-            <div className='show-current-question'>
+            {/* <div className='show-current-question'>
                 {currentQuestion < questions.length ? (
                     <>
                         <div>
@@ -184,7 +184,32 @@ const AvatarTalk = () => {
                 ) : (
                     <p>✅ Interview Finished!</p>
                 )}
+            </div> */}
+
+            <div className="show-current-question">
+                {currentQuestion < questions.length ? (
+                    <>
+                        <div className="question-row">
+                            <p className="question-text">{questions[currentQuestion].que}</p>
+                            <Button onClick={handleRepeat} className="repeat-btn">
+                                <RotateCcw size={20} />
+                            </Button>
+                        </div>
+
+                        <div className="next-btn-wrapper">
+                            <Button
+                                className="avatar-next-btn"
+                                onClick={() => setCurrentQuestion(prev => prev + 1)}
+                            >
+                                Next Question
+                            </Button>
+                        </div>
+                    </>
+                ) : (
+                    <p>✅ Interview Finished!</p>
+                )}
             </div>
+
         </div>
     );
 };
