@@ -395,12 +395,12 @@ const DatasContextApi = ({ children }) => {
             return;
         }
         if (
-            resumeName &&
-            selectRoundsTitle &&
-            selectInterview &&
-            selectInterviewer &&
-            videoSelected &&
-            termsAgreed
+            // resumeName &&
+            selectRoundsTitle
+            // selectInterview &&
+            // selectInterviewer &&
+            // videoSelected &&
+            // termsAgreed
         ) {
             if (selectedRound === 'Warm Up') {
                 navigate('/avatarModal')

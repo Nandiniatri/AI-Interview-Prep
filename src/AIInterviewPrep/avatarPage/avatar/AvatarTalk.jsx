@@ -151,7 +151,7 @@ const AvatarTalk = () => {
                     meshRef={meshRef}
                 />
                 <OrbitControls enableZoom={false} />
-            </Canvas>
+            </Canvas> 
             {
                 !interviewStarted && (
                     <button
