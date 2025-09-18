@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "que": "Can you explain the difference between inline, inline-block, and block elements in CSS?",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 2,
+    "que": "How would you center a div both vertically and horizontally using CSS Flexbox?",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 3,
+    "que": "What are media queries, and how do you use them for responsive design?",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 4,
+    "que": "Can you explain the difference between relative, absolute, fixed, and sticky positioning in CSS?",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 5,
+    "que": "How do you optimize images and assets for faster website performance?",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 6,
+    "que": "Can you describe how CSS Grid differs from Flexbox, and when you would use each?",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 7,
+    "que": "Write a simple HTML and CSS snippet to create a responsive navigation bar.",
+    "title": "Web Designer",
+    "subTitle": "Coding Avatar"
+  }
+]
