@@ -21,7 +21,7 @@ const AvatarTalk = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
-    const { questions } = useDataContext();
+    const { questions , handleRepeat} = useDataContext();
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -129,11 +129,11 @@ const AvatarTalk = () => {
     }, [currentQuestion, interviewStarted, questions]);
 
     // 🔁 Repeat Question button handler
-    const handleRepeat = () => {
-        if (questions.length > 0) {
-            speakQuestion(currentQuestion); // 🔥 Repeat ke time bhi avatar bolega
-        }
-    };
+    // const handleRepeat = () => {
+    //     if (questions.length > 0) {
+    //         speakQuestion(currentQuestion); 
+    //     }
+    // };
 
     return (
         <div className='canvas-main-div'>

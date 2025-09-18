@@ -394,8 +394,6 @@ const DatasContextApi = ({ children }) => {
         }
     }
 
-
-
     const handleStartPractice = () => {
         if (!session) {
             navigate("/login");
