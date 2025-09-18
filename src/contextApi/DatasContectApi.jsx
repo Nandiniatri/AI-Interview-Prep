@@ -388,8 +388,10 @@ const DatasContextApi = ({ children }) => {
     };
 
     const handleRepeat = () => {
-        alert('hllo')
-        // setQuestions(prev => prev);
+        // alert('hllo')
+        if(questions.length > 0){
+            speakQuestion(currentQuestion);
+        }
     }
 
 
