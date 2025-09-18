@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useDataContext } from '../../../contextApi/DatasContectApi';
+import Button from '../../../componets/Button';
 
 const AvatarModel = ({ url, meshRef }) => {
     const { scene } = useGLTF(url);
@@ -21,8 +22,8 @@ const AvatarTalk = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
-    const { questions } = useDataContext();
- 
+    const { questions, handleRepeat } = useDataContext();
+
 
 
     // 🎤 Speech Recognition setup
@@ -151,7 +152,7 @@ const AvatarTalk = () => {
                     meshRef={meshRef}
                 />
                 <OrbitControls enableZoom={false} />
-            </Canvas> 
+            </Canvas>
             {
                 !interviewStarted && (
                     <button
@@ -180,17 +181,25 @@ const AvatarTalk = () => {
             <div className='show-current-question'>
                 {currentQuestion < questions.length ? (
                     <>
-                        <p>{questions[currentQuestion].que}</p>
-                        <button
-                            className="avatar-next-btn"
-                            onClick={() => setCurrentQuestion(prev => prev + 1)}
-                        >
-                            Next Question
-                        </button>
+                        <div>
+                            <p>{questions[currentQuestion].que}</p>
+                            <Button onClick={handleRepeat}>Repeat Question</Button>
+                        </div>
+
+                        <div>
+                            <Button
+                                className="avatar-next-btn"
+                                onClick={() => setCurrentQuestion(prev => prev + 1)}
+                            >
+                                Next Question
+                            </Button>
+                        </div>
+
                     </>
                 ) : (
                     <p>✅ Interview Finished!</p>
                 )}
+
             </div>
 
 

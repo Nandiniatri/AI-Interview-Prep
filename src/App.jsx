@@ -9,11 +9,11 @@ import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
 function App() {
   return (
       <Routes>
-        <Route path="/" element={<AIMainFile />} />
-        <Route path="/login" element={<LoginInSignUpForm />} />
-        <Route path="/signup" element={<InsideSignUp />} />
+        {/* <Route path="/" element={<AIMainFile />} /> */}
+        {/* <Route path="/login" element={<LoginInSignUpForm />} /> */}
+        {/* <Route path="/signup" element={<InsideSignUp />} /> */}
         <Route path="/avatarModal" element={<AvatarPage />} />
-        <Route path="/codingPage" element={<CodingInterview />} />
+        {/* <Route path="/codingPage" element={<CodingInterview />} /> */}
       </Routes>
   );
 }

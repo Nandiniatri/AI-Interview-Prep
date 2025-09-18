@@ -387,6 +387,11 @@ const DatasContextApi = ({ children }) => {
         }
     };
 
+    const handleRepeat = () => {
+        alert('hllo')
+        // setQuestions(prev => prev);
+    }
+
 
 
     const handleStartPractice = () => {
@@ -438,7 +443,8 @@ const DatasContextApi = ({ children }) => {
                 interviewStarted, startInterview, currentQuestion, questions,
                 meshRef,
                 avatarToUse,
-                navigate
+                navigate,
+                handleRepeat
             }}
         >
             {children}
