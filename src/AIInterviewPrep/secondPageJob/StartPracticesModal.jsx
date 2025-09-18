@@ -57,7 +57,7 @@ const StartPracticeModal = ({ onClose }) => {
                             ))}
                         </select>
 
-                        <select
+                        <select 
                             value={selectedPosition}
                             onChange={e => setSelectedPosition(e.target.value)}
                         >

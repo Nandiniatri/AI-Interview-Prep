@@ -21,7 +21,7 @@ const Modal = ({ isOpen, children, onClose }) => {
                 handleStartPractice();
               }}
             >
-              START PRACTICE
+              START PRACTICE'S
             </Button>
             <Button className="cancel-btn1" onClick={onClose}>
               CANCEL
