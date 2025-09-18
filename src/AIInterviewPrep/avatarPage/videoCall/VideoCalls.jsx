@@ -5,19 +5,37 @@ import Button from '../../../componets/Button';
 
 const VideoCall = () => {
     const videoRef = useRef(null);
+    const streamRef = useRef(null);
     const { questions, navigate } = useDataContext();
 
+    // const handleVideoCallExit = () => {
+    //     if(streamRef.current){
+    //         streamRef.current.getTracks().forEach(track => track.stop());
+    //         streamRef.current = null;
+    //     }
+    //     navigate('/');
+    // } 
+
     const handleVideoCallExit = () => {
-        navigate('/');
-    } 
+        if (streamRef.current) {
+            streamRef.current.getTracks().forEach(track => track.stop()); // stop all tracks
+            if (videoRef.current) {
+                videoRef.current.srcObject = null; // ✅ disconnect from video element
+            }
+            streamRef.current = null; // clear reference
+        }
+        navigate('/'); // go home
+    };
+
 
     if (!questions) {
         alert('there is no questions data');
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         navigator.mediaDevices.getUserMedia({ video: true })
             .then(stream => {
+                streamRef.current = stream;
                 if (videoRef.current) {
                     videoRef.current.srcObject = stream
                 }
@@ -26,7 +44,26 @@ const VideoCall = () => {
                 console.log('Camera or mic not working', err);
             })
 
+        // return () => {
+        //     if (streamRef.current) {
+        //         streamRef.current.getTracks().forEach(track => track.stop());
+        //         streamRef.current = null;
+        //     }
+        // }
+
+        return () => {
+            if (streamRef.current) {
+                streamRef.current.getTracks().forEach(track => track.stop());
+                if (videoRef.current) {
+                    videoRef.current.srcObject = null; // ✅ cleanup video element
+                }
+                streamRef.current = null;
+            }
+        };
+
     }, [])
+
+
 
 
     if (!questions || questions.length === 0) {
