@@ -164,20 +164,6 @@ const AvatarTalk = () => {
                 )
             }
 
-            {/* <div className='show-current-question'>
-                {interviewStarted && currentQuestion < questions.length && (
-                    <>
-                        <p>{questions[currentQuestion].que}</p>
-                        <button
-                            className="avatar-next-btn"
-                            onClick={() => setCurrentQuestion(prev => prev + 1)}
-                        >
-                            Next Question
-                        </button>
-                    </>
-                )}
-            </div> */}
-
             <div className='show-current-question'>
                 {currentQuestion < questions.length ? (
                     <>
