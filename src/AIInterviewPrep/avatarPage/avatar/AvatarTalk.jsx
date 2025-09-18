@@ -1,5 +1,4 @@
 import './AvatarTalk.css';
-
 import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -9,7 +8,6 @@ import Button from '../../../componets/Button';
 
 const AvatarModel = ({ url, meshRef }) => {
     const { scene } = useGLTF(url);
-
     return (
         <primitive ref={meshRef} object={scene} scale={4} position={[0, -6, 2.2]} />
     );
@@ -22,9 +20,7 @@ const AvatarTalk = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
-    const { questions, handleRepeat } = useDataContext();
-
-
+    const { questions } = useDataContext();
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -38,25 +34,23 @@ const AvatarTalk = () => {
     }
 
     const speakQuestion = (index) => {
-        if (index >= questions.length) {
-            console.log("✅ Interview finished!");
-            return;
-        }
+        if (index >= questions.length) return;
 
         const text = questions[index].que;
         const utterance = new SpeechSynthesisUtterance(text);
 
-        //Stop old speech and lipsync
+        // ❌ Stop old speech and lipsync
         window.speechSynthesis.cancel();
         if (lipsyncInterval) {
             clearInterval(lipsyncInterval);
             lipsyncInterval = null;
         }
 
-        //ye hai new speech start karne ke liye
+        // ✅ Start new speech
         window.speechSynthesis.speak(utterance);
+        const start = Date.now();
 
-        // debug morph targets
+        // Debug morph targets (optional)
         if (debug && meshRef.current) {
             meshRef.current.traverse((child) => {
                 if (child.morphTargetDictionary) {
@@ -65,16 +59,14 @@ const AvatarTalk = () => {
             });
         }
 
-        // lipsync effect
+        // 🎭 Lipsync effect
         const duration = text.split(" ").length * 0.3 * 1000;
-        // console.log(duration);
 
-        const start = Date.now();
-
-        const interval = setInterval(() => {
+        lipsyncInterval = setInterval(() => {
             const elapsed = Date.now() - start;
             if (elapsed > duration) {
-                clearInterval(interval);
+                clearInterval(lipsyncInterval);
+                lipsyncInterval = null;
                 if (meshRef.current) {
                     meshRef.current.traverse((child) => {
                         if (child.morphTargetInfluences) {
@@ -94,7 +86,7 @@ const AvatarTalk = () => {
             }
         }, 100);
 
-        // ✅ Speech end hone ke baad recognition safe start
+        // ✅ On speech end → restart recognition
         utterance.onend = () => {
             if (recognition) {
                 try {
@@ -107,6 +99,7 @@ const AvatarTalk = () => {
         };
     };
 
+    // 🎤 Recognition handlers
     if (recognition) {
         recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
@@ -114,10 +107,7 @@ const AvatarTalk = () => {
             setCurrentQuestion((prev) => prev + 1);
         };
 
-        recognition.onspeechend = () => {
-            recognition.stop();
-        };
-
+        recognition.onspeechend = () => recognition.stop();
         recognition.onerror = (event) => {
             console.error("Recognition error:", event.error);
             recognition.stop();
@@ -127,16 +117,22 @@ const AvatarTalk = () => {
     const startInterview = () => {
         setInterviewStarted(true);
         setCurrentQuestion(0);
-        speakQuestion(currentQuestion);
+        speakQuestion(0);
     };
 
-    // ✅ Har baar currentQuestion change hote hi ye trigger hoga
+    // ✅ Har baar currentQuestion change hote hi avatar bolega
     useEffect(() => {
         if (interviewStarted && currentQuestion < questions.length) {
             speakQuestion(currentQuestion);
         }
     }, [currentQuestion, interviewStarted, questions]);
 
+    // 🔁 Repeat Question button handler
+    const handleRepeat = () => {
+        if (questions.length > 0) {
+            speakQuestion(currentQuestion); // 🔥 Repeat ke time bhi avatar bolega
+        }
+    };
 
     return (
         <div className='canvas-main-div'>
@@ -153,6 +149,7 @@ const AvatarTalk = () => {
                 />
                 <OrbitControls enableZoom={false} />
             </Canvas>
+
             {
                 !interviewStarted && (
                     <button
@@ -180,23 +177,13 @@ const AvatarTalk = () => {
                                 Next Question
                             </Button>
                         </div>
-
                     </>
                 ) : (
                     <p>✅ Interview Finished!</p>
                 )}
-
             </div>
-
-
-            {interviewStarted && currentQuestion >= questions.length && (
-                <p>✅ Interview Finished!</p>
-            )}
         </div>
     );
 };
 
 export default AvatarTalk;
-
-
-
