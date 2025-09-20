@@ -217,8 +217,12 @@ const AvatarTalk = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
-    const { questions, setShowAnalyisBtn, showAnalyisBtn, handleAvatarEnd } = useDataContext();
+    const { questions, setShowAnalyisBtn, showAnalyisBtn, handleAvatarEnd , navigate} = useDataContext();
     const [answers, setAnswers] = useState([]);
+
+    const handleAnalysis = () => {
+        alert('hello Analysis');
+    }
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -376,7 +380,7 @@ const AvatarTalk = () => {
                     <div>
                         <p>✅ Interview Finished!</p>
                         {showAnalyisBtn && (
-                            <Button className="analysis-btn" >
+                            <Button className="analysis-btn" onClick={handleAnalysis}>
                                 Analyse your Interview
                             </Button>
                         )}

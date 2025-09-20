@@ -14,6 +14,7 @@ function App() {
         <Route path="/signup" element={<InsideSignUp />} />
         <Route path="/avatarModal" element={<AvatarPage />} />
         <Route path="/codingPage" element={<CodingInterview />} />
+        
       </Routes>
   );
 }
