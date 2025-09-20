@@ -19,4 +19,4 @@ const AvatarPage = () => {
     );
 };
 
-export default AvatarPage;
+export default AvatarPage; 
