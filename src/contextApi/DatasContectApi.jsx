@@ -153,13 +153,14 @@ const DatasContextApi = ({ children }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(false);
     const debug = true;
-
-
-
-
     const [selectedRound, setSelectedRound] = useState("");
     const [selectedPosition, setSelectedPosition] = useState("");
     const [questions, setQuestions] = useState([]);
+    const [showAnalyisBtn, setShowAnalyisBtn] = useState(false);
+
+    const handleAvatarEnd = () => {
+        setShowAnalyisBtn(true);
+    }
 
     const selectedRoundData = rounds.find(r => r.title === selectedRound);
     // console.log("Selected Round Data:", selectedRoundData);
@@ -389,7 +390,7 @@ const DatasContextApi = ({ children }) => {
 
     const handleRepeat = () => {
         // alert('hllo')
-        if(questions.length > 0){
+        if (questions.length > 0) {
             speakQuestion(currentQuestion);
         }
     }
@@ -444,7 +445,10 @@ const DatasContextApi = ({ children }) => {
                 meshRef,
                 avatarToUse,
                 navigate,
-                handleRepeat
+                handleRepeat,
+                setShowAnalyisBtn,
+                showAnalyisBtn,
+                handleAvatarEnd
             }}
         >
             {children}

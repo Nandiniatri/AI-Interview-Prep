@@ -4,7 +4,7 @@ import './AvatarPage.css';
 import VideoCall from "./videoCall/VideoCalls";
 
 const AvatarPage = () => {
-    return (
+    return ( 
         <>
         <Header />
             <div className="avatar-page-main-container">
