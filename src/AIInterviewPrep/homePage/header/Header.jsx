@@ -101,7 +101,7 @@ const Header = () => {
         handleCloseModal2();
     };
 
-    const hideFullHeaderPages = ["/avatarModal", "/codingPage"];
+    const hideFullHeaderPages = ["/avatarModal", "/codingPage" , "/analysisPage"];
 
     const isHomePage = !hideFullHeaderPages.includes(location.pathname);
 
