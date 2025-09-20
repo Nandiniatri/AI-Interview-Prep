@@ -17,7 +17,7 @@ export const positions = [
     {
         id: 4, title: "Software Engineer"
     }
-];
+]; 
 
 
 export const rounds = [

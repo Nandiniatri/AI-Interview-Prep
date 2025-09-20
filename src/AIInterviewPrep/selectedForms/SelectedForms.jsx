@@ -17,7 +17,7 @@ const SelectedForm = ({ file }) => {
       try {
         const response = await fetch(`/data/${file}`);
         const result = await response.json();
-        // console.log("selectForms" , result);
+        console.log("selectForms" , result);
         
         setData(result);
       } catch (error) {
