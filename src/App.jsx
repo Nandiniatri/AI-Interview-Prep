@@ -1,24 +1,24 @@
-// import AIMainFile from './AIInterviewPrep/AIFile';
-// import './App.css';
-// import LoginInSignUpForm from './componets/SignupForm/SignupForm';
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
-// import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
-// import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
+import AIMainFile from './AIInterviewPrep/AIFile';
+import './App.css';
+import LoginInSignUpForm from './componets/SignupForm/SignupForm';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
+import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
+import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
 
-// function App() {
-//   return (
-//       <Routes>
-//         <Route path="/" element={<AIMainFile />} />
-//         <Route path="/login" element={<LoginInSignUpForm />} />
-//         <Route path="/signup" element={<InsideSignUp />} />
-//         <Route path="/avatarModal" element={<AvatarPage />} />
-//         <Route path="/codingPage" element={<CodingInterview />} />
-//       </Routes>
-//   );
-// }
+function App() {
+  return (
+      <Routes>
+        <Route path="/" element={<AIMainFile />} />
+        <Route path="/login" element={<LoginInSignUpForm />} />
+        <Route path="/signup" element={<InsideSignUp />} />
+        <Route path="/avatarModal" element={<AvatarPage />} />
+        <Route path="/codingPage" element={<CodingInterview />} />
+      </Routes>
+  );
+}
 
-// export default App;
+export default App;
 
 
 
@@ -78,16 +78,16 @@
 // export default App;
 
 
-const App = () => {
-  return (
-    <>
-        
-    </>
-  )
-}
+// const App = () => {
+//   return (
+//     <>
+
+//     </>
+//   )
+// }
 
 
-export default App;
+// export default App;
 
 
 
