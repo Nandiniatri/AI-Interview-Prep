@@ -131,3 +131,21 @@
 .avatar-next-btn:hover {
     background-color: #ffffff30;
 }
+
+
+.answers-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #6c47ff;
+    border-radius: 10px;
+    background: #f8f6ff;
+    color: #333;
+}
+
+.answer-card {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
