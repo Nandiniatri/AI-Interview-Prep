@@ -217,11 +217,11 @@ const AvatarTalk = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
-    const { questions, setShowAnalyisBtn, showAnalyisBtn, handleAvatarEnd , navigate} = useDataContext();
+    const { questions, setShowAnalyisBtn, showAnalyisBtn, handleAvatarEnd, navigate } = useDataContext();
     const [answers, setAnswers] = useState([]);
 
     const handleAnalysis = () => {
-        alert('hello Analysis');
+        navigate('/analysisPage');
     }
 
     // 🎤 Speech Recognition setup

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InsideSignUp from './componets/SignupForm/insideSignUp/InsideSignUp';
 import AvatarPage from './AIInterviewPrep/avatarPage/AvatarPage';
 import CodingInterview from './AIInterviewPrep/codingInterview/CodingINterview';
+import AnalysisPage from './AIInterviewPrep/avatarPage/analysisPage/AnalysisPage';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Route path="/signup" element={<InsideSignUp />} />
         <Route path="/avatarModal" element={<AvatarPage />} />
         <Route path="/codingPage" element={<CodingInterview />} />
-        
+        <Route path="/analysisPage" element={<AnalysisPage />} />
       </Routes>
   );
 }
