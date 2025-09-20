@@ -22,6 +22,7 @@ const AvatarTalk = () => {
     const [interviewStarted, setInterviewStarted] = useState(true);
     const debug = true;
     const { questions } = useDataContext();
+    const [answer , setAnswer] = useState([]);
 
     // 🎤 Speech Recognition setup
     const SpeechRecognition =
@@ -161,30 +162,6 @@ const AvatarTalk = () => {
                     </button>
                 )
             }
-
-            {/* <div className='show-current-question'>
-                {currentQuestion < questions.length ? (
-                    <>
-                        <div>
-                            <p>{questions[currentQuestion].que}</p>
-                            <Button onClick={handleRepeat} className="repeat-btn">
-                                <RotateCcw size={20} />
-                            </Button>
-                        </div>
-
-                        <div>
-                            <Button
-                                className="avatar-next-btn"
-                                onClick={() => setCurrentQuestion(prev => prev + 1)}
-                            >
-                                Next Question
-                            </Button>
-                        </div>
-                    </>
-                ) : (
-                    <p>✅ Interview Finished!</p>
-                )}
-            </div> */}
 
             <div className="show-current-question">
                 {currentQuestion < questions.length ? (
