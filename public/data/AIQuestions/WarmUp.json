@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "que": "Hello Student, How are you? Can you tell me about yourself"
+    },
+    {
+        "id": 2,
+        "que": "Could you tell me about a specific project where you utilized your front-end development skills?"
+    },
+    {
+        "id": 3,
+        "que": "How do you prioritize your tasks when you have multiple deadlines to meet?"
+    },
+    {
+        "id": 4,
+        "que": "Ok, let's continue."
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Can you walk me through your journey into web development?"
+    },
+    { 
+        "id": 2,
+        "question": "What is your favorite part about building websites or web applications?"
+    },
+    {
+        "id": 3,
+        "question": "Which technologies or tools do you enjoy working with the most, and why?"
+    },
+    {
+        "id": 4,
+        "question": "Tell me about a small project or experiment you worked on that you are proud of."
+    },
+    {
+        "id": 5,
+        "question": "How do you usually start a new web development project?"
+    },
+    {
+        "id": 6,
+        "question": "If you had unlimited resources, what kind of web application would you build?"
+    },
+    {
+        "id": 7,
+        "question": "What do you find most exciting about modern web development trends?"
+    },
+    {
+        "id": 8,
+        "question": "How do you keep yourself updated with the latest web development practices?"
+    },
+    {
+        "id": 9,
+        "question": "Can you share a moment when you solved a tricky bug or performance issue?"
+    },
+    {
+        "id": 10,
+        "question": "What motivates you to keep learning and improving as a web developer?"
+    }
+]

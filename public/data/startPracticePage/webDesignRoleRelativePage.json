@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Can you explain the main responsibilities of a web designer compared to a web developer?"
+    },
+    {
+        "id": 2,
+        "question": "How do you ensure your web designs align with a client’s brand identity?"
+    },
+    {
+        "id": 3,
+        "question": "What’s your process for gathering requirements before starting a new design project?"
+    },
+    {
+        "id": 4,
+        "question": "How do you collaborate with developers to bring your designs to life?"
+    },
+    {
+        "id": 5,
+        "question": "Can you explain the role of typography in web design and why it’s important?"
+    },
+    {
+        "id": 6,
+        "question": "How do you prioritize user experience (UX) while creating visually appealing designs?"
+    },
+    {
+        "id": 7,
+        "question": "What role does accessibility (a11y) play in your design decisions?"
+    },
+    {
+        "id": 8,
+        "question": "How do you approach designing for different screen sizes and devices?"
+    },
+    {
+        "id": 9,
+        "question": "What’s the difference between UI and UX design in the context of web design?"
+    },
+    {
+        "id": 10,
+        "question": "How do you handle feedback or criticism on your designs from clients or team members?"
+    }
+]

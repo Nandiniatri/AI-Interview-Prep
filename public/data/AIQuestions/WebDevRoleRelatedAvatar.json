@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "que": "Tell me about a project where you played a key role as a front-end developer.",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 2,
+        "que": "How do you collaborate with designers and backend developers?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 3,
+        "que": "What strategies do you use to ensure your code is maintainable and scalable?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 4,
+        "que": "Can you describe a situation where you optimized a website’s performance?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 5,
+        "que": "How do you stay updated with new technologies and frameworks in front-end development?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    }
+]

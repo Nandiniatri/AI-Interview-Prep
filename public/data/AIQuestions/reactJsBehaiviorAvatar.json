@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "que": "Tell me about a time you faced a challenge in a project and how you overcame it.",
+    "title": "React JS Developer",
+    "subTitle": "Behavioral"
+  },
+  {
+    "id": 2,
+    "que": "How do you handle feedback from peers or supervisors?",
+    "title": "React JS Developer",
+    "subTitle": "Behavioral"
+  },
+  {
+    "id": 3,
+    "que": "Describe a situation where you had to learn something new quickly.",
+    "title": "React JS Developer",
+    "subTitle": "Behavioral"
+  },
+  {
+    "id": 4,
+    "que": "How do you prioritize tasks when you have multiple deadlines?",
+    "title": "React JS Developer",
+    "subTitle": "Behavioral"
+  },
+  {
+    "id": 5,
+    "que": "What motivates you to keep improving as a developer?",
+    "title": "React JS Developer",
+    "subTitle": "Behavioral"
+  }
+]

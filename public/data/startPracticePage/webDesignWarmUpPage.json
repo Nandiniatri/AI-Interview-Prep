@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "What inspired you to pursue web design as a career?"
+    },
+    {
+        "id": 2,
+        "question": "How would you describe your design style in a few words?"
+    },
+    {
+        "id": 3,
+        "question": "Which design tools or software do you feel most comfortable using?"
+    },
+    {
+        "id": 4,
+        "question": "What do you usually focus on first when starting a new web design project?"
+    },
+    {
+        "id": 5,
+        "question": "Can you share a web design trend you really like and why?"
+    },
+    {
+        "id": 6,
+        "question": "How do you make sure your designs are both creative and user-friendly?"
+    },
+    {
+        "id": 7,
+        "question": "What role does color psychology play in your web design choices?"
+    },
+    {
+        "id": 8,
+        "question": "Do you prefer designing for mobile-first or desktop-first, and why?"
+    },
+    {
+        "id": 9,
+        "question": "What’s the most exciting project you have worked on as a designer?"
+    },
+    {
+        "id": 10,
+        "question": "How do you handle creative block when working on a new design?"
+    }
+]

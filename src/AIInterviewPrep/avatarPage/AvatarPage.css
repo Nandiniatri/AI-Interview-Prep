@@ -1,0 +1,29 @@
+.avatar-page-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  height: auto;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #3b0764);
+}
+
+.avatar-section,
+.video-call-section {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  /* border: solid; */
+}
+
+.avatar-section {
+  flex: 1;
+  max-width: 800px;
+}
+
+.video-call-section {
+  flex: 1;
+  max-width: 450px;
+  min-height: auto;
+}

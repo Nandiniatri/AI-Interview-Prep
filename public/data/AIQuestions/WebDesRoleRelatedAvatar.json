@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "que": "What do you think is the primary responsibility of a web designer in a project?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 2,
+    "que": "How do you approach creating a design that balances both aesthetics and usability?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 3,
+    "que": "What’s your process for understanding client requirements before starting a design?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 4,
+    "que": "Can you explain the difference between UI design and UX design in your own words?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 5,
+    "que": "How do you ensure your designs remain consistent across different devices and screen sizes?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 6,
+    "que": "Tell me about a time when you had to redesign something based on user feedback.",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 7,
+    "que": "Which design tools do you prefer to use, and why?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 8,
+    "que": "How do you collaborate with developers to bring your designs to life?",
+    "title": "Web Designer",
+    "subTitle": "Role Related Avatar"
+  }
+]

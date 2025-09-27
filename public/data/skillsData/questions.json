@@ -1,0 +1,16 @@
+{
+    "Frontend Development": {
+        "fresher": {
+            "questions": [
+                "What are semantic tags in HTML5?",
+                "What is the purpose of DOCTYPE?",
+                "What is the difference between CSS3 animations and transitions?",
+                "Explain the basic use of Flexbox.",
+                "What is the difference between let, var, and const?",
+                "What is an arrow function?",
+                "What is a component in React?",
+                "What is the difference between props and state?"
+            ]
+        }
+    }
+}

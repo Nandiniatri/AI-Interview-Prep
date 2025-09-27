@@ -1,0 +1,122 @@
+.features-main-div {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.features-top {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.features-top h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.features-top h2 span {
+  color: #6b3fd4;
+}
+
+.features-top p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+.features-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.feature-card {
+  width: 320px;
+  border-radius: 20px;
+  padding: 20px;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+
+@media (max-width:480px) {
+  .features-main-div {
+    padding: 20px 10px;
+  }
+
+  .features-top h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .features-top p {
+    font-size: 0.9rem;
+    margin: 15px auto 0;
+  }
+
+  .features-cards {
+    gap: 20px;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 244px;
+    margin: 0 auto;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .card-image {
+    height: 140px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+

@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "que": "How do you manage state in a React application?",
+    "title": "React JS Developer",
+    "subTitle": "Coding"
+  }, 
+  {
+    "id": 2,
+    "que": "Can you explain the use of useEffect and how it differs from useState?",
+    "title": "React JS Developer",
+    "subTitle": "Coding"
+  },
+  {
+    "id": 3,
+    "que": "How would you optimize a React component's performance?",
+    "title": "React JS Developer",
+    "subTitle": "Coding"
+  },
+  {
+    "id": 4,
+    "que": "What are controlled and uncontrolled components?",
+    "title": "React JS Developer",
+    "subTitle": "Coding"
+  },
+  {
+    "id": 5,
+    "que": "Can you walk me through the process of handling forms in React?",
+    "title": "React JS Developer",
+    "subTitle": "Coding"
+  }
+]
+ 

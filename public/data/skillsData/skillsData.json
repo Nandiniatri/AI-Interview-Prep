@@ -1,0 +1,282 @@
+{
+    "skills": [
+        {
+            "category": "Frontend Development",
+            "skillsItems": [
+                "HTML5",
+                "CSS3",
+                "JavaScript (ES6+)",
+                "TypeScript",
+                "React Js",
+                "Redux",
+                "Next.js",
+                "Vue.js",
+                "Angular",
+                "SASS/SCSS",
+                "Bootstrap",
+                "Tailwind CSS",
+                "Material UI",
+                "Chakra UI"
+            ]
+        },
+        {
+            "category": "Backend Development",
+            "skillsItems": [
+                "Node.js",
+                "Express.js",
+                "Django",
+                "Flask",
+                "Spring Boot",
+                "FastAPI",
+                "Ruby on Rails",
+                "Laravel",
+                "REST API",
+                "GraphQL"
+            ]
+        },
+        {
+            "category": "Databases",
+            "skillsItems": [
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB",
+                "SQLite",
+                "Redis",
+                "Cassandra",
+                "Firebase Firestore",
+                "Supabase"
+            ]
+        },
+        {
+            "category": "Artificial Intelligence & Machine Learning",
+            "skillsItems": [
+                "Python",
+                "NumPy",
+                "Pandas",
+                "Scikit-learn",
+                "TensorFlow",
+                "Keras",
+                "PyTorch",
+                "OpenCV",
+                "Natural Language Processing (NLP)",
+                "Computer Vision",
+                "Deep Learning",
+                "Reinforcement Learning",
+                "LLMs (ChatGPT, GPT, LLaMA)"
+            ]
+        },
+        {
+            "category": "Data Science & Analytics",
+            "skillsItems": [
+                "Data Visualization",
+                "Matplotlib",
+                "Seaborn",
+                "Plotly",
+                "Power BI",
+                "Tableau",
+                "Big Data",
+                "Apache Spark",
+                "Hadoop"
+            ]
+        },
+        {
+            "category": "Cloud & DevOps",
+            "skillsItems": [
+                "AWS",
+                "Microsoft Azure",
+                "Google Cloud Platform (GCP)",
+                "Heroku",
+                "Netlify",
+                "Vercel",
+                "Docker",
+                "Kubernetes",
+                "Jenkins",
+                "CI/CD Pipelines"
+            ]
+        },
+        {
+            "category": "Mobile Development",
+            "skillsItems": [
+                "React Native",
+                "Flutter",
+                "Kotlin",
+                "Swift",
+                "Java (Android)",
+                "Ionic"
+            ]
+        },
+        {
+            "category": "UI/UX & Design",
+            "skillsItems": [
+                "Figma",
+                "Adobe XD",
+                "Sketch",
+                "Canva",
+                "Wireframing",
+                "Prototyping",
+                "Responsive Design",
+                "Design Systems"
+            ]
+        },
+        {
+            "category": "Programming Languages",
+            "skillsItems": [
+                "C",
+                "C++",
+                "Java",
+                "Python",
+                "JavaScript",
+                "TypeScript",
+                "Go",
+                "Rust",
+                "Ruby",
+                "PHP",
+                "R",
+                "MATLAB"
+            ]
+        },
+        {
+            "category": "Version Control & Tools",
+            "skillsItems": [
+                "Git",
+                "GitHub",
+                "GitLab",
+                "Bitbucket",
+                "Postman",
+                "Jira",
+                "Trello",
+                "VS Code",
+                "IntelliJ IDEA",
+                "Eclipse"
+            ]
+        },
+        {
+            "category": "Testing",
+            "skillsItems": [
+                "Jest",
+                "Mocha",
+                "Chai",
+                "Cypress",
+                "Selenium",
+                "JUnit",
+                "PyTest"
+            ]
+        },
+        {
+            "category": "Soft Skills",
+            "skillsItems": [
+                "Problem Solving",
+                "Critical Thinking",
+                "Communication",
+                "Team Collaboration",
+                "Leadership",
+                "Time Management",
+                "Adaptability",
+                "Creativity"
+            ]
+        },
+        {
+            "category": "Cybersecurity",
+            "skillsItems": [
+                "Network Security",
+                "Ethical Hacking",
+                "Penetration Testing",
+                "Kali Linux",
+                "Wireshark",
+                "Burp Suite",
+                "Cryptography",
+                "OWASP",
+                "Cyber Threat Intelligence"
+            ]
+        },
+        {
+            "category": "Blockchain & Web3",
+            "skillsItems": [
+                "Solidity",
+                "Ethereum",
+                "Smart Contracts",
+                "NFT Development",
+                "DeFi",
+                "Hyperledger",
+                "Metamask Integration",
+                "Truffle",
+                "Hardhat"
+            ]
+        },
+        {
+            "category": "Game Development",
+            "skillsItems": [
+                "Unity",
+                "Unreal Engine",
+                "C# for Unity",
+                "C++ for Unreal",
+                "Blender (3D Modelling)",
+                "Godot",
+                "Game Physics",
+                "2D/3D Animation"
+            ]
+        },
+        {
+            "category": "AR/VR & Metaverse",
+            "skillsItems": [
+                "ARKit",
+                "ARCore",
+                "Three.js",
+                "WebXR",
+                "Oculus SDK",
+                "Mixed Reality Toolkit (MRTK)"
+            ]
+        },
+        {
+            "category": "IoT & Embedded Systems",
+            "skillsItems": [
+                "Arduino",
+                "Raspberry Pi",
+                "Microcontrollers",
+                "IoT Protocols (MQTT, CoAP)",
+                "Embedded C",
+                "Edge Computing",
+                "Sensor Integration"
+            ]
+        },
+        {
+            "category": "Robotics & Automation",
+            "skillsItems": [
+                "ROS (Robot Operating System)",
+                "MATLAB Robotics Toolbox",
+                "Path Planning",
+                "Automation Anywhere",
+                "UiPath",
+                "Blue Prism"
+            ]
+        },
+        {
+            "category": "Data Engineering",
+            "skillsItems": [
+                "ETL Pipelines",
+                "Apache Kafka",
+                "Airflow",
+                "Snowflake",
+                "Data Warehousing",
+                "Google BigQuery"
+            ]
+        },
+        {
+            "category": "Business & Management Tools",
+            "skillsItems": [
+                "Agile Methodology",
+                "Scrum",
+                "Business Analysis",
+                "MS Excel",
+                "MS PowerPoint",
+                "Slack",
+                "Notion",
+                "Asana"
+            ]
+        }
+    ]
+}
+
+
+
+

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Basic Plan",
+    "price": "$12",
+    "priceType": "month",
+    "target": "For startups and small businesses",
+    "features": [
+      "Resume screening",
+      "Automated interview scheduling",
+      "Virtual interviews",
+      "AI Video Score Analytic"
+    ],
+    "buttonText": "Choose Plan"
+  },
+  {
+    "id": 2,
+    "title": "Pro Plan",
+    "price": "$50",
+    "priceType": "month",
+    "target": "For Growing Companies",
+    "features": [
+      "Basic Plan Features",
+      "Customizable assessments",
+      "Comprehensive data analytics",
+      "Interview Report Analytic"
+    ],
+    "buttonText": "Choose and Get 20%"
+  },
+  {
+    "id": 3,
+    "title": "Enterprise Plan",
+    "price": "$100",
+    "priceType": "month",
+    "target": "For Large Organizations",
+    "features": [
+      "Pro Plan Features",
+      "Additional customization options",
+      "Dedicated support",
+      "Advanced integrations"
+    ],
+    "buttonText": "Choose Plan"
+  }
+]

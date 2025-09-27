@@ -1,0 +1,153 @@
+.role-related-container {
+    display: flex;
+    align-items: center;
+    background: #f9fafb;
+    padding: 10px;
+    gap: 30px;
+    /* border: solid red; */
+}
+
+.role-related-video-section {
+    position: relative;
+    flex: 1;
+    width: 70%;
+    /* border: solid blue; */
+    display: flex;
+    justify-content: center;
+}
+
+.role-related-interviewer-box {
+    border: 4px solid #ddd;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 70vh;
+    width: 80%;
+}
+
+.role-related-interviewer-video {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+.role-related-timer {
+    position: absolute;
+    bottom: 15px;
+    left: 100px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.role-related-start-btn {
+    position: absolute;
+    bottom: 15px;
+    /* left: 100px; */
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    /* border: solid red; */
+}
+
+.role-related-start-btn:hover {
+    background: #218838;
+}
+
+.role-related-side-panel {
+    /* border: solid red; */
+    /* width: 20; */
+    position: relative;
+    right: 90px;
+    height: 60vh;
+    bottom: 30px;
+}
+
+.role-related-candidate-box {
+    width: 160px;
+    height: 110px;
+    background: black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.role-related-candidate-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-related-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a2cc7;
+    margin: 0;
+}
+
+.role-related-subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.role-related-eval-btn {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6a0dad;
+    color: #6a0dad;
+    background: transparent;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.role-related-eval-btn:hover {
+    background: #f5e8ff;
+}
+
+.role-related-exit-btn {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e53935;
+    color: #e53935;
+    background: transparent;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.role-related-exit-btn:hover {
+    background: #fdecea;
+}
+
+
+.role-related-question-box {
+    margin-top: 20px;
+    width: 58%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* border: solid; */
+    margin-left: 110px;
+}
+
+.role-related-question-heading {
+    color: #6a0dad;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.role-related-question-text {
+    font-size: 18px;
+    font-weight: 500;
+}

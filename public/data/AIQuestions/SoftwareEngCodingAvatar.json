@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "que": "Can you explain the difference between an array and a linked list?",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 2,
+    "que": "Write a function to reverse a string without using built-in reverse methods.",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 3,
+    "que": "What is the difference between synchronous and asynchronous programming?",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 4,
+    "que": "Can you explain the concept of time complexity with an example?",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 5,
+    "que": "Write a program to check if a number is prime.",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 6,
+    "que": "What is the difference between stack and queue data structures?",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 7,
+    "que": "How would you implement a simple REST API call in JavaScript or Python?",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  },
+  {
+    "id": 8,
+    "que": "Can you explain recursion with a coding example?",
+    "title": "Software Engineer",
+    "subTitle": "Coding Avatar"
+  }
+]

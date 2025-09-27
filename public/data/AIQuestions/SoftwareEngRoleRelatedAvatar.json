@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "que": "What do you consider the main responsibilities of a software engineer in a development team?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 2,
+    "que": "How do you approach understanding requirements before starting to code?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 3,
+    "que": "Can you explain the importance of writing clean and maintainable code?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 4,
+    "que": "How do you collaborate with testers, designers, and product managers in a project?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 5,
+    "que": "Tell me about a time when you faced a production bug — how did you handle it?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 6,
+    "que": "How do you ensure that your code is scalable and efficient for future use?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 7,
+    "que": "What’s your process for reviewing and giving feedback on other developers’ code?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  },
+  {
+    "id": 8,
+    "que": "How do you keep yourself updated with the latest programming languages, tools, and frameworks?",
+    "title": "Software Engineer",
+    "subTitle": "Role Related Avatar"
+  }
+]

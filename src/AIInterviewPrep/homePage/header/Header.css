@@ -1,0 +1,106 @@
+.hero-header {
+  background: linear-gradient(135deg, #6b3fd4 0%, #8e46e8 100%);
+  color: #fff;
+  padding: 20px 60px;
+  /* border-radius: 24px 24px 0 0; */
+  position: relative;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: solid; */
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffdfff;
+}
+
+.auth-buttons {
+  /* border: solid; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-buttons button {
+  margin-left: 12px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.login-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.signup-btn {
+  /* background: #fff; */
+  transition: background 0.3s ease, color 0.3s ease;
+  /* border: solid !important; */
+  background-color: #6b3fd4 !important;
+}
+
+.signup-btn .inside-signup-btn {
+  color: white;
+  text-decoration: none;
+}
+
+.signup-btn:hover {
+  background: #f5f5f5;
+}
+
+.ciSearch {
+  /* border: solid; */
+  font-size: 20px;
+}
+
+
+.header-auth-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.header-auth-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.down-icon-header {
+  position: relative;
+  top: 4px;
+  left: 4px;
+  cursor: pointer;
+}

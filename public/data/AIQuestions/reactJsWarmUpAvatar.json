@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "que": "Hi there! Can you tell me how long you've been working with React?",
+    "title": "React JS Developer",
+    "subTitle": "Warm Up"
+  },
+  {
+    "id": 2,
+    "que": "What motivated you to learn React?", 
+    "title": "React JS Developer",
+    "subTitle": "Warm Up"
+  },
+  {
+    "id": 3,
+    "que": "Can you share a small project you built using React?",
+    "title": "React JS Developer",
+    "subTitle": "Warm Up"
+  },
+  {
+    "id": 4,
+    "que": "What do you enjoy the most when working with components?",
+    "title": "React JS Developer",
+    "subTitle": "Warm Up"
+  },
+  {
+    "id": 5,
+    "que": "Great! Now let's dive deeper into your technical skills.",
+    "title": "React JS Developer",
+    "subTitle": "Warm Up"
+  }
+]

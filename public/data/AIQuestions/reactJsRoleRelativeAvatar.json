@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "que": "How do you approach code reviews in your team?",
+    "title": "React JS Developer",
+    "subTitle": "Role Related"
+  },
+  {
+    "id": 2,
+    "que": "What strategies do you use for collaborating with backend developers?",
+    "title": "React JS Developer",
+    "subTitle": "Role Related"
+  },
+  {
+    "id": 3,
+    "que": "Can you explain how you ensure the UI meets design requirements?",
+    "title": "React JS Developer",
+    "subTitle": "Role Related"
+  },
+  {
+    "id": 4,
+    "que": "How do you handle deadlines and pressure in a development cycle?",
+    "title": "React JS Developer",
+    "subTitle": "Role Related"
+  },
+  {
+    "id": 5,
+    "que": "Describe how you stay updated with new React features and libraries.",
+    "title": "React JS Developer",
+    "subTitle": "Role Related"
+  }
+]

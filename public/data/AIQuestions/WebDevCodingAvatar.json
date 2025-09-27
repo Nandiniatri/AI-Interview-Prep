@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "que": "Can you write a function to reverse a string in JavaScript?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 2,
+    "que": "How would you fetch data from an API in React?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 3,
+    "que": "Write a function to check if a number is a palindrome.",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 4,
+    "que": "How would you implement a simple counter component in React with increment and decrement?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 5,
+    "que": "Write a function that removes duplicate values from an array.",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  }
+]

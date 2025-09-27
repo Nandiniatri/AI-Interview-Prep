@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "que": "Tell me about a time you faced a challenging bug and how you solved it.",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 2,
+        "que": "How do you handle working under tight deadlines?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 3,
+        "que": "Have you ever had a conflict with a teammate? How did you resolve it?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 4,
+        "que": "What motivates you the most when working on long projects?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    },
+    {
+        "id": 5,
+        "que": "Describe a situation where you received critical feedback. How did you respond?",
+        "title": "Web Developer",
+        "subTitle": "Warm Up"
+    }
+]

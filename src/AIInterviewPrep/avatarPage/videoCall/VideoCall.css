@@ -1,0 +1,61 @@
+.video-call-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.video-Call-main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    background-color: #35177d;
+}
+
+.video-call {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.video-Call-title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-Call-title-div h3 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.video-Call-title-div span {
+    color: white;
+    font-weight: bold;
+}
+
+.video-call-exit-btn {
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #ef4444, #b91c1c);
+    color: white;
+}
+
+.exit-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

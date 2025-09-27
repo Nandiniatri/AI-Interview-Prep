@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "que": "Hello Nandini, how are you doing today?",
+    "title": "Web Designer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 2,
+    "que": "Can you briefly introduce yourself and your background in web design?",
+    "title": "Web Designer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 3,
+    "que": "What inspires you the most when creating designs?",
+    "title": "Web Designer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 4,
+    "que": "Do you prefer working with brand guidelines or complete creative freedom?",
+    "title": "Web Designer",
+    "subTitle": "Warm Up Avatar"
+  },
+  {
+    "id": 5,
+    "que": "Alright, let’s move on to some creative design questions.",
+    "title": "Web Designer",
+    "subTitle": "Warm Up Avatar"
+  }
+]

@@ -1,0 +1,165 @@
+.canvas-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    border: none !important;
+}
+
+.canvas-main-div {
+    width: 750px;
+    height: 400px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/035/093/911/non_2x/you-can-use-the-blurred-focus-of-a-white-open-space-office-interior-as-a-background-with-wooden-table-free-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.avatar-Btn {
+    position: relative;
+    left: 270px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    /* background: green;  */
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    color: #fff;
+    border: none;
+    bottom: 79px;
+}
+
+/* .show-current-question {
+    height: 110px;
+    background-color: #38137f;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    position: absolute;
+    left: 49%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    width: 92%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.show-current-question p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.avatar-next-btn {
+    border: solid 1px white;
+    background-color: transparent;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 45px;
+    font-size: 15px;
+} */
+
+
+.show-current-question {
+    background-color: #38137f;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.question-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: white;
+}
+
+.repeat-btn {
+    border: none;
+    background: #ffffff20;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.repeat-btn:hover {
+    background: #ffffff40;
+    transform: scale(1.1);
+}
+
+
+.next-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.avatar-next-btn {
+    border: solid 1px white;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.avatar-next-btn:hover {
+    background-color: #ffffff30;
+}
+
+
+.answers-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #6c47ff;
+    border-radius: 10px;
+    background: #f8f6ff;
+    color: #333;
+}
+
+.answer-card {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.analysis-btn {
+    background: #8e46e8;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

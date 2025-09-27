@@ -1,0 +1,190 @@
+/* Main Layout */
+.coding-interview {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #3b0764);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Sidebar (Left) */
+.coding-interview__sidebar {
+  width: 280px;
+  background: linear-gradient(160deg, #1e1b4b, #312e81);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.coding-interview__title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #f9fafb;
+}
+
+.coding-interview__round {
+  font-size: 14px;
+  color: #a5b4fc;
+  margin-bottom: 20px;
+}
+
+.coding-interview__instruction {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 12px;
+  backdrop-filter: blur(6px);
+}
+
+/* Buttons */
+.coding-interview__sidebar button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.coding-interview__sidebar button:first-child {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: 600;
+}
+
+.coding-interview__sidebar button:first-child:hover {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  transform: scale(1.05);
+}
+
+.coding-interview__exit-btn {
+  background: linear-gradient(90deg, #ef4444, #b91c1c);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.coding-interview__exit-btn:hover {
+  background: linear-gradient(90deg, #dc2626, #7f1d1d);
+  transform: scale(1.05);
+}
+
+/* Right Panel (Editor + Output) */
+.coding-interview__editor-panel {
+  flex: 1;
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Editor Box */
+.coding-editor-div {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 1px solid #1e293b;
+}
+
+/* Video Avatar */
+.coding-interview__video-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 160px;
+  height: 110px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #6366f1;
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.8);
+  z-index: 1000;
+}
+
+.coding-interview__video-timer {
+  position: absolute;
+  bottom: 5px;
+  right: 6px;
+  background: red;
+  color: white;
+  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Output Section */
+.output-wrapper {
+  position: relative;
+  margin-top: 15px;
+}
+
+.output-div {
+  background: #1e293b;
+  color: #f9fafb;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: monospace;
+  min-height: 120px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.run-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.run-btn:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  transform: scale(1.05);
+}
+
+/* Language Selector */
+.language-select {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  font-size: 14px;
+  font-weight: 600;
+  background: #1e293b;
+  color: #f1f5f9;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.language-select:hover {
+  border-color: #6366f1;
+  background: #312e81;
+}

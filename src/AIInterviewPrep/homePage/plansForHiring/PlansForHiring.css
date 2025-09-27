@@ -1,0 +1,185 @@
+.plans-wrapper {
+    padding: 2rem;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f7f7fc;
+    color: #1f1f1f;
+}
+
+.plans-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.toggle-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.plans-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background: white;
+    padding: 1.6rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: scale(1.03);
+}
+
+
+.per-month {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+.target {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    /* border: solid; */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    margin-left: 10px;
+}
+
+.features {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.2rem;
+}
+
+.features li {
+    margin-bottom: 0.5rem;
+}
+
+.plan-btn {
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.plan-btn:hover {
+    background-color: #5b21b6;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 110px;
+}
+
+.image-heading {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.plancard-image {
+    width: 100%;
+    height: 110px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.plan-description {
+    padding: 10px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.plans-price-span2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 55px;
+}
+.price{
+    margin-left: 22px;
+}
+
+
+/* @media (max-width:480px){
+    
+} */
+
+@media (max-width: 480px) {
+    .plans-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        width: 90%;           
+        max-width: 340px;    
+        margin-bottom: 1rem;
+        padding: 1rem;        
+    }
+
+    .image-wrapper {
+        height: 90px;         
+    }
+
+    .plancard-image {
+        height: 90px;        
+    }
+
+    .image-heading {
+        font-size: 1rem;  
+        top: 50%;
+    }
+
+    .plans-price-span2 {
+        font-size: 1.4rem;   
+        margin-left: 0;
+    }
+
+    .price {
+        margin-left: 0;
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .target {
+        width: 100%;
+        margin-left: 0;
+        font-size: 0.8rem;
+        height: auto;         
+        padding: 6px;
+    }
+
+    .features li {
+        font-size: 0.85rem;   
+    }
+
+    .plan-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}

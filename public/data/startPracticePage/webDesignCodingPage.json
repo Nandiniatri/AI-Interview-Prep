@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "question": "Can you explain the difference between inline, internal, and external CSS?"
+    },
+    {
+        "id": 2,
+        "question": "How would you make a website responsive using CSS?"
+    },
+    {
+        "id": 3,
+        "question": "What are media queries and how do you use them in web design?"
+    },
+    {
+        "id": 4,
+        "question": "Can you describe the difference between relative, absolute, fixed, and sticky positioning in CSS?"
+    },
+    {
+        "id": 5,
+        "question": "How do you implement a grid layout using CSS Grid or Flexbox?"
+    },
+    {
+        "id": 6,
+        "question": "What is the difference between semantic HTML tags and non-semantic tags?"
+    },
+    {
+        "id": 7,
+        "question": "How would you optimize images for faster web performance?"
+    },
+    {
+        "id": 8,
+        "question": "What are pseudo-classes and pseudo-elements in CSS? Give examples."
+    },
+    {
+        "id": 9,
+        "question": "How do you ensure accessibility (a11y) in your web design projects?"
+    },
+    {
+        "id": 10,
+        "question": "What’s the difference between responsive design and adaptive design?"
+    },
+    {
+        "id": 11,
+        "question": "Can you explain the difference between CSS transitions, transforms, and animations?"
+    },
+    {
+        "id": 12,
+        "question": "How would you implement dark mode support in a website?"
+    },
+    {
+        "id": 13,
+        "question": "What is the difference between inline-block and block elements in HTML/CSS?"
+    },
+    {
+        "id": 14,
+        "question": "How do you debug layout or styling issues in a web project?"
+    },
+    {
+        "id": 15,
+        "question": "Can you explain the difference between responsive units like %, em, rem, vw, vh?"
+    }
+]

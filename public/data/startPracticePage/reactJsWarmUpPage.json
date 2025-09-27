@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "question": "Tell me about one of your projects or initiatives that you are really proud of. , WARMUP"
+    },
+    {
+        "id": 2,
+        "question": "What inspired you to become a frontend developer?"
+    },
+    {
+        "id": 3,
+        "question": "Can you describe a recent challenge you solved in your work or studies?"
+    },
+    {
+        "id": 4,
+        "question": "What’s your favorite part of working with frontend technologies?"
+    },
+    {
+        "id": 5,
+        "question": "If you had unlimited time, what project would you love to build?"
+    },
+    {
+        "id": 6,
+        "question": "What do you find most exciting about React or modern frontend development?"
+    },
+    {
+        "id": 7,
+        "question": "How do you usually start learning a new technology?"
+    },
+    {
+        "id": 8,
+        "question": "Which frontend tool or library do you enjoy using the most, and why?"
+    },
+    {
+        "id": 9,
+        "question": "Can you share a moment when you felt really accomplished as a developer?"
+    },
+    {
+        "id": 10,
+        "question": "What motivates you to keep improving your skills?"
+    }
+]

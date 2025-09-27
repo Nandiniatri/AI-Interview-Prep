@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "que": "Hello Nandini, how are you doing today?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 2,
+    "que": "Can you briefly introduce yourself and your background in web development?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  }, 
+  {
+    "id": 3,
+    "que": "What excites you the most about working in front-end development?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 4,
+    "que": "Do you prefer working in a team or individually? Why?",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  },
+  {
+    "id": 5,
+    "que": "Alright, let's move on to some technical questions.",
+    "title":"Web Developer",
+    "subTitle":"Warm Up"
+  }
+]

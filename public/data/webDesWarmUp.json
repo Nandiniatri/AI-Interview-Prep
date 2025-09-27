@@ -1,0 +1,50 @@
+ {
+    "heading": [
+        {
+            "title": "Web Designer",
+            "subTitle": "Warm Up"
+        }
+    ],
+
+    "rounds": [
+        {
+            "id": 1,
+            "title": "Warm Up"
+        },
+        {
+            "id": 2,
+            "title": "Coding"
+        },
+        {
+            "id": 3,
+            "title": "Role Related"
+        },
+        {
+            "id": 4,
+            "title": "Behavioral"
+        }
+    ],
+    "durations": [
+        {
+            "id": 1,
+            "time": "5 mins"
+        },
+        {
+            "id": 2,
+            "time": "15 mins"
+        },
+        {
+            "id": 3,
+            "time": "30 mins",
+            "premium": true
+        }
+    ],
+    "interviewers": [
+        {
+            "id": 1,
+            "name": "Payal",
+            "lang": "IN English",
+            "img": "https://brianvanderwaal.com/wp-content/uploads/2025/01/How-To-Responsibly-Leverage-AI-in-Your-Interview-Process-1024x590.jpg"
+        }
+    ]
+}

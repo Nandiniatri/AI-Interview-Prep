@@ -1,0 +1,25 @@
+/* .revision-main-div {
+    border: solid; */
+    /* text-align: center; //horizontal */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    align-items: center; */
+    /* align-items: center;   //vertical */
+    /* height: 100vh; */
+/* } */
+
+/* p {
+    border: solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}  */
+
+
+
+.pre-class{
+    border: solid;
+}
