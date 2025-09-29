@@ -91,16 +91,34 @@
     gap: 20px;
 }
 
+.record-download-btn {
+    border: solid;
+    background: linear-gradient(135deg, #8a2be2, #6c63ff);
+    color: white;
+}
+
+.record-download-btn a {
+    text-decoration: none;
+    color: white;
+}
+
 .buttons button {
+    border: solid;
     padding: 12px 26px;
     border: none;
     border-radius: 8px;
-    color: #fff;
     cursor: pointer;
     font-size: 15px;
-    font-weight: 500;
+    color: white;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
+
+.buttons .share{
+    background-color: #e0e0e0;
+    color: black;
+}
+
 
 button.download {
     background: linear-gradient(135deg, #6c63ff, #8a2be2);
@@ -116,4 +134,4 @@ button.delete {
 
 button.delete:hover {
     transform: scale(1.05);
-} 
+}

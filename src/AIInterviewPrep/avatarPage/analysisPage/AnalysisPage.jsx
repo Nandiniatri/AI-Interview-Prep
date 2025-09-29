@@ -134,15 +134,17 @@ export default function AnalysisPage() {
                     </div>
 
                     <div className="buttons">
-                        {recordedVideo && ( 
+                        {recordedVideo && (
                             <>
-                                <a
-                                    href={recordedVideo}
-                                    download="recording.webm"
-                                    className="download"
-                                >
-                                    Download
-                                </a>
+                                <Button className="record-download-btn">
+                                    <a
+                                        href={recordedVideo}
+                                        download="recording.webm"
+                                        className="download"
+                                    >
+                                        Download
+                                    </a>
+                                </Button>
                                 <Button
                                     className="delete"
                                     onClick={() => setRecordedVideo(null)}
@@ -163,4 +165,3 @@ export default function AnalysisPage() {
         </>
     );
 }
- 
