@@ -16,7 +16,7 @@
 
 .logo {
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 700; 
   letter-spacing: 0.5px;
 }
 
@@ -104,3 +104,22 @@
   left: 4px;
   cursor: pointer;
 }
+
+.menu-toggle{
+  display: none;
+}
+
+
+
+
+
+
+/* 
+@media (max-width:480px) {
+  .hero-header{
+    border: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+} */
