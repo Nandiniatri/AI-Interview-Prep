@@ -70,6 +70,7 @@ import { useState } from "react";
 import "./AnalysisPage.css";
 import Header from "../../homePage/header/Header";
 import { useDataContext } from "../../../contextApi/DatasContectApi";
+import Button from "../../../componets/Button";
 
 export default function AnalysisPage() {
     const [selected, setSelected] = useState(0);
@@ -142,18 +143,18 @@ export default function AnalysisPage() {
                                 >
                                     Download
                                 </a>
-                                <button
+                                <Button
                                     className="delete"
                                     onClick={() => setRecordedVideo(null)}
                                 >
                                     Delete
-                                </button>
-                                <button
+                                </Button>
+                                <Button
                                     className="share"
                                     onClick={handleShare}
                                 >
                                     Share
-                                </button>
+                                </Button>
                             </>
                         )}
                     </div>
