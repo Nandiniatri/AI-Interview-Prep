@@ -6,7 +6,7 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1100;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
   padding: 10px;
