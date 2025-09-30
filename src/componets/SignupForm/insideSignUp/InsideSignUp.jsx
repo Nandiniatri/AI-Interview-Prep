@@ -8,8 +8,8 @@ import { useState } from "react";
 const InsideSignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [isLogin, setIsLogin] = useState(true);
-    const { signOut, signUp , session} = useDataContext(); 
+    const [isLogin, setIsLogin] = useState(false);
+    const { signOut, signUp, session } = useDataContext();
 
 
     const handleSubmit = async (e) => {
@@ -32,6 +32,7 @@ const InsideSignUp = () => {
             <div>
                 <div className="signup-container">
                     <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+
                     <form className="signup-form" onSubmit={handleSubmit}>
 
                         {/* Header */}

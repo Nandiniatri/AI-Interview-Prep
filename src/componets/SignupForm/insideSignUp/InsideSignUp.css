@@ -11,7 +11,6 @@
     --fontSize1: 18px;
 }
 
-/* Center Container */
 .signup-container {
     display: flex;
     justify-content: center;
@@ -29,7 +28,6 @@
     border-radius: var(--border-radius1);
 }
 
-/* Header */
 .signup-header {
     text-align: left;
     margin-bottom: 20px;
@@ -40,8 +38,6 @@
     font-weight: 600;
     color: var(--color1);
 }
-
-/* Google Button */
 .signup-google-btn {
     display: flex;
     align-items: center;

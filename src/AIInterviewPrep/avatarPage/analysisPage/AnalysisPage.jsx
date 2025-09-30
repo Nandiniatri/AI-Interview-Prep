@@ -94,7 +94,7 @@ export default function AnalysisPage() {
             try {
                 await navigator.share({
                     title: "My Recorded Video",
-                    text: "Check out my interview recording!",
+                    text: "Check out my interview recording!", 
                     url: recordedVideo,
                 });
                 alert("Video shared successfully!");
