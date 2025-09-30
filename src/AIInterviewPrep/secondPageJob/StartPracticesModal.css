@@ -108,6 +108,7 @@
   cursor: not-allowed;
 }
 
+
 /* 
 @media (max-width: 768px) {
   .dropdown-row {
@@ -144,10 +145,13 @@
   to { opacity: 1; transform: scale(1); }
 } */
 
+
 @media (max-width: 768px) {
   .modal-content {
     max-width: 90%;
     padding: 1.5rem;
+    border: solid red;
+    top: -50px;
   }
 
   .modal-content h2 {
@@ -159,7 +163,7 @@
   }
 }
 
-
+ 
 @media (max-width: 480px) {
   .dropdown-row {
     flex-direction: column;
@@ -172,7 +176,7 @@
   }
 }
 
-/* Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -184,6 +188,7 @@
     transform: scale(1);
   }
 }
+
 
 .dropdown-row {
   display: flex;
