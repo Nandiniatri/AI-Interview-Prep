@@ -1,4 +1,4 @@
-.interview-container {
+/* .interview-container {
     display: flex;
     height: 100vh;
     background: #fdfdfd;
@@ -134,4 +134,181 @@ button.delete {
 
 button.delete:hover {
     transform: scale(1.05);
+} */
+
+
+
+
+
+
+.interview-container {
+  display: flex;
+  height: 100vh;
+  background: #fdfdfd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: solid;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 16%;
+  background: #fafafa;
+  border-right: 1px solid #eee;
+  padding: 25px 15px;
+  border: solid red;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  color: #444;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  background: #f1f1f1;
+}
+
+.sidebar li.active {
+  background: linear-gradient(135deg, #8a2be2, #6c63ff);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.3);
+}
+
+/* Question */
+.question-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.question-area p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e2e2e;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Video Area */
+.video-area {
+  width: 35%;
+  border-left: 1px solid #eee;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-box {
+  width: 100%;
+  height: 260px;
+  background: #f4f4f4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-box video {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* small screen pe wrap ho jaye */
+  justify-content: center;
+}
+
+.record-download-btn {
+  background: linear-gradient(135deg, #8a2be2, #6c63ff);
+  color: white;
+}
+
+.record-download-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.buttons button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 110px;
+}
+
+.buttons .share {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+button.delete {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+button.delete:hover,
+button.download:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   Responsive Fixes
+=========================== */
+@media (max-width: 992px) {
+  .interview-container {
+    flex-direction: column; /* stack all */
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  .question-area {
+    padding: 20px;
+  }
+
+  .video-area {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding: 20px;
+  }
+
+  .video-box {
+    height: auto;
+    aspect-ratio: 16/9; /* maintain proportion */
+  }
 }
