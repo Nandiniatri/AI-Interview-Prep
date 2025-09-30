@@ -186,3 +186,24 @@
   color: #a259ff;
   text-decoration: underline;
 }
+
+
+
+/* @media (max-width: 480px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .resume-heading {
+    font-size: 14px;
+  }
+
+  .upload-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+} */

@@ -27,7 +27,7 @@ const SelectedForm = ({ file }) => {
   };
 
   useEffect(() => {
-    fetchAllFileData();
+    fetchAllFileData(); 
   }, []); 
 
   const handleUploadClick = () => {
