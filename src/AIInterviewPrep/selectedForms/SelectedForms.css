@@ -189,7 +189,7 @@
 
 
 
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
   .form-container {
     padding: 15px;
   }
@@ -203,7 +203,12 @@
   }
 
   .upload-btn {
-    padding: 8px;
-    font-size: 14px;
+    padding: 6px;
+    font-size: 11px;
   }
-} */
+
+  .resume-subtext{
+    /* border: solid; */
+    font-size: 10px;
+  }
+}
