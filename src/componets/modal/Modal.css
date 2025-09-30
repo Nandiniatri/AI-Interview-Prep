@@ -153,3 +153,13 @@ textarea {
 }
 
 
+
+
+@media (max-width:480px){
+  .modal-content1{
+    width: 90vw;
+    height: 79vh;
+    top: -60px;
+    right: 12px;
+  }
+}
