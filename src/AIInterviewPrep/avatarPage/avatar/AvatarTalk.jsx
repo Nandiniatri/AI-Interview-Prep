@@ -207,7 +207,7 @@
 
 import './AvatarTalk.css';
 import { useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber"; 
 import { OrbitControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
 import { useDataContext } from '../../../contextApi/DatasContectApi';
