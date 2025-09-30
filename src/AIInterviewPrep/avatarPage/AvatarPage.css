@@ -7,6 +7,8 @@
   box-sizing: border-box;
   height: auto;
   background: linear-gradient(135deg, #0f172a, #1e1b4b, #3b0764);
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .avatar-section,
@@ -15,6 +17,7 @@
   display: flex;
   justify-content: center;
   /* border: solid; */
+  width: 100%;
 }
 
 .avatar-section {
@@ -26,4 +29,22 @@
   flex: 1;
   max-width: 450px;
   min-height: auto;
+}
+
+
+@media (min-width: 768px) {
+  .avatar-section {
+    flex: 1;
+    max-width: 800px;
+  }
+
+  .video-call-section {
+    flex: 1;
+    max-width: 450px;
+    min-height: auto;
+  }
+
+  .avatar-page-main-container {
+    flex-wrap: nowrap;
+  }
 }
