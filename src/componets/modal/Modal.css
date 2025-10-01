@@ -157,14 +157,13 @@ textarea {
 
 @media (max-width:480px) {
   .modal-content1 {
-    width: 90vw;
-    height: 79vh;
-    top: -60px;
+    width: 93vw;
+    height: 58vh;
+    top: -178px;
     right: 12px;
   }
 
   .start-btn1 {
-    /* border: solid red; */
     padding: 10px 20px;
     font-size: 10px;
   }
